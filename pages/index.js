@@ -42,22 +42,7 @@ export default function Home() {
                         )}
                     </Media>
 
-
-                    <Media queries={{
-                        carousel4:"(max-width: 380px)",
-                        carousel3:"(min-width: 381px) and (max-width: 560px)",
-                        carousel2:"(min-width: 561px) and (max-width: 980px)",
-                        carousel1:"(min-width: 981px)"
-                    }}>
-                        {matches=>(
-                            <>
-                                {matches.carousel1 && <CarouselInicio container_car={"container-carousel"} carousel_foto={"carousel-foto"} prev_next_btn={"prev-next-btn"}/>}
-                                {matches.carousel2 && <CarouselInicio container_car={"container-carousel-mid"} carousel_foto={"carousel-foto-mid"} prev_next_btn={"prev-next-btn-mid"}/>}
-                                {matches.carousel3 && <CarouselInicio container_car={"container-carousel-sml"} carousel_foto={"carousel-foto-sml"} prev_next_btn={"prev-next-btn-sml"}/>}
-                                {matches.carousel4 && <CarouselInicio container_car={"container-carousel-xsml"} carousel_foto={"carousel-foto-xsml"} prev_next_btn={"prev-next-btn-xsml"}/>}
-                            </>
-                        )}
-                    </Media>
+                    <CarouselInicio/>
                     
                     <Media queries={{
                         carouselF4:"(max-width: 380px)",
