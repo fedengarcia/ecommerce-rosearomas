@@ -1,16 +1,14 @@
-
+import Image from 'next/image'
 
 export default function Footer(){
     return(
         <footer id="contacto">
             <div className="piePagina">
                 <div className="footer-inicial">
-                    <div>
-                        <p className="contacto">CONTACTOS</p>
+                    <div className='contacto'>
+                        <p>CONTACTOS</p>
                         <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener" className="contacto-2">WHATSAPP : +54 3487-513839</a>
-                        <div>
-                            <a href="https://www.instagram.com/rose_velas/?hl=es" target="_blank" rel="noopener" className="contacto-2">INSTAGRAM : @rose_velas</a>
-                        </div>
+                        <a href="https://www.instagram.com/rose_velas/?hl=es" target="_blank" rel="noopener" className="contacto-2">INSTAGRAM : @rose_velas</a>
                         <a href="mailto:Caromagnanihg@gmail.com" className="contacto-2">MAIL : Caromagnanihg@gmail.com</a>
                     </div>
                     <a href="#cabecero" rel="noopener" className="contacto-3">

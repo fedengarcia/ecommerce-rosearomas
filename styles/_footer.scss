@@ -2,6 +2,7 @@
 footer{
     bottom: 0;
     height: 0.1vw;
+    
 }
 .piePagina {
     margin: auto;
@@ -13,10 +14,18 @@ footer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 2vw;
+  background-color: #c7e5e3;
+
 }
 
 .piePagina .footer-inicial{
   margin-left: 3vw;
+  
+  div{
+    background-color: #c7e5e3;
+
+  }
+
 }
 
 .piePagina .footer-inicial img {
@@ -24,10 +33,20 @@ footer{
 }
 
 .contacto {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 2vw;
   cursor: context-menu;
+  background-color: #c7e5e3;
+
+  p{
+    background-color: #c7e5e3;
+  }
+
 }
 
 .contacto-2 {
@@ -36,6 +55,8 @@ footer{
   font-size: 1.5vw;
   color: #084444;
   text-decoration: none;
+  background-color: #c7e5e3;
+
 }
 
 .contacto-2:hover{
@@ -49,6 +70,8 @@ footer{
 
 .contacto-3{
   text-align: center;
+  background-color: #c7e5e3;
+
 }
 
 .piePagina .copyright {
@@ -57,4 +80,6 @@ footer{
   padding-top: 1vw;
   cursor: context-menu;
   font-size: 1.2vw;
+  background-color: #c7e5e3;
 }
+
