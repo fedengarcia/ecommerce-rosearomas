@@ -9,10 +9,10 @@ import { crlContext } from "../../../context/carouselContext";
 
 export default function CarouselInicio(){
     const leftArrow=(
-        <Image src={left} alt="FLECHA" className="prev-next-btn"/>
+        <Image src={left} alt="FLECHA" width={70} height={70} className="prev-next-btn"/>
     )
     const rightArrow=(
-        <Image src={right} alt="FLECHA" className="prev-next-btn"/>
+        <Image src={right} alt="FLECHA" width={70} height={70} className="prev-next-btn"/>
     )
 
     const {carousel} = useContext (crlContext);
@@ -26,7 +26,7 @@ export default function CarouselInicio(){
                             <Image
                             src={foto.img}
                             alt={foto.titulo}
-                            width={500}
+                            width={700}
                             height={500}
                             className="carousel-foto"
                             />

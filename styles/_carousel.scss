@@ -1,5 +1,5 @@
 .prev-next-btn{
-    width: 4vw;
+    background-color: transparent;
 }
 .container-carousel{
     width: 70%;
@@ -7,7 +7,6 @@
     text-align: center;
 }
 .carousel-foto{
-    width: 200vw;
     border-radius: 2vw;
 }
 .container-carousel .carousel-caption{
@@ -21,10 +20,12 @@
 .carousel-caption{
     h3{
         font-size: 2.5vw;
+        background-color: transparent;
     }
     p{
         font-size: 1.2vw;
         margin: 0 2vw;
+        background-color: transparent;
     }
 }
 .carousel-indicators button{
