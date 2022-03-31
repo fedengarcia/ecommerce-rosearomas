@@ -7,7 +7,7 @@ export default function Header(){
 
     return (
         <div className="cabecero" id="cabecero">
-            <h1 className="tituloI">ROSÉ TIMOTEO GAMBELLA</h1>
+            <h1 className="tituloI">ROSÉ AROMAS</h1>
 
             <div>
                 <Image src={logo} alt="LOGO" width={180} height={150}/>
