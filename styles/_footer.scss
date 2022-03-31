@@ -58,30 +58,3 @@ footer{
   cursor: context-menu;
   font-size: 1.2vw;
 }
-
-.footer-inicial-sml{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 2vw;
-}
-
-.footer-inicial-sml img {
-  width: 25vw
-}
-
-.contacto-3-sml{
-  text-align: center;
-  margin: auto auto;
-}
-
-.footer-inicial-xsml{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr;
-  margin-bottom: 2vw;
-  text-align: center;
-}
-.footer-inicial-xsml img {
-  margin-top: 3vw;
-  width: 40vw
-}

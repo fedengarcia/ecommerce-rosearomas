@@ -8,7 +8,6 @@ import logoWhap from "../public/whatsapp.png";
 import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia";
 import CarouselFraganciaSml from "./components/CarouselFragancia/CarouselFragancia-sml";
 import Header from './components/Header/Header';
-import Script from 'next/script';
 import Footer from './components/Footer/Footer';
 
 
