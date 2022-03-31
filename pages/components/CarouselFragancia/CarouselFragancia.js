@@ -15,7 +15,7 @@ export default function CarouselFragancia(){
         <Image src={right} alt="FLECHA" width={60} height={60} className="prev-next-btn"/>
     )
 
-    const {carouselFragancia} = useContext(crlContext);
+    const {carouselFragancia,carouselFraganciaSML} = useContext(crlContext);
 
     return(
         <>

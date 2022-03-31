@@ -9,7 +9,6 @@ import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia"
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-
 export default function Home() {
   const [carga,setCarga]=useState(true)
 
@@ -45,21 +44,7 @@ export default function Home() {
                     
                     <CarouselFragancia/>
 
-                    <Media queries={{
-                        logoWhap4:"(max-width: 450px)",
-                        logoWhap3:"(min-width: 451px) and (max-width: 600px)",
-                        logoWhap2:"(min-width: 601px) and (max-width: 900px)",
-                        logoWhap1:"(min-width: 901px)"
-                    }}>
-                        {matches=>(
-                            <>
-                                {matches.logoWhap1 && <Image src={logoWhap} alt="Whap" className="logoWhap"  width={80} height={80}/>}
-                                {matches.logoWhap2 && <Image src={logoWhap} alt="Whap" className="logoWhap"  width={70} height={70}/>}
-                                {matches.logoWhap3 && <Image src={logoWhap} alt="Whap" className="logoWhap"  width={60} height={60} />}
-                                {matches.logoWhap4 && <Image src={logoWhap} alt="Whap" className="logoWhap"  width={50} height={50} />}
-                            </>
-                        )}
-                    </Media>
+                    <Image src={logoWhap} alt="Whap" className="logoWhap" width={80} height={80}/>
 
                     <Footer/>
                 </div>
