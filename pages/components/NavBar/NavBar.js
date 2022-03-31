@@ -10,7 +10,7 @@ export default function NavBar() {
 
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span id="referenciaMenu">Inicio</span>
+                <span id="referenciaMenu">InicioSAASFS</span>
                 <span className="navbar-toggler-icon"></span>
             </button>
 
