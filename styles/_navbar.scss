@@ -6,8 +6,8 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 2vw;
-  margin-bottom: 2.5vw;
   color: #084444 !important;
+  padding: 0 !important;
 
   a{
     text-decoration: none;
@@ -25,8 +25,9 @@
     }
   }
 
-  button{
+  .navbar-toggler{
     .navbar-toggler-icon {
+      color: black;
       display: inline-block;
       width: 1.5em;
       height: 1.5em;
@@ -49,21 +50,6 @@
   //     font-size: 5vw;
       
   //   }
-
-  //   &:hover{
-  //     cursor: pointer;
-  //   }
-
-
-  // }
-
-  
-
-
-  // .navbar-toggler{
-  //   margin: 2vw;
-  // }
-
 
 }
 
