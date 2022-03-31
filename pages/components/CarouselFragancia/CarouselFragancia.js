@@ -6,13 +6,13 @@ import right from "../Carousel/icons8-derecha-círculo-90.png";
 import { crlContext } from "../../../context/carouselContext";
 import Image from "next/image";
 
-export default function CarouselFragancia({carouselFFoto,carouselF_arrow}){
+export default function CarouselFragancia(){
     
     const leftArrow=(
-        <Image src={left} alt="FLECHA" className={carouselF_arrow}/>
+        <Image src={left} alt="FLECHA" width={60} height={60} className="prev-next-btn"/>
     )
     const rightArrow=(
-        <Image src={right} alt="FLECHA" className={carouselF_arrow}/>
+        <Image src={right} alt="FLECHA" width={60} height={60} className="prev-next-btn"/>
     )
 
     const {carouselFragancia} = useContext(crlContext);
@@ -28,9 +28,9 @@ export default function CarouselFragancia({carouselFFoto,carouselF_arrow}){
                                     <Image
                                     src={foto.img}
                                     alt={foto.titulo}
-                                    width={400}
-                                    height={400}
-                                    className={carouselFFoto}
+                                    width={1320}
+                                    height={300}
+                                    className="carouselF-foto"
                                     />
                                     <Carousel.Caption>
                                         <h3>{foto.titulo}</h3>
