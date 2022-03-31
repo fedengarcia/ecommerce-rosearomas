@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+.cabecero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-size: contain;
+    margin-bottom: 3vw;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    margin-bottom: 3vw;
+    
+
+    img{
+        padding-top: 1.5vw;
+        width: 12vw;
+    }
+
+    div{
+        text-align: center;
+
+        p{
+            font-weight: 600;
+            font-size: 1.6vw;
+        }
+    }
+
+
+    .tituloI{
+        text-align: end;
+        font-size: 3.6vw;
+        font-weight: 300;
+    }
+
+    .tituloD{
+        text-align: start;
+        font-size: 3.6vw;
+        font-weight: 300;
+    }
+  }
+
+  
+
+  
+  .cabecero-xxsml{
+    height: 15vw;
+    background-size: contain;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+  }
+  .cabecero-xxsml .tituloI{
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12vw;
+    font-weight: 500;
+    color: black;
+  }

@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+footer{
+    bottom: 0;
+    height: 0.1vw;
+}
+.piePagina {
+    margin: auto;
+    padding-top: 2vw;
+    background-color: #c7e5e3;
+}
+
+.piePagina .footer-inicial {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 2vw;
+}
+
+.piePagina .footer-inicial{
+  margin-left: 3vw;
+}
+
+.piePagina .footer-inicial img {
+  width: 18vw
+}
+
+.contacto {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 2vw;
+  cursor: context-menu;
+}
+
+.contacto-2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.5vw;
+  color: #084444;
+  text-decoration: none;
+}
+
+.contacto-2:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #084444;
+  border-radius: 0.7vw;
+  padding: 0.2vw 0.5vw;
+  margin: 0.5vw 0;
+}
+
+.contacto-3{
+  text-align: center;
+}
+
+.piePagina .copyright {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 1vw;
+  cursor: context-menu;
+  font-size: 1.2vw;
+}
+
+.footer-inicial-sml{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2vw;
+}
+
+.footer-inicial-sml img {
+  width: 25vw
+}
+
+.contacto-3-sml{
+  text-align: center;
+  margin: auto auto;
+}
+
+.footer-inicial-xsml{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+.footer-inicial-xsml img {
+  margin-top: 3vw;
+  width: 40vw
+}

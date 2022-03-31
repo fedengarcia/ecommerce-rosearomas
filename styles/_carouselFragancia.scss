@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+.container-carouselFragancia{
+    width: 90%;
+    margin: 9vw auto;
+    text-align: center;
+    height: 20vw;
+}
+.carouselF-foto{
+    width: 80%;
+    border-radius: 2vw;
+}
+.carouselF-foto:hover{
+    transform: scale(1.2);
+}
+.titulo-fragancias{
+    text-align: center;
+    padding-top: 12vw;
+    margin-bottom: -5vw;
+    font-family: "Montserrat", sans-serif;
+    color: #084444;
+    font-weight: 600;
+    font-size: 3vw;
+}
+.carouselF-foto-mid{
+    width: 100%;
+    border-radius: 2vw;
+}
+.carouselF-foto-mid:hover{
+    transform: scale(1.2);
+}
+.carouselFraganciaSML{
+    width: 100%;
+    text-align: center;
+    margin: 15vw auto;
+}
+.carouselFraganciaSML img{
+    width: 80vw;
+    text-align: center;
+    border-radius: 2vw;
+}
+.carouselFraganciaSML img:hover{
+    transform: scale(1.1);
+}
+.arrow-F-sml{
+    width: 10vw !important;
+}
+.tamañoF .foto-car{
+    width: 100vw !important;
+}

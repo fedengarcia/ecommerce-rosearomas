@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+@keyframes appear{
+    0%{
+        margin-left: -1500px;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+
+.texto-cargando{
+    margin-top: 20vh;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 3vw;
+    height: 50vw;
+}
+.appear{
+    width: 100%;
+    animation-name: appear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    margin-bottom: 5vw;
+}
+.appear-ban2{
+    width: 100%;
+    animation-name: appear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    margin-bottom: 5vw;
+}
+.logoWhap{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 1vw;
+}
