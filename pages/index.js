@@ -6,7 +6,6 @@ import banner2 from "../public/banner/banner2.png";
 import Media from "react-media";
 import logoWhap from "../public/whatsapp.png";
 import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia";
-import CarouselFraganciaSml from "./components/CarouselFragancia/CarouselFragancia-sml";
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -44,21 +43,8 @@ export default function Home() {
 
                     <CarouselInicio/>
                     
-                    <Media queries={{
-                        carouselF4:"(max-width: 380px)",
-                        carouselF3:"(min-width: 381px) and (max-width: 540px)",
-                        carouselF2:"(min-width: 541px) and (max-width: 900px)",
-                        carouselF1:"(min-width: 901px)"
-                    }}>
-                        {matches=>(
-                            <>
-                                {matches.carouselF1 && <CarouselFragancia carouselFFoto={"carouselF-foto"} carouselF_arrow={"prev-next-btn"}/>}
-                                {matches.carouselF2 && <CarouselFragancia carouselFFoto={"carouselF-foto-mid"} carouselF_arrow={"prev-next-btn-mid"}/>}
-                                {matches.carouselF3 && <CarouselFraganciaSml tamañoF={""}/>}
-                                {matches.carouselF4 && <CarouselFraganciaSml tamañoF={"tamañoF"}/>}
-                            </>
-                        )}
-                    </Media>
+                    <CarouselFragancia/>
+
                     <Media queries={{
                         logoWhap4:"(max-width: 450px)",
                         logoWhap3:"(min-width: 451px) and (max-width: 600px)",
