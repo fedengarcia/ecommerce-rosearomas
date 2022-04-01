@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function NavBar() {
   
 
-    return(
+    return(<div className="navbar-container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light" id='navBar'>
 
 
@@ -25,11 +25,11 @@ export default function NavBar() {
                 <Link href='#contacto' className="nav-link">Contacto</Link>
 
                 </div>
-                <CartWidget  cantProducto={"CantidadCart-big"} cart={"Cart-big"}/>
-
             </div>
 
         </nav>
+        <CartWidget  cantProducto={"CantidadCart-big"} cart={"Cart-big"}/>
+        </div>
     );
 }
 
