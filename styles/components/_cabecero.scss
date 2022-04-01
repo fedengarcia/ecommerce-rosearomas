@@ -1,11 +1,9 @@
 .cabecero {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    background-size: contain;
     margin-bottom: 3vw;
     font-family: "Montserrat", sans-serif;
-    color: black;
     margin-bottom: 3vw;
     
     img{
@@ -24,33 +22,19 @@
 
     .tituloI{
         text-align: end;
-        font-size: 3.6vw;
+        font-size: 4.5vw;
         font-weight: 300;
     }
 
     .tituloD{
         text-align: start;
-        font-size: 3.6vw;
+        font-size: 4.5vw;
         font-weight: 300;
     }
     .tituloMobile{
         display: none;
     }
-  }
-
-  
-
-  
-  .cabecero-xxsml{
-    height: 15vw;
-    background-size: contain;
-    margin-bottom: 3vw;
-    margin-top: 3vw;
-  }
-  .cabecero-xxsml .tituloI{
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12vw;
-    font-weight: 500;
-    color: black;
-  }
+    .container-logoRose{
+        width: 16vw;
+    }
+}

@@ -13,7 +13,7 @@ export default function Header(){
 
             <div className='container-logoRose'>
                 <div className='container2-logoRose'>
-                    <Image src={logo} alt="LOGO" width={180} height={150}/>
+                    <Image src={logo} alt="LOGO" width={230} height={200}/>
                 </div>
                 <p>By Carolina</p>
             </div>
