@@ -44,7 +44,9 @@ export default function Home() {
                     
                     <CarouselFragancia/>
 
-                    <Image src={logoWhap} alt="Whap" className="logoWhap" width={80} height={80}/>
+                    <div className="logoWhap">
+                        <Image src={logoWhap} alt="Whap" width={80} height={80}/>
+                    </div>
 
                     <Footer/>
                 </div>
