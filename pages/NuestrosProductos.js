@@ -11,7 +11,9 @@ function NuestrosProductos() {
         <h1>Nuestros Productos</h1>
 
         <div className="container-logoWhap">
-          <Image src={logoWhap} alt="Logo de whatsapp" width={80} height={80}/>
+          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
+              <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
+          </a>
         </div>
     <Footer/>
     </>
