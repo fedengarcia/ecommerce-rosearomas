@@ -8,11 +8,12 @@ import Link from 'next/link';
 export default function CartWidget({cantProduco}){
     
     return(
-        // <Link href="/cartContainer">          </Link>
-        <Badge badgeContent={2} color="primary">
-            <ShoppingCartOutlinedIcon fontSize="large"/>
-        </Badge>
-
-
+        <Link href="/cart">          
+        <div className='cartWidget-container'>  
+            <Badge badgeContent={cantProduco} color="primary">
+                <ShoppingCartOutlinedIcon fontSize="large"/>
+            </Badge>
+        </div>
+        </Link>
     )
 }
