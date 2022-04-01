@@ -44,8 +44,10 @@ export default function Home() {
                     
                     <CarouselFragancia/>
 
-                    <div className="logoWhap">
-                        <Image src={logoWhap} alt="Whap" width={80} height={80}/>
+                    <div className="container-logoWhap">
+                        <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
+                            <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
+                        </a>
                     </div>
 
                     <Footer/>

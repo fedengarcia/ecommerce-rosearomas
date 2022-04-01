@@ -30,10 +30,16 @@
     animation-timing-function: ease-in-out;
     margin-bottom: 5vw;
 }
-.logoWhap{
+.container-logoWhap{
     position: fixed;
     background-color: transparent;
     right: 0;
     bottom: 0;
     margin: 1vw;
+    .logoWhap{
+        background-color: transparent;
+    }
+    a{
+        background-color: transparent;
+    }
 }
