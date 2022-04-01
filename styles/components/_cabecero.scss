@@ -1,4 +1,3 @@
-
 .cabecero {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -9,7 +8,6 @@
     color: black;
     margin-bottom: 3vw;
     
-
     img{
         padding-top: 1.5vw;
         width: 12vw;
@@ -24,7 +22,6 @@
         }
     }
 
-
     .tituloI{
         text-align: end;
         font-size: 3.6vw;
@@ -35,6 +32,9 @@
         text-align: start;
         font-size: 3.6vw;
         font-weight: 300;
+    }
+    .tituloMobile{
+        display: none;
     }
   }
 

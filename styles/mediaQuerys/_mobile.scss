@@ -1,7 +1,30 @@
 @media only screen and (max-width:480px){
-    
-
-
-
-    
+    .cabecero{
+        display: flex;
+        flex-wrap: wrap;
+        .tituloD{
+            display: none;
+        }
+        .tituloI{
+            display: none;
+        }
+        .tituloMobile{
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 11vw;
+            margin-top: 4vw;
+        }
+        .container-logoRose{
+            width: 100%;
+            text-align: center;
+            .container2-logoRose{
+                width: 35vw;
+                margin: 0 auto;
+            }
+            p{
+                font-size: 3vw;
+            }
+        }
+    }
 }
