@@ -46,4 +46,55 @@
         margin-right: 0vw;
         margin-left: 0vw;
     }
+
+
+
+    // FOOTER
+
+    .piePagina {
+
+
+        .footer-inicial {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            background-color: #c7e5e3;
+    
+    
+            img{
+                width: 50vw;
+            }
+    
+            .contacto{
+                margin-top: 4vw;
+                margin-bottom: 0;
+                font-size: 4vw;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                p{
+                    margin-bottom: 0;
+                }
+    
+                a{
+                    font-size: 3vw;
+                }
+            }
+          
+          }
+
+          .copyright {
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 1vw;
+            cursor: context-menu;
+            font-size: 3vw;
+            background-color: #c7e5e3;
+          }
+    }
+    
+    
+    
+      
 }
