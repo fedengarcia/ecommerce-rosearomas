@@ -8,6 +8,10 @@ function QuienSoy() {
   return (<>
     <Header />
         <h1>Quien Soy?</h1>
+
+        <div className="logoWhap">
+          <Image src={logoWhap} alt="Whap" width={80} height={80}/>
+        </div>
     <Footer/>
     </>
   );

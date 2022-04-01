@@ -7,6 +7,10 @@ function NuestrosProductos() {
   return (<>
     <Header />
         <h1>Nuestros Productos</h1>
+
+        <div className="logoWhap">
+          <Image src={logoWhap} alt="Whap" width={80} height={80}/>
+        </div>
     <Footer/>
     </>
   );
