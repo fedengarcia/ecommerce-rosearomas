@@ -1,0 +1,25 @@
+//FONTS
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+// PAGES
+@import "./pages/index";
+@import "./pages/nuestrosProductos";
+@import "./pages/quienSoy";
+@import "./pages/refill";
+@import "./pages/tienda";
+
+//COMPONENTS
+@import "./components/carousel";
+@import "./components/carouselFragancia";
+@import "./components/cabecero";
+@import "./components/cartWidget";
+@import "./components/footer";
+@import "./components/navbar";
+
+
+// MEDIA QUERYS
+@import "./mediaQuerys/mobile";
+@import "./mediaQuerys/tablet";
+@import "./mediaQuerys/desktop";
+
+
