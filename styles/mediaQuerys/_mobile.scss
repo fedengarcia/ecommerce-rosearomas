@@ -1,4 +1,6 @@
 @media only screen and (max-width:480px){
+
+    //CABECERO
     .cabecero{
         display: flex;
         flex-wrap: wrap;
@@ -26,5 +28,22 @@
                 font-size: 3vw;
             }
         }
+    }
+
+    //NUESTROS PRODUCTOS 
+    .container-Nprods{
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center;
+    }
+
+    .container-Nprods-left{
+        margin-left: 0vw;
+    }
+
+    .container-Nprods-right{
+        margin-right: 0vw;
+        margin-left: 0vw;
     }
 }
