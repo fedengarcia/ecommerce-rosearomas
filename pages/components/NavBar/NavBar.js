@@ -5,7 +5,7 @@ export default function NavBar() {
   
 
     return(<div className="navbar-container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light" id='navBar'>
+        <nav className="navbar navbar-expand-lg navbar-light " id='navBar'>
 
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
