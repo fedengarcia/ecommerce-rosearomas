@@ -1,18 +1,18 @@
-import React,{useContext} from 'react';
-import carro from './cart.png';
+import {useContext} from 'react';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Badge from '@material-ui/core/Badge';
 import Link from 'next/link';
-// import { CartContext } from '../../Context/CartContext';
-// import { Link } from "react-router-dom";
 
-export default function CartWidget({cantx,cart}){
+
+
+export default function CartWidget({cantProduco}){
     
-    // const {cant}=useContext(CartContext)
-
     return(
-        <div className='CartCant'>
-            <Link href={"/"}>
-                <Image src={carro} alt="carro" width={30} height={30} className={`Cart ${cart}`}/>
-            </Link>
-        </div>
+        // <Link href="/cartContainer">          </Link>
+        <Badge badgeContent={2} color="primary">
+            <ShoppingCartOutlinedIcon fontSize="large"/>
+        </Badge>
+
+
     )
 }

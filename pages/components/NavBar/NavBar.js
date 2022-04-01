@@ -1,6 +1,5 @@
 import CartWidget from "../CartWidget/CartWidget"
 import Link from 'next/link'
-import MenuIcon from '@mui/icons-material/Menu';
 
 export default function NavBar() {
   
@@ -26,9 +25,10 @@ export default function NavBar() {
                 <Link href='#contacto' className="nav-link">Contacto</Link>
 
                 </div>
+                <CartWidget  cantProducto={"CantidadCart-big"} cart={"Cart-big"}/>
+
             </div>
 
-            {/* <CartWidget  cantx={"CantidadCart-big"} cart={"Cart-big"}/> */}
         </nav>
     );
 }
