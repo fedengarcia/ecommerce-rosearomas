@@ -28,7 +28,7 @@ export default function NavBar() {
             </div>
 
         </nav>
-        <CartWidget  cantProducto={"CantidadCart-big"} cart={"Cart-big"}/>
+        <CartWidget/>
         </div>
     );
 }
