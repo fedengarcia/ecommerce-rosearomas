@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
-import { collection, getDocs, orderBy } from "firebase/firestore";
+import { collection, getDocs, orderBy, where } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -36,4 +36,13 @@ export const getCarouselFraganciaSMLImg = async() => {
   const carouselFraganciasSMLDocs = await getDocs(collection(db,"CarouselFraganciasSML"),orderBy("Nombre"));
   const carouselFraganciasSMLImg = carouselFraganciasSMLDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}});
   return(carouselFraganciasSMLImg);
+}
+
+
+
+export const getProductos = async() =>{
+
+  const productosDocs = await getDocs(collection(db,"Productos"));
+  const productos = productosDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}})
+  return(productos)
 }
