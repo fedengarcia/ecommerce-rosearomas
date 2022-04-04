@@ -1,6 +1,6 @@
 import logo from './rose.png'
 import Image from 'next/image'
-
+import Link from 'next/link'
 
 export default function Header(){
 
@@ -13,7 +13,7 @@ export default function Header(){
 
             <div className='container-logoRose'>
                 <div className='container2-logoRose'>
-                    <Image src={logo} alt="LOGO" width={230} height={200}/>
+                    <Link href="/"><Image src={logo} alt="LOGO" width={230} height={200}/></Link>
                 </div>
                 <p>By Carolina</p>
             </div>
