@@ -12,6 +12,7 @@
         margin: 0 auto;
         border-radius: 3vw;
         margin-bottom: -0.5vw;
+        padding-top: 0.5rem;
         h3{
             font-size: 2.5vw;
             background-color: transparent;
@@ -29,79 +30,9 @@
         display: none;
     }
 }
-
-// .container-carousel-mid{
-//     width: 90%;
-//     margin: 4vw auto;
-//     text-align: center;
-// }
-// .carousel-foto-mid{
-//     border-radius: 2vw;
-//     width: 70vw;
-// }
-// .container-carousel-mid .carousel-caption{
-//     height: 16vw;
-//     width: 50%;
-//     margin-bottom: -1vw;
-//     padding-top: 1vw;
-// }
-// .container-carousel-mid h3{
-//     font-size: 4vw;
-// }
-// .container-carousel-mid p{
-//     font-size: 2vw;
-//     margin: 0 1vw;
-// }
-// .prev-next-btn-mid{
-//     width: 7vw;
-// }
-// .container-carousel-sml{
-//     width: 100%;
-//     margin: 10vw auto;
-//     text-align: center;
-// }
-// .carousel-foto-sml{
-//     border-radius: 2vw;
-//     width: 85vw;
-// }
-// .container-carousel-sml .carousel-caption{
-//     height: 22vw;
-//     width: 55%;
-//     margin-bottom: -2.5vw;
-//     padding-top: 2vw;
-// }
-// .container-carousel-sml h3{
-//     font-size: 5vw;
-// }
-// .container-carousel-sml p{
-//     font-size: 2.5vw;
-//     margin: 0 1vw;
-// }
-// .prev-next-btn-sml{
-//     width: 9vw;
-// }
-// .container-carousel-xsml{
-//     width: 100%;
-//     margin-top: 5vw;
-//     text-align: center;
-// }
-// .carousel-foto-xsml{
-//     border-radius: 2vw;
-//     width: 100vw;
-// }
-// .container-carousel-xsml .carousel-caption{
-//     height: 25vw;
-//     width: 70%;
-//     margin-bottom: -3vw;
-//     padding-top: 2vw;
-// }
-// .container-carousel-xsml h3{
-//     font-size: 6.5vw;
-// }
-// .container-carousel-xsml p{
-//     font-size: 3.2vw;
-//     margin: 0 1vw;
-// }
-// .prev-next-btn-xsml{
-//     width: 10vw;
-// }
+.carousel-titulo-mobile{
+    display: none;
+}
+.carousel-desc-mobile{
+    display: none;
+}

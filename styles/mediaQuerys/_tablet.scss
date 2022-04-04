@@ -96,5 +96,23 @@
             background-color: #c7e5e3;
           }
     }
-    
+
+
+    // CAROUSEL
+
+      .container-carousel{
+        width: 80%;
+        margin-top: 6vw;
+        .carousel-caption{
+            width: 50%;
+            height: 15vw;
+            h3{
+                font-size: 3vw;
+            }
+            p{
+                font-size: 1.8vw;
+            }
+        }
+        
+    }
 }
