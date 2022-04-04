@@ -18,10 +18,23 @@
         margin-left: 0vw;
     }
     
-
+    // CABECERO
+    .cabecero{
+        .container2-logoRose{
+            width: 20vw;
+        }
+        .container-logoRose{
+            p{
+                font-size: 2.2vw !important;
+            }
+        }
+        h1{
+            font-size: 6vw !important;
+        }
+    }
        
     // NAVBAR
-    
+
     .navbar-container{
         align-items: flex-start;
 
@@ -36,7 +49,6 @@
 
     .piePagina {
 
-
         .footer-inicial {
             display: flex;
             flex-direction: column-reverse;
@@ -46,7 +58,7 @@
     
     
             img{
-                width: 50vw;
+                width: 30vw;
             }
     
             .contacto{
@@ -72,7 +84,7 @@
             margin: 0 auto;
             padding-top: 1vw;
             cursor: context-menu;
-            font-size: 3vw;
+            font-size: 2vw;
             background-color: #c7e5e3;
           }
     }
