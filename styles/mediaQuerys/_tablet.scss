@@ -1,6 +1,5 @@
 @media only screen and (min-width:481px) and (max-width:960px){
 
-    
     //NUESTROS PRODUCTOS 
     .container-Nprods{
         display: flex;
@@ -38,12 +37,19 @@
     .navbar-container{
         align-items: flex-start;
 
-        .navbar {
+        #referenciaMenu {
             font-size: 4vw;
         }
+        .navbar-nav{
+            font-size: 3vw;
+            text-align: center;
+        }
     }
-
-
+    .cartWidget-container{
+        flex-grow: 1;
+        text-align: center;
+        margin-top: 1.5vw;
+    }
     
     // FOOTER
 

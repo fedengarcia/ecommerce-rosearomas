@@ -12,7 +12,7 @@
       align-items: center;
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
-      width: 85%;
+      width: 90%;
       font-size: 2vw;
       color: #084444 !important;
       padding: 0 !important;
@@ -44,13 +44,34 @@
           width: 1.5em;
           height: 1.5em;
           vertical-align: middle;
-          content: "";
           background: 50%/100% 100% no-repeat;
+        }
+        span{
+          font-size: 3vw;
         }
       
       }
       
     }
+}
 
-
+@media (min-width: 600px){
+  .navbar-expand-custom {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-nav {
+      flex-direction: row;
+  }
+  .navbar-expand-custom .navbar-nav .nav-link {
+      padding-right: .5rem;
+      padding-left: .5rem;
+  }
+  .navbar-expand-custom .navbar-collapse {
+      display: flex!important;
+  }
+  .navbar-expand-custom .navbar-toggler {
+      display: none;
+  }
 }
