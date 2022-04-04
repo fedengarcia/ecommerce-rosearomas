@@ -130,4 +130,30 @@
         width: 12vw !important;
     }
       
+    // GOOGLE MAPS
+    .container-map{
+        .container-map-titulo{
+            font-size: 9vw !important;
+        }
+        iframe{
+            width: 90vw !important;
+            height: 40vh !important;
+        }
+    }
+
+        // QUIEN SOY BIO
+
+        .biografia{
+            margin: 5vw 10vw;
+            padding-top: 2vw;
+            padding-bottom: 4vw;
+        }
+        .biografia{
+            h1{
+                font-size: 8vw;
+            }
+            p{
+                font-size: 5vw;
+            }
+        }
 }
