@@ -1,0 +1,36 @@
+@media (min-width: 600px){
+    .navbar-expand-custom {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+        flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .navbar-expand-custom .navbar-collapse {
+        display: flex!important;
+    }
+    .navbar-expand-custom .navbar-toggler {
+        display: none;
+    }
+}
+@media (max-width:599px){
+    #referenciaMenu{
+        font-size: 5vw;
+    }
+    .navbar{
+        margin-right: -15vw;
+        margin-bottom: 2vw;
+        a{
+            font-size: 3.5vw;
+        }
+    }
+    .cartWidget-container{
+        margin-top: -0.5vw;
+        margin-right: 15vw;
+    }
+}
