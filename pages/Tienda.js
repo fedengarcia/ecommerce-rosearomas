@@ -5,10 +5,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { getProductos } from "../firebase/Firebase";
 import TiendaContainer from "./components/TiendaContainer/TiendaContainer";
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 import NavBarTienda from "./components/NavBar/NavBarTienda";
 
 
@@ -29,8 +25,6 @@ function Tienda() {
     }).catch(err => console.log(err))
     
   }, []);
-
-
 
 
   return (<>

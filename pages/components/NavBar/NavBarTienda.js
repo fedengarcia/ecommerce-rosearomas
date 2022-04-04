@@ -20,11 +20,13 @@ export default function NavBarTienda({setItemType}) {
         
                 <div className="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup">
                     
-                    <ul><li onClick={() =>handleClick("Todo")}>Todo</li></ul>
-                    <ul><li onClick={() =>handleClick("Velas")}>Velas</li></ul>
-                    <ul><li onClick={() =>handleClick("Homespray")}>Homespray</li></ul>
-                    <ul><li onClick={() =>handleClick("Difusores")}>Difusores</li></ul>
-                    <ul><li onClick={() =>handleClick("Bombones")}>Bombones</li></ul>
+                    <ul>
+                        <li onClick={() =>handleClick("Todo")}>Todo</li>
+                        <li onClick={() =>handleClick("Velas")}>Velas</li>
+                        <li onClick={() =>handleClick("Homespray")}>Homespray</li>
+                        <li onClick={() =>handleClick("Difusores")}>Difusores</li>
+                        <li onClick={() =>handleClick("Bombones")}>Bombones</li>
+                    </ul>
 
                 </div>
 
