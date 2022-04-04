@@ -9,15 +9,16 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import NavBarTienda from "./components/NavBar/NavBarTienda";
 
 
 function Tienda() {
   const [productos, setProductos] = useState([]);
-  const [filtro, setFiltro] = useState("1");
+  const [itemType, setItemType] = useState("Todo");
   
-  const handleChange = (event, newValue) => {
-    setFiltro(newValue);
-  };
+  // const handleChange = (event, newValue) => {
+  //   setItemType(newValue);
+  // };
 
   useEffect(() => {
 
@@ -35,27 +36,10 @@ function Tienda() {
   return (<>
     <Header />
 
-        <div className="tiendaTabs">
-          <TabContext value={filtro}>
-            <div className="tabs"> 
-              <TabList onChange={handleChange} textColor="secondary"
-                 indicatorColor="secondary">
-                <Tab label="Todo" value="1" />
-                <Tab label="Velas" value="2" />
-                <Tab label="Difusores" value="3" />
-                <Tab label="Homespray" value="4" />
-                <Tab label="Bombones" value="5" />
-              </TabList>
-            </div>
-            <div className="tabsPanel">
-              <TabPanel value="1"><TiendaContainer itemType={filtro} productos={productos}/></TabPanel>
-              <TabPanel value="2"><TiendaContainer itemType={filtro} productos={productos}/></TabPanel>
-              <TabPanel value="3"><TiendaContainer itemType={filtro} productos={productos}/></TabPanel>
-              <TabPanel value="4"><TiendaContainer itemType={filtro} productos={productos}/></TabPanel>
-              <TabPanel value="5"><TiendaContainer itemType={filtro} productos={productos}/></TabPanel>
-            </div>
-          </TabContext>
-        </div>
+        {productos && <NavBarTienda setItemType={setItemType}/>} 
+
+        <TiendaContainer itemType={itemType} productos={productos}/>
+
 
         <div className="container-logoWhap">
           <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
