@@ -63,16 +63,16 @@
             align-items: center;
             justify-content: center;
             background-color: #c7e5e3;
-    
-    
+
             img{
                 width: 30vw;
+                max-width: 30vw;
             }
     
             .contacto{
                 margin-top: 4vw;
                 margin-bottom: 0;
-                font-size: 4vw;
+                font-size: 3.8vw;
                 justify-content: center;
                 align-items: center;
                 display: flex;
@@ -81,7 +81,8 @@
                 }
     
                 a{
-                    font-size: 3vw;
+                    font-size: 2.8vw;
+                    margin: 0.5vw;
                 }
             }
           
@@ -113,6 +114,17 @@
                 font-size: 1.8vw;
             }
         }
-        
+    }
+
+    // CAROUSEL FRAGANCIA
+    
+    .titulo-fragancias{
+        font-size: 5vw;
+    }
+
+    // LOGO WHAP
+
+    .container-logoWhap{
+        width: 7.6vw !important;
     }
 }

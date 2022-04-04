@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import { Carousel } from "react-bootstrap";
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import left from "../Carousel/icons8-izquierda-círculo-90.png";
 import right from "../Carousel/icons8-derecha-círculo-90.png";
 import { crlContext } from "../../../context/carouselContext";
 import Image from "next/image";
+import { width } from "@mui/system";
 
 export default function CarouselFragancia(){
     
@@ -16,13 +17,15 @@ export default function CarouselFragancia(){
     )
 
     const {carouselFragancia,carouselFraganciaSML} = useContext(crlContext);
+    
+    const [carouselTamaño,setCarouselTamaño]=useState(carouselFragancia)
 
     return(
         <>
             <h1 className="titulo-fragancias">NUESTRAS FRAGANCIAS</h1>
             <div className="container-carouselFragancia">
                 <Carousel prevIcon={leftArrow} nextIcon={rightArrow} interval={3000}>
-                        {carouselFragancia.map((foto)=>{
+                        {carouselTamaño.map((foto)=>{
                             return(
                                 <Carousel.Item key={foto.id}>
                                     <Image
