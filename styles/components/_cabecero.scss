@@ -21,13 +21,13 @@
     }
 
     .tituloI{
-        text-align: end;
+        text-align: center;
         font-size: 4.5vw;
         font-weight: 300;
     }
 
     .tituloD{
-        text-align: start;
+        text-align: center;
         font-size: 4.5vw;
         font-weight: 300;
     }
@@ -37,5 +37,8 @@
     .container-logoRose{
         width: 20vw;
         cursor: pointer;
+    }
+    .container-titulo{
+        width: 20vw;
     }
 }
