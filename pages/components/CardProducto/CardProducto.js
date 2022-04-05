@@ -1,13 +1,15 @@
+import {useState} from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ItemCount from '../ItemCount/ItemCount';
 
 export default function CardProducto({producto}) {
-    console.log(producto)
-  return (
+    const [amount,setAmount] = useState(undefined);
+
+    return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
@@ -30,6 +32,7 @@ export default function CardProducto({producto}) {
         </Typography>
       </CardContent>
       <CardActions>
+        <ItemCount stock={producto.Stock} setAmount={setAmount}/>
         <button className="add-cart-button">Agregar al carrito</button>
       </CardActions>
     </Card>
