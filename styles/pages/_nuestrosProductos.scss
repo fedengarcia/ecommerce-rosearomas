@@ -16,18 +16,12 @@
         margin-left: 36vw;
     }
 }
-@keyframes aumento{
-    0%{
-        width: 0vw;
-    }
-    100%{
-        width: 15vw;
-    }
-}
 
 .container-Nprods{
     display: flex;
     flex-direction: column;
+    margin-top: 12vw;
+    color: #084444;
 }
 .container-Nprods-left{
     display: flex;
@@ -35,6 +29,7 @@
     background-color: #c7e5e3;
     margin-bottom: 4vw;
     margin-left: 2vw;
+    border-radius: 3vw;
     border: 6px black double;
     animation-name: appearL;
     animation-duration: 3s;
@@ -47,6 +42,7 @@
     margin-bottom: 4vw;
     margin-right: 2vw;
     margin-left: 36vw;
+    border-radius: 3vw;
     border: 6px black double;
     animation-name: appearxL;
     animation-duration: 3s;
@@ -68,4 +64,7 @@
     margin: 1vw auto;
     text-align: center;
     font-size: 1.5vw;
+}
+.container-Nprods-info{
+    border-radius: 3vw;
 }
