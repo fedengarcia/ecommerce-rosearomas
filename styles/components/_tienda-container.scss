@@ -4,7 +4,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
 
 
     .title-container{
@@ -16,8 +15,9 @@
     .tienda{
         width: 90%;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: flex-start;
     }
 }

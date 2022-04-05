@@ -4,14 +4,14 @@
     .navbar-collapse{
         ul{
             display: flex;
-            width: 90%;
+            width: 100%;
             justify-content: center;
             align-items: center;
             li{
                 text-decoration: none;
                 color: rgba(0,0,0,.55) !important;
                 cursor: pointer;
-                margin: 0.5vw;
+                margin: 1.5vw;
                 transition: color 0.2s ease-in-out;
                 padding: 1vw;
                 cursor: pointer;
