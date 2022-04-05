@@ -13,11 +13,11 @@
 
 
     .tienda{
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         align-items: flex-start;
     }
 }
