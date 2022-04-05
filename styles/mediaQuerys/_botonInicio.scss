@@ -19,18 +19,20 @@
     }
 }
 @media (max-width:599px){
-    #referenciaMenu{
-        font-size: 5vw;
-    }
+    // .navbar-toggler{
+    //     margin-right: -11vw;
+    // }
+    // #referenciaMenu{
+    //     font-size: 5vw;
+    // }
     .navbar{
-        margin-right: -15vw;
-        margin-bottom: 2vw;
+        margin-left: 18vw;
         a{
             font-size: 3.5vw;
         }
     }
     .cartWidget-container{
         margin-top: -0.5vw;
-        margin-right: 15vw;
+        margin-right: 18vw;
     }
 }

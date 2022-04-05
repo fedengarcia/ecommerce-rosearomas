@@ -81,23 +81,18 @@
     
     .navbar-container{
         align-items: flex-start;
-
+        margin-bottom: 8vw;
         .navbar {
             font-size: 4vw;
-            margin-right: -10vw !important;
+            margin-left: 18vw !important;
             a{
                 font-size: 5vw !important;
                 text-align: center;
             }
         }
     }
-
     #referenciaMenu{
         font-size: 7vw !important;
-    }
-
-    .cartWidget-container{
-        margin-right: 0vw !important;
     }
 
     //NUESTROS PRODUCTOS 
@@ -122,7 +117,7 @@
     // FOOTER
 
     .piePagina {
-
+        margin-top: 18vw;
 
         .footer-inicial {
             display: flex;
@@ -165,6 +160,14 @@
           }
     }
     
+    // CAROUSEL
+
+    .carousel{
+        margin-top: 15vw;
+        margin-bottom: 10vw;
+    }
+
+
     // CAROUSEL FRAGANCIA
 
     .titulo-fragancias{
@@ -179,6 +182,7 @@
       
     // GOOGLE MAPS
     .container-map{
+        margin-top: 10vw;
         .container-map-titulo{
             font-size: 9vw !important;
         }
