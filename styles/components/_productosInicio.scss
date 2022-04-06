@@ -15,7 +15,7 @@
     margin-bottom: 3.6vw;
     justify-content: center;
     .productos-inicio{
-        background-color: #084444;
+        background-color: hsl(180, 79%, 15%, 0.6);
         min-height: 3.6vw;
         border-radius: 10px;
         margin: 1.5vw;
@@ -25,6 +25,7 @@
         cursor: pointer;
         &:hover{
             transform: scale(1.2);
+            background-color: hsl(180, 79%, 15%);
         }
         img{
             width: 20vw;

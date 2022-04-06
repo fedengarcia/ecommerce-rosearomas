@@ -1,11 +1,11 @@
-
-
 export default function NavBarTienda({setItemType}) {
   
 
     const handleClick = (type) => {
         setItemType(type)
     }
+
+    
 
     return(
         <nav className="navbar navbar-expand navbar-light navbar-tienda" id='navBar'>

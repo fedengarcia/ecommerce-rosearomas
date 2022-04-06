@@ -12,26 +12,26 @@ export default function ProductosInicio(){
         <div>
             <h2 className="titulo-productos">NUESTROS PRODUCTOS</h2>
             <div className="contenedor-productos-inicio">
-                <Link href={"/Tienda"} className="CardProdInicio">
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'Velas' } }}>
                     <div className="productos-inicio">
                         <Image src={prod1} alt="DIFUSORES"/>
                         
                         <h3>VELAS</h3>
                     </div>
                 </Link>
-                <Link href={"/Tienda"}>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'Homespray' } }}>
                     <div className="productos-inicio">
                         <Image src={prod2} alt="BOMBON"/>
                         <h3>HOMESPRAY</h3>
                     </div>
                 </Link>
-                <Link href={"/Tienda"}>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'Difusores' } }}>
                     <div className="productos-inicio">
                         <Image src={prod3} alt="VELAS"/>
                         <h3>DIFUSORES</h3>
                     </div>
                 </Link>
-                <Link href={"/Tienda"}>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'Bombones' } }}>
                     <div className="productos-inicio">
                         <Image src={prod4} alt="HOMESPRAY"/>
                         <h3>BOMBONES DE SOJA</h3>

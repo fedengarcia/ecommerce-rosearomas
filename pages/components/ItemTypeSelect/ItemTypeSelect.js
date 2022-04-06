@@ -14,7 +14,7 @@ export default function ItemTypeSelect ({setType}){
       <select id="fragancias" onChange={e => handleOnChange(e)}>
         <option value="none">Seleccionar Fragancia</option>
         {carouselFragancia.map((fragancia)=>(
-            <option value={fragancia.Nombre}>{fragancia.Nombre}</option>
+            <option value={fragancia.Nombre} key={fragancia.Nombre}>{fragancia.Nombre}</option>
           )
         )}
       </select>

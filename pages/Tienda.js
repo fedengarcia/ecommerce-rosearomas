@@ -6,24 +6,32 @@ import { useState, useEffect } from "react";
 import { getProductos } from "../firebase/Firebase";
 import TiendaContainer from "./components/TiendaContainer/TiendaContainer";
 import NavBarTienda from "./components/NavBar/NavBarTienda";
+import { useRouter } from 'next/router'
 
 
-function Tienda() {
+function Tienda({typeProd}) {
   const [productos, setProductos] = useState([]);
   const [itemType, setItemType] = useState("Todo");
   
   // const handleChange = (event, newValue) => {
   //   setItemType(newValue);
   // };
+  const router=useRouter()
+
+  useEffect(()=>{
+    if(router.query.keyword!=undefined){
+      setItemType(router.query.keyword)
+    }
+  },[router])
 
   useEffect(() => {
-
 
     getProductos().then(res => {
       setProductos(res);
       
     }).catch(err => console.log(err))
     
+
   }, []);
 
 
@@ -44,6 +52,5 @@ function Tienda() {
     </>
   );
 }
-
 
 export default Tienda;
