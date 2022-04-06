@@ -1,9 +1,8 @@
-import logo from './rose.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import logo from '../../../public/rose.png'
 
 export default function Header(){
-
 
     return (
         <div className="cabecero" id="cabecero">
@@ -15,7 +14,11 @@ export default function Header(){
 
             <div className='container-logoRose'>
                 <div className='container2-logoRose'>
-                    <Link href="/"><Image src={logo} alt="LOGO" width={230} height={200}/></Link>
+                    <Link href={'/'}>
+                        <a>
+                            <Image src={logo} alt="LOGO" width={230} height={200}/>
+                        </a>
+                    </Link>
                 </div>
                 <p>By Carolina</p>
             </div>
