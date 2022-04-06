@@ -10,29 +10,29 @@ export default function ProductosInicio(){
 
     return(
         <div>
-            <h2 class="titulo-productos">NUESTROS PRODUCTOS</h2>
-            <div class="contenedor-productos-inicio">
-                <Link href={"/Tienda"} class="CardProdInicio">
-                    <div class="productos-inicio">
+            <h2 className="titulo-productos">NUESTROS PRODUCTOS</h2>
+            <div className="contenedor-productos-inicio">
+                <Link href={"/Tienda"} className="CardProdInicio">
+                    <div className="productos-inicio">
                         <Image src={prod1} alt="DIFUSORES"/>
                         
                         <h3>VELAS</h3>
                     </div>
                 </Link>
                 <Link href={"/Tienda"}>
-                    <div class="productos-inicio">
+                    <div className="productos-inicio">
                         <Image src={prod2} alt="BOMBON"/>
                         <h3>HOMESPRAY</h3>
                     </div>
                 </Link>
                 <Link href={"/Tienda"}>
-                    <div class="productos-inicio">
+                    <div className="productos-inicio">
                         <Image src={prod3} alt="VELAS"/>
                         <h3>DIFUSORES</h3>
                     </div>
                 </Link>
                 <Link href={"/Tienda"}>
-                    <div class="productos-inicio">
+                    <div className="productos-inicio">
                         <Image src={prod4} alt="HOMESPRAY"/>
                         <h3>BOMBONES DE SOJA</h3>
                     </div>
