@@ -26,18 +26,18 @@ export default function ItemCount ({stock, setAmount}) {
     }
 
     return (
-        <div className="root">
+        <div className="itemCountContainer">
 
 
-            <RemoveIcon className="buttonitemcount"onClick={handleRemoveItem} color="primary" style={{fontSize:"1em"}}/>
+            <RemoveIcon className="buttonitemcount"onClick={handleRemoveItem} color="primary" style={{fontSize:"1.2em"}}/>
 
 
-            <div className="itemCountContainer">
+            <div className="itemCount">
                 <Typography style={{fontSize:"0.7em"}}>{`Cantidad: ${cantidad}`}</Typography>
             </div>
 
 
-            <AddIcon className="buttonitemcount" onClick={handleAddItem} style={{fontSize:"1em"}}/>
+            <AddIcon className="buttonitemcount" onClick={handleAddItem} style={{fontSize:"1.2em"}}/>
 
         </div>
     );

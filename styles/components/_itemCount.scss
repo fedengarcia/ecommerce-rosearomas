@@ -1,4 +1,4 @@
-.root{
+.itemCountContainer{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -6,18 +6,17 @@
     .buttonitemcount{
         background-color: #0b5a5a;
         color: white;
-        padding: 0.5em;
         cursor: pointer;
         border-radius: 0.4em;
         margin: 1em;
     }
+    .itemCount{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 1.5em;
+    }
 }
 
 
-.itemCountContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.5em;
-}
