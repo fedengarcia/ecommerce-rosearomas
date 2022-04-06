@@ -1,14 +1,15 @@
-import React from 'react';
+import {forwardRef} from 'react';
 import { Dialog,DialogContent,DialogTitle,DialogActions, Typography } from '@material-ui/core';
 import Slide from '@mui/material/Slide';
 import { useRouter } from 'next/router';
 import Router from 'next/router';
 
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef((props, ref) => {
     return <Slide direction="up" ref={ref} {...props} />;
   });
-  
+
+
 
 export default function DialogComponent (props) {
     const route = useRouter()
@@ -26,7 +27,6 @@ export default function DialogComponent (props) {
     const handleAccept = () => {
         //SEND TO
         if(route.query.keyword === 'SelectFraganciaDialog'){
-            console.log(route.query.keyword)
             Router.push({ pathname: '/Tienda', query: { keyword: 'Todo' } })
         }
     }
