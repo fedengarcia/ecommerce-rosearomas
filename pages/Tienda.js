@@ -19,7 +19,7 @@ function Tienda({typeProd}) {
   const router=useRouter()
 
   useEffect(()=>{
-    if(router.query.keyword!=undefined){
+    if(router.query.keyword != undefined){
       setItemType(router.query.keyword)
     }
   },[router])

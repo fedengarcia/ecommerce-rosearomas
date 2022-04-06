@@ -1,0 +1,21 @@
+.dialog-container{
+
+    font-family: "Montserrat", sans-serif;
+    .dialogContent{
+        text-align: left;
+    }
+
+    .buttonDialog{
+        font-size: 1.5em;
+        padding: 0.2em;
+        background-color: #0b5a5a;
+        color: white;
+        cursor: pointer;
+        border-radius: 0.2em;
+    }
+}
+
+.MuiDialogActions-root, .MuiDialogContent-root, .MuiDialogTitle-root{
+    padding: 1em 0.2 !important;
+}
+
