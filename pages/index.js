@@ -15,7 +15,7 @@ export default function Home() {
     setTimeout(() => {
         setCarga(false)
     }, 1000);
-    
+
     return(
         <>
             {carga?

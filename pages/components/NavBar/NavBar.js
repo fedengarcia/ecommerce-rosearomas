@@ -17,12 +17,12 @@ export default function NavBar() {
             <div className="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup">
                 
                 <div className="navbar-nav">
-                    <Link href={"/"} className="nav-link">Inicio</Link>
-                    <Link href={"/QuienSoy"} className="nav-link">¿Quién soy?</Link>
-                    <Link href={"/NuestrosProductos"} className="nav-link">Nuestros productos</Link>
-                    <Link href={`/Tienda`} className="nav-link">Tienda</Link>
-                    <Link href={"/Refill"} className="nav-link">Refill</Link>
-                    <Link href='#contacto' className="nav-link">Contacto</Link>
+                    <Link href={'/'} className="nav-link">Inicio</Link>
+                    <Link href={'/QuienSoy'} className="nav-link">¿Quién soy?</Link>
+                    <Link href={'/NuestrosProductos'} className="nav-link">Nuestros productos</Link>
+                    <Link href={'/Tienda'} className="nav-link">Tienda</Link>
+                    <Link href={'/Refill'} className="nav-link">Refill</Link>
+                    <Link href={'#contacto'} className="nav-link">Contacto</Link>
                 </div>
             </div>
 
