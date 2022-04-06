@@ -149,11 +149,32 @@
         }
     }
 
+    // PRODUCTOS INICIO
+
+    .titulo-productos{
+        font-size: 5vw;
+    }
+    .contenedor-productos-inicio{
+        flex-wrap: wrap;
+        gap: 3vw;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+        .contenedor-card-inicio{
+            width: 32vw;
+        }
+        .productos-inicio{
+            h3{
+                font-size: 4vw !important;
+            }
+        }
+    }
+
     // CAROUSEL FRAGANCIA
     
     .titulo-fragancias{
         font-size: 5vw;
     }
+
 
     // LOGO WHAP
 
@@ -176,4 +197,7 @@
             font-size: 3vw;
         }
     }
+
+    // TIENDA
+
 }

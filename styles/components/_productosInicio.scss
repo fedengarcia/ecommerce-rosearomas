@@ -1,41 +1,37 @@
 .titulo-productos{
     text-align: center;
     padding-top: 12vw;
-    margin-bottom: 5vw;
     font-family: "Montserrat", sans-serif;
     color: #084444;
     font-weight: 600;
     font-size: 3vw;
 }
 .contenedor-productos-inicio{
-    min-height: 29vw;
     display: flex;
-    margin-left: 3.6vw;
-    margin-right: 3.6vw;
-    margin-bottom: 3.6vw;
+    width: auto;
+    gap: 1.5vw;
     justify-content: center;
+    margin-top: 2vw;
+    .contenedor-card-inicio{
+        width: 22vw;
+    }
     .productos-inicio{
-        background-color: hsl(180, 79%, 15%, 0.6);
-        min-height: 3.6vw;
-        border-radius: 10px;
-        margin: 1.5vw;
-        width: 100%;
+        border-radius: 1vw;
         text-align: center;
-        padding-top: 1vw;
         cursor: pointer;
-        &:hover{
-            transform: scale(1.2);
-            background-color: hsl(180, 79%, 15%);
-        }
-        img{
-            width: 20vw;
-            border-radius: 10px;
+        .img-card-inicio{
+            border-radius: 2vw;
         }
         h3{
-            color: #dee6e6;
-            margin: 5px;
-            font-size: 2vw;
-            background-color: transparent;
+            color: hsl(180, 79%, 15%);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0.2vw;
+            font-weight: 600;
+            font-size: 2.5vw;
+            background-color: hsl(180, 79%, 15%,0.1);
+            border-radius: 1vw;
+            padding-left: 0.5vw;
+            padding-right: 0.5vw;
         }
     }
 }
