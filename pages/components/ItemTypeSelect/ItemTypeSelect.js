@@ -1,6 +1,6 @@
 
 
-export default function ItemTypeSelect ({setType, type}){
+export default function ItemTypeSelect ({setType}){
 
 
   const handleOnChange = (e) => {

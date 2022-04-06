@@ -10,7 +10,7 @@ import AddCartButton from '../AddCartButton/addCartButton';
 
 export default function CardProducto({producto}) {
     const [type, setType] = useState("none");
-    const [amount,setAmount] = useState(undefined);
+    const [amount,setAmount] = useState("1");
 
     return (
     <Card sx={{ maxWidth: 345 }}>
