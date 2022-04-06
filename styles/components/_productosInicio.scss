@@ -1,0 +1,40 @@
+.titulo-productos{
+    text-align: center;
+    padding-top: 12vw;
+    margin-bottom: 5vw;
+    font-family: "Montserrat", sans-serif;
+    color: #084444;
+    font-weight: 600;
+    font-size: 3vw;
+}
+.contenedor-productos-inicio{
+    min-height: 29vw;
+    display: flex;
+    margin-left: 3.6vw;
+    margin-right: 3.6vw;
+    margin-bottom: 3.6vw;
+    justify-content: center;
+    .productos-inicio{
+        background-color: #084444;
+        min-height: 3.6vw;
+        border-radius: 10px;
+        margin: 1.5vw;
+        width: 100%;
+        text-align: center;
+        padding-top: 1vw;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+        }
+        img{
+            width: 20vw;
+            border-radius: 10px;
+        }
+        h3{
+            color: #dee6e6;
+            margin: 5px;
+            font-size: 2vw;
+            background-color: transparent;
+        }
+    }
+}
