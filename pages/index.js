@@ -8,6 +8,7 @@ import logoWhap from "../public/whatsapp.png";
 import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia";
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import ProductosInicio from './components/ProductosInicio/ProductosInicio';
 
 export default function Home() {
   const [carga,setCarga]=useState(true)
@@ -42,6 +43,8 @@ export default function Home() {
 
                     <CarouselInicio/>
                     
+                    <ProductosInicio/>
+
                     <CarouselFragancia/>
 
                     <div className="container-logoWhap">
