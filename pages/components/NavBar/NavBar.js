@@ -22,7 +22,7 @@ export default function NavBar() {
                     <Link href={'/NuestrosProductos'} className="nav-link">Nuestros productos</Link>
                     <Link href={'/Tienda'} className="nav-link">Tienda</Link>
                     <Link href={'/Refill'} className="nav-link">Refill</Link>
-                    <Link href={'#contacto'} className="nav-link">Contacto</Link>
+                    <a href={'#contacto'} className="nav-link">Contacto</a>
                 </div>
             </div>
 
