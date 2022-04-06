@@ -5,8 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount';
+import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
 
 export default function CardProducto({producto}) {
+    const [type, setType] = useState("none");
     const [amount,setAmount] = useState(undefined);
 
     return (
@@ -32,6 +34,7 @@ export default function CardProducto({producto}) {
         </Typography>
       </CardContent>
       <CardActions>
+        <ItemTypeSelect setType={setType} type={type}/>
         <ItemCount stock={producto.Stock} setAmount={setAmount}/>
         <button className="add-cart-button">Agregar al carrito</button>
       </CardActions>
