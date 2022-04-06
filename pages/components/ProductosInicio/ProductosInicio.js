@@ -14,27 +14,34 @@ export default function ProductosInicio(){
             <div className="contenedor-productos-inicio">
                 <Link href={{ pathname: '/Tienda', query: { keyword: 'Velas' } }}>
                     <div className="productos-inicio">
-                        <Image src={prod1} alt="DIFUSORES"/>
-                        
+                        <div className='contenedor-card-inicio'>
+                            <Image src={prod1} alt="DIFUSORES" width={445} height={520} className="img-card-inicio"/>
+                        </div>
                         <h3>VELAS</h3>
                     </div>
                 </Link>
                 <Link href={{ pathname: '/Tienda', query: { keyword: 'Homespray' } }}>
                     <div className="productos-inicio">
-                        <Image src={prod2} alt="BOMBON"/>
+                        <div className='contenedor-card-inicio'>
+                            <Image src={prod2} alt="BOMBON" width={445} height={520} className="img-card-inicio"/>
+                        </div>
                         <h3>HOMESPRAY</h3>
                     </div>
                 </Link>
                 <Link href={{ pathname: '/Tienda', query: { keyword: 'Difusores' } }}>
                     <div className="productos-inicio">
-                        <Image src={prod3} alt="VELAS"/>
+                        <div className='contenedor-card-inicio'>
+                            <Image src={prod3} alt="VELAS" width={445} height={520} className="img-card-inicio"/>
+                        </div>
                         <h3>DIFUSORES</h3>
                     </div>
                 </Link>
                 <Link href={{ pathname: '/Tienda', query: { keyword: 'Bombones' } }}>
                     <div className="productos-inicio">
-                        <Image src={prod4} alt="HOMESPRAY"/>
-                        <h3>BOMBONES DE SOJA</h3>
+                        <div className='contenedor-card-inicio'>
+                            <Image src={prod4} alt="HOMESPRAY" width={445} height={520} className="img-card-inicio"/>
+                        </div>
+                        <h3>BOMBONES</h3>
                     </div>
                 </Link>
             </div>

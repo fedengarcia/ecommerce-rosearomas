@@ -14,12 +14,14 @@ export default function CardProducto({producto}) {
 
     return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image={producto.Img}
-      />
+      <div>
+        <CardMedia
+          component="img"
+          alt="green iguana"
+          height="140"
+          image={producto.Img}
+        />
+      </div>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {producto.Nombre}
