@@ -9,7 +9,7 @@ export const CartContext = ({children}) => {
     const [idCompra,setIdCompra] = useState(undefined);
 
 
-
+ 
     //DEVUELVE -1 SI NO EXISTE EL ITEM
     const getIndex = (id) =>{
         return items.findIndex(item => item.id === id);

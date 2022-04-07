@@ -5,7 +5,7 @@ import { showNotification as show} from '../../helpers/helpers';
 
 export default function ({producto,type,amount,setShowNotification}){
     const {addItem} = useContext(UseCartContext);
-    
+     
     const handleOnClick = () => {
         if(type === "none"){
             // PUSH MODAL
