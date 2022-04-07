@@ -180,6 +180,7 @@
         width: 12vw !important;
     }
       
+
     // GOOGLE MAPS
     .container-map{
         margin-top: 10vw;
@@ -207,4 +208,16 @@
                 font-size: 5vw;
             }
         }
+
+    // TIENDA
+
+    .navbar-tienda{
+        ul{
+            flex-direction: column;
+            padding-left: 0px !important;
+        }
+        li{
+            font-size: 5vw;
+        }
+    }
 }

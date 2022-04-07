@@ -16,17 +16,21 @@
                 padding: 1vw;
                 cursor: pointer;
                 list-style: none;
-
+                font-size: 2vw;
                 &:hover{
                 background-color: #084444 !important;
                 color: #c7e5e3 !important;                
                 }
             }
         }
+        .Filtro1{
+          display: flex;
+        }
+        .Filtro2{
+          display: flex;
+        }
+      }
     }
-    
-  }
-
 
   .navbar-toggler{
     background-color: #dee6e6;

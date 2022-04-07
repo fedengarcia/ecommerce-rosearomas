@@ -13,7 +13,11 @@
         width: 100%;
         img{
             &:hover{
-                height: 100%;
+                height: auto;
+                width: auto;
+                position: absolute;
+                border-radius: 1vw;
+                padding-bottom: 5vw;
             }
         }
     }
