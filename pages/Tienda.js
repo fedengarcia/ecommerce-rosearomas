@@ -43,8 +43,11 @@ function Tienda({typeProd}) {
         {productos && <NavBarTienda setItemType={setItemType}/>} 
 
         <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}/>
-
-        <Notification showNotification={showNotification} text={"Recuerda de seleccionar una fragancia"}/>
+        
+        <div className="notification-container">
+          <Notification showNotification={showNotification} text={"Recuerda de seleccionar una fragancia"}/>
+        </div>
+        
         <div className="container-logoWhap">
           <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
               <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>

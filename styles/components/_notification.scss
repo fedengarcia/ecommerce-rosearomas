@@ -1,12 +1,11 @@
 .notification-container{
     width: 100%;
     height: 4.5em;
-    background-color: #F3D5BD;
     display: flex;
     justify-content: center;
     align-items: center;
+    
     .notification{
-        background-color: #F3D5BD;
         border-radius: 0.5em;
         bottom: -50px;
         position: absolute;
