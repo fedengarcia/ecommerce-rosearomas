@@ -18,6 +18,7 @@ function Tienda({typeProd}) {
   // const handleChange = (event, newValue) => {
   //   setItemType(newValue);
   // };
+  
   const router=useRouter()
 
   useEffect(()=>{
