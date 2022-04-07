@@ -14,11 +14,11 @@ export default function ({producto,type,amount}){
             })
         }else{
             //AGREGAR AL CARRO
-            console.log(producto);
-            console.log(type);
-            console.log(amount);
-
-            addItem(producto);
+            //CAMBIAR MODIFICAR LOS NOMBRES DE LA BD PARA QUE EL PARSEO DE DATOS CON MP SEA FACIL
+            addItem({
+                ...producto,
+                quantity: amount
+            });
         }
     }
 

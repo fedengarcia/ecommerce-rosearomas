@@ -8,9 +8,7 @@ export const CartContext = ({children}) => {
     const [itemTrashId,setItemTrashId] = useState(undefined);
     const [idCompra,setIdCompra] = useState(undefined);
 
-    useEffect(() => {
-        console.log(items)
-    }, [items]);
+
 
     //DEVUELVE -1 SI NO EXISTE EL ITEM
     const getIndex = (id) =>{
@@ -19,13 +17,16 @@ export const CartContext = ({children}) => {
 
     //AGREGO UN ITEM AL CARRITO, SI EXISTE LE CAMBIO LA CANTIDAD
     const addItem = (item) => {
-        let result = getIndex(item.item.id);
+        let result = getIndex(item.id);
         if(result === -1){
             setItem(items => [...items,item])
         }else{
             const newItems = [...items];
             newItems[result]["quantity"] = newItems[result]["quantity"] + item.quantity;
             setItem(newItems);
+            // FUNCIONA PERO ESTA CARGANDO MAL LA CANTIDAD
+            console.log("ITEMS ====>",items)
+
         }
         
     }
