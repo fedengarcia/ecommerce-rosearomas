@@ -2,7 +2,7 @@ import CardProducto from '../CardProducto/CardProducto'
 
 
 
-export default function TiendaContainer ({productos, itemType}) {
+export default function TiendaContainer ({productos, itemType, setShowNotification}) {
 
 
     return (
@@ -14,7 +14,7 @@ export default function TiendaContainer ({productos, itemType}) {
             <div className="tienda">
 
                 {itemType === "Todo" 
-                ? productos.map(producto => <CardProducto producto={producto} key={producto.id}></CardProducto>) 
+                ? productos.map(producto => <CardProducto producto={producto} setShowNotification={setShowNotification} key={producto.id}></CardProducto>) 
                 :  productos.filter(prod => prod.Categoria === itemType).map(producto => <CardProducto producto={producto} key={producto.id}></CardProducto>)}
             
             </div>

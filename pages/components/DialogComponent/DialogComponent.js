@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 import Router from 'next/router';
 
 
-const Transition = forwardRef((props, ref) => {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
+// const Transition = forwardRef((props, ref) => {
+//     return <Slide direction="up" ref={ref} {...props} />;
+//   });
 
 
 
@@ -34,7 +34,7 @@ export default function DialogComponent (props) {
     return <Dialog 
             open={open} 
             onClose={handleClose}
-            TransitionComponent={Transition}
+            // TransitionComponent={Transition}
             keepMounted
             aria-describedby="alert-dialog-slide-description"
             className="dialog-container"
