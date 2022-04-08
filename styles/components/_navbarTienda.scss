@@ -7,6 +7,7 @@
             width: 100%;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             li{
                 text-decoration: none;
                 color: rgba(0,0,0,.55) !important;
@@ -16,7 +17,7 @@
                 padding: 1vw;
                 cursor: pointer;
                 list-style: none;
-                font-size: 2vw;
+                font-size: 2.3vw;
                 &:hover{
                 background-color: #084444 !important;
                 color: #c7e5e3 !important;                

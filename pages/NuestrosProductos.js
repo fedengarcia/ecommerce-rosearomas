@@ -14,7 +14,11 @@ function NuestrosProductos() {
             alt="VELAS" className='fotoProd'/>
             <div className="container-Nprods-info">
                 <h2>VELAS</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto eligendi quas ducimus voluptas vitae harum praesentium incidunt aspernatur enim doloremque, mollitia commodi vel maiores exercitationem quos alias at laudantium? Aliquid.</p>
+                <p>
+                  Realizadas con cera natural de soja, la cual posee diversas propiedades,
+                  entre ellas que no emite gases tóxicos,duran más que las de parafina y no dejan residuos.
+                  Además le agregamos esencias concentradas de larga duración.
+                </p>
             </div>
         </div>
         <div className='container-Nprods-right'>
@@ -22,7 +26,10 @@ function NuestrosProductos() {
             alt="VELAS" className='fotoProd'/>
             <div className="container-Nprods-info">
                 <h2>DIFUSORES</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto eligendi quas ducimus voluptas vitae harum praesentium incidunt aspernatur enim doloremque, mollitia commodi vel maiores exercitationem quos alias at laudantium? Aliquid.</p>
+                <p>
+                  Perfumes para ambiente y textiles, realizados con esencias concentradas de larga duración.
+                  Disponibles en versión plástico pet.
+                </p>
             </div>
         </div>
         <div className='container-Nprods-left'>
@@ -30,7 +37,10 @@ function NuestrosProductos() {
             alt="VELAS" className='fotoProd'/>
             <div className="container-Nprods-info">
                 <h2>HOMESPRAYS</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto eligendi quas ducimus voluptas vitae harum praesentium incidunt aspernatur enim doloremque, mollitia commodi vel maiores exercitationem quos alias at laudantium? Aliquid.</p>
+                <p>
+                  Perfumes realizados con esencias concentradas de larga duración, incluye varillas de madera. 
+                  Disponible en versión plástico pet y vidrio.
+                </p>
             </div>
         </div>
         <div className='container-Nprods-right'>
@@ -38,7 +48,11 @@ function NuestrosProductos() {
             alt="VELAS" className='fotoProd'/>
             <div className="container-Nprods-info">
                 <h2>BOMBONES</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto eligendi quas ducimus voluptas vitae harum praesentium incidunt aspernatur enim doloremque, mollitia commodi vel maiores exercitationem quos alias at laudantium? Aliquid.</p>
+                <p>
+                  Realizados con cera de soja natural y perfumados con esencias concentradas. 
+                  Ideales para decoración o para su uso en el hornito (del mismo modo que se usaría la esencia). 
+                  Disponibles en su versión en bolsa de encaje o caja.
+                </p>
             </div>
         </div>
       </div>

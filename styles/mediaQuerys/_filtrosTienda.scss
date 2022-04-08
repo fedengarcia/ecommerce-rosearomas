@@ -1,11 +1,13 @@
 @media (max-width:800px){
     .title-container{
-        font-size: 3vw !important;
+        h1{
+            font-size: 4vw !important;
+        }
     }
     .navbar-collapse{
         ul{
             li{
-                font-size: 4vw !important;             
+                font-size: 4.5vw !important;             
             }
         }
     }

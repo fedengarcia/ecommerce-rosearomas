@@ -10,7 +10,7 @@ function QuienSoy() {
       <div className='container-bio'>
           <div className='biografia'>
               <h1>Carolina Magnani</h1>
-              <p>Hola! Bienvenidos! <br></br> Les voy a contar sobre mi, soy estudiante de marketing y emprendedora. Este emprendimiento nació como una forma de distenderme y hacer lo que me gusta. Espero que en los productos encuentren la relajación y bienestar que intento transmitir</p>
+              <p>Hola! Bienvenidos! <br></br> Les voy a contar sobre mi, soy estudiante de marketing y emprendedora. Este emprendimiento nació como una forma de distenderme y hacer lo que me gusta. Espero que en los productos encuentren la relajación y bienestar que intento transmitir.</p>
           </div>
       </div>
 
