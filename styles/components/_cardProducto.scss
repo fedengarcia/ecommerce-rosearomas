@@ -20,15 +20,13 @@
     flex-direction: column;
 }
 
-.MuiPaper-root{
-    .img-card-tienda{
-        width: 100%;
-        &:hover img{
-            width: auto;
-            height: auto;
-        }
-        &:hover + .css-46bh2p-MuiCardContent-root{
-            display: none;
-        }
+.img-card-tienda{
+    width: 100%;
+    &:hover img{
+        width: auto;
+        height: auto;
+    }
+    &:hover + .css-46bh2p-MuiCardContent-root{
+        display: none;
     }
 }
