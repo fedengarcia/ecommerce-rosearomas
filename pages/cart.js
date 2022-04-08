@@ -3,10 +3,10 @@ import Footer from "./components/Footer/Footer";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useState,useContext } from "react";
-import { cartContext } from "../context/CartContext";
+import { UseCartContext } from "../context/CartContext";
 
 function Cart() {
-  const {getItems} = useContext(cartContext);
+  const {getItems} = useContext(UseCartContext);
   const [items, setitems] = useState(undefined);
 
   return (<>
