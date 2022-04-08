@@ -8,20 +8,6 @@
     text-align: center;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
-.MuiPaper-root{
-    div{
-        width: 100%;
-        img{
-            &:hover{
-                height: auto;
-                width: auto;
-                position: absolute;
-                border-radius: 1vw;
-                padding-bottom: 5vw;
-            }
-        }
-    }
-}
 
 .css-46bh2p-MuiCardContent-root{
     padding: 1em 0.5em 0 0.5em;
@@ -29,8 +15,20 @@
 
 .css-1t6e9jv-MuiCardActions-root{
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.MuiPaper-root{
+    .img-card-tienda{
+        width: 100%;
+        &:hover img{
+            width: auto;
+            height: auto;
+        }
+        &:hover + .css-46bh2p-MuiCardContent-root{
+            display: none;
+        }
+    }
 }

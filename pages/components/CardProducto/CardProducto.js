@@ -14,7 +14,7 @@ export default function CardProducto({producto, setShowNotification}) {
 
     return (
     <Card sx={{ maxWidth: 345 }}>
-      <div>
+      <div className='img-card-tienda'>
         <CardMedia
           component="img"
           alt="green iguana"
