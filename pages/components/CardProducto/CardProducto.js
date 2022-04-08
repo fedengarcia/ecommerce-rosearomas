@@ -8,7 +8,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
 import AddCartButton from '../AddCartButton/addCartButton';
 
-export default function CardProducto({producto}) {
+export default function CardProducto({producto, setShowNotification}) {
     const [type, setType] = useState("none");
     const [amount,setAmount] = useState("1");
 
@@ -36,7 +36,7 @@ export default function CardProducto({producto}) {
       <CardActions>
         <ItemTypeSelect setType={setType} type={type}/>
         <ItemCount stock={producto.Stock} setAmount={setAmount}/>
-        <AddCartButton producto={producto} type={type} amount={amount}/>
+        <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
       </CardActions>
     </Card>
   );
