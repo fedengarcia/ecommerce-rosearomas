@@ -1,8 +1,4 @@
-
-
-
 export default function Notification ({showNotification, text}) {
-
     return (
        
             <div className="notification">
