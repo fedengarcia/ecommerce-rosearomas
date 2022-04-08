@@ -26,7 +26,7 @@ export default function CardProducto({producto, setShowNotification}) {
         <Typography gutterBottom variant="h5" component="div">
           {producto.Nombre}
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="body1" color="text.secondary" className='desc-card-tienda'>
           {producto.Descripcion}
         </Typography>
         <Typography variant="h6" color="text.secondary" className='precio-card-tienda'>
@@ -34,7 +34,7 @@ export default function CardProducto({producto, setShowNotification}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <ItemTypeSelect setType={setType} type={type}/>
+        <ItemTypeSelect setType={setType} type={type} className="select-card-tienda"/>
         <ItemCount stock={producto.Stock} setAmount={setAmount}/>
         <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
       </CardActions>

@@ -1,0 +1,23 @@
+@media (max-width:550px){
+
+    .desc-card-tienda{
+        display: none;
+    }
+    #fragancias{
+        display: none;
+    }
+    .itemCountContainer{
+        display: none;
+    }
+    .MuiPaper-root{
+        width: 45%;
+    }
+}
+@media (max-width:495px){
+    .css-h93ljk-MuiTypography-root{
+        height: 18vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
