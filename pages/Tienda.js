@@ -45,7 +45,7 @@ function Tienda({typeProd}) {
 
         <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}/>
         
-        <div className="notification-container">
+        <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda de seleccionar una fragancia"}/>
         </div>
         
