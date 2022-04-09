@@ -4,16 +4,15 @@ import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useState,useContext } from "react";
 import { UseCartContext } from "../context/CartContext";
+import CartContainer from "./components/CartContainer/CartContainer";
 
 function Cart() {
-  const {getItems} = useContext(UseCartContext);
-  const [items, setitems] = useState(undefined);
 
   return (<>
     <Header />
         <h1>Cart</h1>
 
-
+        <CartContainer/>
 
         <div className="container-logoWhap">
           <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
