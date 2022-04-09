@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,10 +8,12 @@ import ItemCount from '../ItemCount/ItemCount';
 import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
 import AddCartButton from '../AddCartButton/addCartButton';
 import DetailsButton from '../DetailsButton/detailsButton';
+import DetailsBlock from '../DetailsBlock/DetailsBlock';
 
 export default function CardProducto({producto, setShowNotification}) {
     const [type, setType] = useState("none");
     const [amount,setAmount] = useState(1);
+    const [details,setDetails] = useState(false);
 
     return (
     <Card sx={{ maxWidth: 345 }}>
@@ -38,7 +40,8 @@ export default function CardProducto({producto, setShowNotification}) {
         <ItemTypeSelect setType={setType} type={type} className="select-card-tienda"/>
         <ItemCount stock={producto.Stock} amount={amount} setAmount={setAmount}/>
         <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
-        <DetailsButton/>
+        <DetailsButton SetDetails={setDetails} Details={details}/>
+        <DetailsBlock SetDetails={setDetails} Details={details} producto={producto} setShowNotification={setShowNotification}/>
       </CardActions>
     </Card>
   );

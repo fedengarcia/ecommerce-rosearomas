@@ -35,7 +35,7 @@ export default function ItemCount ({stock, amount, setAmount, productId}) {
         <div className="itemCountContainer">
 
 
-            <RemoveIcon className="buttonitemcount"onClick={handleRemoveItem} color="primary" style={{fontSize:"1.2em"}}/>
+            <RemoveIcon className="buttonitemcount" onClick={handleRemoveItem} color="primary" style={{fontSize:"1.2em"}}/>
 
 
             <div className="itemCount">
