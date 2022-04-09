@@ -2,8 +2,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
-import { useState,useContext } from "react";
-import { UseCartContext } from "../context/CartContext";
 import CartContainer from "./components/CartContainer/CartContainer";
 
 function Cart() {
