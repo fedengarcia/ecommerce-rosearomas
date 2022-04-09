@@ -19,7 +19,8 @@ export default function ({producto,type,amount,setShowNotification}){
             //CAMBIAR MODIFICAR LOS NOMBRES DE LA BD PARA QUE EL PARSEO DE DATOS CON MP SEA FACIL
             addItem({
                 ...producto,
-                quantity: amount
+                quantity: amount,
+                type:type,
             });
         }
     }

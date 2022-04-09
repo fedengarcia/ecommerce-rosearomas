@@ -16,9 +16,22 @@ export default function CartContainer () {
 
 
     return (<div className="cart-container">
+
             <div className="item-cart-container">
+                <div className="grid-container">
+                    <div className="grid-row">
+                        <div className="gridItem"><h1>Nombre</h1></div>
+                        <div className="gridItem"><h1>Fragancia</h1></div>
+                        <div className="gridItem"><h1>Cantidad</h1></div>
+                    </div>
+                </div>
                 {itemsCart && itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
+                <div className="cart-actions">
+                    <button>Confirmar Compra</button>
+                    <button>Vaciar Carrito</button>
+                </div>
             </div>
+            
         </div>
     )
 }

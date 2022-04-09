@@ -1,0 +1,25 @@
+.item-cart, .grid-container{
+    font-family: "Montserrat", sans-serif;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    
+    .grid-row{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}
+
+
+.item-cart{
+    border-bottom: 0.1em solid #0000001c;
+}
