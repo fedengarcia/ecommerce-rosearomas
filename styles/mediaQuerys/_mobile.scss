@@ -167,6 +167,26 @@
         margin-bottom: 10vw;
     }
 
+        // PRODUCTOS INICIO
+
+        .titulo-productos{
+            font-size: 6.5vw;
+        }
+        .contenedor-productos-inicio{
+            flex-wrap: wrap;
+            gap: 3vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            .contenedor-card-inicio{
+                width: 38vw;
+            }
+            .productos-inicio{
+                h3{
+                    font-size: 5vw !important;
+                }
+            }
+        }
+
 
     // CAROUSEL FRAGANCIA
 

@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
 import AddCartButton from '../AddCartButton/addCartButton';
+import DetailsButton from '../DetailsButton/detailsButton';
 
 export default function CardProducto({producto, setShowNotification}) {
     const [type, setType] = useState("none");
@@ -37,6 +38,7 @@ export default function CardProducto({producto, setShowNotification}) {
         <ItemTypeSelect setType={setType} type={type} className="select-card-tienda"/>
         <ItemCount stock={producto.Stock} setAmount={setAmount}/>
         <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
+        <DetailsButton/>
       </CardActions>
     </Card>
   );
