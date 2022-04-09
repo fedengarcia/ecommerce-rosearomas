@@ -11,7 +11,7 @@ import DetailsButton from '../DetailsButton/detailsButton';
 
 export default function CardProducto({producto, setShowNotification}) {
     const [type, setType] = useState("none");
-    const [amount,setAmount] = useState("1");
+    const [amount,setAmount] = useState(1);
 
     return (
     <Card sx={{ maxWidth: 345 }}>
@@ -36,7 +36,7 @@ export default function CardProducto({producto, setShowNotification}) {
       </CardContent>
       <CardActions>
         <ItemTypeSelect setType={setType} type={type} className="select-card-tienda"/>
-        <ItemCount stock={producto.Stock} setAmount={setAmount}/>
+        <ItemCount stock={producto.Stock} amount={amount} setAmount={setAmount}/>
         <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
         <DetailsButton/>
       </CardActions>

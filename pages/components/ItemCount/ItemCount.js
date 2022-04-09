@@ -1,27 +1,25 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { Typography } from '@material-ui/core';
+import { UseCartContext } from '../../../context/CartContext';
 
 
 
-
-export default function ItemCount ({stock, setAmount}) {
-    const [cantidad, setCantidad] = useState(1);
+export default function ItemCount ({stock, amount, setAmount}) {
+    const {getQuantity} = useContext(UseCartContext);
 
 
     const handleAddItem = () => {
-        if(cantidad < stock){
-            setCantidad(cantidad + 1);
-            setAmount(cantidad + 1);
+        if(amount < stock){
+            setAmount(amount + 1);
         }
     }
     
     const handleRemoveItem = () => {
-        if(cantidad > 0){
-            setCantidad(cantidad - 1);
-            setAmount(cantidad - 1);
+        if(amount > 0){
+            setAmount(amount - 1);
         }
     }
 
@@ -33,7 +31,7 @@ export default function ItemCount ({stock, setAmount}) {
 
 
             <div className="itemCount">
-                <Typography style={{fontSize:"0.7em"}}>{`Cantidad: ${cantidad}`}</Typography>
+                <Typography style={{fontSize:"0.7em"}}>{`Cantidad: ${amount}`}</Typography>
             </div>
 
 
