@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 import Router from 'next/router';
 
 
-// const Transition = forwardRef((props, ref) => {
-//     return <Slide direction="up" ref={ref} {...props} />;
-//   });
+const Transition = forwardRef((props, ref) => {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
 
 
 
@@ -21,20 +21,19 @@ export default function DialogComponent (props) {
             closeDialog();
         }
         openDialog(false);
-
+        Router.push({ pathname: '/Cart'})
+    
     }
 
     const handleAccept = () => {
         //SEND TO
-        if(route.query.keyword === 'SelectFraganciaDialog'){
-            Router.push({ pathname: '/Tienda', query: { keyword: 'Todo' } })
-        }
+        
     }
 
-    return <Dialog 
+    return (<Dialog 
             open={open} 
             onClose={handleClose}
-            // TransitionComponent={Transition}
+            TransitionComponent={Transition}
             keepMounted
             aria-describedby="alert-dialog-slide-description"
             className="dialog-container"
@@ -51,6 +50,7 @@ export default function DialogComponent (props) {
 
 
     </Dialog>
+    )
 
 
 }

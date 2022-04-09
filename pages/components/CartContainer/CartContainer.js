@@ -1,16 +1,20 @@
 import { useEffect, useState,useContext } from "react";
 import { UseCartContext } from "../../../context/CartContext";
 import ItemCart from '../ItemCart/ItemCart';
-
+import Router from "next/router";
 
 
 export default function CartContainer () {
     const {getItems, getTotalPrice, clear} = useContext(UseCartContext);
     const itemsCart = getItems();
- 
 
     const handleClearCart = () => {
-        clear();
+        Router.push({ pathname: '/Dialog', query: { keyword: 'ClearCartDialog' } })
+    }
+
+
+    const handleConfirmBuy = () => {
+        Router.push({ pathname: '/FinalizarCompra', query: { keyword: 'Todo' } })
     }
 
     return (<div className="cart-container">
@@ -29,7 +33,7 @@ export default function CartContainer () {
                     <div><h3>Total: ${getTotalPrice()}</h3></div>
                 </div>
                 <div className="cart-actions">
-                    <button>Confirmar Compra</button>
+                    <button onClick={handleConfirmBuy}>Confirmar Compra</button>
                     <button onClick={handleClearCart}>Vaciar Carrito</button>
                 </div>
             </div>
