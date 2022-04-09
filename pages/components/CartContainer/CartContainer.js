@@ -5,15 +5,13 @@ import ItemCart from '../ItemCart/ItemCart';
 
 
 export default function CartContainer () {
-    const [itemsCart, setitemsCart] = useState(undefined);
-    const {getItems, getTotalPrice} = useContext(UseCartContext);
+    const {getItems, getTotalPrice, clear} = useContext(UseCartContext);
+    const itemsCart = getItems();
+ 
 
-    useEffect(() => {
-        setitemsCart(getItems());
-        console.log(itemsCart);
-    }, []);
-
-
+    const handleClearCart = () => {
+        clear();
+    }
 
     return (<div className="cart-container">
 
@@ -25,13 +23,13 @@ export default function CartContainer () {
                         <div className="gridItem"><h1>Cantidad</h1></div>
                     </div>
                 </div>
-                {itemsCart && itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
+                {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
                 <div className="">
                     <div><h3>Total: ${getTotalPrice()}</h3></div>
                 </div>
                 <div className="cart-actions">
                     <button>Confirmar Compra</button>
-                    <button>Vaciar Carrito</button>
+                    <button onClick={handleClearCart}>Vaciar Carrito</button>
                 </div>
             </div>
             

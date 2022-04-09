@@ -80,7 +80,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems}}>
+    return(<UseCartContext.Provider value={{clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems}}>
         {children}
     </UseCartContext.Provider>)
 
