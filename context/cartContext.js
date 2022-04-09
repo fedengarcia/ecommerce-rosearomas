@@ -3,10 +3,19 @@ import { useState,createContext,useEffect } from "react";
 export const UseCartContext = createContext();
 
 export const CartContext = ({children}) => {
-    const [items,setItem] = useState([]);
+    const [items,setItems] = useState([]);
     const [order,setOrder] = useState(undefined);
     const [itemTrashId,setItemTrashId] = useState(undefined);
     const [idCompra,setIdCompra] = useState(undefined);
+
+
+    // ACTUALIZAR CANTIDAD DE UN ITEM
+    const updateQuantityItem = (id, newQuantity) => {
+        const newItems = [...items]
+        const position = getIndex(id);
+        newItems[position]["quantity"] = newQuantity;
+        setItems(newItems);
+    }
 
 
  
@@ -19,14 +28,12 @@ export const CartContext = ({children}) => {
     const addItem = (item) => {
         let result = getIndex(item.id);
         if(result === -1){
-            setItem(items => [...items,item])
+            setItems(items => [...items,item])
         }else{
             const newItems = [...items];
             newItems[result]["quantity"] = newItems[result]["quantity"] + item.quantity;
-            setItem(newItems);
+            setItems(newItems);
             // FUNCIONA PERO ESTA CARGANDO MAL LA CANTIDAD
-            console.log("ITEMS ====>",items)
-
         }
         
     }
@@ -44,7 +51,7 @@ export const CartContext = ({children}) => {
     //DEVUELVO EL PRECIO TOTAL DE LA COMPRA
     const getTotalPrice = () =>{
         const totalPrice = items.reduce(function(accumulator, currentValue) {
-            return accumulator + (currentValue.item.precio * currentValue.quantity) ;
+            return accumulator + (currentValue.Precio * currentValue.quantity) ;
           },0);
 
         return totalPrice;
@@ -61,19 +68,19 @@ export const CartContext = ({children}) => {
 
     //SACO UN ITEM DEL CARRITO, 
     const removeItem = (id) => {
-        setItem(items.filter(item => item.item.id !== id));
+        setItems(items.filter(item => item.item.id !== id));
     }
 
     //LIMPIO POR COMPLETO EL CARRITO
     const clear = () => {
-        setItem([])
+        setItems([])
     }
 
     // DEVUELVO TODOS LOS ITEMS DEL CARRITO
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{addItem, getTotalPrice,getQuantity,getItems}}>
+    return(<UseCartContext.Provider value={{updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems}}>
         {children}
     </UseCartContext.Provider>)
 

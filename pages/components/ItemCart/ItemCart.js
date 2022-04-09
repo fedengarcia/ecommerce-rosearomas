@@ -14,7 +14,7 @@ export default function ItemCart({producto}) {
                 <div className='gridItem'><h3>{producto.Nombre}</h3></div>
                 <div className='gridItem'><h3>{producto.type}</h3></div>
                 
-                <ItemCount amount={amount} setAmount={setAmount} stock={producto.Stock}/>
+                <ItemCount productId= {producto.id} amount={amount} setAmount={setAmount} stock={producto.Stock}/>
 
             </div>
         </div>

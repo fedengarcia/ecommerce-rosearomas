@@ -6,7 +6,7 @@ import ItemCart from '../ItemCart/ItemCart';
 
 export default function CartContainer () {
     const [itemsCart, setitemsCart] = useState(undefined);
-    const {getItems} = useContext(UseCartContext);
+    const {getItems, getTotalPrice} = useContext(UseCartContext);
 
     useEffect(() => {
         setitemsCart(getItems());
@@ -26,6 +26,9 @@ export default function CartContainer () {
                     </div>
                 </div>
                 {itemsCart && itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
+                <div className="">
+                    <div><h3>Total: ${getTotalPrice()}</h3></div>
+                </div>
                 <div className="cart-actions">
                     <button>Confirmar Compra</button>
                     <button>Vaciar Carrito</button>

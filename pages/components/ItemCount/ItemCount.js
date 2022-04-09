@@ -1,4 +1,4 @@
-import {useState, useContext} from 'react'
+import {useState, useContext, useEffect} from 'react'
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -7,19 +7,27 @@ import { UseCartContext } from '../../../context/CartContext';
 
 
 
-export default function ItemCount ({stock, amount, setAmount}) {
-    const {getQuantity} = useContext(UseCartContext);
+export default function ItemCount ({stock, amount, setAmount, productId}) {
+    const {updateQuantityItem} = useContext(UseCartContext);
+
 
 
     const handleAddItem = () => {
         if(amount < stock){
             setAmount(amount + 1);
+            if(productId){
+                updateQuantityItem(productId,amount);
+            }
+            
         }
     }
     
     const handleRemoveItem = () => {
-        if(amount > 0){
+        if(amount > 1){
             setAmount(amount - 1);
+            if(productId){
+                updateQuantityItem(productId,amount);
+            }
         }
     }
 
