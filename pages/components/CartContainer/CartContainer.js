@@ -24,7 +24,7 @@ export default function CartContainer () {
                     </div>
                 </div>
                 {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
-                <div className="">
+                <div className="resume-cart-container">
                     <div><h3>Total: ${getTotalPrice()}</h3></div>
                 </div>
                 <div className="cart-actions">
