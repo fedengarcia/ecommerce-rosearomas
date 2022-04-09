@@ -25,6 +25,7 @@ export default function CartContainer () {
                 </div>
                 {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
                 <div className="resume-cart-container">
+                    <div><p>TEXTO DONDE SE EXPLICA POR QUE EL AUMENTO DEL PRECIO POR EL ENVIO</p></div>
                     <div><h3>Total: ${getTotalPrice()}</h3></div>
                 </div>
                 <div className="cart-actions">
