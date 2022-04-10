@@ -57,6 +57,7 @@ export const CartContext = ({children}) => {
         return totalPrice;
     }
 
+
     //DEVUELVO CANTIDAD DE TOTAL ITEMS EN CARRITO
     const getQuantity = () => {
         const quantity = items.reduce(function(accumulator, currentValue) {
@@ -80,7 +81,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems}}>
+    return(<UseCartContext.Provider value={{clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems, getItemPrice}}>
         {children}
     </UseCartContext.Provider>)
 

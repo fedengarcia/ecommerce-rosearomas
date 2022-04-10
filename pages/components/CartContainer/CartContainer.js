@@ -25,6 +25,7 @@ export default function CartContainer () {
                         <div className="gridItem"><h1>Nombre</h1></div>
                         <div className="gridItem"><h1>Fragancia</h1></div>
                         <div className="gridItem"><h1>Cantidad</h1></div>
+                        <div className="gridItem"><h1>Precio</h1></div>
                     </div>
                 </div>
                 {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
