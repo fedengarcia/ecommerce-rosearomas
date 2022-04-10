@@ -22,11 +22,11 @@
 
 .img-card-tienda{
     width: 100%;
+    transition: width 1s;
     &:hover img{
-        width: auto;
-        height: auto;
+        width: 15em;
+        height: 20em;
+        transition: height 1s;
     }
-    &:hover + .css-46bh2p-MuiCardContent-root{
-        display: none;
-    }
+
 }

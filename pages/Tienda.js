@@ -12,7 +12,7 @@ import Loader from "./components/Loader/Loader";
 
 
 function Tienda({typeProd}) {
-  const [productos, setProductos] = useState(undefined);
+  const [productos, setProductos] = useState([]);
   const [itemType, setItemType] = useState("Todo");
   const [showNotification,setShowNotification] = useState(false)
   
@@ -44,10 +44,7 @@ function Tienda({typeProd}) {
 
         <NavBarTienda setItemType={setItemType}/>
 
-        {productos === undefined ? <Loader/>
-        : <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}  
-          
-        />}
+        <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}  />
         
         <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>
