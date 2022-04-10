@@ -8,10 +8,11 @@ import TiendaContainer from "./components/TiendaContainer/TiendaContainer";
 import NavBarTienda from "./components/NavBar/NavBarTienda";
 import { useRouter } from 'next/router'
 import Notification from "./components/Notification/Notification";
+import Loader from "./components/Loader/Loader";
 
 
 function Tienda({typeProd}) {
-  const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState(undefined);
   const [itemType, setItemType] = useState("Todo");
   const [showNotification,setShowNotification] = useState(false)
   
@@ -41,9 +42,12 @@ function Tienda({typeProd}) {
   return (<>
     <Header />
 
-        {productos && <NavBarTienda setItemType={setItemType}/>} 
+        <NavBarTienda setItemType={setItemType}/>
 
-        <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}/>
+        {productos === undefined ? <Loader/>
+        : <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}  
+          
+        />}
         
         <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>

@@ -9,6 +9,7 @@ import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia"
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ProductosInicio from './components/ProductosInicio/ProductosInicio';
+import Loader from './components/Loader/Loader';
 
 export default function Home() {
   const [carga,setCarga]=useState(true)
@@ -19,9 +20,9 @@ export default function Home() {
 
     return(
         <>
-            {carga?
-                <p className="texto-cargando">Cargando...</p>
-            :
+            {/* {carga?
+                <Loader/>
+            : */}
                 <div>
                     <Header/>
 
@@ -55,8 +56,8 @@ export default function Home() {
 
                     <Footer/>
                 </div>
-                
-            }
+{/*                 
+            } */}
 
         </>
     )
