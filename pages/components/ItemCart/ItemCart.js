@@ -18,7 +18,5 @@ export default function ItemCart({producto}) {
                 <div className='gridItem'><h3>${producto.Precio*producto.quantity}</h3></div>
             </div>
         </div>
-
-        
     )
 }

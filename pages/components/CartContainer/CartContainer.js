@@ -26,14 +26,14 @@ export default function CartContainer () {
     return (<div className="cart-container">
 
             <div className="item-cart-container">
-                {/* <div className="grid-container">
+                <div className="grid-container">
                     <div className="grid-row">
-                        <div className="gridItem"><h1>Nombre</h1></div>
-                        <div className="gridItem"><h1>Fragancia</h1></div>
-                        <div className="gridItem"><h1>Cantidad</h1></div>
-                        <div className="gridItem"><h1>Precio</h1></div>
+                        <div className="gridItem"><p>Nombre</p></div>
+                        <div className="gridItem"><p>Fragancia</p></div>
+                        <div className="gridItem"><p>Cantidad</p></div>
+                        <div className="gridItem"><p>Precio</p></div>
                     </div>
-                </div> */}
+                </div>
                 {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
                 <div className="resume-cart-container">
                     <div><p>TEXTO DONDE SE EXPLICA POR QUE EL AUMENTO DEL PRECIO POR EL ENVIO</p></div>
