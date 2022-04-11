@@ -17,6 +17,7 @@ export default function CartContainer () {
         Router.push({ pathname: '/FinalizarCompra', query: { keyword: 'Todo' } })
     }
 
+    
     return (<div className="cart-container">
 
             <div className="item-cart-container">

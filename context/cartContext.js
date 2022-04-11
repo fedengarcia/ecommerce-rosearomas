@@ -14,6 +14,7 @@ export const CartContext = ({children}) => {
         const newItems = [...items]
         const position = getIndex(id);
         newItems[position]["quantity"] = newQuantity;
+        console.log(items)
         setItems(newItems);
     }
 
@@ -37,6 +38,7 @@ export const CartContext = ({children}) => {
         }
         
     }
+
 
     //ARMO UN JSON PARA ENVIAR LA INFORMACION A MERCADO PAGO
     const saveBuy = (buyer) => {

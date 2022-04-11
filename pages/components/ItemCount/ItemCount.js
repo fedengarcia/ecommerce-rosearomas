@@ -16,7 +16,7 @@ export default function ItemCount ({stock, amount, setAmount, productId}) {
         if(amount < stock){
             setAmount(amount + 1);
             if(productId){
-                updateQuantityItem(productId,amount);
+                updateQuantityItem(productId,amount+1);
             }
             
         }
@@ -26,7 +26,7 @@ export default function ItemCount ({stock, amount, setAmount, productId}) {
         if(amount > 1){
             setAmount(amount - 1);
             if(productId){
-                updateQuantityItem(productId,amount);
+                updateQuantityItem(productId,amount-1);
             }
         }
     }

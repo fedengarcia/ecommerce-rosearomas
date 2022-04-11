@@ -4,7 +4,7 @@ import { UseCartContext } from '../../../context/CartContext';
 
 export default function ItemCart({producto}) {
     const [amount,setAmount] = useState(producto.quantity)
-    console.log(producto)
+
     const {getItemPrice} = useContext(UseCartContext);
 
     return(
