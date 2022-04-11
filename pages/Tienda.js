@@ -49,10 +49,6 @@ function Tienda({typeProd}) {
         <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>
         </div>
-
-        {/* <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
-          <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>
-        </div> */}
         
         <div className="container-logoWhap">
           <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">

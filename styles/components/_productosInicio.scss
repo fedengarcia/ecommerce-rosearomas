@@ -19,6 +19,13 @@
         border-radius: 1vw;
         text-align: center;
         cursor: pointer;
+        &:hover .img-card-inicio{
+            transform: scale(1.2);
+        }
+        &:hover h3{
+            background-color: hsl(180, 79%, 15%);
+            color: #dee6e6;
+        }
         .img-card-inicio{
             border-radius: 2vw;
         }
