@@ -14,7 +14,6 @@ export const CartContext = ({children}) => {
         const newItems = [...items]
         const position = getIndex(id);
         newItems[position]["quantity"] = newQuantity;
-        console.log(items)
         setItems(newItems);
     }
 

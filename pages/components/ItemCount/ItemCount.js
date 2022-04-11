@@ -11,14 +11,12 @@ export default function ItemCount ({stock, amount, setAmount, productId}) {
     const {updateQuantityItem} = useContext(UseCartContext);
 
 
-
     const handleAddItem = () => {
         if(amount < stock){
             setAmount(amount + 1);
             if(productId){
                 updateQuantityItem(productId,amount+1);
             }
-            
         }
     }
     
