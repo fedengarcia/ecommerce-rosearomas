@@ -2,14 +2,21 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
+import Form from "./components/Form/Form";
 
 function FinalizarCompra() {
 
   return (<>
     <Header />
-      <div >
+      <div className="form-title">
           <h1>FINALIZAR COMPRA</h1>
       </div>
+
+      <div className="form-container">
+      <Form />
+      </div>
+
+
 
       <div className="container-logoWhap">
         <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">

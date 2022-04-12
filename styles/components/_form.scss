@@ -1,0 +1,60 @@
+.form-title{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 4em;
+}
+
+.form-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 70vw;
+        margin-top: 2em;
+        padding: 4em 0;
+
+
+        .form-input-title{
+            width: 70%;
+            display: flex;
+            justify-content: flex-start;
+            h2{
+                font-family: "Montserrat", sans-serif;
+            }
+        }
+        
+    
+        .form-input{
+            width: 70%;
+            margin: 0.5em;
+            .MuiInput-colorSecondary.MuiInput-underline:after {
+                border-bottom-color: #0b5a5a;
+            }
+        }
+    
+        .linkStyle{
+            text-decoration: none;
+        }
+        button{
+            font-family: "Montserrat", sans-serif;
+            background-color: #0b5a5a;
+            color: white;
+            padding: 0.9em;
+            cursor: pointer;
+            border-radius: 0.4em;
+            margin: 0.5em;
+        }
+    
+    }
+}

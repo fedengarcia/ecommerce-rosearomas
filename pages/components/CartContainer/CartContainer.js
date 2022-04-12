@@ -19,7 +19,7 @@ export default function CartContainer () {
 
 
     const handleConfirmBuy = () => {
-        Router.push({ pathname: '/FinalizarCompra', query: { keyword: 'Todo' } })
+        Router.push({ pathname: '/FinalizarCompra'})
     }
 
     
