@@ -70,7 +70,7 @@ export const CartContext = ({children}) => {
 
     //SACO UN ITEM DEL CARRITO, 
     const removeItem = (id) => {
-        setItems(items.filter(item => item.item.id !== id));
+        setItems(items.filter(item => item.id !== id));
     }
 
     //LIMPIO POR COMPLETO EL CARRITO
@@ -82,7 +82,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems}}>
+    return(<UseCartContext.Provider value={{clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem}}>
         {children}
     </UseCartContext.Provider>)
 
