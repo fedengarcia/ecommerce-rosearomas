@@ -17,6 +17,14 @@
         justify-content: center;
         
     }
+    .borrar-item{
+        margin-left: -2.2vw;
+        width: 2vw;
+        cursor: pointer;
+        &:hover{
+            background-color: #084444;
+        }
+    }
 }
 
 
