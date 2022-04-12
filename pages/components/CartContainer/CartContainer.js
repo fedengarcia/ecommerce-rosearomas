@@ -43,17 +43,15 @@ export default function CartContainer () {
                     <button onClick={handleConfirmBuy}>Confirmar Compra</button>
                     <button onClick={()=>{handleClearCart(false)}}>Vaciar Carrito</button>
                     {vaciar?
-                        <>
-                            <div className="VaciarCarrito-container">
-                                <div className="VaciarCarrito">
-                                    <p className="title-vaciar">VACIAR CARRITO</p>
-                                    <div className="button-vaciar-container">
-                                        <p className="button-vaciar" onClick={()=>{handleClearCart(false)}}>CANCELAR</p>
-                                        <p className="button-vaciar" onClick={()=>{handleClearCart(true)}}>ACEPTAR</p>
-                                    </div>
+                        <div className="VaciarCarrito-container">
+                            <div className="VaciarCarrito">
+                                <p className="title-vaciar">VACIAR CARRITO</p>
+                                <div className="button-vaciar-container">
+                                    <p className="button-vaciar" onClick={()=>{handleClearCart(false)}}>CANCELAR</p>
+                                    <p className="button-vaciar" onClick={()=>{handleClearCart(true)}}>ACEPTAR</p>
                                 </div>
                             </div>
-                        </>
+                        </div>
                         :
                         <>
                         </>
