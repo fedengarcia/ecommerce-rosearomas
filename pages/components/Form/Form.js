@@ -64,7 +64,8 @@ export default function Form () {
         }
     }
 
-    return (<form className="form">
+    return (
+    <form className="form">
         <div className='form-input-title'>
             <h2>DATOS PERSONALES</h2>
         </div>
@@ -74,7 +75,7 @@ export default function Form () {
             <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="emailId"  placeholder="Email" type="input" onChange={handleEmailData}/>
             <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Numero de telefono" type="input" onChange={handlePhoneData}/>
             
-        <div className='form-input-title'>
+        <div className='form-input-title formtitle2'>
             <h2>DATOS DE ENVIO</h2>
         </div>    
             <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="ciudadId"  placeholder="Ciudad" type="input" onChange={handleCityData}/>
@@ -82,16 +83,15 @@ export default function Form () {
             <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="emailId"  placeholder="Numero" type="input" onChange={handleAddressNumberData}/>
             <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Codigo Postal" type="input" onChange={handlePostalCodeData}/>
 
-        
-            
-            
-            <div>
-                {/* MERCADO PAGO COMPRAR */}
-                <button onClick={() => handleAccept()}>Aceptar</button>
-                <Link href="/Cart" className="linkStyle"><button>Cancelar</button></Link>
-            </div>
+
+        {/* MERCADO PAGO COMPRAR */}
+        <button onClick={() => handleAccept()}>Finalizar Compra</button>
+        <Link href="/Cart" className="linkStyle"><button>Cancelar</button></Link>
+
         </form>
-        )
+
+
+)
         
 }
     
