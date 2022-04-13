@@ -1,7 +1,8 @@
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 import { collection, getDocs, orderBy, where } from "firebase/firestore";
-
+import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAfSPLiF53AwxpbFsL9RQjamXZaBC49lKU",
@@ -15,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
 export const getCarouselImg = async() => {
 
   const carouselDocs = await getDocs(collection(db, "Carousel"));
@@ -24,7 +24,7 @@ export const getCarouselImg = async() => {
 }
 
 export const getCarouselFraganciaImg = async() => {
-
+  
   const carouselFraganciasDocs = await getDocs(collection(db, "CarouselFragancias"));
   const carouselFraganciasImg = carouselFraganciasDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}});
   return(carouselFraganciasImg);
@@ -39,10 +39,22 @@ export const getCarouselFraganciaSMLImg = async() => {
 }
 
 
-
 export const getProductos = async() =>{
-
+  
   const productosDocs = await getDocs(collection(db,"Productos"));
   const productos = productosDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}})
   return(productos)
+}
+
+
+// DASHBOARD
+const storage=getStorage(app)
+
+export const addStorage=async(titulo,carpeta,imagen)=>{
+  
+  const storageRef=ref(storage,`${carpeta}/${titulo}.jpg`)
+  uploadBytes(storageRef,imagen).then((snapshot)=>{
+    console.log("timo",snapshot.ref)
+  })
+
 }
