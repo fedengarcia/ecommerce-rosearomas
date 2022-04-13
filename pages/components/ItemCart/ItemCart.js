@@ -24,11 +24,11 @@ export default function ItemCart({producto}) {
         <div className="item-cart">
 
             <div className="grid-row">
-                <div className='gridItem titulo-cart'><h3>{producto.Nombre}</h3></div>
+                <div className='gridItem titulo-cart'><h3>{producto.title}</h3></div>
                 <div className='gridItem fragancia-cart'><h3>{producto.type}</h3></div>
                 
-                <ItemCount productId= {producto.id} amount={amount} setAmount={setAmount} stock={producto.Stock}/>
-                <div className='gridItem precio-item-cart'><h3>${producto.Precio*producto.quantity}</h3></div>
+                <ItemCount productId= {producto.id} amount={amount} setAmount={setAmount} stock={producto.stock}/>
+                <div className='gridItem precio-item-cart'><h3>${producto.unit_price*producto.quantity}</h3></div>
             </div>
             <div className='borrar-item' onClick={()=>{setBorrar(!borrar)}}>
                 <Image src={tacho} width={96} height={96}/>
