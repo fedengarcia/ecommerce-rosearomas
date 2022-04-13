@@ -8,20 +8,23 @@ export default function ({producto,type,amount,setShowNotification}){
      
     const handleOnClick = () => {
         if(type === "none"){
-            // PUSH MODAL
-            // Router.push({
-            //     pathname: '/dialog',
-            //     query: { keyword: 'SelectFraganciaDialog' },
-            // })
             show(setShowNotification)
         }else{
-            //AGREGAR AL CARRO
-            //CAMBIAR MODIFICAR LOS NOMBRES DE LA BD PARA QUE EL PARSEO DE DATOS CON MP SEA FACIL
+            //AGREGAR AL CARRO EL JSON CON FORMATO DE MP
             addItem({
-                ...producto,
+                id: producto.id,
+                title: producto.Nombre,
+                description: producto.Descripcion,
+                picture_url: producto.Img,
+                category_id: producto.Categoria,
+                currency_id: "ARS", 
                 quantity: amount,
                 type:type,
+                unit_price: producto.Precio,
+                stock:producto.Stock,
             });
+            
+
         }
     }
 
