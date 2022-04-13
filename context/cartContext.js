@@ -4,7 +4,6 @@ export const UseCartContext = createContext();
 
 export const CartContext = ({children}) => {
     const [items,setItems] = useState([]);
-    const [order,setOrder] = useState(undefined);
     const [itemTrashId,setItemTrashId] = useState(undefined);
     const [idCompra,setIdCompra] = useState(undefined);
 
@@ -39,18 +38,6 @@ export const CartContext = ({children}) => {
     }
 
 
-    //ARMO UN JSON PARA ENVIAR LA INFORMACION A MERCADO PAGO
-    const saveBuy = (payerInfo) => {
-        const newOrder = {
-            items: items,
-            payer: payerInfo,
-            // date: new Date().toLocaleString() + "",
-            // price: getTotalPrice(),
-        }
-        setOrder(newOrder)
-        console.log(order)
-    }
-
     //DEVUELVO EL PRECIO TOTAL DE LA COMPRA
     const getTotalPrice = () =>{
         const totalPrice = items.reduce(function(accumulator, currentValue) {
@@ -84,7 +71,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{order, items, clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem, saveBuy}}>
+    return(<UseCartContext.Provider value={{items, clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem}}>
         {children}
     </UseCartContext.Provider>)
 
