@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import {useState} from "react";
 import CarouselInicio from "./components/Carousel/CarouselInicio";
-import banner1 from "../public/banner/banner.png";
-import banner2 from "../public/banner/banner2.png";
+import banner_1 from "../public/banner/banner.png";
+import banner_2 from "../public/banner/banner2.png";
 import Media from "react-media";
 import logoWhap from "../public/whatsapp.png";
 import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia";
@@ -19,10 +19,6 @@ export default function Home() {
     }, 1000);
 
     return(
-        <>
-            {/* {carga?
-                <Loader/>
-            : */}
                 <div>
                     <Header/>
 
@@ -32,18 +28,14 @@ export default function Home() {
                         }}>
                         {matches => (
                             <>
-                                {matches.banner1 && <>
-                                                        <Image src={banner1} layout="responsive"  alt="BANNER" className="appear"/>
-                                                    </>}
-                                {matches.banner2 && <>
-                                                        <Image src={banner2} layout="responsive" alt="BANNER" className="appear-ban2"/>
-                                                    </>}
+                                {matches.banner1 && <Image src={banner_1} layout="responsive"  alt="BANNER" className="appear"/>}
+                                {matches.banner2 && <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>}
                             </>
                         )}
                     </Media>
 
                     <CarouselInicio/>
-                    
+
                     <ProductosInicio/>
 
                     <CarouselFragancia/>
@@ -56,10 +48,6 @@ export default function Home() {
 
                     <Footer/>
                 </div>
-{/*                 
-            } */}
-
-        </>
     )
 }
 
