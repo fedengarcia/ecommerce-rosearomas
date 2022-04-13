@@ -40,19 +40,21 @@ export const CartContext = ({children}) => {
 
 
     //ARMO UN JSON PARA ENVIAR LA INFORMACION A MERCADO PAGO
-    const saveBuy = (buyer) => {
-        const order = {
+    const saveBuy = (payerInfo) => {
+        const newOrder = {
             items: items,
-            buyer: buyer,
-            date: new Date().toLocaleString() + "",
-            price: getTotalPrice(),
+            payer: payerInfo,
+            // date: new Date().toLocaleString() + "",
+            // price: getTotalPrice(),
         }
+        setOrder(newOrder)
+        console.log(order)
     }
 
     //DEVUELVO EL PRECIO TOTAL DE LA COMPRA
     const getTotalPrice = () =>{
         const totalPrice = items.reduce(function(accumulator, currentValue) {
-            return accumulator + (currentValue.Precio * currentValue.quantity) ;
+            return accumulator + (currentValue.unit_price * currentValue.quantity) ;
           },0);
 
         return totalPrice;
@@ -82,7 +84,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem}}>
+    return(<UseCartContext.Provider value={{order, items, clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem, saveBuy}}>
         {children}
     </UseCartContext.Provider>)
 
