@@ -31,6 +31,7 @@
 @import "./components/loader";
 @import "./components/refill";
 @import "./components/form";
+@import "./components/dashboard";
 
 // MEDIA QUERYS
 @import "./mediaQuerys/mobile";
@@ -46,5 +47,6 @@
 @import "./mediaQuerys/vaciarBlock";
 @import "./mediaQuerys/refill";
 @import "./mediaQuerys/_cart.scss";
+@import "./mediaQuerys/banner"
 
 

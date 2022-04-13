@@ -34,16 +34,11 @@ export default function CarouselInicio(){
                                 <h3 className="carousel-titulo">{foto.titulo}</h3>
                                 <p className="carousel-desc">{foto.descripcion}</p>
                             </Carousel.Caption>
-                            <div className="carousel-titulo-mobile">
-                                <h3>{foto.titulo}</h3>
-                            </div>
-                            <div className="carousel-desc-mobile">
-                                <p>{foto.descripcion}</p>
-                            </div>
+                            <div className="carousel-titulo-mobile"><h3>{foto.titulo}</h3></div>
+                            <div className="carousel-desc-mobile"><p>{foto.descripcion}</p></div>
                         </Carousel.Item>
                     )
                 })}
-
             </Carousel>
         </div>
     )
