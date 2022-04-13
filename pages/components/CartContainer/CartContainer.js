@@ -39,7 +39,7 @@ export default function CartContainer () {
                     <div><p>TEXTO DONDE SE EXPLICA POR QUE EL AUMENTO DEL PRECIO POR EL ENVIO</p></div>
                     <div><h3>Total: ${getTotalPrice()}</h3></div>
                 </div>
-                <div className="cart-actions">
+                {itemsCart.length === 0 ? <></> : <div className="cart-actions">
                     <button onClick={handleConfirmBuy}>Confirmar Compra</button>
                     <button onClick={()=>{handleClearCart(false)}}>Vaciar Carrito</button>
                     {vaciar?
@@ -57,6 +57,7 @@ export default function CartContainer () {
                         </>
                     }
                 </div>
+                }
             </div>
             
         </div>
