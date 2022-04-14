@@ -45,6 +45,11 @@
             .MuiInput-colorSecondary.MuiInput-underline:after {
                 border-bottom-color: #0b5a5a;
             }
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+            }
         }
     
         .linkStyle{

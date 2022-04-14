@@ -1,9 +1,10 @@
 import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../context/CartContext';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 
 export default function MercadoPagoButton ({payerInfo}) {
     const {items} = useContext(UseCartContext);
+    const router = useRouter();
 
 
 
@@ -23,9 +24,7 @@ export default function MercadoPagoButton ({payerInfo}) {
         console.log("RUTA DE REDIRECCION AL PAGO DE MP ----->",preference.redirect)
   
         //REDIRECCION A CHECKOUTPRO
-        Router.push({
-              pathname: preference.redirect,
-        });
+        router.replace(preference.redirect);
 
       }).catch(err => {
         //DISABLED BUTTON
@@ -33,12 +32,12 @@ export default function MercadoPagoButton ({payerInfo}) {
       });    
 
 
-    const handleAccept = (payerInfo) => {
+    const handleAccept = async (payerInfo) => {
         const order = {
             items:items,
             payer:payerInfo,
         }
-        payMP(order);
+        
 
         // var hasNumber = /\d/;   
         // // MODIFICAR
@@ -52,6 +51,7 @@ export default function MercadoPagoButton ({payerInfo}) {
         //     payMP(order);
         //     // history.push('/dialog/endBuyDialog');
         // }
+        await payMP(order);
     }
 
 
