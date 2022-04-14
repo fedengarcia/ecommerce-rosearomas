@@ -1,6 +1,6 @@
 import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../context/CartContext';
-
+import Router from 'next/router';
 
 export default function MercadoPagoButton ({payerInfo}) {
     const {items} = useContext(UseCartContext);
@@ -23,7 +23,10 @@ export default function MercadoPagoButton ({payerInfo}) {
         console.log("RUTA DE REDIRECCION AL PAGO DE MP ----->",preference.redirect)
   
         //REDIRECCION A CHECKOUTPRO
-        router.replace(preference.redirect);
+        Router.push({
+              pathname: preference.redirect,
+        });
+
       }).catch(err => {
         //DISABLED BUTTON
         console.log("ERR",err);

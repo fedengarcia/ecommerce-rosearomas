@@ -17,9 +17,9 @@ export default function ({producto,type,amount,setShowNotification, setShowNotif
                 picture_url: producto.Img,
                 category_id: producto.Categoria,
                 currency_id: "ARS", 
-                quantity: amount,
+                quantity: Number(amount),
                 type:type,
-                unit_price: producto.Precio,
+                unit_price: Number(producto.Precio),
                 stock:producto.Stock,
             });
             show(setShowNotification2)

@@ -31,7 +31,7 @@ export default function(req, res) {
 	return new Promise((resolve, reject) => {
 		let preference = {
 			items: req.body.items,
-			payer: req.body.payer,
+			// payer: req.body.payer,
 			back_urls: {
 				"success": "http://localhost:3000/feedback",
 				"failure": "http://localhost:3000/feedback",
@@ -40,12 +40,12 @@ export default function(req, res) {
 			auto_return: "approved",
 		};
 
-		console.log(preference)
-
 		mercadopago.preferences.create(preference)
 		.then(function (response) {
+			// console.log(response.body)
 			res.statusCode = 200
 			res.setHeader('Content-type','application/json')
+			console.log(response.body.init_point)
 			res.json({
 				id: response.body.id,
 				redirect: response.body.init_point
