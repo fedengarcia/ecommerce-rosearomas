@@ -15,6 +15,8 @@ function Tienda({typeProd}) {
   const [productos, setProductos] = useState([]);
   const [itemType, setItemType] = useState("Todo");
   const [showNotification,setShowNotification] = useState(false)
+  const [showNotification2,setShowNotification2] = useState(false)
+
   
   // const handleChange = (event, newValue) => {
   //   setItemType(newValue);
@@ -44,10 +46,14 @@ function Tienda({typeProd}) {
 
         <NavBarTienda setItemType={setItemType}/>
 
-        <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification}  />
+        <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
         
         <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>
+        </div>
+
+        <div className="notification-container" style={showNotification2 ? {zIndex:'5'} : null}>
+          <Notification showNotification2={showNotification2} text={"Se agrego correctamente"}/>
         </div>
         
         <div className="container-logoWhap">

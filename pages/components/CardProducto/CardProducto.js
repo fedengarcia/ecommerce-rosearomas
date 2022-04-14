@@ -10,7 +10,7 @@ import AddCartButton from '../AddCartButton/addCartButton';
 import DetailsButton from '../DetailsButton/detailsButton';
 import DetailsBlock from '../DetailsBlock/DetailsBlock';
 
-export default function CardProducto({producto, setShowNotification}) {
+export default function CardProducto({producto, setShowNotification, setShowNotification2}) {
     const [type, setType] = useState("none");
     const [amount,setAmount] = useState(1);
     const [details,setDetails] = useState(false);
@@ -39,9 +39,9 @@ export default function CardProducto({producto, setShowNotification}) {
       <CardActions>
         <ItemTypeSelect setType={setType} type={type} className="select-card-tienda"/>
         <ItemCount stock={producto.Stock} amount={amount} setAmount={setAmount}/>
-        <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
+        <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
         <DetailsButton SetDetails={setDetails} Details={details}/>
-        <DetailsBlock SetDetails={setDetails} Details={details} producto={producto} setShowNotification={setShowNotification}/>
+        <DetailsBlock SetDetails={setDetails} Details={details} producto={producto} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
       </CardActions>
     </Card>
   );
