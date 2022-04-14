@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import TextField from '@material-ui/core/TextField';
 import MercadoPagoButton from '../MercadoPagoButton/MercadoPagoButton';
 import Link from 'next/link';
+import { useEffect } from "react";
 
 export default function Form2(){
 
     const {register, formState:{errors},handleSubmit} = useForm()
+
     const [formValidado,setFormValidado] = useState(false);
     const [respuesta,setRespuesta]=useState(false)
     const [respuesta2,setRespuesta2]=useState(true)
@@ -34,7 +36,6 @@ export default function Form2(){
     const handleAreaNumberPhoneData = (e) => {
         setPhone({...phone,area_code: e.target.value});
         setPayerInfo({...payerInfo,phone:phone});
-
     }
 
     // NUMERO DE TELEFONO
@@ -47,7 +48,6 @@ export default function Form2(){
     const handleStreetNameData = (e) => {
         setAddress({...address, street_name: e.target.value});
         setPayerInfo({...payerInfo, address:address});
-
     }
 
     // NUMERO DE CASA
@@ -68,6 +68,10 @@ export default function Form2(){
         setFormValidado(true);
     }   
 
+    useEffect(()=>{
+        setFormValidado(false)
+        console.log(payerInfo)
+    },[payerInfo])
 
     return(
         <div className="container-form-compra">
@@ -104,7 +108,7 @@ export default function Form2(){
 
                 <div>
                     <div className="input-span">
-                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberAreaId"  placeholder="Numero de area" type="number" onChange={handleAreaNumberPhoneData}
+                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberAreaId"  placeholder="Código de area" type="number" onChange={handleAreaNumberPhoneData}
                         {...register("numberAreaId",{required:true,minLength:2,maxLength:4})}/>
                         <span className="text-danger text-small d-block mb-2">
                             {errors.numberAreaId?.type==="required"&&"Campo obligatorio"}
@@ -114,7 +118,7 @@ export default function Form2(){
                     </div>
 
                     <div className="input-span">
-                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Numero de telefono" type="number" onChange={handleNumberPhoneData}
+                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Número de telefono" type="number" onChange={handleNumberPhoneData}
                         {...register("numberId",{required:true,minLength:6,maxLength:6})}/>
                         <span className="text-danger text-small d-block mb-2">
                             {errors.numberId?.type==="required"&&"Campo obligatorio"}
@@ -136,14 +140,14 @@ export default function Form2(){
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="streetNumberId"  placeholder="Numero de calle" type="number" onChange={handleStreetNumberData}
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="streetNumberId"  placeholder="Número de calle" type="number" onChange={handleStreetNumberData}
                     {...register("streetNumberId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.streetNumberId?.type==="required"&&"Campo obligatorio"}
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Codigo Postal" type="text" onChange={handleZipCoderData}
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="text" onChange={handleZipCoderData}
                     {...register("zipCodeId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.zipCodeId?.type==="required"&&"Campo obligatorio"}
@@ -163,7 +167,7 @@ export default function Form2(){
             {/* MERCADO PAGO COMPRAR */}
             <div>
                 <MercadoPagoButton payerInfo={payerInfo} formValidado={formValidado}/>
-                <Link href="/Cart" className="linkStyle"><button>Cancelar</button></Link>
+                <Link href="/Cart" className="linkStyle"><button className="boton-validar">CANCELAR</button></Link>
             </div>
         </div>
     )

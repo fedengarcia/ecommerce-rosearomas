@@ -10,6 +10,7 @@
     height: auto;
     font-family: "Montserrat", sans-serif;
     margin-top: 6vw;
+    text-align: center;
 }
 .formtitle2{
     margin-top: 2vw;
@@ -45,6 +46,7 @@
         font-size: 2vw;
         width: 35vw;
         margin-top: 0.5vw;
+        padding-left: 1vw;
     }
 }
 
@@ -52,15 +54,27 @@
 .boton-validar{
     background-color: #489696;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 2vw;
     border: none;
-    margin: 5px 15px;
-    font-size: 1.2vw;
-    padding-right: 10px;
-    padding-left: 10px;
+    margin: 1.5vw;
+    font-size: 1.8vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    &:hover{
+        background-color: #dee6e6;
+        color: #489696;
+        border: 3px solid #489696;
+    }
 }
-.boton-validar:hover{
-    background-color: aliceblue;
+.boton-validar-sinHover{
+    background-color: #489696;
+    font-weight: 600;
+    border-radius: 2vw;
+    border: none;
+    margin: 1.5vw;
+    font-size: 1.8vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
 }
 .validacion-mensaje{
     color: rgb(19, 70, 53);

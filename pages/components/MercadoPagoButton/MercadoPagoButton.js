@@ -57,7 +57,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado}) {
 
 
     return(<>
-        {formValidado ? <button onClick={() => handleAccept(payerInfo)}>Finalizar Compra</button> : <button onClick={() => handleAccept(payerInfo)} disabled>Finalizar Compra</button>}
+        {formValidado ? <button onClick={() => handleAccept(payerInfo)} className="boton-validar">FINALIZAR COMPRA</button> : <button onClick={() => handleAccept(payerInfo)} disabled className='boton-validar-sinHover'>Finalizar Compra</button>}
         </>
     )
 }

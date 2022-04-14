@@ -1,0 +1,59 @@
+@media (max-width:900px){
+    .boton-validar{
+        font-size: 2.5vw !important;
+    }
+    .boton-validar-sinHover{
+        font-size: 2.5vw !important;
+    }
+}
+@media (max-width:800px){
+    .boton-validar{
+        font-size: 2.8vw !important;
+        margin-bottom: 3vw !important;
+        margin-top: 3vw !important;
+    }
+    .boton-validar-sinHover{
+        font-size: 2.8vw !important;
+    }
+
+    .input-span{
+        input{
+            font-size: 3vw;
+            width: 50vw;
+        }
+    }
+}
+@media (max-width:550px){
+    .boton-validar{
+        font-size: 3.8vw !important;
+        margin-top: 6vw !important;
+    }
+    .boton-validar-sinHover{
+        font-size: 3.8vw !important;
+    }
+
+    .input-span{
+        input{
+            font-size: 4.2vw;
+            width: 60vw;
+            padding-left: 2vw !important;
+            margin-top: 1.5vw !important;
+        }
+    }
+}
+@media (max-width:370px){
+    .boton-validar{
+        font-size: 5.5vw !important;
+    }
+    .boton-validar-sinHover{
+        font-size: 5.5vw !important;
+    }
+
+    .input-span{
+        input{
+            font-size: 5vw;
+            width: 80vw;
+            padding-left: 3vw !important;
+        }
+    }
+}
