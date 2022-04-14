@@ -13,24 +13,23 @@ export default function NavBarTienda({setItemType}) {
                 <div className="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup2">
                     <ul>
                         <div className="Filtro1">
-                        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                            <li onClick={() =>handleClick("Todo")}>Todo</li>
-                        </Animated>
-                        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                        <li onClick={() =>handleClick("Velas")}>Velas</li>
-                        </Animated>
-                        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                        <li onClick={() =>handleClick("Homespray")}>Homespray</li>
-                        </Animated>
+                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                <li onClick={() =>handleClick("Todo")}>Todo</li>
+                            </Animated>
+                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                <li onClick={() =>handleClick("Velas")}>Velas</li>
+                            </Animated>
+                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                <li onClick={() =>handleClick("Homespray")}>Homespray</li>
+                            </Animated>
                         </div>
                         <div className="Filtro2">
-                        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                            <li onClick={() =>handleClick("Difusores")}>Difusores</li>
-                        </Animated>
-                        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                        <li onClick={() =>handleClick("Bombones")}>Bombones</li>
-                        </Animated>
-                           
+                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                <li onClick={() =>handleClick("Difusores")}>Difusores</li>
+                            </Animated>
+                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                <li onClick={() =>handleClick("Bombones")}>Bombones</li>
+                            </Animated>
                         </div>
                     </ul>
                 </div>

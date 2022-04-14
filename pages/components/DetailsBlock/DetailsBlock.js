@@ -9,7 +9,7 @@ import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
 import AddCartButton from '../AddCartButton/addCartButton';
 import DetailsButton from '../DetailsButton/detailsButton';
 
-export default function DetailsBlock({SetDetails, Details, producto, setShowNotification}){
+export default function DetailsBlock({SetDetails, Details, producto, setShowNotification,setShowNotification2}){
     const [type, setType] = useState("none");
     const [amount,setAmount] = useState(1);
 
@@ -41,7 +41,7 @@ export default function DetailsBlock({SetDetails, Details, producto, setShowNoti
                             <CardActions>
                                 <ItemTypeSelect setType={setType} type={type} className="select-card-details"/>
                                 <ItemCount stock={producto.Stock} amount={amount} setAmount={setAmount}/>
-                                <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification}/>
+                                <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
                             </CardActions>
                         </Card>
                     </div>
