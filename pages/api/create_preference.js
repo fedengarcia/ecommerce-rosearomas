@@ -42,9 +42,10 @@ export default function(req, res) {
 
 		mercadopago.preferences.create(preference)
 		.then(function (response) {
-			// console.log(response.body)
 			res.statusCode = 200
 			res.setHeader('Content-type','application/json')
+			console.log(response.body.init_point)
+
 			res.json({
 				id: response.body.id,
 				redirect: response.body.init_point

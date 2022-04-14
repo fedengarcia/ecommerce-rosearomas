@@ -2,7 +2,7 @@ import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../context/CartContext';
 import { useRouter } from 'next/router';
 
-export default function MercadoPagoButton ({payerInfo}) {
+export default function MercadoPagoButton ({payerInfo, formValidado}) {
     const {items} = useContext(UseCartContext);
     const router = useRouter();
 
@@ -32,7 +32,7 @@ export default function MercadoPagoButton ({payerInfo}) {
       });    
 
 
-    const handleAccept = async (payerInfo) => {
+    const handleAccept = (payerInfo) => {
         const order = {
             items:items,
             payer:payerInfo,
@@ -51,12 +51,13 @@ export default function MercadoPagoButton ({payerInfo}) {
         //     payMP(order);
         //     // history.push('/dialog/endBuyDialog');
         // }
-        await payMP(order);
+        payMP(order);
     }
 
 
 
-    return(
-        <button onClick={() => handleAccept(payerInfo)}>Finalizar Compra</button>
+    return(<>
+        {formValidado ? <button onClick={() => handleAccept(payerInfo)}>Finalizar Compra</button> : <button onClick={() => handleAccept(payerInfo)} disabled>Finalizar Compra</button>}
+        </>
     )
 }
