@@ -33,10 +33,16 @@ export default function Dashboard({}){
 
     const [titulo,setTitulo]=useState("")
     const [descripcion,setDescripcion]=useState("")
+    const [mensajeCarousel, setMensajeCarousel]=useState(true)
+    const [botonCarousel,setBotonCarousel]=useState(true)
 
     const Add=(carpeta)=>{
         if(titulo!=""&&descripcion!=""&&imagen!=undefined){
+            setMensajeCarousel(true)
+            setBotonCarousel(false)
             addStorage(titulo,carpeta,imagen)
+        }else{
+            setMensajeCarousel(false)
         }
     }
 
@@ -89,7 +95,7 @@ export default function Dashboard({}){
                             {formAgregar?
                                 <div className="form-agregar-container">
                                     <div className="form-agregar">
-                                            <p onClick={()=>{setFormAgregar(!formAgregar)}} className="cerrar">CERRAR</p>
+                                            <p onClick={()=>{setFormAgregar(!formAgregar), setMensajeCarousel(true)}} className="cerrar">CERRAR</p>
                                             <input placeholder="Titulo" name="titulo" id="titulo" onChange={e=>{setTitulo(e.target.value)}}/>
                                             <input placeholder="Descripcion" name="descripcion" id="descripcion" onChange={e=>{setDescripcion(e.target.value)}}/>
                                             <input
@@ -98,7 +104,20 @@ export default function Dashboard({}){
                                                 id="img"
                                                 onChange={(e) => {changeImagen(e)}}
                                             />
-                                            <p onClick={()=>Add("carousel")} className="agregar">AGREGAR</p>
+                                            {botonCarousel?
+                                                <>
+                                                    <p onClick={()=>Add("carousel")} className="agregar">AGREGAR</p>
+                                                </>
+                                                :
+                                                <>
+                                                    <p className="agregar">CARGANDO...</p>
+                                                </>
+                                            }
+                                            {mensajeCarousel?<></>:
+                                                <>
+                                                    <span className="text-danger text-small d-block mb-2">Datos incorrectos</span>
+                                                </>
+                                            }
                                     </div>
                                 </div>
                             :

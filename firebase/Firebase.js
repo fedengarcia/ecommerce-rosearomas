@@ -52,9 +52,9 @@ const storage=getStorage(app)
 
 export const addStorage=async(titulo,carpeta,imagen)=>{
   
-  const storageRef=ref(storage,`${carpeta}/${titulo}.jpg`)
+  const storageRef= ref(storage,`${carpeta}/${titulo}.jpg`)
   uploadBytes(storageRef,imagen).then((snapshot)=>{
-    console.log("timo",snapshot.ref)
+    console.log(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
   })
 
 }
