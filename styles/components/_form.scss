@@ -87,3 +87,15 @@ input[type=number]::-webkit-outer-spin-button {
 -webkit-appearance: none; 
 margin: 0; 
 }
+
+.radioButton{
+    text-align: center;
+    margin: 1vw;
+    label{
+        margin: 1vw;
+        font-size: 2vw;
+    }
+    input{
+        margin: 0.5vw;
+    }
+}

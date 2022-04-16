@@ -12,11 +12,30 @@ export default function Form2(){
     const [formValidado,setFormValidado] = useState(false);
     const [respuesta,setRespuesta]=useState(false)
     const [respuesta2,setRespuesta2]=useState(true)
-
+    
     const [payerInfo, setPayerInfo] = useState({});
     const [payerInfoEspecial, setPayerInfoEspecial] = useState({});
-    const [phone,setPhone] = useState({});
-    const [address,setAddress] = useState({});
+    const [phone, setPhone] = useState({});
+    const [address, setAddress] = useState({});
+    const [metodoPago,setMetodoPago]=useState("")
+
+    const [codigoPostal,setCodigoPostal]= useState(false)
+    const [cambiarCodigo,setCambiarCodigo]=useState(false)
+
+
+    useEffect(()=>{
+        setFormValidado(false)
+        if(cambiarCodigo){
+            CP()
+        }
+    },[payerInfo])
+
+    
+    const handleFormSubmit = (data) => {
+        setRespuesta(true)
+        setFormValidado(true);
+    }   
+
 
     // NOMBRE
     const handleNameData = (e) => {
@@ -38,17 +57,16 @@ export default function Form2(){
 
     // CODIGO DE AREA
     const handleAreaNumberPhoneData = (e) => {
-        setPhone({...phone,area_code: e.target.value});
-        setPayerInfo({...payerInfo,phone:phone});
-
-        setPayerInfoEspecial({...payerInfoEspecial,phone:phone});
+        setPayerInfo({...payerInfo,phone:{...phone,area_code: e.target.value}});
+        setPayerInfoEspecial({...payerInfoEspecial,phone:{...phone,area_code: e.target.value}});
+        setPhone({...phone,area_code: e.target.value})
     }
 
     // NUMERO DE TELEFONO
     const handleNumberPhoneData = (e) => {
-        setPhone({...phone,number: Number(e.target.value)});
-        setPayerInfo({...payerInfo,phone:phone});
-        setPayerInfoEspecial({...payerInfoEspecial,phone:phone});
+        setPayerInfo({...payerInfo,phone:{...phone,number: e.target.value}});
+        setPayerInfoEspecial({...payerInfoEspecial,phone:{...phone,number: e.target.value}});
+        setPhone({...phone,number: e.target.value})
     }
 
     // LOCALIDAD
@@ -58,42 +76,46 @@ export default function Form2(){
 
     // DIRECCION
     const handleStreetNameData = (e) => {
-        setAddress({...address, street_name: e.target.value});
-        setPayerInfo({...payerInfo, address:address});
-        setPayerInfoEspecial({...payerInfoEspecial, address:address});
+        setPayerInfo({...payerInfo, address:{...address, street_name: e.target.value}});
+        setPayerInfoEspecial({...payerInfoEspecial, address:{...address, street_name: e.target.value}});
+        setAddress({...address, street_name: e.target.value})
     }
 
     // NUMERO DE CASA
     const handleStreetNumberData = (e) => {
-        setAddress({...address, street_number: Number(e.target.value)});
-        setPayerInfo({...payerInfo, address:address});
-        setPayerInfoEspecial({...payerInfoEspecial, address:address});
+        setPayerInfo({...payerInfo, address:{...address, street_number:e.target.value}});
+        setPayerInfoEspecial({...payerInfoEspecial, address:{...address, street_number:e.target.value}});
+        setAddress({...address, street_number: e.target.value})
     }
 
     // CODIGO POSTAL
     const handleZipCoderData = (e) => {
+        setPayerInfo({...payerInfo, address:{...address, zip_code: e.target.value}});
+        setPayerInfoEspecial({...payerInfoEspecial, address:{...address, zip_code: e.target.value}});
         setAddress({...address, zip_code: e.target.value})
-        setPayerInfo({...payerInfo, address:address});
-        setPayerInfoEspecial({...payerInfoEspecial, address:address});
+        setCambiarCodigo(true)
+    }
+    
+    const CP = ()=>{
+        if(payerInfo.address.zip_code==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
+            setCodigoPostal(true)
+        }else{
+            setCodigoPostal(false)
+        }
     }
 
-
-    const handleFormSubmit = () => {
-        setRespuesta(true)
-        setFormValidado(true);
-    }   
-
-    useEffect(()=>{
-        setFormValidado(false)
-    },[payerInfo])
+    // METODO DE PAGO
+    const handlePago=(pago)=>{
+        setMetodoPago(pago)
+    }
 
     return(
         <div className="container-form-compra">
             <form onSubmit={handleSubmit(handleFormSubmit)}>
             
-            <div className='form-input-title'>
-                <h2>DATOS PERSONALES</h2>
-            </div>
+                <div className='form-input-title'>
+                    <h2>DATOS PERSONALES</h2>
+                </div>
 
                 <div className="input-span">
                     <TextField className="form-input" size="medium" autoComplete="off"  color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleNameData}
@@ -142,9 +164,9 @@ export default function Form2(){
                     </div>
                 </div>
                 
-            <div className='form-input-title formtitle2'>
-                <h2>DATOS DE ENVIO</h2>
-            </div>
+                <div className='form-input-title formtitle2'>
+                    <h2>DATOS DE ENVIO</h2>
+                </div>
                 <div className="input-span">
                     <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="localidad"  placeholder="Localidad (Solo localidades de BsAS)" type="text" onChangeCapture={handleLocalidad}
                     {...register("localidad",{required:true})}/>
@@ -167,23 +189,49 @@ export default function Form2(){
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="text" onChangeCapture={handleZipCoderData}
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="number" onChangeCapture={handleZipCoderData}
                     {...register("zipCodeId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.zipCodeId?.type==="required"&&"Campo obligatorio"}
                     </span>
                 </div>
-                {payerInfo===2800 && payerInfo===2804 && payerInfo===2806?<p>hgolaa</p>:<></>}
-
+                {codigoPostal?
+                    <div className="radioButton">
+                        <label htmlFor="efectivo">
+                            <input
+                                {...register("pago",{required:true})}
+                                type="radio"
+                                name="pago"
+                                value="efectivo"
+                                id="efectivo"
+                                onClick={()=>handlePago("efectivo")}
+                            />
+                            EFECTIVO
+                        </label>
+                        <label htmlFor="mercadopago">
+                            <input
+                                {...register("pago",{required:true})}
+                                type="radio"
+                                name="pago"
+                                value="mercadopago"
+                                id="mercadopago"
+                                onClick={()=>handlePago("mercadopago")}
+                            />
+                            MERCADOPAGO
+                        </label>
+                        <span className="text-danger text-small d-block mb-2">
+                            {errors.pago?.type==="required"&&"Campo obligatorio"}
+                        </span>
+                    </div>
+                :<></>}
 
                 <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR</button>
                 <span>
                     {respuesta?
                         <p className="validacion-mensaje">Validacion Correcta</p>
-                    : respuesta2?<></>:<p className="validacion-mensaje" style={{color:"red"}}>Validacion Incorrecta</p>
+                        : respuesta2?<></>:<p className="validacion-mensaje" style={{color:"red"}}>Validacion Incorrecta</p>
                     }
                 </span>
-
             </form>
 
             {/* MERCADO PAGO COMPRAR */}
