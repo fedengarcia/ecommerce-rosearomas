@@ -107,7 +107,6 @@ export default function Form2(){
     
     const CP = ()=>{
         if(payerInfo.address.zip_code === "") {
-            console.log("console");
             addShippment(0);
             setEnvio(0);
         }else if(payerInfo.address.zip_code ==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
