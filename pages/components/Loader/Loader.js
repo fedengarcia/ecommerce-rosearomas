@@ -1,9 +1,4 @@
-
-
-
 export default function Loader () {
-
-
 
     return (
     <div class="lds-ring">

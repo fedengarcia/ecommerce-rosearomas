@@ -1,11 +1,13 @@
 import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../context/CartContext';
 import { useRouter } from 'next/router';
+import Loader from '../Loader/Loader';
 
 export default function MercadoPagoButton ({payerInfo, formValidado}) {
     const {items} = useContext(UseCartContext);
     const router = useRouter();
 
+    const [mensaje,setMensaje]=useState(false)
 
 
     const payMP = (newOrder) => fetch('http://localhost:3000/api/create_preference', {
@@ -40,9 +42,10 @@ export default function MercadoPagoButton ({payerInfo, formValidado}) {
     }
 
 
-
-    return(<>
-        {formValidado ? <button onClick={() => handleAccept(payerInfo)} className="boton-validar">FINALIZAR COMPRA</button> : <button onClick={() => handleAccept(payerInfo)} disabled className='boton-validar-sinHover'>Finalizar Compra</button>}
+    return(
+        <>
+          {formValidado ? <button onClick={() => handleAccept(setMensaje(true),payerInfo)} className="boton-validar">FINALIZAR COMPRA</button> : <button onClick={() => handleAccept(payerInfo)} disabled className='boton-validar-sinHover'>Finalizar Compra</button>}
+          {mensaje?<><Loader></Loader></>:<></>}
         </>
     )
 }
