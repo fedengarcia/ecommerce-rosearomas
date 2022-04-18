@@ -1,5 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget"
 import Link from 'next/link'
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 export default function NavBar() {
   
@@ -7,26 +8,20 @@ export default function NavBar() {
     return(
     <div className="navbar-container">
 
-        <nav className="navbar navBarPrincipal navbar-expand-custom navbar-light " id='navBar'>
-
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span id="referenciaMenu">Incio</span>
-            </button>
-
-     
-            <div className="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup">
-                
-                <div className="navbar-nav">
-                    <Link href={'/'} className="nav-link">Inicio</Link>
-                    <Link href={'/QuienSoy'} className="nav-link">¿Quién soy?</Link>
-                    <Link href={'/NuestrosProductos'} className="nav-link">Nuestros productos</Link>
-                    <Link href={'/Tienda'} className="nav-link">Tienda</Link>
-                    <Link href={'/Refill'} className="nav-link">Refill</Link>
-                    <a href={'#contacto'} className="nav-link">Contacto</a>
-                </div>
-            </div>
-
-        </nav>
+        <Navbar expand="sl" className="navbar-expand-custom navBarPrincipal">
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="navbar-nav">
+                        <Link href={'/'} className="nav-link">Inicio</Link>
+                        <Link href={'/QuienSoy'} className="nav-link">¿Quién soy?</Link>
+                        <Link href={'/NuestrosProductos'} className="nav-link">Nuestros productos</Link>
+                        <Link href={'/Tienda'} className="nav-link">Tienda</Link>
+                        <Link href={'/Refill'} className="nav-link">Refill</Link>
+                        <Link href={'#contacto'} className="nav-link">Contacto</Link>
+                    </Nav>
+                </Navbar.Collapse>
+        </Navbar>
+        
         <CartWidget/>
     </div>
     );

@@ -2,7 +2,7 @@
     .navbar-expand-custom {
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: flex-start;
+        justify-content: center;
     }
     .navbar-expand-custom .navbar-nav {
         flex-direction: row;
@@ -23,11 +23,20 @@
     .navBarPrincipal{
         margin-left: 18vw;
         a{
+            text-align: center !important;
             font-size: 3.5vw;
         }
     }
     .cartWidget-container{
         margin-top: -0.5vw;
         margin-right: 18vw;
+    }
+    .navbar-toggler-icon{
+        font-size: 3.5vw !important;
+    }
+}
+@media (max-width:400px){
+    .navbar-toggler-icon{
+        font-size: 4vw !important;
     }
 }
