@@ -32,9 +32,28 @@ export const CartContext = ({children}) => {
             const newItems = [...items];
             newItems[result]["quantity"] = newItems[result]["quantity"] + item.quantity;
             setItems(newItems);
-            // FUNCIONA PERO ESTA CARGANDO MAL LA CANTIDAD
         }
-        
+    }
+
+
+    const addShippment = (unit_price) => {
+        const shippment = {
+            id:"envioprod",
+            title: "Dinero de Envio",
+            quantity: 1,
+            unit_price: unit_price,
+        }
+
+        let result = getIndex("envioprod");
+        if(result === -1){
+            setItems(items => [...items,shippment])
+        }else{
+            const newItems = [...items];
+            newItems[result]["unit_price"] = shippment.unit_price;
+            setItems(newItems);
+        }
+
+
     }
 
 
@@ -71,7 +90,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{items, clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem}}>
+    return(<UseCartContext.Provider value={{addShippment,items, clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem}}>
         {children}
     </UseCartContext.Provider>)
 

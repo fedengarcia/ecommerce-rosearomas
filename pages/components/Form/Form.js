@@ -1,11 +1,14 @@
-import React,{useState} from "react";
+import React,{useState, useContext} from "react";
 import { useForm } from "react-hook-form";
 import TextField from '@material-ui/core/TextField';
 import MercadoPagoButton from '../MercadoPagoButton/MercadoPagoButton';
 import Link from 'next/link';
 import { useEffect } from "react";
+import { UseCartContext } from "../../../context/CartContext";
 
 export default function Form2(){
+
+    const {addShippment,getTotalPrice} = useContext(UseCartContext);
 
     const {register, formState:{errors},handleSubmit} = useForm()
 
@@ -99,8 +102,10 @@ export default function Form2(){
     const CP = ()=>{
         if(payerInfo.address.zip_code==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
             setCodigoPostal(true)
+            addShippment(300)
         }else{
             setCodigoPostal(false)
+            addShippment(600)
         }
     }
 
@@ -225,7 +230,11 @@ export default function Form2(){
                     </div>
                 :<></>}
 
-                <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR</button>
+                <div className="total-a-pagar">
+                    <p>Total a pagar: ${getTotalPrice()}</p>
+                </div>
+
+                <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR FORMULARIO</button>
                 <span>
                     {respuesta?
                         <p className="validacion-mensaje">Validacion Correcta</p>

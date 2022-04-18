@@ -1,6 +1,8 @@
 .container-form-compra{
     display: flex;
     flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+
 }
 .form-title{
     display: flex;
@@ -15,6 +17,7 @@
 .formtitle2{
     margin-top: 2vw;
 }
+
 .form-container{
     width: 100%;
     height: auto;
@@ -52,29 +55,38 @@
 
 
 .boton-validar{
-    background-color: #489696;
+    font-family: "Montserrat", sans-serif;
+    background-color: #0b5a5a;
+    color: white;
+    padding: 0.9em;
+    cursor: pointer;
+    border-radius: 0.4em;
     font-weight: 600;
-    border-radius: 2vw;
     border: none;
-    margin: 1.5vw;
-    font-size: 1.8vw;
-    padding-right: 1vw;
-    padding-left: 1vw;
+    margin: 1vw 2vw 0 0;
+    font-size: 1vw;
+    transition: 0.1s ease;
+
     &:hover{
-        background-color: #dee6e6;
-        color: #489696;
-        border: 3px solid #489696;
+        color: #eef600;
+        background-color: #0b5a5a;
     }
 }
+
 .boton-validar-sinHover{
-    background-color: #489696;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: #0b5a5aa3;
+    padding: 0.9em;
+    cursor: pointer;
+    border-radius: 0.4em;
+    margin: 0 1vw 0 0;
+
     font-weight: 600;
-    border-radius: 2vw;
     border: none;
-    margin: 1.5vw;
-    font-size: 1.8vw;
-    padding-right: 1vw;
-    padding-left: 1vw;
+    font-size: 1vw;
+    // padding-right: 1vw;
+    // padding-left: 1vw;
 }
 .validacion-mensaje{
     color: rgb(19, 70, 53);
@@ -98,4 +110,9 @@ margin: 0;
     input{
         margin: 0.5vw;
     }
+}
+
+.total-a-pagar{
+    font-size: 2vw;
+    margin-top: 2vw;
 }
