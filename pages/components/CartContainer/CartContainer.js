@@ -36,7 +36,7 @@ export default function CartContainer () {
                 </div>
                 <div className="line"></div>
 
-                {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
+                {itemsCart && itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
                 
                 {itemsCart.length === 0 ? <p>No tienes ningun producto en el carrito</p> : <></>} 
                 {/* <div className="line"></div> */}
