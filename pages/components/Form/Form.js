@@ -8,7 +8,7 @@ import { UseCartContext } from "../../../context/CartContext";
 
 export default function Form2(){
 
-    const {addShippment,getTotalPrice} = useContext(UseCartContext);
+    const {addShippment,getTotalPrice,removeItem} = useContext(UseCartContext);
 
     const {register, formState:{errors},handleSubmit} = useForm()
 
@@ -100,13 +100,16 @@ export default function Form2(){
     }
     
     const CP = ()=>{
-        if(payerInfo.address.zip_code==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
+        if(payerInfo.address.zip_code === "") {
+            removeItem("evioprod");
+        }else if(payerInfo.address.zip_code ==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
             setCodigoPostal(true)
             addShippment(300)
         }else{
             setCodigoPostal(false)
             addShippment(600)
         }
+
     }
 
     // METODO DE PAGO
