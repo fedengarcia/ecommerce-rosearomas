@@ -83,9 +83,30 @@
         }
     }
 }
+@media (max-width:580px){
+    .grid-info-adicional{
+        p{
+            font-size: 2.8vw !important;
+            padding-right: 5vw;
+            padding-left: 5vw;
+        }
+    }
+    .total{
+        h3{
+            font-size: 5vw !important;
+        }
+    }
+}
 @media (max-width:500px){
     .borrar-item{
         width: 7vw !important;
+    }
+}
+@media (max-width:486px){
+    .cart-actions{
+        button{
+            padding: 2vw !important;
+        }
     }
 }
 @media (max-width:470px){
@@ -107,6 +128,18 @@
             .title-vaciar{
                 padding: 1vw;
             }
+        }
+    }
+}
+@media (max-width:400px){
+    .grid-info-adicional{
+        p{
+            font-size: 3.4vw !important;
+        }
+    }
+    .total{
+        h3{
+            font-size: 6vw !important;
         }
     }
 }

@@ -1,19 +1,19 @@
 @media (max-width:900px){
     .boton-validar{
-        font-size: 2.5vw !important;
+        font-size: 1.5vw !important;
     }
     .boton-validar-sinHover{
-        font-size: 2.5vw !important;
+        font-size: 1.5vw !important;
     }
 }
 @media (max-width:800px){
     .boton-validar{
-        font-size: 2.8vw !important;
-        margin-bottom: 3vw !important;
-        margin-top: 3vw !important;
+        font-size: 2vw !important;
+        margin-bottom: 1.5vw !important;
+        margin-top: 1.5vw !important;
     }
     .boton-validar-sinHover{
-        font-size: 2.8vw !important;
+        font-size: 2vw !important;
     }
 
     .input-span{
@@ -27,14 +27,17 @@
             font-size: 2.5vw !important;
         }
     }
+    .total-a-pagar{
+        font-size: 3vw !important;
+    }
 }
 @media (max-width:550px){
     .boton-validar{
-        font-size: 3.8vw !important;
-        margin-top: 6vw !important;
+        font-size: 3vw !important;
+        margin-top: 3vw !important;
     }
     .boton-validar-sinHover{
-        font-size: 3.8vw !important;
+        font-size: 3vw !important;
     }
 
     .input-span{
@@ -48,16 +51,21 @@
     .radioButton{
         label{
             font-size: 3.5vw !important;
-            margin: 2vw !important;
         }
+    }
+    .total-a-pagar{
+        font-size: 4vw !important;
+        margin-top: 5vw !important;
     }
 }
 @media (max-width:370px){
     .boton-validar{
-        font-size: 5.5vw !important;
+        font-size: 4vw !important;
+        margin-left: 2vw !important;
     }
     .boton-validar-sinHover{
-        font-size: 5.5vw !important;
+        font-size: 4vw !important;
+        margin-left: 2vw !important;
     }
 
     .input-span{
@@ -72,5 +80,9 @@
             margin: 3vw !important;
             font-size: 4vw !important;
         }
+    }
+    .total-a-pagar{
+        font-size: 5.5vw !important;
+        margin-left: 2vw !important;
     }
 }
