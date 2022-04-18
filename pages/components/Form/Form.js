@@ -126,7 +126,6 @@ export default function Form2(){
         setMetodoPago(pago)
     }
 
-    console.log(payerInfo)
     return(
         <div className="container-form-compra">
             <form onSubmit={handleSubmit(handleFormSubmit)}>
