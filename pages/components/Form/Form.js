@@ -107,6 +107,7 @@ export default function Form2(){
     
     const CP = ()=>{
         if(payerInfo.address.zip_code === "") {
+            console.log("console");
             addShippment(0);
             setEnvio(0);
         }else if(payerInfo.address.zip_code ==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
@@ -152,31 +153,33 @@ export default function Form2(){
                 
                 <div className="input-span">
                     <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="emailId"  placeholder="Email" type="email" onChangeCapture={handleEmailData}
-                    {...register("emailId",{required:true,pattern:/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}/>
+                    {...register("emailId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
-                        {errors.MAIL?.type==="required"&&"Campo obligatorio"}
-                        {errors.MAIL?.type==="pattern"&&"Mail no valido"}
+                        {errors.emailId?.type==="required"&&"Campo obligatorio"}
+                        {errors.emailId?.type==="pattern"&&"Mail no valido"}
                     </span>
                 </div>
 
                 <div>
                     <div className="input-span">
-                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberAreaId"  placeholder="Código de area" type="number" onChangeCapture={handleAreaNumberPhoneData}
-                        {...register("numberAreaId",{required:true,minLength:2,maxLength:4})}/>
+                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberAreaId"  placeholder="Código de area" type="text" onChangeCapture={handleAreaNumberPhoneData}
+                        {...register("numberAreaId",{required:true,minLength:2,maxLength:4, pattern:/^[0-9]+/})}/>
                         <span className="text-danger text-small d-block mb-2">
                             {errors.numberAreaId?.type==="required"&&"Campo obligatorio"}
                             {errors.numberAreaId?.type==="minLength"&&"Cod. area sin 0"}
                             {errors.numberAreaId?.type==="maxLength"&&"Cod. area incorrecto"}
+                            {errors.numberAreaId?.type==="pattern"&&"Solo números"}
                         </span>
                     </div>
 
                     <div className="input-span">
-                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Número de telefono" type="number" onChangeCapture={handleNumberPhoneData}
-                        {...register("numberId",{required:true,minLength:6,maxLength:6})}/>
+                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Número de telefono" type="text" onChangeCapture={handleNumberPhoneData}
+                        {...register("numberId",{required:true,minLength:6,maxLength:6, pattern:/^[0-9]+/})}/>
                         <span className="text-danger text-small d-block mb-2">
                             {errors.numberId?.type==="required"&&"Campo obligatorio"}
                             {errors.numberId?.type==="minLength"&&"Numero incorrecto"}
                             {errors.numberId?.type==="maxLength"&&"Numero sin 15"}
+                            {errors.numberId?.type==="pattern"&&"Solo números"}
                         </span>
                     </div>
                 </div>
@@ -199,17 +202,20 @@ export default function Form2(){
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="streetNumberId"  placeholder="Número de calle" type="number" onChangeCapture={handleStreetNumberData}
-                    {...register("streetNumberId",{required:true})}/>
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="streetNumberId"  placeholder="Número de calle" type="text" onChangeCapture={handleStreetNumberData}
+                    {...register("streetNumberId",{required:true, pattern:/^[0-9]+/})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.streetNumberId?.type==="required"&&"Campo obligatorio"}
+                        {errors.streetNumberId?.type==="pattern"&&"Solo números"}
+
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="number" onChangeCapture={handleZipCoderData}
-                    {...register("zipCodeId",{required:true})}/>
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="text" onChangeCapture={handleZipCoderData}
+                    {...register("zipCodeId",{required:true, pattern:/^[0-9]+/})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.zipCodeId?.type==="required"&&"Campo obligatorio"}
+                        {errors.zipCodeId?.type==="pattern"&&"Solo números"}
                     </span>
                 </div>
                 {codigoPostal?
