@@ -27,7 +27,6 @@ export default function MercadoPagoButton ({payerInfo, formValidado}) {
         router.replace(preference.redirect);
 
       }).catch(err => {
-        //DISABLED BUTTON
         console.log("ERR",err);
       });    
 
@@ -37,20 +36,6 @@ export default function MercadoPagoButton ({payerInfo, formValidado}) {
             items:items,
             payer:payerInfo,
         }
-        
-
-        // var hasNumber = /\d/;   
-        // // MODIFICAR
-        // if(payerInfo.nombre === "" || payerInfo.apellido === "" || payerInfo.email === "" || payerInfo.phone === ""){
-        //     // history.push('/dialog/formDialogError');
-        // }else if ( hasNumber.test(payerInfo.nombre) || hasNumber.test(payerInfo.apellido)) {
-        //     // history.push('/dialog/formDialogError');
-        // } else if (!payerInfo.email.includes("@")) {
-        //     // history.push('/dialog/formDialogError');
-        // }else{
-        //     payMP(order);
-        //     // history.push('/dialog/endBuyDialog');
-        // }
         payMP(order);
     }
 
