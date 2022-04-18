@@ -8,7 +8,7 @@ import { UseCartContext } from "../../../context/CartContext";
 
 export default function Form2(){
 
-    const {addShippment,getTotalPrice} = useContext(UseCartContext);
+    const {addShippment,getTotalPriceForm} = useContext(UseCartContext);
 
     const {register, formState:{errors},handleSubmit} = useForm()
 
@@ -231,7 +231,7 @@ export default function Form2(){
                 :<></>}
 
                 <div className="total-a-pagar">
-                    <p>Total a pagar: ${getTotalPrice()}</p>
+                    <p>Total a pagar: ${getTotalPriceForm()}</p>
                 </div>
 
                 <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR FORMULARIO</button>

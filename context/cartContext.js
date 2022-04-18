@@ -58,21 +58,30 @@ export const CartContext = ({children}) => {
 
 
     //DEVUELVO EL PRECIO TOTAL DE LA COMPRA
-    const getTotalPrice = () =>{
-        const totalPrice = items.reduce(function(accumulator, currentValue) {
+    const getTotalPriceCart = () =>{
+        const totalPrice = items.filter(item=>item.id!=="envioprod").reduce(function(accumulator, currentValue) {
             return accumulator + (currentValue.unit_price * currentValue.quantity) ;
           },0);
-
         return totalPrice;
     }
 
+    const getTotalPriceForm = () =>{
+        const totalPrice = items.reduce(function(accumulator, currentValue) {
+            return accumulator + (currentValue.unit_price * currentValue.quantity) ;
+          },0);
+        return totalPrice;
+    }
 
     //DEVUELVO CANTIDAD DE TOTAL ITEMS EN CARRITO
     const getQuantity = () => {
         const quantity = items.reduce(function(accumulator, currentValue) {
-            return accumulator + currentValue.quantity ;
+            if(currentValue.id!=="envioprod"){
+                return accumulator + currentValue.quantity;
+            }else{
+                return accumulator + currentValue.quantity - 1;
+            }
           },0);
-
+        
         return quantity;
     }
 
@@ -90,7 +99,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{addShippment,items, clear,updateQuantityItem,addItem, getTotalPrice,getQuantity,getItems,removeItem}}>
+    return(<UseCartContext.Provider value={{addShippment,items, clear,updateQuantityItem,addItem, getTotalPriceCart,getTotalPriceForm,getQuantity,getItems,removeItem}}>
         {children}
     </UseCartContext.Provider>)
 

@@ -5,7 +5,7 @@ import Router from "next/router";
 
 
 export default function CartContainer () {
-    const {getItems, getTotalPrice, clear} = useContext(UseCartContext);
+    const {getItems, getTotalPriceCart, clear} = useContext(UseCartContext);
     const itemsCart = getItems();
 
     const [vaciar,setVaciar]=useState(false)
@@ -48,7 +48,7 @@ export default function CartContainer () {
                                 <div className="gridItem"><p>El costo de envio a Zarate, Campana y Lima es de $300 adicionales</p></div>
                                 <div className="gridItem"><p>El costo de envio a cualquier otra localidad de CABA o Buenos Aires es de $600 adicionales</p></div>
                             </div>
-                            <div className="gridItem total"><h3>Total: ${getTotalPrice()}</h3></div>
+                            <div className="gridItem total"><h3>Total: ${getTotalPriceCart()}</h3></div>
                         </div> 
                     </div>
                 </div>
