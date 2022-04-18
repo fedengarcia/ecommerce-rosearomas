@@ -3,14 +3,14 @@ import {UseCartContext} from '../../../context/CartContext';
 import { useRouter } from 'next/router';
 import Loader from '../Loader/Loader';
 
-export default function MercadoPagoButton ({payerInfo, formValidado}) {
+export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEspecial}) {
     const {items} = useContext(UseCartContext);
     const router = useRouter();
 
     const [mensaje,setMensaje]=useState(false)
 
 
-    const payMP = (newOrder) => fetch('http://localhost:3000/api/create_preference', {
+    const payMP = (newOrder,payerInfoEspecial) => fetch('http://localhost:3000/api/create_preference', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
           'Content-Type': 'application/json'
@@ -22,29 +22,45 @@ export default function MercadoPagoButton ({payerInfo, formValidado}) {
         return response.json();
       })
       .then(function(preference) {
-        console.log("PREFERENCE ID DE PAGO DE MP ---->", preference.id);
-        console.log("RUTA DE REDIRECCION AL PAGO DE MP ----->",preference.redirect)
-  
+        //ENVIO DE EMAIL CONFIRMANDO COMPRA
+        sendEmail(payerInfoEspecial)
+
         //REDIRECCION A CHECKOUTPRO
-        router.replace(preference.redirect);
+        // router.replace(preference.redirect);
+
 
       }).catch(err => {
         console.log("ERR",err);
       });    
 
 
-    const handleAccept = (payerInfo) => {
+    const sendEmail = (payerInfoEspecial) => fetch('http://localhost:3000/api/email', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payerInfoEspecial)
+    }).then((res) => {
+        console.log('Response received')
+        if (res.status === 200) {
+          console.log('Response succeeded!')
+        }
+    })
+    
+
+    const handleAccept = (payerInfo,payerInfoEspecial) => {
         const order = {
             items:items,
             payer:payerInfo,
         }
-        payMP(order);
+        payMP(order,payerInfoEspecial);
     }
 
 
     return(
         <>
-          {formValidado ? <button onClick={() => handleAccept(setMensaje(true),payerInfo)} className="boton-validar">FINALIZAR COMPRA</button> : <button onClick={() => handleAccept(payerInfo)} disabled className='boton-validar-sinHover'>Finalizar Compra</button>}
+          {formValidado ? <button onClick={() => handleAccept(setMensaje(true),payerInfo,payerInfoEspecial)} className="boton-validar">FINALIZAR COMPRA</button> : <button onClick={() => handleAccept(payerInfo,payerInfoEspecial)} disabled className='boton-validar-sinHover'>Finalizar Compra</button>}
           {mensaje?<><Loader></Loader></>:<></>}
         </>
     )
