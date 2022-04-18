@@ -34,10 +34,23 @@ export default function CartContainer () {
                         <div className="gridItem"><p>Precio</p></div>
                     </div>
                 </div>
+                <div className="line"></div>
+
                 {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
+                
+                {itemsCart.length === 0 ? <p>No tienes ningun producto en el carrito</p> : <></>} 
+                {/* <div className="line"></div> */}
+                
                 <div className="resume-cart-container">
-                    <div><p>TEXTO DONDE SE EXPLICA POR QUE EL AUMENTO DEL PRECIO POR EL ENVIO</p></div>
-                    <div><h3>Total: ${getTotalPrice()}</h3></div>
+                    <div className="grid-container">
+                        <div className="grid-row-cart">
+                            <div className="grid-info-adicional">
+                                <div className="gridItem"><p>El costo de envio a Zarate, Campana y Lima es de $300 adicionales</p></div>
+                                <div className="gridItem"><p>El costo de envio a cualquier otra localidad de CABA o Buenos Aires es de $600 adicionales</p></div>
+                            </div>
+                            <div className="gridItem total"><h3>Total: ${getTotalPrice()}</h3></div>
+                        </div> 
+                    </div>
                 </div>
                 {itemsCart.length === 0 ? <></> : <div className="cart-actions">
                     <button onClick={handleConfirmBuy}>Confirmar Compra</button>
