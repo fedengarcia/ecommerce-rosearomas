@@ -3,7 +3,7 @@ const mercadopago = require("mercadopago");
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
-	access_token: process.env.ACCESS_TOKEN_DEV //DEV or PROD
+	access_token: process.env.ACCESS_TOKEN_PROD //DEV or PROD
 
 });
 
@@ -31,7 +31,7 @@ export default function(req, res) {
 	return new Promise((resolve, reject) => {
 		let preference = {
 			items: req.body.items,
-			// payer: req.body.payer,
+			payer: req.body.payer,
 			back_urls: {
 				"success": "http://localhost:3000/feedback",
 				"failure": "http://localhost:3000/feedback",

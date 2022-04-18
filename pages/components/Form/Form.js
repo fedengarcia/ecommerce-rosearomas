@@ -73,9 +73,9 @@ export default function Form2(){
 
     // NUMERO DE TELEFONO
     const handleNumberPhoneData = (e) => {
-        setPayerInfo({...payerInfo,phone:{...phone,number: e.target.value}});
+        setPayerInfo({...payerInfo,phone:{...phone,number: Number(e.target.value)}});
         setPayerInfoEspecial({...payerInfoEspecial,phone:{...phone,number: e.target.value}});
-        setPhone({...phone,number: e.target.value})
+        setPhone({...phone,number: Number(e.target.value)})
     }
 
     // LOCALIDAD
@@ -92,9 +92,9 @@ export default function Form2(){
 
     // NUMERO DE CASA
     const handleStreetNumberData = (e) => {
-        setPayerInfo({...payerInfo, address:{...address, street_number:e.target.value}});
+        setPayerInfo({...payerInfo, address:{...address,street_number: Number(e.target.value)}});
         setPayerInfoEspecial({...payerInfoEspecial, address:{...address, street_number:e.target.value}});
-        setAddress({...address, street_number: e.target.value})
+        setAddress({...address, street_number: Number(e.target.value)})
     }
 
     // CODIGO POSTAL
@@ -126,6 +126,7 @@ export default function Form2(){
         setMetodoPago(pago)
     }
 
+    console.log(payerInfo)
     return(
         <div className="container-form-compra">
             <form onSubmit={handleSubmit(handleFormSubmit)}>

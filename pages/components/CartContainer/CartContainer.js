@@ -9,7 +9,7 @@ export default function CartContainer () {
     const itemsCart = getItems();
 
     const [vaciar,setVaciar]=useState(false)
-
+    
     const handleClearCart = (event) => {
         setVaciar(!vaciar)
         if(event){
@@ -17,11 +17,9 @@ export default function CartContainer () {
         }
     }
 
-
     const handleConfirmBuy = () => {
         Router.push({ pathname: '/FinalizarCompra'})
     }
-
     
     return (<div className="cart-container">
 
