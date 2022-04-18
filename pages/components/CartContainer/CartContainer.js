@@ -1,4 +1,4 @@
-import { useEffect, useState,useContext } from "react";
+import { useState,useContext } from "react";
 import { UseCartContext } from "../../../context/CartContext";
 import ItemCart from '../ItemCart/ItemCart';
 import Router from "next/router";
@@ -36,7 +36,7 @@ export default function CartContainer () {
                 </div>
                 <div className="line"></div>
 
-                {itemsCart && itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
+                {itemsCart.map(producto => <ItemCart key={producto.id} producto={producto}/>)}
                 
                 {itemsCart.length === 0 ? <p>No tienes ningun producto en el carrito</p> : <></>} 
                 {/* <div className="line"></div> */}
