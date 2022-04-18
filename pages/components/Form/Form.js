@@ -9,7 +9,7 @@ import { UseCartContext } from "../../../context/CartContext";
 export default function Form2(){
 
 
-    const {addShippment,getTotalPriceForm,removeItem} = useContext(UseCartContext);
+    const {addShippment,getTotalPriceForm,getTotalPriceCart} = useContext(UseCartContext);
 
     const {register, formState:{errors},handleSubmit} = useForm()
 
@@ -25,6 +25,8 @@ export default function Form2(){
 
     const [codigoPostal,setCodigoPostal]= useState(false)
     const [cambiarCodigo,setCambiarCodigo]=useState(false)
+
+    const [envio,setEnvio] = useState(0);
 
 
     useEffect(()=>{
@@ -105,14 +107,17 @@ export default function Form2(){
     
     const CP = ()=>{
         if(payerInfo.address.zip_code === "") {
-            console.log("console")
-            addShippment(0)
+            console.log("console");
+            addShippment(0);
+            setEnvio(0);
         }else if(payerInfo.address.zip_code ==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
-            setCodigoPostal(true)
-            addShippment(300)
+            setCodigoPostal(true);
+            addShippment(300);
+            setEnvio(300);
         }else{
-            setCodigoPostal(false)
-            addShippment(600)
+            setCodigoPostal(false);
+            addShippment(600);
+            setEnvio(600);
         }
     }
 
@@ -238,7 +243,9 @@ export default function Form2(){
                 :<></>}
 
                 <div className="total-a-pagar">
-                    <p>Total a pagar: $ {getTotalPriceForm()}</p>
+                    <p>Total a pagar: $ {getTotalPriceCart()}</p>
+                    <p>Precio de envio: $ {envio}</p>
+                    <p>Total: $ {getTotalPriceForm()}</p>
                 </div>
 
                 <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR FORMULARIO</button>
