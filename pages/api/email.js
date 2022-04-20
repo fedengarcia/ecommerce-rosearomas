@@ -12,8 +12,8 @@ export default function (req, res) {
         })
 
         const mailData = {
-        from: 'fedegarcia37@gmail.com',
-        to: 'federicogarcialivisky@gmail.com',
+        from: 'caromagnanihg@gmail.com',
+        to: 'caromagnanihg@gmail.com',
         subject: 'NUEVA COMPRA REALIZADA',
         text: "NUEVA COMPRA | Sent from: " + req.body.email,
         html: `
