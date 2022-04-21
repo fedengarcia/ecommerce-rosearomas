@@ -10,12 +10,12 @@ export default function TiendaContainer ({itemType, setItemType, setShowNotifica
     const [productos, setProductos] = useState([]);
     const [totalProductos, setTotalProductos] = useState(0);
     const [cargando,setCargando]=useState(false)
-    const [mostrarMas,setMostrarMas]=useState(2)
+    const [mostrarMas,setMostrarMas]=useState(3)
 
     useEffect(() => {
         console.log(itemType)
         setItemType(itemType)
-        setMostrarMas(2)
+        setMostrarMas(3)
         getProductos(itemType,mostrarMas).then(res => {
             setProductos(res);
             
