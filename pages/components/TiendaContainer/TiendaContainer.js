@@ -1,9 +1,43 @@
+import { useEffect, useState } from 'react';
 import CardProducto from '../CardProducto/CardProducto'
+import Image from "next/image";
+import { getProductos } from '../../../firebase/Firebase';
+import loading from "../../../public/loading_apple_wordpress.gif"
 
 
+export default function TiendaContainer ({itemType, setItemType, setShowNotification,setShowNotification2}) {
 
-export default function TiendaContainer ({productos, itemType, setShowNotification,setShowNotification2}) {
+    const [productos, setProductos] = useState([]);
+    const [totalProductos, setTotalProductos] = useState(0);
+    const [cargando,setCargando]=useState(false)
+    const [mostrarMas,setMostrarMas]=useState(2)
 
+    useEffect(() => {
+        console.log(itemType)
+        setItemType(itemType)
+        setMostrarMas(2)
+        getProductos(itemType,mostrarMas).then(res => {
+            setProductos(res);
+            
+        }).catch(err => console.log(err))
+        
+        getProductos(itemType,10000).then(res => {
+            setTotalProductos(res.length);
+            
+        }).catch(err => console.log(err))
+    }, [itemType]);
+
+
+    const cargarMasProductos=()=>{
+        setCargando(true)
+        getProductos(itemType,mostrarMas+1).then(res => {
+          setTimeout(()=>{
+            setMostrarMas(mostrarMas+1)
+            setProductos(res);
+            setCargando(false)
+          },1000)
+        }).catch(err => console.log(err))
+      }
 
     return (
         <div className="tienda-container">
@@ -19,6 +53,19 @@ export default function TiendaContainer ({productos, itemType, setShowNotificati
             
             </div>
             
+            {totalProductos>mostrarMas?
+                <>
+                {cargando?
+                    <div className="cargarMas loading">
+                        <Image src={loading} alt="loading" width={50} height={50}/>
+                    </div>
+                    :
+                    <div className="cargarMas">
+                        <p onClick={()=>{cargarMasProductos()}}>CARGAR MÁS</p>
+                    </div> 
+                } 
+                </>:<></>
+            }
         </div>
     )
 }

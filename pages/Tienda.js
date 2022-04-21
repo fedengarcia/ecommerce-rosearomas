@@ -3,29 +3,17 @@ import Header from "./components/Header/Header";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { getProductos, getProductosFiltrados } from "../firebase/Firebase";
 import TiendaContainer from "./components/TiendaContainer/TiendaContainer";
 import NavBarTienda from "./components/NavBar/NavBarTienda";
 import { useRouter } from 'next/router'
 import Notification from "./components/Notification/Notification";
-import Loader from "./components/Loader/Loader";
-import loading from "../public/loading_apple_wordpress.gif"
 
 function Tienda({typeProd}) {
 
-  const [productos, setProductos] = useState([]);
   const [itemType, setItemType] = useState("Todo");
   const [showNotification,setShowNotification] = useState(false)
   const [showNotification2,setShowNotification2] = useState(false)
-  
-  const [totalProductos, setTotalProductos] = useState(0);
 
-  const [mostrarMas,setMostrarMas]=useState(2)
-  const [cargando,setCargando]=useState(false)
-
-  // const handleChange = (event, newValue) => {
-  //   setItemType(newValue);
-  // };
   
   const router=useRouter()
 
@@ -35,69 +23,13 @@ function Tienda({typeProd}) {
     }
   },[router])
 
-  useEffect(() => {
-
-    getProductos(itemType,mostrarMas).then(res => {
-      setProductos(res);
-      
-    }).catch(err => console.log(err))
-    
-    getProductos(itemType,10000).then(res => {
-      setTotalProductos(res.length);
-      
-    }).catch(err => console.log(err))
-  }, []);
-
-  const cargarMasProductos=()=>{
-    setCargando(true)
-    getProductos(itemType,mostrarMas+1).then(res => {
-      setTimeout(()=>{
-        setMostrarMas(mostrarMas+1)
-        setProductos(res);
-        setCargando(false)
-      },1000)
-    }).catch(err => console.log(err))
-  }
-
-  const ItemType = (type)=>{
-    setItemType(type)
-    setMostrarMas(2)
-    getProductos(type,mostrarMas).then(res => {
-      setProductos(res);
-      
-    }).catch(err => console.log(err))
-    
-    getProductos(type,10000).then(res => {
-      setTotalProductos(res.length);
-      
-    }).catch(err => console.log(err))
-  }
-
 
   return (<>
     <Header />
 
-        <NavBarTienda setItemType={ItemType}/>
+        <NavBarTienda setItemType={setItemType}/>
 
-        <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
-        
-        {totalProductos>mostrarMas?
-          <>
-          {cargando?
-            <>
-              <div className="cargarMas loading">
-                <Image src={loading} alt="loading" width={50} height={50}/>
-              </div>
-            </>
-            :
-            <>
-              <div className="cargarMas">
-                <p onClick={()=>{cargarMasProductos()}}>CARGAR MÁS</p>
-              </div> 
-            </>
-          } 
-          </>:<></>
-        }
+        <TiendaContainer itemType={itemType} setItemType={setItemType} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
         
         <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>
