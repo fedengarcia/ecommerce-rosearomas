@@ -41,7 +41,7 @@ export const getCarouselFraganciaSMLImg = async() => {
 
 export const getProductos = async(limite) =>{
   
-  const productosDocs = await getDocs(query(collection(db,"Productos"),orderBy("Nombre"),limit(limite)));
+  const productosDocs = await getDocs(query(collection(db,"Productos"),limit(limite)));
   const productos = productosDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}})
   return(productos)
 }
@@ -53,7 +53,7 @@ const storage=getStorage(app)
 export const addStorage=async(titulo,carpeta,imagen)=>{
   
   const storageRef= ref(storage,`${carpeta}/${titulo}.jpg`)
-  uploadBytes(storageRef,imagen).then((snapshot)=>{
+  uploadBytes(storageRef,imagen).then(()=>{
     console.log(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
   })
 
