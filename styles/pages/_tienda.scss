@@ -22,4 +22,12 @@
         height: 70vw;
     }
 }
-
+.cargarMas{
+    text-align: center;
+    color: #084444;
+    cursor: pointer;
+    margin-top: 2vw;
+    &:hover{
+        text-decoration: underline;
+    }
+}

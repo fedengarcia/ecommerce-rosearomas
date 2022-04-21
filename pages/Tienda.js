@@ -62,7 +62,7 @@ function Tienda({typeProd}) {
         
         {totalProductos>mostrarMas?
           <>
-          <div>
+          <div className="cargarMas">
             <p onClick={()=>{cargarMasProductos()}}>CARGAR MÁS</p>
           </div>  
           </>
