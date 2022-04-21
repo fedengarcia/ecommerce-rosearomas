@@ -45,6 +45,7 @@ export default function CartContainer () {
                             <div className="grid-info-adicional">
                                 <div className="gridItem"><p>El costo de envio a Zarate, Campana y Lima es de $300 adicionales</p></div>
                                 <div className="gridItem"><p>El costo de envio a cualquier otra localidad de CABA o Buenos Aires es de $600 adicionales</p></div>
+                                <div className="gridItem"><p>El envio tarda aproximadamente 10 dias. <br/>En casos especiales, la responsable se pondra en contacto con usted.</p></div>
                             </div>
                             <div className="gridItem total"><h3>Total: ${getTotalPriceCart()}</h3></div>
                         </div> 

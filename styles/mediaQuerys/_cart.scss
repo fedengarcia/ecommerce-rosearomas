@@ -87,14 +87,17 @@
     .grid-info-adicional{
         p{
             font-size: 2.8vw !important;
-            padding-right: 5vw;
-            padding-left: 5vw;
+            margin-top: 5vw !important;
         }
     }
     .total{
         h3{
             font-size: 5vw !important;
         }
+    }
+    .resume-cart-container{
+        margin-left: 0.2em !important;
+        margin-right: 1em !important;
     }
 }
 @media (max-width:500px){
@@ -130,13 +133,13 @@
             }
         }
     }
-}
-@media (max-width:400px){
-    .grid-info-adicional{
+        .grid-info-adicional{
         p{
-            font-size: 3.4vw !important;
+            font-size: 4vw !important;
         }
     }
+}
+@media (max-width:400px){
     .total{
         h3{
             font-size: 6vw !important;
