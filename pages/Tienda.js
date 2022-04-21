@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { getProductos } from "../firebase/Firebase";
+import { getProductos, getProductosFiltrados } from "../firebase/Firebase";
 import TiendaContainer from "./components/TiendaContainer/TiendaContainer";
 import NavBarTienda from "./components/NavBar/NavBarTienda";
 import { useRouter } from 'next/router'
@@ -19,6 +19,7 @@ function Tienda({typeProd}) {
   const [showNotification2,setShowNotification2] = useState(false)
   
   const [totalProductos, setTotalProductos] = useState(0);
+
   const [mostrarMas,setMostrarMas]=useState(2)
   const [cargando,setCargando]=useState(false)
 
@@ -36,12 +37,12 @@ function Tienda({typeProd}) {
 
   useEffect(() => {
 
-    getProductos(mostrarMas).then(res => {
+    getProductos(itemType,mostrarMas).then(res => {
       setProductos(res);
       
     }).catch(err => console.log(err))
     
-    getProductos(10000).then(res => {
+    getProductos(itemType,10000).then(res => {
       setTotalProductos(res.length);
       
     }).catch(err => console.log(err))
@@ -49,7 +50,7 @@ function Tienda({typeProd}) {
 
   const cargarMasProductos=()=>{
     setCargando(true)
-    getProductos(mostrarMas+1).then(res => {
+    getProductos(itemType,mostrarMas+1).then(res => {
       setTimeout(()=>{
         setMostrarMas(mostrarMas+1)
         setProductos(res);
@@ -58,10 +59,25 @@ function Tienda({typeProd}) {
     }).catch(err => console.log(err))
   }
 
+  const ItemType = (type)=>{
+    setItemType(type)
+    setMostrarMas(2)
+    getProductos(type,mostrarMas).then(res => {
+      setProductos(res);
+      
+    }).catch(err => console.log(err))
+    
+    getProductos(type,10000).then(res => {
+      setTotalProductos(res.length);
+      
+    }).catch(err => console.log(err))
+  }
+
+
   return (<>
     <Header />
 
-        <NavBarTienda setItemType={setItemType}/>
+        <NavBarTienda setItemType={ItemType}/>
 
         <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
         
