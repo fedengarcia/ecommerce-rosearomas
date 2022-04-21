@@ -39,24 +39,13 @@ export const getCarouselFraganciaSMLImg = async() => {
 }
 
 
-export const getProductos = async(cat,limite) =>{
+export const getProductos = async(limite) =>{
   
-  if(cat==="Todo"){
-    var productosDocs = await getDocs(query(collection(db,"Productos"),limit(limite)));
-  }else{
-    var productosDocs = await getDocs(query(collection(db,"Productos"),where("Categoria","==",cat),limit(limite)));
-  }
+  const productosDocs = await getDocs(query(collection(db,"Productos"),limit(limite)));
   const productos = productosDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}})
-  
   return(productos)
 }
 
-// export const getProductosFiltrados = async(cat,limite) =>{
-  
-//   const productosDocs2 = await getDocs(query(collection(db,"Productos"),where("Categoria","==",cat),limit(limite)));
-//   const productos2 = productosDocs2.docs.map(doc=>{return{id:doc.id,...doc.data()}})
-//   return(productos2)
-// }
 
 // DASHBOARD
 const storage=getStorage(app)

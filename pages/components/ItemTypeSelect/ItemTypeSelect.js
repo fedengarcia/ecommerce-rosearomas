@@ -15,7 +15,7 @@ export default function ItemTypeSelect ({setType}){
         <option value="none">Seleccionar Fragancia</option>
         {carouselFragancia.map((fragancia)=>{
           return(
-            fragancia.stock?<><option value={fragancia.Nombre} key={fragancia.Nombre}>{fragancia.Nombre}</option></>:<></>
+            fragancia.stock?<option value={fragancia.Nombre} key={fragancia.Nombre}>{fragancia.Nombre}</option>:<></>
           )
         }
         )}
