@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
-import { collection, getDocs, orderBy, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, where, query } from "firebase/firestore";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
 const firebaseConfig = {
@@ -25,7 +25,7 @@ export const getCarouselImg = async() => {
 
 export const getCarouselFraganciaImg = async() => {
   
-  const carouselFraganciasDocs = await getDocs(collection(db, "CarouselFragancias"));
+  const carouselFraganciasDocs = await getDocs(query(collection(db,"CarouselFragancias"),orderBy("Nombre")));
   const carouselFraganciasImg = carouselFraganciasDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}});
   return(carouselFraganciasImg);
 }
@@ -33,7 +33,7 @@ export const getCarouselFraganciaImg = async() => {
 //Cambian las fotos para el responsive
 export const getCarouselFraganciaSMLImg = async() => {
   
-  const carouselFraganciasSMLDocs = await getDocs(collection(db,"CarouselFraganciasSML"),orderBy("Nombre"));
+  const carouselFraganciasSMLDocs = await getDocs(query(collection(db,"CarouselFraganciasSML"),orderBy("Nombre")));
   const carouselFraganciasSMLImg = carouselFraganciasSMLDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}});
   return(carouselFraganciasSMLImg);
 }
@@ -41,7 +41,7 @@ export const getCarouselFraganciaSMLImg = async() => {
 
 export const getProductos = async() =>{
   
-  const productosDocs = await getDocs(collection(db,"Productos"));
+  const productosDocs = await getDocs(query(collection(db,"Productos"),orderBy("Nombre")));
   const productos = productosDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}})
   return(productos)
 }

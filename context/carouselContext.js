@@ -21,7 +21,7 @@ export const CarouselContext = ({children}) => {
             setCarouselFraganciaSMLImg(res);
         })
     }, []);
-
+    
     return(
         <crlContext.Provider value={{carousel, carouselFragancia, carouselFraganciaSML}}>
             {children}
