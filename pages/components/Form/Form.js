@@ -95,6 +95,17 @@ export default function Form2(){
         setPayerInfo({...payerInfo, address:{...address,street_number: Number(e.target.value)}});
         setPayerInfoEspecial({...payerInfoEspecial, address:{...address, street_number:e.target.value}});
         setAddress({...address, street_number: Number(e.target.value)})
+
+    }
+
+    // PISO
+    const handlePiso = (e) => {
+        setPayerInfoEspecial({...payerInfoEspecial, piso:e.target.value});
+    }
+    
+    // DEPARTAMENTO
+    const handleDepartamento = (e) => {
+        setPayerInfoEspecial({...payerInfoEspecial, departamento:e.target.value});
     }
 
     // CODIGO POSTAL
@@ -208,6 +219,14 @@ export default function Form2(){
                         {errors.streetNumberId?.type==="pattern"&&"Solo números"}
 
                     </span>
+                </div>
+                <div className="input-span">
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="piso"  placeholder="Piso" type="text" onChangeCapture={handlePiso}
+                    {...register("piso")}/>
+                </div>
+                <div className="input-span">
+                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="departamento"  placeholder="Departamento" type="text" onChangeCapture={handleDepartamento}
+                    {...register("departamento")}/>
                 </div>
                 <div className="input-span">
                     <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="text" onChangeCapture={handleZipCoderData}

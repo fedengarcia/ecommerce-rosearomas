@@ -13,7 +13,6 @@ export default function TiendaContainer ({itemType, setItemType, setShowNotifica
     const [mostrarMas,setMostrarMas]=useState(3)
 
     useEffect(() => {
-        console.log(itemType)
         setItemType(itemType)
         setMostrarMas(3)
         getProductos(itemType,mostrarMas).then(res => {
