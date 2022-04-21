@@ -44,7 +44,8 @@ function Tienda({typeProd}) {
               <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
           </a>
         </div>
-    <Footer/>
+        
+        <Footer/>
     </>
   );
 }
