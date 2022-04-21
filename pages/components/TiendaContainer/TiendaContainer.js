@@ -18,6 +18,7 @@ export default function TiendaContainer ({productos, itemType, setShowNotificati
                 :  productos.filter(prod => prod.Categoria === itemType).map(producto => <CardProducto producto={producto} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2} key={producto.id}></CardProducto>)}
             
             </div>
+            
         </div>
     )
 }

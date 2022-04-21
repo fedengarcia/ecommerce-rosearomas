@@ -12,12 +12,15 @@ import Loader from "./components/Loader/Loader";
 
 
 function Tienda({typeProd}) {
+
+  const [mostrarMas,setMostrarMas]=useState(2)
   const [productos, setProductos] = useState([]);
   const [itemType, setItemType] = useState("Todo");
   const [showNotification,setShowNotification] = useState(false)
   const [showNotification2,setShowNotification2] = useState(false)
-
   
+  const [totalProductos, setTotalProductos] = useState(0);
+
   // const handleChange = (event, newValue) => {
   //   setItemType(newValue);
   // };
@@ -32,14 +35,23 @@ function Tienda({typeProd}) {
 
   useEffect(() => {
 
-    getProductos().then(res => {
+    getProductos(mostrarMas).then(res => {
       setProductos(res);
       
     }).catch(err => console.log(err))
     
-
+    getProductos(10000).then(res => {
+      setTotalProductos(res.length);
+      
+    }).catch(err => console.log(err))
   }, []);
 
+  const cargarMasProductos=()=>{
+    setMostrarMas(mostrarMas+5)
+    getProductos(mostrarMas+5).then(res => {
+      setProductos(res);
+    }).catch(err => console.log(err))
+  }
 
   return (<>
     <Header />
@@ -47,6 +59,16 @@ function Tienda({typeProd}) {
         <NavBarTienda setItemType={setItemType}/>
 
         <TiendaContainer itemType={itemType} productos={productos} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
+        
+        {totalProductos>mostrarMas?
+          <>
+          <div>
+            <p onClick={()=>{cargarMasProductos()}}>CARGAR MÁS</p>
+          </div>  
+          </>
+          :
+          <></>
+        }
         
         <div className="notification-container" style={showNotification ? {zIndex:'5'} : null}>
           <Notification showNotification={showNotification} text={"Recuerda seleccionar una fragancia"}/>

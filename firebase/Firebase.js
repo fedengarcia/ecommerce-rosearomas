@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore";
+import {getFirestore, limit} from "firebase/firestore";
 import { collection, getDocs, orderBy, where, query } from "firebase/firestore";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
@@ -39,9 +39,9 @@ export const getCarouselFraganciaSMLImg = async() => {
 }
 
 
-export const getProductos = async() =>{
+export const getProductos = async(limite) =>{
   
-  const productosDocs = await getDocs(query(collection(db,"Productos"),orderBy("Nombre")));
+  const productosDocs = await getDocs(query(collection(db,"Productos"),orderBy("Nombre"),limit(limite)));
   const productos = productosDocs.docs.map(doc=>{return{id:doc.id,...doc.data()}})
   return(productos)
 }
