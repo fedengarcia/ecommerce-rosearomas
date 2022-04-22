@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         <title>Rosé Aromas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta charSet="utf-8"/>
-        <meta name="description" content="Sitio web de un emprendimiento gastronómico del rubro hamburguesas. Zárate, Buenos Aires"/>
+        <meta name="description" content="Sitio web de Rosé Aromas, emprendimiento de Zárate. Dedicado a la venta de velas, homesprays, difusores y bombones aromatizados."/>
 	      <meta name="keywords" content="aromas, vela, difusor, bombon, homespray, perfume, decoracion, emprendimiento, rose"/>
         <link rel='icon' href='/vela.png' type='image/png'/>
       </Head>
