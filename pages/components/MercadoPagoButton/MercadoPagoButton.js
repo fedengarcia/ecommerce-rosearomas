@@ -34,19 +34,16 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
       });    
 
 
-    const sendEmail = (payerInfoEspecial) => fetch('http://localhost:3000/api/email', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payerInfoEspecial)
-    }).then((res) => {
-        console.log('Response received')
-        if (res.status === 200) {
-          console.log('Response succeeded!')
-        }
-    })
+      const sendEmail = () => {
+        // e.preventDefault();
+        emailjs.send('service_jb6mijg', 'template_30x548n', payerInfoEspecial,'iAGffvAUjlmg0kSrt')
+            .then(function(response) {
+            console.log(payerInfoEspecial)
+            console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+            console.log('FAILED...', error);
+        });
+    };
     
 
     const handleAccept = (payerInfo,payerInfoEspecial) => {

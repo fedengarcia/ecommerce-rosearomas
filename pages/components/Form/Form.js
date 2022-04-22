@@ -1,14 +1,16 @@
-import React,{useState, useContext} from "react";
+import React,{useState, useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import TextField from '@material-ui/core/TextField';
 import MercadoPagoButton from '../MercadoPagoButton/MercadoPagoButton';
 import Link from 'next/link';
 import { useEffect } from "react";
 import { UseCartContext } from "../../../context/CartContext";
+import emailjs from '@emailjs/browser';
+
 
 export default function Form2(){
 
-
+    const form = useRef();
     const {addShippment,getTotalPriceForm,getTotalPriceCart} = useContext(UseCartContext);
 
     const {register, formState:{errors},handleSubmit} = useForm()
@@ -28,7 +30,16 @@ export default function Form2(){
 
     const [envio,setEnvio] = useState(0);
 
-
+    const sendEmail = () => {
+        // e.preventDefault();
+        emailjs.send('service_jb6mijg', 'template_30x548n', payerInfoEspecial,'iAGffvAUjlmg0kSrt')
+            .then(function(response) {
+            console.log(payerInfoEspecial)
+            console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+            console.log('FAILED...', error);
+        });
+    };
     useEffect(()=>{
         setFormValidado(false)
         if(cambiarCodigo){
@@ -40,9 +51,10 @@ export default function Form2(){
         addShippment(0)
     },[])
     
-    const handleFormSubmit = (data) => {
+    const handleFormSubmit = () => {
         setRespuesta(true)
         setFormValidado(true);
+        // sendEmail();
     }   
 
 
@@ -100,12 +112,17 @@ export default function Form2(){
 
     // PISO
     const handlePiso = (e) => {
-        setPayerInfoEspecial({...payerInfoEspecial, piso:e.target.value});
+        setPayerInfoEspecial({...payerInfoEspecial, street_piso:e.target.value});
     }
     
     // DEPARTAMENTO
     const handleDepartamento = (e) => {
-        setPayerInfoEspecial({...payerInfoEspecial, departamento:e.target.value});
+        setPayerInfoEspecial({...payerInfoEspecial, street_departamento:e.target.value});
+    }
+
+    // DEPARTAMENTO
+    const handleMetodoPago = (pago) => {
+        setPayerInfoEspecial({...payerInfoEspecial, metodo_pago:pago});
     }
 
     // CODIGO POSTAL
@@ -118,7 +135,6 @@ export default function Form2(){
     
     const CP = ()=>{
         if(payerInfo.address.zip_code === "") {
-            console.log("console");
             addShippment(0);
             setEnvio(0);
         }else if(payerInfo.address.zip_code ==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
@@ -135,6 +151,7 @@ export default function Form2(){
     // METODO DE PAGO
     const handlePago=(pago)=>{
         setMetodoPago(pago)
+        handleMetodoPago(pago);
     }
 
     return(
@@ -146,7 +163,7 @@ export default function Form2(){
                 </div>
 
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"  color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleNameData}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleNameData}
                     {...register("nameId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.nameId?.type==="required"&&"Campo obligatorio"}
@@ -154,7 +171,7 @@ export default function Form2(){
                 </div>
 
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="surnameId"  placeholder="Apellido" type="text" onChangeCapture={handleSurnameData}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="surnameId"  placeholder="Apellido" type="text" onChangeCapture={handleSurnameData}
                     {...register("surnameId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.surnameId?.type==="required"&&"Campo obligatorio"}
@@ -162,7 +179,7 @@ export default function Form2(){
                 </div>
                 
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="emailId"  placeholder="Email" type="email" onChangeCapture={handleEmailData}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="emailId"  placeholder="Email" type="email" onChangeCapture={handleEmailData}
                     {...register("emailId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.emailId?.type==="required"&&"Campo obligatorio"}
@@ -172,7 +189,7 @@ export default function Form2(){
 
                 <div>
                     <div className="input-span">
-                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberAreaId"  placeholder="Código de area" type="text" onChangeCapture={handleAreaNumberPhoneData}
+                        <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="numberAreaId"  placeholder="Código de area" type="text" onChangeCapture={handleAreaNumberPhoneData}
                         {...register("numberAreaId",{required:true,minLength:2,maxLength:4, pattern:/^[0-9]+/})}/>
                         <span className="text-danger text-small d-block mb-2">
                             {errors.numberAreaId?.type==="required"&&"Campo obligatorio"}
@@ -183,7 +200,7 @@ export default function Form2(){
                     </div>
 
                     <div className="input-span">
-                        <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="numberId"  placeholder="Número de telefono" type="text" onChangeCapture={handleNumberPhoneData}
+                        <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="numberId"  placeholder="Número de telefono" type="text" onChangeCapture={handleNumberPhoneData}
                         {...register("numberId",{required:true,minLength:6,maxLength:6, pattern:/^[0-9]+/})}/>
                         <span className="text-danger text-small d-block mb-2">
                             {errors.numberId?.type==="required"&&"Campo obligatorio"}
@@ -198,21 +215,21 @@ export default function Form2(){
                     <h2>DATOS DE ENVIO</h2>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="localidad"  placeholder="Localidad (Solo localidades de BsAS)" type="text" onChangeCapture={handleLocalidad}
+                    <TextField className="form-input" size="medium" autoComplete="off"  color="secondary"  id="localidad"  placeholder="Localidad (Solo localidades de BsAS)" type="text" onChangeCapture={handleLocalidad}
                     {...register("localidad",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.localidad?.type==="required"&&"Campo obligatorio"}
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="streetId"  placeholder="Calle" type="text" onChangeCapture={handleStreetNameData}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="streetId"  placeholder="Calle" type="text" onChangeCapture={handleStreetNameData}
                     {...register("streetId",{required:true})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.streetId?.type==="required"&&"Campo obligatorio"}
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="streetNumberId"  placeholder="Número de calle" type="text" onChangeCapture={handleStreetNumberData}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="streetNumberId"  placeholder="Número de calle" type="text" onChangeCapture={handleStreetNumberData}
                     {...register("streetNumberId",{required:true, pattern:/^[0-9]+/})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.streetNumberId?.type==="required"&&"Campo obligatorio"}
@@ -221,15 +238,15 @@ export default function Form2(){
                     </span>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="piso"  placeholder="Piso" type="text" onChangeCapture={handlePiso}
+                    <TextField className="form-input" size="medium" autoComplete="off"  color="secondary"  id="piso"  placeholder="Piso" type="text" onChangeCapture={handlePiso}
                     {...register("piso")}/>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="departamento"  placeholder="Departamento" type="text" onChangeCapture={handleDepartamento}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="departamento"  placeholder="Departamento" type="text" onChangeCapture={handleDepartamento}
                     {...register("departamento")}/>
                 </div>
                 <div className="input-span">
-                    <TextField className="form-input" size="medium" autoComplete="off"   color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="text" onChangeCapture={handleZipCoderData}
+                    <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="zipCodeId"  placeholder="Código Postal" type="text" onChangeCapture={handleZipCoderData}
                     {...register("zipCodeId",{required:true, pattern:/^[0-9]+/})}/>
                     <span className="text-danger text-small d-block mb-2">
                         {errors.zipCodeId?.type==="required"&&"Campo obligatorio"}
