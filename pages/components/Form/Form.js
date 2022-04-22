@@ -30,16 +30,7 @@ export default function Form2(){
 
     const [envio,setEnvio] = useState(0);
 
-    const sendEmail = () => {
-        // e.preventDefault();
-        emailjs.send('service_jb6mijg', 'template_30x548n', payerInfoEspecial,'iAGffvAUjlmg0kSrt')
-            .then(function(response) {
-            console.log(payerInfoEspecial)
-            console.log('SUCCESS!', response.status, response.text);
-            }, function(error) {
-            console.log('FAILED...', error);
-        });
-    };
+
     useEffect(()=>{
         setFormValidado(false)
         if(cambiarCodigo){
@@ -54,7 +45,6 @@ export default function Form2(){
     const handleFormSubmit = () => {
         setRespuesta(true)
         setFormValidado(true);
-        // sendEmail();
     }   
 
 

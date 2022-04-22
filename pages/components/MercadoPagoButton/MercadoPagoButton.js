@@ -34,7 +34,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
       });    
 
 
-      const sendEmail = () => {
+      const sendEmail = (payerInfoEspecial) => {
         // e.preventDefault();
         emailjs.send('service_jb6mijg', 'template_30x548n', payerInfoEspecial,'iAGffvAUjlmg0kSrt')
             .then(function(response) {
@@ -47,11 +47,19 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
     
 
     const handleAccept = (payerInfo,payerInfoEspecial) => {
-        const order = {
+        if(payerInfoEspecial.metodo_pago === "mercadopago"){
+          const orderMp = {
             items:items,
             payer:payerInfo,
         }
-        payMP(order,payerInfoEspecial);
+          payMP(orderMp,payerInfoEspecial);
+        }else{
+          const orderEfectivo = {
+            items:items,
+            payer:payerInfoEspecial,
+        }
+          sendEmail(orderEfectivo);
+        }
     }
 
 
