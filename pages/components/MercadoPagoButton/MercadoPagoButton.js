@@ -2,9 +2,10 @@ import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../context/CartContext';
 import { useRouter } from 'next/router';
 import Loader from '../Loader/Loader';
+import { addNewOrder } from '../../../firebase/Firebase';
 
 export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEspecial}) {
-    const {items} = useContext(UseCartContext);
+    const {items,clear} = useContext(UseCartContext);
     const router = useRouter();
 
     const [mensaje,setMensaje]=useState(false)
@@ -35,7 +36,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
 
 
       const sendEmail = (payerInfoEspecial) => {
-        // e.preventDefault();
+        
         emailjs.send('service_jb6mijg', 'template_30x548n', payerInfoEspecial,'iAGffvAUjlmg0kSrt')
             .then(function(response) {
             console.log(payerInfoEspecial)
@@ -47,18 +48,24 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
     
 
     const handleAccept = (payerInfo,payerInfoEspecial) => {
+        
         if(payerInfoEspecial.metodo_pago === "mercadopago"){
           const orderMp = {
             items:items,
             payer:payerInfo,
-        }
+          }
           payMP(orderMp,payerInfoEspecial);
         }else{
-          const orderEfectivo = {
+          // FUNCIONANDO
+          const order = {
             items:items,
-            payer:payerInfoEspecial,
-        }
-          sendEmail(orderEfectivo);
+            payerInfoEspecial:payerInfoEspecial,
+          }
+          addNewOrder(order);
+          clear();
+          sendEmail(payerInfoEspecial);
+          router.replace("http://localhost:3000/StatusCompra?keyword=success");
+
         }
     }
 
