@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {getFirestore, limit} from "firebase/firestore";
-import { collection, getDocs, orderBy, where, query } from "firebase/firestore";
+import { collection, getDocs, orderBy, where, query, addDoc, Timestamp } from "firebase/firestore";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
 const firebaseConfig = {
@@ -38,7 +38,7 @@ export const getCarouselFraganciaSMLImg = async() => {
   return(carouselFraganciasSMLImg);
 }
 
-
+//OBTENER PRODUCTOS
 export const getProductos = async(cat,limite) =>{
   if(cat==="Todo"){
     var productosDocs = await getDocs(query(collection(db,"Productos"),limit(limite)));
@@ -60,4 +60,16 @@ export const addStorage=async(titulo,carpeta,imagen)=>{
     console.log(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
   })
 
+}
+
+
+//CARGAR UNA NUEVA ORDEN DE COMPRA
+export const addNewOrder = async (order) => {
+
+  const newOrder = {
+      items: order.items,
+      payer: order.payerInfoEspecial,
+      // date: Timestamp.toDate(),
+  };
+  await addDoc(collection(db, "Orders"), newOrder);
 }
