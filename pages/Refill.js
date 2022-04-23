@@ -15,7 +15,7 @@ function Refill() {
           <p>Este servicio consiste en el rellenado de recipientes con cera de soja de origen vegetal y esencias concentradas. 
             Es una tecnica amigable con el planeta ya que se reutilizan los envases luego de terminar la vela, y de esta forma, se reduce la cantidad de recipientes.
           </p>
-          <p className="puntos-refill">Puntos necesarios:</p>
+          <p className="puntos-refill">Requisitos:</p>
           <ul>
             <li>- Contar con un envase</li>
             <li>- Envase resistente a alta temperatura</li>

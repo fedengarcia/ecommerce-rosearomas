@@ -271,12 +271,34 @@ export default function Form2(){
                             {errors.pago?.type==="required"&&"Campo obligatorio"}
                         </span>
                     </div>
-                :<></>}
+                :
+                    <div className="radioButton">
+                        <label htmlFor="mercadopago">
+                            <input
+                                {...register("pago",{required:true})}
+                                type="radio"
+                                name="pago"
+                                value="mercadopago"
+                                id="mercadopago"
+                                onClick={()=>handlePago("mercadopago")}
+                            />
+                            MERCADOPAGO
+                        </label>
+                        <span className="text-danger text-small d-block mb-2">
+                            {errors.pago?.type==="required"&&"Campo obligatorio"}
+                        </span>
+                    </div>
+                }
 
                 <div className="total-a-pagar">
                     <p>Total a pagar: $ {getTotalPriceCart()}</p>
                     <p>Precio de envio: $ {envio}</p>
-                    <p>Total: $ {getTotalPriceForm()}</p>
+                    {metodoPago==="mercadopago"?
+                        <p>Impuestos por mercadopago: $ {(getTotalPriceForm())*5/100}</p>
+                        :
+                        <></>
+                    }
+                    <p>Total: $ {(getTotalPriceForm())+(getTotalPriceForm())*5/100}</p>
                 </div>
 
                 <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR FORMULARIO</button>
