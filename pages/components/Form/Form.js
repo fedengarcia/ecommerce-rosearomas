@@ -294,11 +294,16 @@ export default function Form2(){
                     <p>Total a pagar: $ {getTotalPriceCart()}</p>
                     <p>Precio de envio: $ {envio}</p>
                     {metodoPago==="mercadopago"?
-                        <p>Impuestos por mercadopago: $ {(getTotalPriceForm())*5/100}</p>
+                        <>
+                            <p>Impuestos por mercadopago: $ {(getTotalPriceForm())*5/100}</p>
+                            <p>Total: $ {(getTotalPriceForm())+(getTotalPriceForm())*5/100}</p>
+                        </>
                         :
-                        <></>
+                        <>
+                            <p>Total: $ {(getTotalPriceForm())}</p>
+                        </>
                     }
-                    <p>Total: $ {(getTotalPriceForm())+(getTotalPriceForm())*5/100}</p>
+                    
                 </div>
 
                 <button className="boton-validar" onClick={()=>{setRespuesta2(false)}}>VALIDAR FORMULARIO</button>
