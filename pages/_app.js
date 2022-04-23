@@ -3,8 +3,8 @@ import { CarouselContext } from '../context/carouselContext';
 import {CartContext} from '../context/CartContext';
 import Head from 'next/head';
 import Script from "next/script";
-function MyApp({ Component, pageProps }) {
 
+function MyApp({ Component, pageProps }) {
 
   return (
     <>
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
         <meta charSet="utf-8"/>
         <meta name="description" content="Sitio web de Rosé Aromas, emprendimiento de Zárate. Dedicado a la venta de velas, homesprays, difusores y bombones aromatizados."/>
 	      <meta name="keywords" content="aromas, vela, difusor, bombon, homespray, perfume, decoracion, emprendimiento, rose"/>
-        <link rel='icon' href='/vela.png' type='image/png'/>
+        <link rel='icon' href='https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/vela.png?alt=media&token=572785b7-faeb-4d7e-acf1-235f966a14ef' type='image/png'/>
       </Head>
       
       <CarouselContext>
