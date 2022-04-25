@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CarouselInicio from "./components/Carousel/CarouselInicio";
 import banner_1 from "../public/banner/banner.png";
 import banner_2 from "../public/banner/banner2.png";
@@ -11,6 +11,23 @@ import ProductosInicio from './components/ProductosInicio/ProductosInicio';
 
 export default function Home() {
   const [carga,setCarga]=useState(true)
+
+
+  useEffect(() => {
+
+      fetch(`https://api.mercadopago.com/v1/payment_methods?public_key=APP_USR-4ef62021-d9ac-4ecc-872e-241e604f540b`, {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }).then(function(response) {
+        console.log("PAGOS",response)
+      }).catch(err => {
+        console.log("ERR",err);
+      });
+
+  }, []);
 
     setTimeout(() => {
         setCarga(false)

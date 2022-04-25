@@ -7,25 +7,6 @@ mercadopago.configure({
 
 });
 
-// "items": [
-    // {
-    //   "title": "Dummy Title",
-    //   "description": "Dummy description",
-    //   "picture_url": "http://www.myapp.com/myimage.jpg",
-    //   "category_id": "car_electronics",
-    //   "quantity": 1,
-    //   "currency_id": "U$",
-    //   "unit_price": 10
-    // }
-//   ],
-//   "payer": {
-//     "phone": {},
-//     "identification": {},
-//     "address": {}
-//   },
-
-
-
 
 export default function(req, res) {
 	return new Promise((resolve, reject) => {
@@ -36,6 +17,12 @@ export default function(req, res) {
 				"success": "http://localhost:3000/StatusCompra?keyword=success",
 				"failure": `http://localhost:3000/StatusCompra?keyword=failure&idCompra=${req.body.id}`,
 			},
+			payment_methods: {
+				"excluded_payment_types": [
+					{
+						"id": "credit_card"
+					}]
+			},
 			auto_return: "approved",
 		};
 		
@@ -44,8 +31,6 @@ export default function(req, res) {
 		.then(function (response) {
 			res.statusCode = 200
 			res.setHeader('Content-type','application/json')
-			console.log(response.body.init_point)
-
 			res.json({
 				id: response.body.id,
 				redirect: response.body.init_point

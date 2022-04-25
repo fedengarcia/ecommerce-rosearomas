@@ -5,7 +5,6 @@ import MercadoPagoButton from '../MercadoPagoButton/MercadoPagoButton';
 import Link from 'next/link';
 import { useEffect } from "react";
 import { UseCartContext } from "../../../context/CartContext";
-import emailjs from '@emailjs/browser';
 
 
 export default function Form2(){

@@ -44,24 +44,23 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           // COMPRA MERCADO PAGO
           // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
 
-          addNewOrder(order).then(res => {
-            const orderMp = {
-              items:items,
-              payer:payerInfo,
-              id: res,
-            }
-            payMP(orderMp,payerInfoEspecial);
-          });
-         
+        
+          const id = addNewOrder(order);
+          const orderMp = {
+            items:items,
+            payer:payerInfo,
+            id: id,
+          }
+          payMP(orderMp,payerInfoEspecial);
           
         }else{
           // COMPRA EN EFECTIVO
           // AGREGO ORDEN A FIREBASE y REDIRECCIONO A STATUS COMPRA => Compra Terminada "Success"
           
           addNewOrder(order).then(res => {
-          clear();
-          sendEmail("template_30x548n",payerInfoEspecial);
-          router.replace(`http://localhost:3000/StatusCompra?keyword=success`);
+            clear();
+            sendEmail("template_30x548n",payerInfoEspecial);
+            router.replace(`http://localhost:3000/StatusCompra?keyword=success`);
           });
 
 
@@ -71,9 +70,9 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
 
     return(
         <>
-          {formValidado ? <button onClick={() => handleAccept(setMensaje(true),payerInfo,payerInfoEspecial)} className="boton-validar">FINALIZAR COMPRA</button> 
+          {formValidado ? <button onClick={() => {handleAccept(payerInfo,payerInfoEspecial), setMensaje(true)}} className="boton-validar">FINALIZAR COMPRA</button> 
           : <button onClick={() => handleAccept(payerInfo,payerInfoEspecial)} disabled className='boton-validar-sinHover'>Finalizar Compra</button>}
-          {/* {mensaje?<><Loader></Loader></>:<></>} */}
+          {mensaje?<><Loader></Loader></>:<></>}
         </>
     )
 }
