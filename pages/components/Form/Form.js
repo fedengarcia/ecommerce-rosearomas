@@ -46,6 +46,7 @@ export default function Form2(){
     const handleFormSubmit = () => {
         setRespuesta(true)
         setFormValidado(true);
+        console.log(payerInfoEspecial)
     }   
 
     // NOMBRE
@@ -146,7 +147,6 @@ export default function Form2(){
             setCodigoPostal(true);
             addShippment(300);
             setEnvio(300);
-            setMetodoPago("efectivo")
         }else{
             setCodigoPostal(false);
             addShippment(600);
