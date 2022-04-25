@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {getFirestore, limit} from "firebase/firestore";
-import { collection, getDocs, orderBy, where, query, addDoc, Timestamp } from "firebase/firestore";
+import { collection, getDocs, orderBy, where, query, addDoc, doc,Timestamp, deleteDoc} from "firebase/firestore";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
 const firebaseConfig = {
@@ -71,5 +71,13 @@ export const addNewOrder = async (order) => {
       payer: order.payerInfoEspecial,
       // date: Timestamp.toDate(),
   };
-  await addDoc(collection(db, "Orders"), newOrder);
+  const doc = await addDoc(collection(db, "Orders"), newOrder);
+  return(doc.id);
+}
+
+
+
+// REMOVE ORDER
+export const removeOrder = async (id) => {
+  await deleteDoc(doc(db, "Orders", id));
 }

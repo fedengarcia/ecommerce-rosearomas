@@ -5,6 +5,8 @@ import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Router from 'next/router';
+import { removeOrder } from "../firebase/Firebase";
+import { sendEmail } from "./helpers/helpers";
 
 function StatusCompra() {
   const router=useRouter();
@@ -12,6 +14,13 @@ function StatusCompra() {
   const handleButton = () => {
     Router.push({ pathname: '/'})
   }
+
+  useEffect(() => {
+    if(router.query.keyword === "failure"){
+      removeOrder(router.query.idCompra);
+      sendEmail("template_qkm691n",router.query.idCompra)
+    }
+  }, [router.query.idCompra]);
 
   return (<>
 

@@ -34,7 +34,7 @@ export default function(req, res) {
 			payer: req.body.payer,
 			back_urls: {
 				"success": "http://localhost:3000/StatusCompra?keyword=success",
-				"failure": "http://localhost:3000/StatusCompra?keyword=failure",
+				"failure": `http://localhost:3000/StatusCompra?keyword=failure&idCompra=${req.body.id}`,
 			},
 			auto_return: "approved",
 		};

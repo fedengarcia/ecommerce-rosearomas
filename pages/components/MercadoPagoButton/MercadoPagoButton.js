@@ -1,8 +1,9 @@
 import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../context/CartContext';
-import { useRouter } from 'next/router';
+import Router,{ useRouter } from 'next/router';
 import Loader from '../Loader/Loader';
 import { addNewOrder } from '../../../firebase/Firebase';
+import { sendEmail } from '../../helpers/helpers';
 
 export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEspecial}) {
     const {items,clear} = useContext(UseCartContext);
@@ -24,47 +25,45 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
       })
       .then(function(preference) {
         //ENVIO DE EMAIL CONFIRMANDO COMPRA
-        sendEmail(payerInfoEspecial)
-
+        sendEmail("template_30x548n",payerInfoEspecial);
         //REDIRECCION A CHECKOUTPRO
-        // router.replace(preference.redirect);
-
+        router.replace(preference.redirect);
 
       }).catch(err => {
         console.log("ERR",err);
       });    
 
 
-      const sendEmail = (payerInfoEspecial) => {
-        
-        emailjs.send('service_jb6mijg', 'template_30x548n', payerInfoEspecial,'iAGffvAUjlmg0kSrt')
-            .then(function(response) {
-            console.log(payerInfoEspecial)
-            console.log('SUCCESS!', response.status, response.text);
-            }, function(error) {
-            console.log('FAILED...', error);
-        });
-    };
-    
-
     const handleAccept = (payerInfo,payerInfoEspecial) => {
-        
+        const order = {
+          items:items,
+          payerInfoEspecial:payerInfoEspecial,
+        }
+
         if(payerInfoEspecial.metodo_pago === "mercadopago"){
-          const orderMp = {
-            items:items,
-            payer:payerInfo,
-          }
-          payMP(orderMp,payerInfoEspecial);
+          // COMPRA MERCADO PAGO
+          // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
+
+          addNewOrder(order).then(res => {
+            const orderMp = {
+              items:items,
+              payer:payerInfo,
+              id: res,
+            }
+            payMP(orderMp,payerInfoEspecial);
+          });
+         
+          
         }else{
-          // FUNCIONANDO
-          const order = {
-            items:items,
-            payerInfoEspecial:payerInfoEspecial,
-          }
-          addNewOrder(order);
+          // COMPRA EN EFECTIVO
+          // AGREGO ORDEN A FIREBASE y REDIRECCIONO A STATUS COMPRA => Compra Terminada "Success"
+          
+          addNewOrder(order).then(res => {
           clear();
-          sendEmail(payerInfoEspecial);
-          router.replace("http://localhost:3000/StatusCompra?keyword=success");
+          sendEmail("template_30x548n",payerInfoEspecial);
+          router.replace(`http://localhost:3000/StatusCompra?keyword=success`);
+          });
+
 
         }
     }
