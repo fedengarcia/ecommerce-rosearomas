@@ -135,6 +135,7 @@ export default function Form2(){
             setCodigoPostal(false);
             addShippment(600);
             setEnvio(600);
+            setMetodoPago("mercadopago")
         }
     }
 
