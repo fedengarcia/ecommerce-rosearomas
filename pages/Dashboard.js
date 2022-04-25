@@ -5,7 +5,7 @@ import { getCarouselFraganciaImg, getCarouselImg, addStorage } from "../firebase
 export default function Dashboard({}){
 
     // LOGIN------------------------------
-    const [login, setLogin]=useState(false)
+    const [login, setLogin]=useState(true)
 
     const loginExito=(usuario,contraseña)=>{
         if(usuario==="Caro" & contraseña==="1"){
