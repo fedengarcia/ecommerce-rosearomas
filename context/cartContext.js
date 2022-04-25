@@ -52,21 +52,52 @@ export const CartContext = ({children}) => {
             newItems[result]["unit_price"] = shippment.unit_price;
             setItems(newItems);
         }
-
-
     }
+    const addPackaging = (unit_price) => {
+        const packaging = {
+            id:"packaging",
+            title: "Packaging",
+            quantity: 1,
+            unit_price: unit_price,
+        }
 
+        let result = getIndex("packaging");
+        if(result === -1){
+            setItems(items => [...items,packaging])
+        }else{
+            const newItems = [...items];
+            newItems[result]["unit_price"] = packaging.unit_price;
+            setItems(newItems);
+        }
+    }
+    const addImpuestosMP = (unit_price) => {
+        const impuestosMP = {
+            id:"impuestosMP",
+            title: "Tasa Mercadopago",
+            quantity: 1,
+            unit_price: unit_price,
+        }
+
+        let result = getIndex("impuestosMP");
+        if(result === -1){
+            setItems(items => [...items,impuestosMP])
+        }else{
+            const newItems = [...items];
+            newItems[result]["unit_price"] = impuestosMP.unit_price;
+            setItems(newItems);
+        }
+    }
 
     //DEVUELVO EL PRECIO TOTAL DE LA COMPRA
     const getTotalPriceCart = () =>{
-        const totalPrice = items.filter(item=>item.id!=="envioprod").reduce(function(accumulator, currentValue) {
+        const totalPrice = items.filter(item=>item.id!=="envioprod" && item.id!=="packaging" && item.id!=="impuestosMP").reduce(function(accumulator, currentValue) {
             return accumulator + (currentValue.unit_price * currentValue.quantity) ;
           },0);
         return totalPrice;
     }
 
     const getTotalPriceForm = () =>{
-        const totalPrice = items.reduce(function(accumulator, currentValue) {
+        const totalPrice = items.filter(item=>item.id!=="impuestosMP").reduce(function(accumulator, currentValue) {
             return accumulator + (currentValue.unit_price * currentValue.quantity) ;
           },0);
         return totalPrice;
@@ -75,7 +106,7 @@ export const CartContext = ({children}) => {
     //DEVUELVO CANTIDAD DE TOTAL ITEMS EN CARRITO
     const getQuantity = () => {
         const quantity = items.reduce(function(accumulator, currentValue) {
-            if(currentValue.id!=="envioprod"){
+            if(currentValue.id!=="envioprod" && currentValue.id!=="packaging" && currentValue.id!=="impuestosMP"){
                 return accumulator + currentValue.quantity;
             }else{
                 return accumulator + currentValue.quantity - 1;
@@ -99,7 +130,7 @@ export const CartContext = ({children}) => {
     const getItems = () => {
         return items;
     }
-    return(<UseCartContext.Provider value={{addShippment,items, clear,updateQuantityItem,addItem, getTotalPriceCart,getTotalPriceForm,getQuantity,getItems,removeItem}}>
+    return(<UseCartContext.Provider value={{addShippment,addImpuestosMP,addPackaging, items, clear,updateQuantityItem,addItem, getTotalPriceCart,getTotalPriceForm,getQuantity,getItems,removeItem}}>
         {children}
     </UseCartContext.Provider>)
 
