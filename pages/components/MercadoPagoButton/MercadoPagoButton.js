@@ -3,7 +3,7 @@ import {UseCartContext} from '../../../context/CartContext';
 import Router,{ useRouter } from 'next/router';
 import Loader from '../Loader/Loader';
 import { addNewOrder } from '../../../firebase/Firebase';
-import { sendEmail } from '../../helpers/helpers';
+import { sendEmail } from '../../../helpers/helpers';
 
 export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEspecial}) {
     const {items,clear} = useContext(UseCartContext);

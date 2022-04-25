@@ -18,3 +18,4 @@ export function sendEmail (template,data) {
             console.log('FAILED...', error);
         });
 }
+

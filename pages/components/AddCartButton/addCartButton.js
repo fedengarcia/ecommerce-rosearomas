@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { UseCartContext } from '../../../context/CartContext';
-import { showNotification as show} from '../../helpers/helpers';
+import { showNotification as show} from '../../../helpers/helpers';
 
-export default function ({producto,type,amount,setShowNotification, setShowNotification2}){
+export default function AddCartButton({producto,type,amount,setShowNotification, setShowNotification2}){
     const {addItem} = useContext(UseCartContext);
      
     const handleOnClick = () => {

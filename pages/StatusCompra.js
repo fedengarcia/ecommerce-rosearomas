@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from 'next/router';
 import Router from 'next/router';
 import { removeOrder } from "../firebase/Firebase";
-import { sendEmail } from "./helpers/helpers";
+import { sendEmail } from "../helpers/helpers";
 
 function StatusCompra() {
   const router=useRouter();
