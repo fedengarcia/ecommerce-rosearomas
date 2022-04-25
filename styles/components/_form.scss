@@ -116,3 +116,12 @@ margin: 0;
     font-size: 2vw;
     margin-top: 2vw;
 }
+
+.checkbox{
+    text-align: center;
+    font-size: 2vw;
+    input{
+        width: 4vw;
+        transform: scale(1.3);
+    }
+}
