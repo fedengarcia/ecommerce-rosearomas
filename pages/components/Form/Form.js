@@ -11,7 +11,7 @@ import emailjs from '@emailjs/browser';
 export default function Form2(){
 
     const form = useRef();
-    const {addShippment,getTotalPriceForm,getTotalPriceCart} = useContext(UseCartContext);
+    const {addShippment,addImpuestosMP,addPackaging,getTotalPriceForm,getTotalPriceCart} = useContext(UseCartContext);
 
     const {register, formState:{errors},handleSubmit} = useForm()
 
@@ -29,10 +29,11 @@ export default function Form2(){
     const [cambiarCodigo,setCambiarCodigo]=useState(false)
 
     const [envio,setEnvio] = useState(0);
-
+    const [packaging, setPackaging] =useState(false)
 
     useEffect(()=>{
         setFormValidado(false)
+        setRespuesta(false)
         if(cambiarCodigo){
             CP()
         }
@@ -46,7 +47,6 @@ export default function Form2(){
         setRespuesta(true)
         setFormValidado(true);
     }   
-
 
     // NOMBRE
     const handleNameData = (e) => {
@@ -110,9 +110,14 @@ export default function Form2(){
         setPayerInfoEspecial({...payerInfoEspecial, street_departamento:e.target.value});
     }
 
-    // DEPARTAMENTO
+    // PAGO
     const handleMetodoPago = (pago) => {
         setPayerInfoEspecial({...payerInfoEspecial, metodo_pago:pago});
+    }
+    
+    const handlePago=(pago)=>{
+        setMetodoPago(pago)
+        handleMetodoPago(pago);
     }
 
     // CODIGO POSTAL
@@ -123,6 +128,16 @@ export default function Form2(){
         setCambiarCodigo(true)
     }
     
+    const handlePackaging = (e)=>{
+        setPackaging(!packaging)
+        setPayerInfoEspecial({...payerInfoEspecial, packaging: (!packaging)});
+        if(!packaging){
+            addPackaging(200)
+        }else{
+            addPackaging(0)
+        }
+    }
+
     const CP = ()=>{
         if(payerInfo.address.zip_code === "") {
             addShippment(0);
@@ -131,18 +146,18 @@ export default function Form2(){
             setCodigoPostal(true);
             addShippment(300);
             setEnvio(300);
+            setMetodoPago("efectivo")
         }else{
             setCodigoPostal(false);
             addShippment(600);
             setEnvio(600);
             setMetodoPago("mercadopago")
         }
-    }
-
-    // METODO DE PAGO
-    const handlePago=(pago)=>{
-        setMetodoPago(pago)
-        handleMetodoPago(pago);
+        if(metodoPago==="mercadopago"){
+            addImpuestosMP(getTotalPriceForm()*5/100)
+        }else{
+            addImpuestosMP(0)
+        }
     }
 
     return(
@@ -290,17 +305,31 @@ export default function Form2(){
                         </span>
                     </div>
                 }
+                <div className="checkbox">
+                    <label htmlFor="packaging">
+                        <input
+                            type="checkbox"
+                            name="packaging"
+                            value="checkbox"
+                            id="packaging"
+                            onChangeCapture={()=>{handlePackaging()}}
+                        />
+                        SERVICIO DE PACKAGING
+                    </label>
+                </div>
 
                 <div className="total-a-pagar">
-                    <p>Total a pagar: $ {getTotalPriceCart()}</p>
+                    <p>Productos: $ {getTotalPriceCart()}</p>
                     <p>Precio de envio: $ {envio}</p>
                     {metodoPago==="mercadopago"?
                         <>
+                            {packaging?<p>Servicio Packaging: $ 200</p>:<></>}
                             <p>Impuestos por mercadopago: $ {(getTotalPriceForm())*5/100}</p>
                             <p>Total: $ {(getTotalPriceForm())+(getTotalPriceForm())*5/100}</p>
                         </>
                         :
                         <>
+                            {packaging?<p>Servicio Packaging: $ 200</p>:<></>}
                             <p>Total: $ {(getTotalPriceForm())}</p>
                         </>
                     }

@@ -22,7 +22,7 @@ export default function ItemCart({producto}) {
     
     return(
         <>
-            {producto.id==="envioprod"?<></>:
+            {producto.id==="envioprod" || producto.id==="packaging" || producto.id==="impuestosMP"?<></>:
             
                 <div className="item-cart">
 
