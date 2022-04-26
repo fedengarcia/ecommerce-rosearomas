@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { UseCartContext } from '../../../context/CartContext';
 import Image from 'next/image'
@@ -8,8 +8,13 @@ export default function ItemCart({producto}) {
     const {removeItem} = useContext(UseCartContext);
 
 
-    const [amount,setAmount] = useState(producto.quantity)
+    const [amount,setAmount] = useState("")
     const [borrar,setBorrar]=useState(false)
+
+    useEffect(() => {
+        setAmount(producto.quantity);
+    }, [producto]);
+
 
     const handleClearCart = (event,id) => {
         setBorrar(!borrar)
@@ -22,7 +27,7 @@ export default function ItemCart({producto}) {
     
     return(
         <>
-            {producto.id==="envioprod" || producto.id==="packaging" || producto.id==="impuestosMP"?<></>:
+            {producto && (producto.id==="envioprod" || producto.id==="packaging" || producto.id==="impuestosMP"?<></>:
             
                 <div className="item-cart">
 
@@ -53,7 +58,7 @@ export default function ItemCart({producto}) {
                         </>
                     }
                 </div>
-            }
+            )}
         </>
     )
 }
