@@ -50,7 +50,28 @@ export const getProductos = async(cat,limite) =>{
 }
 
 
-// DASHBOARD
+//CARGAR UNA NUEVA ORDEN DE COMPRA
+export const addNewOrder = async (order) => {
+
+  const newOrder = {
+      items: order.items,
+      payer: order.payerInfoEspecial,
+      entregado: false,
+      // date: Timestamp.toDate(),
+  };
+  const doc = await addDoc(collection(db, "Orders"), newOrder);
+  return(doc.id);
+}
+
+
+
+// REMOVE ORDER
+export const removeOrder = async (id) => {
+  await deleteDoc(doc(db, "Orders", id));
+}
+
+
+// DASHBOARD REF IMAGE
 const storage=getStorage(app)
 
 export const addStorage=async(titulo,carpeta,imagen)=>{
@@ -63,21 +84,10 @@ export const addStorage=async(titulo,carpeta,imagen)=>{
 }
 
 
-//CARGAR UNA NUEVA ORDEN DE COMPRA
-export const addNewOrder = async (order) => {
-
-  const newOrder = {
-      items: order.items,
-      payer: order.payerInfoEspecial,
-      // date: Timestamp.toDate(),
-  };
-  const doc = await addDoc(collection(db, "Orders"), newOrder);
-  return(doc.id);
-}
-
-
-
-// REMOVE ORDER
-export const removeOrder = async (id) => {
-  await deleteDoc(doc(db, "Orders", id));
+// DASHBOARD GET ORDERS
+export const getOrders = async() => {
+  
+  const ordersDoc = await getDocs(query(collection(db,"Orders")));
+  const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
+  return(orders);
 }
