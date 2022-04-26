@@ -33,14 +33,15 @@ export default function Form2(){
     useEffect(()=>{
         setFormValidado(false)
         setRespuesta(false)
+        
         if(cambiarCodigo){
             CP()
         }
-    },[payerInfo])
+    },[payerInfo])// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(()=>{
         addShippment(0)
-    },[])
+    },[])// eslint-disable-line react-hooks/exhaustive-deps
     
     const handleFormSubmit = () => {
         setRespuesta(true)

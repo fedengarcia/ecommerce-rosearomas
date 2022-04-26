@@ -8,7 +8,7 @@ mercadopago.configure({
 });
 
 
-export default function(req, res) {
+export default function (req, res) {
 	return new Promise((resolve, reject) => {
 		let preference = {
 			items: req.body.items,

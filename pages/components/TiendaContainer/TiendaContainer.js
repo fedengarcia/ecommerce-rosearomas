@@ -24,7 +24,7 @@ export default function TiendaContainer ({itemType, setItemType, setShowNotifica
             setTotalProductos(res.length);
             
         }).catch(err => console.log(err))
-    }, [itemType]);
+    }, [itemType]);// eslint-disable-line react-hooks/exhaustive-deps
 
 
     const cargarMasProductos=()=>{
