@@ -38,7 +38,7 @@ function StatusCompra() {
         </div>
 
         <div className="container-logoWhap">
-          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
+          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noreferrer">
               <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
           </a>
         </div>

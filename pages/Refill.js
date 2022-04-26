@@ -22,11 +22,11 @@ function Refill() {
             <li>- Si es de madera, ser ignifugo</li>
             <li>- Servicio único para: Zárate-Campana-Lima</li>
           </ul>
-          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta sobre los Refill" target="_blank" rel="noopener" className="contacto-refill">Contactar servicio: 3487542190</a>
+          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta sobre los Refill" target="_blank" rel="noreferrer" className="contacto-refill">Contactar servicio: 3487542190</a>
         </div>
 
         <div className="container-logoWhap">
-          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noopener">
+          <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noreferrer">
               <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
           </a>
         </div>
