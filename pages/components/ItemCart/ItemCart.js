@@ -34,7 +34,7 @@ export default function ItemCart({producto}) {
                         <div className='gridItem precio-item-cart'><h3>$ {producto.unit_price*producto.quantity}</h3></div>
                     </div>
                     <div className='borrar-item' onClick={()=>{setBorrar(!borrar)}}>
-                        <Image src={tacho} width={96} height={96}/>
+                        <Image src={tacho} width={96} height={96} alt="itemCart"/>
                     </div>
                     {borrar?
                         <>

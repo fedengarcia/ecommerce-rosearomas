@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
 
         <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
-        <Script type="text/javascript">
+        <Script type="text/javascript" id='emailJS'>
           {() =>{
               emailjs.init("iAGffvAUjlmg0kSrt");}
           }

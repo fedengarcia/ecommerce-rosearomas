@@ -347,7 +347,7 @@ export default function Form2(){
             {/* MERCADO PAGO COMPRAR */}
             <div>
                 <MercadoPagoButton payerInfo={payerInfo} payerInfoEspecial={payerInfoEspecial} formValidado={formValidado}/>
-                <Link href="/Cart" className="linkStyle"><button className="boton-validar">CANCELAR</button></Link>
+                <Link href="/Cart" className="linkStyle" passHref><button className="boton-validar">CANCELAR</button></Link>
             </div>
         </div>
     )

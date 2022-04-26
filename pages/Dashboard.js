@@ -80,7 +80,7 @@ export default function Dashboard({}){
                                     <div className="separacion"  key={dat.id}>
                                         <div className="container">
                                             <div className="container-img">
-                                                <Image src={dat.img} width={700} height={500}/>
+                                                <Image src={dat.img} width={700} height={500} alt='FotoCarousel'/>
                                             </div>
                                             <p className="titulo">{dat.titulo}</p>
                                             <p className="descripcion">{dat.descripcion}</p>
