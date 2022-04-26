@@ -1,12 +1,14 @@
 {
   "name": "rose-velas",
+  "homepage": "https://www.rosearomas.com.ar",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",

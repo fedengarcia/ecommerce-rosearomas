@@ -1,11 +1,31 @@
-
+import { useEffect, useState } from "react"
+import { getOrders } from "../../../firebase/Firebase";
+import DashboardOrden from "../DashboardOrden/DashboardOrden";
 
 
 
 
 export default function DashboardOrdenes() {
+    const [orders, setOrders] = useState(undefined);
+
+    useEffect(() => {
+        getOrders().then(res => {
+            setOrders(res)
+        })
+    }, []);
 
 
+    return (
+    
+        <div className="dashboard-ordenes">
+            <h2>Tus Ordenes</h2>
 
-    return (<h1>Ordenes</h1>)
+            <div className="ordenes-container">
+                {orders && orders.map(orden => <DashboardOrden orden={orden}/>)}
+            </div>
+            
+        </div>
+    
+    
+    )
 }
