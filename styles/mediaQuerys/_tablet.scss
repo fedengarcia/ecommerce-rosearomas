@@ -1,52 +1,5 @@
 @media only screen and (min-width:481px) and (max-width:960px){
 
-    //NUESTROS PRODUCTOS
-
-    @keyframes appearMid{
-        0%{
-            margin-left: -1500px;
-        }
-        100%{
-            margin-left: 0;
-        }
-    }
-
-    .container-Nprods{
-        display: flex;
-        flex-direction: column;
-        align-items: center !important;
-        justify-content: center;
-        margin-bottom: 4vw;
-        .container-Nprods-left{
-            margin-left: 0vw;
-            width: 90vw;
-            animation-name: appearMid !important;
-            animation-duration: 2.5s !important;
-            animation-timing-function: ease-in-out !important;
-        }
-        .container-Nprods-right{
-            margin-right: 0vw;
-            margin-left: 0vw;
-            width: 90vw;
-            animation-name: appearMid !important;
-            animation-duration: 2.5s !important;
-            animation-timing-function: ease-in-out !important;
-        }
-        .fotoProd{
-            width: 30vw !important;
-        }
-        h2{
-            font-size: 5.5vw;
-            font-weight: 600;
-        }
-        div{
-            p{
-                font-size: 2.5vw;
-                padding-top: 2vw;
-            }
-        }
-    }
-    
     // CABECERO
     .cabecero{
         .container-titulo{
