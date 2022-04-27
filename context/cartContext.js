@@ -1,5 +1,5 @@
 import { useState,createContext,useEffect,useContext } from "react";
-import { UseStorageContext } from "./storageContext";
+import { UseStorageContext } from "./StorageContext";
 
 export const UseCartContext = createContext();
 
