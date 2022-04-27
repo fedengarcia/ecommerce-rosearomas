@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "build": "babel src -d lib",
+    "build": "yarn run build",
     "test": "jest"
   },
   "dependencies": {
