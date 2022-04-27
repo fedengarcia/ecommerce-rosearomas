@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import left from "./icons8-izquierda-círculo-90.png";
 import right from "./icons8-derecha-círculo-90.png";
-import { crlContext } from "../../context/carouselContext";
+import { crlContext } from "../../Context/carouselContext";
 import Image from "next/image";
 import { width } from "@mui/system";
 
