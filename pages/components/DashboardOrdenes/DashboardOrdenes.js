@@ -21,7 +21,7 @@ export default function DashboardOrdenes() {
             <h2>Tus Ordenes</h2>
 
             <div className="ordenes-container">
-                {orders && orders.map(orden => <DashboardOrden orden={orden}/>)}
+                {orders && orders.map(orden => {<DashboardOrden orden={orden}/>})}
             </div>
             
         </div>
