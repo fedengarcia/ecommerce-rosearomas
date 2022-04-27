@@ -5,11 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "build": "yarn build",
-    "test": "jest"
+    "export": "next export"
   },
   "dependencies": {
     "@emailjs/browser": "3.6.2",
