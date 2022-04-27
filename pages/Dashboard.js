@@ -1,6 +1,6 @@
 import { useState} from "react"
-import DashboardContainer from "./components/DashboardContainer/DashboardContainer"
-import DashboardLogin from "./components/DashboardLogin/DashboardLogin"
+import DashboardContainer from "./Components/DashboardContainer/DashboardContainer"
+import DashboardLogin from "./Components/DashboardLogin/DashboardLogin"
 
 export default function Dashboard({}){
 

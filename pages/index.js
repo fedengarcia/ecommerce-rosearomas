@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import {useEffect, useState} from "react";
-import CarouselInicio from "./components/Carousel/CarouselInicio";
+import CarouselInicio from "./Components/Carousel/CarouselInicio";
 import banner_1 from "../public/banner/banner.png";
 import banner_2 from "../public/banner/banner2.png";
 import logoWhap from "../public/whatsapp.png";
-import CarouselFragancia from "./components/CarouselFragancia/CarouselFragancia";
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import ProductosInicio from './components/ProductosInicio/ProductosInicio';
+import CarouselFragancia from "./Components/CarouselFragancia/CarouselFragancia";
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import ProductosInicio from './Components/ProductosInicio/ProductosInicio';
 
 export default function Home() {
   const [carga,setCarga]=useState(true)

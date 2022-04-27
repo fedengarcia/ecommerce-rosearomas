@@ -1,12 +1,12 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import TiendaContainer from "./components/TiendaContainer/TiendaContainer";
-import NavBarTienda from "./components/NavBar/NavBarTienda";
+import TiendaContainer from "./Components/TiendaContainer/TiendaContainer";
+import NavBarTienda from "./Components/NavBar/NavBarTienda";
 import { useRouter } from 'next/router'
-import Notification from "./components/Notification/Notification";
+import Notification from "./Components/Notification/Notification";
 
 function Tienda({typeProd}) {
 

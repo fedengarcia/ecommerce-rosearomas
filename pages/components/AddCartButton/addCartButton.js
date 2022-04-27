@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { UseCartContext } from '../../../context/CartContext';
 import { showNotification as show} from '../../../helpers/helpers';
 
