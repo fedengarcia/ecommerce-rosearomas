@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { UseCartContext } from '../../Context/CartContext';
+import { UseCartContext } from '../../../Context/CartContext';
 import { showNotification as show} from '../../helpersX/helpers';
 
 export default function AddCartButton({producto,type,amount,setShowNotification, setShowNotification2}){

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getOrders } from "../../firebaseX/Firebase";
+import { getOrders } from "../../../firebaseX/Firebase";
 import DashboardOrden from "../DashboardOrdenX/DashboardOrden";
 
 

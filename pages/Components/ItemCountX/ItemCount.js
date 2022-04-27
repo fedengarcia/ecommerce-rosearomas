@@ -2,7 +2,7 @@ import {useState, useContext, useEffect} from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { Typography } from '@material-ui/core';
-import { UseCartContext } from '../../Context/CartContext';
+import { UseCartContext } from '../../../Context/CartContext';
 
 
 

@@ -1,5 +1,5 @@
 import React, { useContext,useState } from "react";
-import { crlContext } from "../../Context/CarouselContext";
+import { crlContext } from "../../../Context/CarouselContext";
 
 export default function ItemTypeSelect ({setType}){
 
