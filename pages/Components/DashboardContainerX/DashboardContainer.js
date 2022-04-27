@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import DashboardNavbar from "../DashboardNavbar/DashboardNavbar";
-import DashboardOrdenes from "../DashboardOrdenes/DashboardOrdenes";
-import DashboardProductos from "../DashboardProductos/DashboardProductos";
-import DashboardFragancias from "../DashboardFragancias/DashboardFragancias";
+import DashboardNavbar from "../DashboardNavbarX/DashboardNavbar";
+import DashboardOrdenes from "../DashboardOrdenesX/DashboardOrdenes";
+import DashboardProductos from "../DashboardProductosX/DashboardProductos";
+import DashboardFragancias from "../DashboardFraganciasX/DashboardFragancias";
 
 export default function DashboardContainer () {
     const [typeContainer,setTypeContainer] = useState(undefined);

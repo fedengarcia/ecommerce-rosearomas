@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getOrders } from "../../../firebaseX/Firebase";
-import DashboardOrden from "../DashboardOrden/DashboardOrden";
+import DashboardOrden from "../DashboardOrdenX/DashboardOrden";
 
 
 
