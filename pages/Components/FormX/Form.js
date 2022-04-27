@@ -1,7 +1,7 @@
 import React,{useState, useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import TextField from '@material-ui/core/TextField';
-import MercadoPagoButton from '../MercadoPagoButton/MercadoPagoButton';
+import MercadoPagoButton from '../MercadoPagoButtonX/MercadoPagoButton';
 import Link from 'next/link';
 import { useEffect } from "react";
 import { UseCartContext } from "../../../context/CartContext";
