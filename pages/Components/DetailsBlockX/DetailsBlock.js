@@ -5,9 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCountX/ItemCount';
-import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
+import ItemTypeSelect from '../ItemTypeSelectX/ItemTypeSelect';
 import AddCartButton from '../AddCartButtonX/AddCartButton';
-import DetailsButton from '../DetailsButton/DetailsButton';
+import DetailsButton from '../DetailsButtonX/DetailsButton';
 
 export default function DetailsBlock({SetDetails, Details, producto, setShowNotification,setShowNotification2}){
     const [type, setType] = useState("none");

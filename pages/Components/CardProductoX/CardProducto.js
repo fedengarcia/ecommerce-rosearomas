@@ -5,10 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCountX/ItemCount';
-import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
+import ItemTypeSelect from '../ItemTypeSelectX/ItemTypeSelect';
 import AddCartButton from '../AddCartButtonX/AddCartButton';
-import DetailsButton from '../DetailsButton/DetailsButton';
-import DetailsBlock from '../DetailsBlock/DetailsBlock';
+import DetailsButton from '../DetailsButtonX/DetailsButton';
+import DetailsBlock from '../DetailsBlockX/DetailsBlock';
 
 export default function CardProducto({producto, setShowNotification, setShowNotification2}) {
     const [type, setType] = useState("none");
