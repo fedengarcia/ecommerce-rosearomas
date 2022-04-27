@@ -3,7 +3,7 @@ import { UseStorageContext } from "./StorageContext";
 
 export const UseCartContext = createContext();
 
-export default function CartContext ({children}) {
+export function CartContext ({children}) {
 
     const {CarritoCargado,carritoStorage} = useContext(UseStorageContext);
 

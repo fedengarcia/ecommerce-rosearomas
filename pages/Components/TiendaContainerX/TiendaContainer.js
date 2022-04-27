@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CardProducto from '../CardProductoX/CardProducto'
 import Image from "next/image";
-import { getProductos } from '../../firebaseX/Firebase';
+import { getProductos } from '../../../firebaseX/Firebase';
 import loading from "../../A-imgs/loading_apple_wordpress.gif"
 
 

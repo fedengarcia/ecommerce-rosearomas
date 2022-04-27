@@ -1,9 +1,9 @@
 import { useEffect,useState, createContext } from "react";
-import { getCarouselImg, getCarouselFraganciaImg, getCarouselFraganciaSMLImg } from "../../../firebaseX/Firebase";
+import { getCarouselImg, getCarouselFraganciaImg, getCarouselFraganciaSMLImg } from "../firebaseX/Firebase";
 
 export const crlContext = createContext();
 
-export default function CarouselContext ({children}){
+export function CarouselContext ({children}){
 
     const [carousel,setCarouselImg] = useState([]);
     const [carouselFragancia,setCarouselFraganciaImg]=useState([]);

@@ -1,9 +1,9 @@
 import {useContext, useState} from 'react';
-import {UseCartContext} from '../Context/CartContext';
+import {UseCartContext} from '../../../Context/CartContext';
 import Router,{ useRouter } from 'next/router';
 import Loader from '../LoaderX/Loader';
-import { addNewOrder } from '../../firebaseX/Firebase';
-import { sendEmail } from '../../helpersX/helpers';
+import { addNewOrder } from '../../../firebaseX/Firebase';
+import { sendEmail } from '../../../helpersX/helpers';
 
 export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEspecial}) {
     const {items,clear} = useContext(UseCartContext);
