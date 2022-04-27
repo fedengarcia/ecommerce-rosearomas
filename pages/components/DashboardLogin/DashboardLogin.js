@@ -1,6 +1,3 @@
-
-
-
 export default function DashboardLogin ({setLogin,login}) {
 
     const loginExito=(usuario,contraseña)=>{
