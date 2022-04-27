@@ -1,12 +1,23 @@
-import { useState,createContext,useEffect } from "react";
+import { useState,createContext,useEffect,useContext } from "react";
+import { UseStorageContext } from "./storageContext";
 
 export const UseCartContext = createContext();
 
 export const CartContext = ({children}) => {
+
+    const {CarritoCargado,carritoStorage} = useContext(UseStorageContext);
+
     const [items,setItems] = useState([]);
     const [itemTrashId,setItemTrashId] = useState(undefined);
     const [idCompra,setIdCompra] = useState(undefined);
 
+    useEffect(()=>{
+        setItems(carritoStorage)
+    },[])// eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(()=>{
+        CarritoCargado(items)
+    },[items])// eslint-disable-line react-hooks/exhaustive-deps
 
     // ACTUALIZAR CANTIDAD DE UN ITEM
     const updateQuantityItem = (id, newQuantity) => {
@@ -16,8 +27,6 @@ export const CartContext = ({children}) => {
         setItems(newItems);
     }
 
-
- 
     //DEVUELVE -1 SI NO EXISTE EL ITEM
     const getIndex = (id) =>{
         return items.findIndex(item => item.id === id);
@@ -133,7 +142,4 @@ export const CartContext = ({children}) => {
     return(<UseCartContext.Provider value={{addShippment,addImpuestosMP,addPackaging, items, clear,updateQuantityItem,addItem, getTotalPriceCart,getTotalPriceForm,getQuantity,getItems,removeItem}}>
         {children}
     </UseCartContext.Provider>)
-
-
-
 }
