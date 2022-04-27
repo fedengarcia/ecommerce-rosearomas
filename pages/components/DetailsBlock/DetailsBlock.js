@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemTypeSelect from '../ItemTypeSelect/ItemTypeSelect';
-import AddCartButton from '../AddCartButton/AddCartButton';
+import AddCartButton from '../AddCartButtonX/AddCartButton';
 import DetailsButton from '../DetailsButton/DetailsButton';
 
 export default function DetailsBlock({SetDetails, Details, producto, setShowNotification,setShowNotification2}){
