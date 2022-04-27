@@ -1,5 +1,5 @@
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import Header from "./Components/HeaderX/Header";
+import Footer from "./Components/FooterX/Footer";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 

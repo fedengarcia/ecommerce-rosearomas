@@ -1,5 +1,5 @@
 import { useEffect,useState, createContext } from "react";
-import { getCarouselImg, getCarouselFraganciaImg, getCarouselFraganciaSMLImg } from "../firebase/Firebase";
+import { getCarouselImg, getCarouselFraganciaImg, getCarouselFraganciaSMLImg } from "../firebaseX/Firebase";
 
 export const crlContext = createContext();
 
