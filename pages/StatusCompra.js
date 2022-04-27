@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Header from "./Components/HeaderX/Header";
 import Footer from "./Components/FooterX/Footer";
-import logoWhap from "../public/whatsapp.png";
+import logoWhap from "./A-imgs/whatsapp.png";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Router from 'next/router';

@@ -5,7 +5,6 @@ import left from "./icons8-izquierda-círculo-90.png";
 import right from "./icons8-derecha-círculo-90.png";
 import { crlContext } from "../../Context/CarouselContext";
 import Image from "next/image";
-import { width } from "@mui/system";
 
 export default function CarouselFragancia(){
     

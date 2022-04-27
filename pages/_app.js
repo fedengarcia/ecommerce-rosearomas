@@ -1,9 +1,9 @@
 import '../styles/style.scss';
-import { CarouselContext } from '../context/carouselContext';
-import {CartContext} from '../context/CartContext';
+import { CarouselContext } from './Context/CarouselContext';
+import {CartContext} from './Context/CartContext';
 import Head from 'next/head';
 import Script from "next/script";
-import { StorageContext } from '../context/storageContext';
+import { StorageContext } from './Context/StorageContext';
 
 function MyApp({ Component, pageProps }) {
 

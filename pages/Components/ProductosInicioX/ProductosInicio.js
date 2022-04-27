@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import prod1 from "../../../public/productos-inicio/vela.png"
-import prod2 from "../../../public/productos-inicio/homespray.png"
-import prod3 from "../../../public/productos-inicio/difusor.png"
-import prod4 from "../../../public/productos-inicio/bombon.png"
+import prod1 from "../../A-imgs/productos-inicio/vela.png"
+import prod2 from "../../A-imgs/productos-inicio/homespray.png"
+import prod3 from "../../A-imgs/productos-inicio/difusor.png"
+import prod4 from "../../A-imgs/productos-inicio/bombon.png"
 import Link from 'next/link'
 
 export default function ProductosInicio(){
