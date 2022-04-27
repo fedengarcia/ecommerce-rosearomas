@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import MercadoPagoButton from '../MercadoPagoButtonX/MercadoPagoButton';
 import Link from 'next/link';
 import { useEffect } from "react";
-import { UseCartContext } from "../../../Context/CartContext";
+import { UseCartContext } from "../Context/CartContext";
 
 
 export default function Form2(){

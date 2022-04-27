@@ -2,7 +2,7 @@ import { useState,createContext,useEffect } from "react";
 
 export const UseStorageContext = createContext();
 
-export const StorageContext = ({children}) => {
+export default function StorageContext ({children}) {
 
     const [carritoStorage, setCarritoStorage]=useState([])
 

@@ -1,5 +1,5 @@
 import { useState,useContext } from "react";
-import { UseCartContext } from "../../../Context/CartContext";
+import { UseCartContext } from "../Context/CartContext";
 import ItemCart from '../ItemCartX/ItemCart';
 import Router from "next/router";
 

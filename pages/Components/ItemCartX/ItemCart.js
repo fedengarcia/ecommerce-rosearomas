@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
 import ItemCount from '../ItemCountX/ItemCount';
-import { UseCartContext } from '../../../Context/CartContext';
+import { UseCartContext } from '../Context/CartContext';
 import Image from 'next/image'
 import tacho from "../../A-imgs/icons8-basura-96.png"
 

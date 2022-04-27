@@ -4,7 +4,7 @@ import  'bootstrap/dist/css/bootstrap.min.css';
 import left from "./icons8-izquierda-círculo-90.png"
 import right from "./icons8-derecha-círculo-90.png"
 import Image from "next/image";
-import { crlContext } from "../../../Context/CarouselContext";
+import { crlContext } from "../Context/CarouselContext";
 
 
 export default function CarouselInicio(){

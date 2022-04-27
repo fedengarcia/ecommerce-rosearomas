@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react';
-import {UseCartContext} from '../../../Context/CartContext';
+import {UseCartContext} from '../Context/CartContext';
 import Router,{ useRouter } from 'next/router';
 import Loader from '../LoaderX/Loader';
 import { addNewOrder } from '../../firebaseX/Firebase';

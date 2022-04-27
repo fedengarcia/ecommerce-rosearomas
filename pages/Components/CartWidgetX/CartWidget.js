@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@material-ui/core/Badge';
 import Link from 'next/link';
-import { UseCartContext } from '../../../Context/CartContext';
+import { UseCartContext } from '../Context/CartContext';
 
 
 
