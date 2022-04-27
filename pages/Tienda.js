@@ -4,7 +4,7 @@ import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import TiendaContainer from "./Components/TiendaContainerX/TiendaContainer";
-import NavBarTienda from "./Components/NavBar/NavBarTienda";
+import NavBarTienda from "./Components/NavBarX/NavBarTienda";
 import { useRouter } from 'next/router'
 import Notification from "./Components/NotificationX/Notification";
 

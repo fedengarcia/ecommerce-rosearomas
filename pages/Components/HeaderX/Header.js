@@ -1,5 +1,5 @@
 import Cabecero from '../CabeceroX/Cabecero'
-import NavBar from '../NavBar/NavBar'
+import NavBar from '../NavBarX/NavBar'
 
 export default function Header(){
 
