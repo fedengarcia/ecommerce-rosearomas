@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { getCarouselFraganciaImg, getCarouselImg, addStorage } from "../../../firebase/Firebase"
-
+import {Image} from "next/image"
 
 
 export default function DashboardContainer () {
