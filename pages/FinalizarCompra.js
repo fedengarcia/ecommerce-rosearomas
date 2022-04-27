@@ -1,8 +1,8 @@
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header.js";
+import Footer from "./Components/Footer/Footer.js";
 import logoWhap from "../public/whatsapp.png";
 import Image from "next/image";
-import Form from "./Components/Form/Form";
+import Form from "./Components/Form/Form.js";
 
 function FinalizarCompra() {
 
