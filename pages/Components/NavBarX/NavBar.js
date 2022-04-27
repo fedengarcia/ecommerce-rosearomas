@@ -1,4 +1,4 @@
-import CartWidget from "../CartWidget/CartWidget"
+import CartWidget from "../CartWidgetX/CartWidget"
 import Link from 'next/link'
 import { Navbar, Nav } from "react-bootstrap";
 
