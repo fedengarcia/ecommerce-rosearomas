@@ -12,7 +12,6 @@ import ProductosInicio from './Components/ProductosInicioX/ProductosInicio';
 export default function Home() {
   const [carga,setCarga]=useState(true)
 
-
     setTimeout(() => {
         setCarga(false)
     }, 1000);
