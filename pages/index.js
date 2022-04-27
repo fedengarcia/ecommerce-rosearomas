@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import {useEffect, useState} from "react";
-import CarouselInicio from "./Components/Carousel/CarouselInicio";"./Components/Carousel/CarouselInicio"
+import CarouselInicio from "./Components/Carousel/CarouselInicio";
 import banner_1 from "./A-imgs/banner/banner.png";
 import banner_2 from "./A-imgs/banner/banner2.png";
 import logoWhap from "./A-imgs/whatsapp.png";
