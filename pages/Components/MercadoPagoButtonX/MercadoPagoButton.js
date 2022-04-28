@@ -2,7 +2,7 @@ import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../Context/CartContext';
 import Router,{ useRouter } from 'next/router';
 import Loader from '../LoaderX/Loader';
-import { addNewOrder } from '../../../firebaseX/Firebase';
+import { addNewOrder, addNewOrderFalse } from '../../../firebaseX/Firebase';
 import { sendEmail } from '../../../helpersX/helpers';
 
 export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEspecial}) {
@@ -47,11 +47,12 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           // COMPRA MERCADO PAGO
           // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
         
-          // const id = addNewOrder(order);
+          const id = addNewOrderFalse(order);
 
           const orderMp = {
             items:items,
             payer:payerInfo,
+            id:id,
           }
           payMP(orderMp,payerInfoEspecial);
           

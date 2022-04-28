@@ -63,6 +63,18 @@ export const addNewOrder = async (order) => {
   return(doc.id);
 }
 
+//CARGAR UNA NUEVA ORDEN DE COMPRA TEMPORAL
+export const addNewOrderFalse = async (order) => {
+
+  const newOrder = {
+      items: order.items,
+      payer: order.payerInfoEspecial,
+      entregado: false,
+      // date: Timestamp.toDate(),
+  };
+  const doc = await addDoc(collection(db, "OrdersFalses"), newOrder);
+  return(doc.id);
+}
 
 
 // REMOVE ORDER
