@@ -5,7 +5,6 @@ import Image from "next/image";
 
 function NuestrosProductos() {
 
-
   return (<>
     <Header />
       <div className='container-Nprods'>
