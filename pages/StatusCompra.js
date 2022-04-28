@@ -18,23 +18,20 @@ function StatusCompra() {
   useEffect(() => {
 
     const vaciarStorage=[]
+    const order = {
+      items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
+      payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
+    }
+
     if(router.query.keyword === "failure"){
       localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
       localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_qkm691n",router.query.idCompra)
     } else if(router.query.keyword === "success"){
-      const order = {
-        items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
-        payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
-      }
       addNewOrder(order);
       removeOrderTemporal(router.query.idCompra)
       localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
       localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
-      sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
-    }else{
-
-      removeOrderTemporal(router.query.idCompra)
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
     }
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
@@ -47,7 +44,7 @@ function StatusCompra() {
 
         <div className="status-compra-container">
             <div className="status-compra">
-                {router.query.keyword === "success" ? <p className="title-status">Tu compra ha sido procesada con exito!</p> : <p className="title-status">Tu compra ha sido rechazada, por favor intenta nuevamente.</p>}
+                {router.query.keyword === "success" || router.query.keyword === "successEfec" ? <p className="title-status">Tu compra ha sido procesada con exito!</p> : <p className="title-status">Tu compra ha sido rechazada, por favor intenta nuevamente.</p>}
                 <div className="button-accept-status">
                     <button onClick={handleButton}>ACEPTAR</button>
                 </div>
