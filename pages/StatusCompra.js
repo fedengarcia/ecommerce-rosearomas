@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Router from 'next/router';
 import { removeOrder } from "../firebaseX/Firebase";
 import { sendEmail } from "../helpersX/helpers";
+import { addNewOrder, addNewOrderFalse } from '../../../firebaseX/Firebase';
 
 function StatusCompra() {
   const router=useRouter();
