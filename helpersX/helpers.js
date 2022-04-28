@@ -7,8 +7,6 @@ export function showNotification (setter) {
     }, 2000);
 }
 
-
-
 export function sendEmail (template,data) {
 
     emailjs.send('service_jb6mijg', template, data,'iAGffvAUjlmg0kSrt')

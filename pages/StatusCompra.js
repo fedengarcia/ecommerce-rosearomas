@@ -16,6 +16,7 @@ function StatusCompra() {
   }
 
   useEffect(() => {
+    const vaciarStorage=[]
     if(router.query.keyword === "failure"){
       removeOrder(router.query.idCompra);
       localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
