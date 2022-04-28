@@ -14,7 +14,7 @@ export default function create_preference(req, res) {
 			items: req.body.items,
 			payer: req.body.payer,
 			back_urls: {
-				"success": "https://www.rosearomas.com.ar/StatusCompra?keyword=success",
+				"success": `https://www.rosearomas.com.ar/StatusCompra?keyword=success&idCompra=${req.body.id}`,
 				"failure": `https://www.rosearomas.com.ar/StatusCompra?keyword=failure&idCompra=${req.body.id}`,
 			},
 			payment_methods: {
