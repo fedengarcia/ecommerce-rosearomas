@@ -1,0 +1,18 @@
+.dashboard-ordenes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .navbarorder{
+        width: 50%;
+    }
+
+    .ordenes-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+}
