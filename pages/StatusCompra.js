@@ -27,6 +27,7 @@ function StatusCompra() {
         items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
         payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
       }
+      console.log(router.query.idCompra)
       if(router.query.idCompra!=undefined){
         addNewOrder(order);
         removeOrderTemporal(router.query.idCompra)
