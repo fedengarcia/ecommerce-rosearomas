@@ -10,7 +10,7 @@ export default function TiendaContainer ({itemType, setItemType, setShowNotifica
     const [productos, setProductos] = useState([]);
     const [totalProductos, setTotalProductos] = useState(0);
     const [cargando,setCargando]=useState(false)
-    const [mostrarMas,setMostrarMas]=useState(3)
+    const [mostrarMas,setMostrarMas]=useState(10)
 
     useEffect(() => {
         setItemType(itemType)
@@ -29,9 +29,9 @@ export default function TiendaContainer ({itemType, setItemType, setShowNotifica
 
     const cargarMasProductos=()=>{
         setCargando(true)
-        getProductos(itemType,mostrarMas+1).then(res => {
+        getProductos(itemType,mostrarMas+5).then(res => {
           setTimeout(()=>{
-            setMostrarMas(mostrarMas+1)
+            setMostrarMas(mostrarMas+5)
             setProductos(res);
             setCargando(false)
           },1000)
