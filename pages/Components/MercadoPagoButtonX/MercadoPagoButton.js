@@ -57,14 +57,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
         }else{
           // COMPRA EN EFECTIVO
           // AGREGO ORDEN A FIREBASE y REDIRECCIONO A STATUS COMPRA => Compra Terminada "Success"
-          
-            addNewOrder(order).then(res => {
-            clear();
-            localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
-            localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
-            sendEmail("template_30x548n",payerInfoEspecial);
-            router.replace(`https://www.rosearomas.com.ar/StatusCompra?keyword=success`);
-          });
+            router.replace(`https://www.rosearomas.com.ar/StatusCompra?keyword=success`);;
         }
     }
 
