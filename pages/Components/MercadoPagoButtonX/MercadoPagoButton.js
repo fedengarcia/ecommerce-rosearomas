@@ -12,7 +12,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
     const [mensaje,setMensaje]=useState(false)
 
 
-    const payMP = (newOrder,payerInfoEspecial) => fetch(`http://www.rosearomas.com.ar/api/create_preference`, {
+    const payMP = (newOrder,payerInfoEspecial) => fetch(`https://www.rosearomas.com.ar/api/create_preference`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
           'Content-Type': 'application/json'
@@ -58,11 +58,11 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           // COMPRA EN EFECTIVO
           // AGREGO ORDEN A FIREBASE y REDIRECCIONO A STATUS COMPRA => Compra Terminada "Success"
           
-          addNewOrder(order).then(res => {
+            addNewOrder(order).then(res => {
             clear();
             localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
             sendEmail("template_30x548n",payerInfoEspecial);
-            router.replace(`http://www.rosearomas.com.ar/StatusCompra?keyword=success`);
+            router.replace(`https://www.rosearomas.com.ar/StatusCompra?keyword=success`);
           });
         }
     }
