@@ -17,7 +17,6 @@ function StatusCompra() {
 
   useEffect(() => {
 
-    const vaciarStorage=[]
     const order = {
       items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
       payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
@@ -30,14 +29,16 @@ function StatusCompra() {
       removeOrderTemporal(router.query.idCompra)
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
     }
-
+    
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
-
+  
   useEffect(()=>{
+    const vaciarStorage=[]
+
     localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
     localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
-    
-  },[router.query.keyword])
+
+  },[router.query.keyword])// eslint-disable-line react-hooks/exhaustive-deps
 
   return (<>
 
