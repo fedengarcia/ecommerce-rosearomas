@@ -5,7 +5,7 @@ import logoWhap from "./A-imgs/whatsapp.png";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import { removeOrder, addNewOrder, addNewOrderFalse } from "../firebaseX/Firebase";
+import { removeOrder, addNewOrder, addNewOrderFalse, removeOrderTemporal } from "../firebaseX/Firebase";
 import { sendEmail } from "../helpersX/helpers";
 
 function StatusCompra() {
@@ -19,7 +19,6 @@ function StatusCompra() {
 
     const vaciarStorage=[]
     if(router.query.keyword === "failure"){
-      removeOrder(router.query.idCompra);
       localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
       localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_qkm691n",router.query.idCompra)
@@ -28,8 +27,10 @@ function StatusCompra() {
         items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
         payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
       }
-
-      const id = addNewOrder(order);
+      addNewOrder(order);
+      removeOrderTemporal(router.query.idCompra)
+      localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
+      localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
     }
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps

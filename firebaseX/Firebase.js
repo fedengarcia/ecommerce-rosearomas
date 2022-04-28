@@ -63,6 +63,12 @@ export const addNewOrder = async (order) => {
   return(doc.id);
 }
 
+// REMOVE ORDER
+export const removeOrder = async (id) => {
+  await deleteDoc(doc(db, "Orders", id));
+}
+
+
 //CARGAR UNA NUEVA ORDEN DE COMPRA TEMPORAL
 export const addNewOrderFalse = async (order) => {
 
@@ -76,10 +82,9 @@ export const addNewOrderFalse = async (order) => {
   return(doc.id);
 }
 
-
-// REMOVE ORDER
-export const removeOrder = async (id) => {
-  await deleteDoc(doc(db, "Orders", id));
+// REMOVE ORDER TEMPORAL
+export const removeOrderTemporal = async (id) => {
+  await deleteDoc(doc(db, "OrdersFalses", id));
 }
 
 
