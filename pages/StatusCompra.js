@@ -10,6 +10,7 @@ import { sendEmail } from "../helpersX/helpers";
 
 function StatusCompra() {
   const router=useRouter();
+  const vaciarStorage=[]
   
   const handleButton = () => {
     localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
