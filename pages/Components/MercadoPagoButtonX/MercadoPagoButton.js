@@ -25,7 +25,8 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
       })
       .then(function(preference) {
         //ENVIO DE EMAIL CONFIRMANDO COMPRA
-        sendEmail("template_30x548n",payerInfoEspecial);
+        // sendEmail("template_30x548n",payerInfoEspecial);
+
         //REDIRECCION A CHECKOUTPRO
         router.replace(preference.redirect);
 
@@ -46,11 +47,11 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           // COMPRA MERCADO PAGO
           // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
         
-          const id = addNewOrder(order);
+          // const id = addNewOrder(order);
+
           const orderMp = {
             items:items,
             payer:payerInfo,
-            id: id,
           }
           payMP(orderMp,payerInfoEspecial);
           
@@ -61,6 +62,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
             addNewOrder(order).then(res => {
             clear();
             localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
+            localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
             sendEmail("template_30x548n",payerInfoEspecial);
             router.replace(`https://www.rosearomas.com.ar/StatusCompra?keyword=success`);
           });

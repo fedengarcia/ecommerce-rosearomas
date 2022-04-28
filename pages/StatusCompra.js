@@ -19,8 +19,17 @@ function StatusCompra() {
     const vaciarStorage=[]
     if(router.query.keyword === "failure"){
       removeOrder(router.query.idCompra);
+      localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
       localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_qkm691n",router.query.idCompra)
+      
+    } else if(router.query.keyword === "success"){
+      const order = {
+        items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
+        payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
+      }
+      const id = addNewOrder(order);
+      sendEmail("template_30x548n", JSON.parse(localStorage.getItem("CarritoRoseAromas")));
     }
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
 

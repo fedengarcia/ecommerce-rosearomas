@@ -37,7 +37,15 @@ export default function Form2(){
         if(cambiarCodigo){
             CP()
         }
+
+        localStorage.setItem("FormRoseAromas",JSON.stringify(payerInfo))
     },[payerInfo])// eslint-disable-line react-hooks/exhaustive-deps
+
+
+    useEffect(()=>{
+        localStorage.setItem("FormRoseAromas",JSON.stringify(payerInfoEspecial))
+    },[payerInfoEspecial])// eslint-disable-line react-hooks/exhaustive-deps
+
 
     useEffect(()=>{
         addShippment(0)
