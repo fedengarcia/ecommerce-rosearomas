@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {getFirestore, limit} from "firebase/firestore";
-import { collection, getDocs, orderBy, where, query, addDoc, doc,Timestamp, deleteDoc} from "firebase/firestore";
+import { collection, getDocs, orderBy, where, query, addDoc, doc,setDoc,Timestamp, deleteDoc} from "firebase/firestore";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
 
 const firebaseConfig = {
@@ -90,4 +90,10 @@ export const getOrders = async() => {
   const ordersDoc = await getDocs(query(collection(db,"Orders")));
   const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
   return(orders);
+}
+
+
+export const setOrderEntregada = (id) => {
+  const order =  doc(db, 'Orders', id);
+  setDoc(order, { entregado: true }, { merge: true });
 }
