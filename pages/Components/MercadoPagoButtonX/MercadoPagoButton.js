@@ -24,8 +24,6 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
         return response.json();
       })
       .then(function(preference) {
-        //ENVIO DE EMAIL CONFIRMANDO COMPRA
-        // sendEmail("template_30x548n",payerInfoEspecial);
 
         //REDIRECCION A CHECKOUTPRO
         router.replace(preference.redirect);
@@ -47,6 +45,8 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           // COMPRA MERCADO PAGO
           // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
         
+          console.log(payerInfoEspecial)
+          
           const id = addNewOrderFalse(order);
 
           const orderMp = {
