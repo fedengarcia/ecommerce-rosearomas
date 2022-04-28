@@ -16,6 +16,8 @@ function StatusCompra() {
   }
 
   useEffect(() => {
+    console.log("HOLA TIMOTEO")
+    console.log(router.query.idCompra)
     const vaciarStorage=[]
     if(router.query.keyword === "failure"){
       removeOrder(router.query.idCompra);
