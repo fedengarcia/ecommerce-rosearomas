@@ -1,3 +1,8 @@
+@media (max-width:995px){
+    .validacion-mensaje{
+        font-size: 1.5vw;
+    }
+}
 @media (max-width:900px){
     .boton-validar{
         font-size: 1.5vw !important;
@@ -37,6 +42,16 @@
         }
     }
 }
+@media (max-width:750px){
+    .validacion-mensaje{
+        font-size: 2vw;
+    }
+}
+@media (max-width:600px){
+    .validacion-mensaje{
+        font-size: 2.5vw;
+    }
+}
 @media (max-width:550px){
     .boton-validar{
         font-size: 3vw !important;
@@ -69,6 +84,11 @@
         input{
             transform: scale(1);
         }
+    }
+}
+@media (max-width:420px){
+    .validacion-mensaje{
+        font-size: 3.5vw;
     }
 }
 @media (max-width:370px){

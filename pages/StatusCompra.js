@@ -18,6 +18,7 @@ function StatusCompra() {
   useEffect(() => {
     if(router.query.keyword === "failure"){
       removeOrder(router.query.idCompra);
+      localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_qkm691n",router.query.idCompra)
     }
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps

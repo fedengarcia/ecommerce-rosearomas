@@ -26,7 +26,6 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
       .then(function(preference) {
         //ENVIO DE EMAIL CONFIRMANDO COMPRA
         sendEmail("template_30x548n",payerInfoEspecial);
-        localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
         //REDIRECCION A CHECKOUTPRO
         router.replace(preference.redirect);
 
