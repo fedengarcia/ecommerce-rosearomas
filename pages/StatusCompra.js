@@ -5,7 +5,7 @@ import logoWhap from "./A-imgs/whatsapp.png";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import { removeOrder, addNewOrder, addNewOrderFalse, removeOrderTemporal } from "../firebaseX/Firebase";
+import { addNewOrder, removeOrderTemporal } from "../firebaseX/Firebase";
 import { sendEmail } from "../helpersX/helpers";
 
 function StatusCompra() {
