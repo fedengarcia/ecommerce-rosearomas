@@ -24,16 +24,15 @@ function StatusCompra() {
     }
 
     if(router.query.keyword === "failure"){
-      localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
-      localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_qkm691n",router.query.idCompra)
     } else if(router.query.keyword === "success"){
       addNewOrder(order);
       removeOrderTemporal(router.query.idCompra)
-      localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
-      localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
     }
+    localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
+    localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
+    
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (<>
@@ -44,7 +43,7 @@ function StatusCompra() {
 
         <div className="status-compra-container">
             <div className="status-compra">
-                {router.query.keyword === "success" || router.query.keyword === "successEfec" ? <p className="title-status">Tu compra ha sido procesada con exito!</p> : <p className="title-status">Tu compra ha sido rechazada, por favor intenta nuevamente.</p>}
+                {router.query.keyword === "success" || router.query.keyword === "successEfec" ? <p className="title-status">Tu compra ha sido procesada con exito! La responsable se pondra en contacto.</p> : <p className="title-status">Tu compra ha sido rechazada, por favor intenta nuevamente.</p>}
                 <div className="button-accept-status">
                     <button onClick={handleButton}>ACEPTAR</button>
                 </div>
