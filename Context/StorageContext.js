@@ -24,5 +24,4 @@ export function StorageContext ({children}) {
     <UseStorageContext.Provider value={{CarritoCargado,carritoStorage}}>
         {children}
     </UseStorageContext.Provider>)
-
 }
