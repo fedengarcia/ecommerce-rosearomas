@@ -27,11 +27,13 @@ function StatusCompra() {
         items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
         payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
       }
-      addNewOrder(order);
-      removeOrderTemporal(router.query.idCompra)
-      localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
-      localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
-      sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
+      if(router.query.idCompra!=undefined){
+        addNewOrder(order);
+        removeOrderTemporal(router.query.idCompra)
+        localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
+        localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
+        sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
+      }
     }
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
 
