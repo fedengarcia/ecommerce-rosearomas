@@ -11,7 +11,7 @@ export default function CartWidget(){
 
 
     return(
-        <Link href="/CartX" passHref >          
+        <Link href="/Cart-" passHref >          
             <div className='cartWidget-container'>  
                 <Badge badgeContent={getQuantity()} color="primary">
                     <ShoppingCartOutlinedIcon fontSize="large"/>
