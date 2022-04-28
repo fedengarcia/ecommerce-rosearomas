@@ -26,6 +26,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
       .then(function(preference) {
         //ENVIO DE EMAIL CONFIRMANDO COMPRA
         sendEmail("template_30x548n",payerInfoEspecial);
+        localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
         //REDIRECCION A CHECKOUTPRO
         router.replace(preference.redirect);
 
@@ -40,10 +41,11 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           payerInfoEspecial:payerInfoEspecial,
         }
 
+        const vaciarStorage=[]
+
         if(payerInfoEspecial.metodo_pago === "mercadopago"){
           // COMPRA MERCADO PAGO
           // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
-
         
           const id = addNewOrder(order);
           const orderMp = {
@@ -59,6 +61,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           
           addNewOrder(order).then(res => {
             clear();
+            localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
             sendEmail("template_30x548n",payerInfoEspecial);
             router.replace(`http://localhost:3000/StatusCompra?keyword=success`);
           });
