@@ -6,7 +6,6 @@ import Image from "next/image";
 
 function Refill() {
 
-
   return (<>
     <Header />
         <h1 className="title-refill">Refill</h1>
