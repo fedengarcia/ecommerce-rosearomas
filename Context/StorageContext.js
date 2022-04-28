@@ -21,12 +21,14 @@ export function StorageContext ({children}) {
         }
     },[])// eslint-disable-line react-hooks/exhaustive-deps
 
+
     const CarritoCargado=(info)=>{
         if(info.length!==0){
             localStorage.setItem("CarritoRoseAromas",(JSON.stringify(info)))
         }
     }
 
+    
     return(
     <UseStorageContext.Provider value={{CarritoCargado,carritoStorage}}>
         {children}

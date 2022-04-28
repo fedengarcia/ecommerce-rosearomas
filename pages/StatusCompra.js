@@ -13,8 +13,6 @@ function StatusCompra() {
   const vaciarStorage=[]
   
   const handleButton = () => {
-    localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
-    localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
     Router.push({ pathname: '/'})
   }
 
@@ -32,10 +30,10 @@ function StatusCompra() {
       addNewOrder(order);
       removeOrderTemporal(router.query.idCompra)
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
-    }
 
-    localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
-    localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
+      localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
+      localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
+    }
 
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
 
