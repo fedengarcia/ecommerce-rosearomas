@@ -44,9 +44,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
         if(payerInfoEspecial.metodo_pago === "mercadopago"){
           // COMPRA MERCADO PAGO
           // AGREGO ORDEN A FIREBASE, SI SE COMPLETA LA COMPRA LA DEJO SINO LA ELIMINO
-        
-          console.log(payerInfoEspecial)
-          
+    
           const id = addNewOrderFalse(order);
 
           const orderMp = {

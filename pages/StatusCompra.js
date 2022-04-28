@@ -28,10 +28,9 @@ function StatusCompra() {
         items: JSON.parse(localStorage.getItem("CarritoRoseAromas")),
         payerInfoEspecial: JSON.parse(localStorage.getItem("FormRoseAromas")),
       }
-      console.log(JSON.parse(localStorage.getItem("CarritoRoseAromas")))
 
       const id = addNewOrder(order);
-      sendEmail("template_30x548n", JSON.parse(localStorage.getItem("CarritoRoseAromas")));
+      sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
     }
   }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
 
