@@ -30,10 +30,14 @@ function StatusCompra() {
       removeOrderTemporal(router.query.idCompra)
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
     }
+
+  }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(()=>{
     localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
     localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
     
-  }, [router.query.idCompra]);// eslint-disable-line react-hooks/exhaustive-deps
+  },[router.query.keyword])
 
   return (<>
 
