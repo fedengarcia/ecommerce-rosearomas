@@ -13,6 +13,7 @@ export function CartContext ({children}) {
 
     useEffect(()=>{
         setItems(carritoStorage)
+        console.log("hola")
     },[carritoStorage])// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(()=>{
