@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import Header from "./Components/HeaderX/Header";
 import Footer from "./Components/FooterX/Footer";
 import logoWhap from "./A-imgs/whatsapp.png";
@@ -7,10 +7,13 @@ import { useRouter } from 'next/router';
 import Router from 'next/router';
 import { addNewOrder, removeOrderTemporal } from "../firebaseX/Firebase";
 import { sendEmail } from "../helpersX/helpers";
+import { UseCartContext } from "../Context/CartContext";
 
 function StatusCompra() {
+
+  const {clear} = useContext(UseCartContext);
+
   const router=useRouter();
-  const vaciarStorage=[]
   
   const handleButton = () => {
     Router.push({ pathname: '/'})
@@ -31,6 +34,7 @@ function StatusCompra() {
       removeOrderTemporal(router.query.idCompra)
       sendEmail("template_30x548n", JSON.parse(localStorage.getItem("FormRoseAromas")));
 
+      clear()
       localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
       localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
     }

@@ -64,6 +64,7 @@ export default function MercadoPagoButton ({payerInfo, formValidado,payerInfoEsp
           localStorage.setItem("FormRoseAromas",JSON.stringify(vaciarStorage))
           localStorage.setItem("CarritoRoseAromas",JSON.stringify(vaciarStorage))
 
+          clear()
           router.replace('https://www.rosearomas.com.ar/StatusCompra?keyword=successEfec');
         }
     }
