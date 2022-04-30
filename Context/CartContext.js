@@ -11,9 +11,13 @@ export function CartContext ({children}) {
     const [itemTrashId,setItemTrashId] = useState(undefined);
     const [idCompra,setIdCompra] = useState(undefined);
 
-    setItems(carritoStorage)
-    console.log(carritoStorage)
+    useEffect(()=>{
+        Cart_Items()
+    },[carritoStorage])// eslint-disable-line react-hooks/exhaustive-deps
 
+    const Cart_Items = ()=>{
+        setItems(carritoStorage)
+    }
 
     useEffect(()=>{
         CarritoCargado(items)
