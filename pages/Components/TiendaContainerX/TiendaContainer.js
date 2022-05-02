@@ -14,7 +14,7 @@ export default function TiendaContainer ({itemType, setItemType, setShowNotifica
 
     useEffect(() => {
         setItemType(itemType)
-        setMostrarMas(3)
+        setMostrarMas(10)
         getProductos(itemType,mostrarMas).then(res => {
             setProductos(res);
             
