@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-export function Anuncio1() {
+export default function Anuncio1() {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});

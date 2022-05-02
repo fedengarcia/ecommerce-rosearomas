@@ -2,9 +2,6 @@ import { useEffect, useState } from "react"
 import { getOrders } from "../../../firebaseX/Firebase";
 import DashboardOrden from "../DashboardOrdenX/DashboardOrden";
 
-
-
-
 export default function DashboardOrdenes() {
     const [orders, setOrders] = useState(undefined);
 

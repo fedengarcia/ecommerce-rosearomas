@@ -8,7 +8,6 @@ import { setOrderEntregada } from '../../../firebaseX/Firebase';
 
 export default function DashboardOrden({order,actualizarOrders}) {
 
-
     const handleEntregadoState = (order) => {
         setOrderEntregada(order.id)
         actualizarOrders(order);
