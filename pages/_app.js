@@ -26,12 +26,18 @@ function MyApp({ Component, pageProps }) {
             
             <Component {...pageProps} />
 
-          <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
-          <Script type="text/javascript" id='emailJS'>
-            {() =>{
-                emailjs.init("iAGffvAUjlmg0kSrt");}
-            }
-          </Script>
+            <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2207263959761061" crossOrigin="anonymous"></Script>
+            <Script id='anuncio'>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </Script>
+
+
+            <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
+            <Script type="text/javascript" id='emailJS'>
+              {() =>{
+                  emailjs.init("iAGffvAUjlmg0kSrt");}
+              }
+            </Script>
           </CartContext>
         </StorageContext>
       

@@ -31,17 +31,13 @@ export default function Home() {
                     </div>
 
                     {/* <!-- anuncio-1 --> */}
-                    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2207263959761061"
-                    crossOrigin="anonymous"></Script>
                     <ins className="adsbygoogle"
                         style={{display:"block"}}
                         data-ad-client="ca-pub-2207263959761061"
                         data-ad-slot="3809900228"
                         data-ad-format="auto"
-                        data-full-width-responsive="true"></ins>
-                    <Script id='anuncio'>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </Script>
+                        data-full-width-responsive="true">
+                    </ins>
 
                     <CarouselInicio/>
 
