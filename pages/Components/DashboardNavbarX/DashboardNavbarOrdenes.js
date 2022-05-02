@@ -1,8 +1,5 @@
 import {Animated} from "react-animated-css";
 
-
-
-
 export default function DashboardNabvarOrdenes({setEntregado}) {
 
 

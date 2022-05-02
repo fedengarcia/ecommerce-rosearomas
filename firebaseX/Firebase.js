@@ -73,11 +73,11 @@ export const removeOrder = async (id) => {
 
 //CARGAR UNA NUEVA ORDEN DE COMPRA TEMPORAL
 export const addNewOrderFalse = async (order) => {
+  
   const fechaOrder={'dia': (new Date()).getDate(),'mes':((new Date()).getMonth()+1),"año":(new Date()).getFullYear()}
 
-
   const newOrder = {
-    fecha:fechaOrder,
+      fecha:fechaOrder,
       items: order.items,
       payer: order.payerInfoEspecial,
       entregado: false
