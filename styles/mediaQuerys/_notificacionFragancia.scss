@@ -23,6 +23,16 @@
         }
     }
 }
+@media (max-width:550px){
+    .notification{
+        & > p{
+            background-color: white !important;
+            color: #084444 !important;
+            font-weight: 600 !important;
+            border: 3px solid #084444;
+        }
+    }
+}
 @media (max-width:400px){
     .notification-container{
         .notification{

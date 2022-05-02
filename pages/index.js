@@ -17,7 +17,7 @@ export default function Home() {
 
     return(
         <div>
-            {carousel.length!=0 && carouselFragancia.length!=0 && carouselFraganciaSML.length!=0?
+            {/* {carousel.length!=0 && carouselFragancia.length!=0 && carouselFraganciaSML.length!=0?
                 <>
                     <Header/>
 
@@ -48,7 +48,30 @@ export default function Home() {
                     <p>CARGANDO...</p>
                     <Image src={loading} alt="loading" width={70} height={70}/>
                 </div>
-            }
+            } */}
+                                <Header/>
+
+<div className='banner-1'>
+    <Image src={banner_1} layout="responsive"  alt="BANNER" className="appear"/>
+</div>
+
+<div className='banner-2'>
+    <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
+</div>
+
+<CarouselInicio/>
+
+<ProductosInicio/>
+
+<CarouselFragancia/>
+
+<div className="container-logoWhap">
+    <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noreferrer">
+        <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
+    </a>
+</div>
+
+<Footer/>
         </div>
     )
 }
