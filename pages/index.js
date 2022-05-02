@@ -64,16 +64,17 @@ export default function Home() {
                 <div className='banner-2'>
                     <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                 </div>
-    
-                <ins className="adsbygoogle"
+
+
+                <amp-ad width="100vw" height="320"
+                    type="adsense"
                     data-ad-client="ca-pub-2207263959761061"
                     data-ad-slot="3809900228"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <Script id='anuncio'>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </Script>
-
+                    data-auto-format="rspv"
+                    data-full-width="">
+                    <div overflow=""></div>
+                </amp-ad>
+                
                 <CarouselInicio/>
     
                 <ProductosInicio/>
