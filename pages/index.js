@@ -10,8 +10,6 @@ import Footer from "./Components/FooterX/Footer";
 import ProductosInicio from './Components/ProductosInicioX/ProductosInicio';
 import { crlContext } from '../Context/CarouselContext';
 import loading from "./A-imgs/loading_apple_wordpress.gif"
-import Script from "next/script";
-import AdBanner from './Components/AnunciosX/AdBanner';
 
 export default function Home() {
 
@@ -30,7 +28,7 @@ export default function Home() {
                     <div className='banner-2'>
                         <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                     </div>
-                    
+
                     <CarouselInicio/>
 
                     <ProductosInicio/>
