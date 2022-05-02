@@ -14,39 +14,47 @@ import Script from "next/script";
 
 export default function Home() {
 
-    const [carga,setCarga]=useState(true)
     const {carousel, carouselFragancia, carouselFraganciaSML}=useContext(crlContext)
-
-    setTimeout(() => {
-        setCarga(false)
-    }, 1000);
 
     return(
         <div>
-            {/* {carousel.length!=0 && carouselFragancia.length!=0 && carouselFraganciaSML.length!=0?
+            {carousel.length!=0 && carouselFragancia.length!=0 && carouselFraganciaSML.length!=0?
                 <>
                     <Header/>
 
                     <div className='banner-1'>
                         <Image src={banner_1} layout="responsive"  alt="BANNER" className="appear"/>
                     </div>
-                    
+
                     <div className='banner-2'>
                         <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                     </div>
-        
+
+                    {/* <!-- anuncio-1 --> */}
+                    <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2207263959761061"
+                    crossOrigin="anonymous"></Script>
+                    <ins className="adsbygoogle"
+                        style={{display:"block"}}
+                        data-ad-client="ca-pub-2207263959761061"
+                        data-ad-slot="3809900228"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <Script id='anuncio'>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </Script>
+
                     <CarouselInicio/>
-        
+
                     <ProductosInicio/>
-        
+
                     <CarouselFragancia/>
-        
+
                     <div className="container-logoWhap">
                         <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noreferrer">
                             <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
                         </a>
                     </div>
-        
+
                     <Footer/>
                 </>
             :
@@ -54,43 +62,7 @@ export default function Home() {
                     <p>CARGANDO...</p>
                     <Image src={loading} alt="loading" width={70} height={70}/>
                 </div>
-            } */}
-            <Header/>
-
-                <div className='banner-1'>
-                    <Image src={banner_1} layout="responsive"  alt="BANNER" className="appear"/>
-                </div>
-                
-                <div className='banner-2'>
-                    <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
-                </div>
-
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2207263959761061"
-                    crossOrigin="anonymous"></script>
-                {/* <!-- anuncio-1 --> */}
-                <ins className="adsbygoogle"
-                    style={{display:"block"}}
-                    data-ad-client="ca-pub-2207263959761061"
-                    data-ad-slot="3809900228"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-
-                <CarouselInicio/>
-    
-                <ProductosInicio/>
-    
-                <CarouselFragancia/>
-    
-                <div className="container-logoWhap">
-                    <a href="https://wa.me/543487513839?text=Hola Rosé! Quería hacer una consulta" target="_blank" rel="noreferrer">
-                        <Image src={logoWhap} alt="Whap" className='logoWhap' width={80} height={80}/>
-                    </a>
-                </div>
-    
-            <Footer/>
+            }
         </div>
     )
 }
