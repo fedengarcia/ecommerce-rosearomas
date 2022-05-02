@@ -15,7 +15,6 @@ function MyApp({ Component, pageProps }) {
         <meta charSet="utf-8"/>
         <meta name="description" content="Sitio web de Rosé Aromas, emprendimiento de Zárate. Dedicado a la venta de velas, homesprays, difusores y bombones aromatizados."/>
 	      <meta name="keywords" content="aromas, vela, difusor, bombon, homespray, perfume, decoracion, emprendimiento, rose"/>
-        <link rel='icon' href='https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/vela.png?alt=media&token=572785b7-faeb-4d7e-acf1-235f966a14ef' type='image/png'/>
       </Head>
       
       <CarouselContext>
@@ -27,11 +26,8 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
 
             <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2207263959761061" crossOrigin="anonymous"></Script>
-            <Script id='anuncio'>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </Script>
-
-
+            
+            
             <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
             <Script type="text/javascript" id='emailJS'>
               {() =>{

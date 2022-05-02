@@ -30,10 +30,7 @@ export default function Home() {
                     <div className='banner-2'>
                         <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                     </div>
-
-                    {/* <!-- anuncio-1 --> */}
-                    <AdBanner/>
-
+                    
                     <CarouselInicio/>
 
                     <ProductosInicio/>
