@@ -996,6 +996,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@nuxtjs/google-adsense@^2.0.0":
+  "integrity" "sha512-x6y4PTOooTXmpUWOZFilXHTzK+3q/X+cNofbcAVHqq+W9F9Y92DyCsEM7HRSl4pW+G0saUO9qSx8O9gmyDVi5Q=="
+  "resolved" "https://registry.npmjs.org/@nuxtjs/google-adsense/-/google-adsense-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "pathe" "^0.2.0"
+
 "@popperjs/core@^2.10.1", "@popperjs/core@^2.10.2", "@popperjs/core@^2.11.4":
   "integrity" "sha512-q/ytXxO5NKvyT37pmisQAItCFqA7FD/vNb8dgaJy3/630Fsc+Mz9/9f2SziBoIZ30TJooXyTwZmhi1zjXmObYg=="
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.4.tgz"
@@ -3110,6 +3117,11 @@
   "integrity" "sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw=="
   "resolved" "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   "version" "4.0.0"
+
+"pathe@^0.2.0":
+  "integrity" "sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw=="
+  "resolved" "https://registry.npmjs.org/pathe/-/pathe-0.2.0.tgz"
+  "version" "0.2.0"
 
 "performance-now@^2.1.0":
   "integrity" "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns="
