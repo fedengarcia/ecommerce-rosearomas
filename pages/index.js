@@ -10,6 +10,7 @@ import Footer from "./Components/FooterX/Footer";
 import ProductosInicio from './Components/ProductosInicioX/ProductosInicio';
 import { crlContext } from '../Context/CarouselContext';
 import loading from "./A-imgs/loading_apple_wordpress.gif"
+import Script from "next/script";
 
 export default function Home() {
 
@@ -65,14 +66,13 @@ export default function Home() {
                 </div>
     
                 <ins className="adsbygoogle"
-                    style="display:block"
                     data-ad-client="ca-pub-2207263959761061"
                     data-ad-slot="3809900228"
                     data-ad-format="auto"
                     data-full-width-responsive="true"></ins>
-                <script>
+                <Script id='anuncio'>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </Script>
 
                 <CarouselInicio/>
     
