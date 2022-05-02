@@ -65,16 +65,19 @@ export default function Home() {
                     <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                 </div>
 
-
-                <amp-ad width="100vw" height="320"
-                    type="adsense"
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2207263959761061"
+                    crossOrigin="anonymous"></script>
+                {/* <!-- anuncio-1 --> */}
+                <ins className="adsbygoogle"
+                    style={{display:"block"}}
                     data-ad-client="ca-pub-2207263959761061"
                     data-ad-slot="3809900228"
-                    data-auto-format="rspv"
-                    data-full-width="">
-                    <div overflow=""></div>
-                </amp-ad>
-                
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
                 <CarouselInicio/>
     
                 <ProductosInicio/>

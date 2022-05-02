@@ -16,7 +16,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Sitio web de Rosé Aromas, emprendimiento de Zárate. Dedicado a la venta de velas, homesprays, difusores y bombones aromatizados."/>
 	      <meta name="keywords" content="aromas, vela, difusor, bombon, homespray, perfume, decoracion, emprendimiento, rose"/>
         <link rel='icon' href='https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/vela.png?alt=media&token=572785b7-faeb-4d7e-acf1-235f966a14ef' type='image/png'/>
-        <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
       </Head>
       
       <CarouselContext>
