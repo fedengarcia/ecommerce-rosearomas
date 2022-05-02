@@ -59,8 +59,7 @@ export const addNewOrder = async (order) => {
       fecha:fechaOrder,
       items: order.items,
       payer: order.payerInfoEspecial,
-      entregado: false,
-      // date: Timestamp.toDate(),
+      entregado: false
   };
   const doc = await addDoc(collection(db, "Orders"), newOrder);
   return(doc.id);
@@ -74,12 +73,14 @@ export const removeOrder = async (id) => {
 
 //CARGAR UNA NUEVA ORDEN DE COMPRA TEMPORAL
 export const addNewOrderFalse = async (order) => {
+  const fechaOrder={'dia': (new Date()).getDate(),'mes':((new Date()).getMonth()+1),"año":(new Date()).getFullYear()}
+
 
   const newOrder = {
+    fecha:fechaOrder,
       items: order.items,
       payer: order.payerInfoEspecial,
-      entregado: false,
-      // date: Timestamp.toDate(),
+      entregado: false
   };
   const doc = await addDoc(collection(db, "OrdersFalses"), newOrder);
   return(doc.id);
