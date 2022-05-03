@@ -104,18 +104,10 @@ export const addStorage=async(titulo,carpeta,imagen)=>{
 
 }
 
-
 // DASHBOARD GET ORDERS
-export const getOrders = async() => {
+export const getOrders = async(typeOrder) => {
   
-  const ordersDoc = await getDocs(query(collection(db,"Orders")));
-  const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
-  return(orders);
-}
-
-export const getOrdersRechazadas = async() => {
-  
-  const ordersDoc = await getDocs(query(collection(db,"OrdersFalses")));
+  const ordersDoc = await getDocs(query(collection(db,typeOrder),orderBy("fecha")));
   const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
   return(orders);
 }
@@ -123,4 +115,8 @@ export const getOrdersRechazadas = async() => {
 export const setOrderEntregada = (id, state) => {
   const order =  doc(db, 'Orders', id);
   setDoc(order, { entregado: state }, { merge: true });
+}
+
+export const removeOrderFinal = async (id,typeOrder) => {
+  await deleteDoc(doc(db, typeOrder, id));
 }

@@ -10,10 +10,10 @@ export default function DashboardOrdenes() {
     const [ordersRechazada,setOrdersRechazadas]=useState([])
 
     useEffect(() => {
-        getOrders().then(res => {
+        getOrders("Orders").then(res => {
             setOrders(res)
         })
-        getOrdersRechazadas().then(res => {
+        getOrders("OrdersFalses").then(res => {
             setOrdersRechazadas(res)
         })
     }, [entregado]);

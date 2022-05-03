@@ -4,9 +4,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { setOrderEntregada } from '../../../firebaseX/Firebase';
+import { removeOrderFinal, setOrderEntregada } from '../../../firebaseX/Firebase';
+
 
 export default function DashboardOrden({order,entregado}) {
+
+    const [disp,setDisp]=useState("none")
 
     const handleEntregadoState = (order,state) => {
         setOrderEntregada(order.id,state)
@@ -16,6 +19,7 @@ export default function DashboardOrden({order,entregado}) {
     <>
       {order && <Card sx={{ maxWidth: 345 }}>
         <CardContent>
+          <p className='borrar-order' onClick={()=>{setDisp("block")}}>X</p>
           <Typography gutterBottom variant="h5" component="div">
             {order && `Nombre: ${order.payer.name} ${order.payer.surname}`}
           </Typography>
@@ -52,6 +56,16 @@ export default function DashboardOrden({order,entregado}) {
           }
       </Card>
       }
+      <div className='confirm-cancel' style={{display:disp}}>
+        <div className='confirm-cancel-info'>
+          {entregado!="rechazada"?
+            <p className='button-borrar-order' onClick={()=>{removeOrderFinal(order.id,"Orders"),setDisp("none")}}>Confirmar</p>
+          :
+            <p className='button-borrar-order' onClick={()=>{removeOrderFinal(order.id,"OrdersFalses"),setDisp("none")}}>Confirmar</p>
+          }
+          <p className='button-borrar-order' onClick={()=>{setDisp("none")}}>Cancelar</p>
+        </div>
+      </div>
     </>
   );
 }

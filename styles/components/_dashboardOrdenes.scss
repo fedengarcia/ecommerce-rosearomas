@@ -18,4 +18,40 @@
         align-items: center;
         flex-direction: row;
     }
+    .borrar-order{
+        text-align: end;
+        margin-right: 1vw;
+        font-size: 1.5vw;
+        cursor: pointer;
+    }
+    .confirm-cancel{
+        width: 100vw;
+        height: 100%;
+        background-color: hsl(180, 79%, 15%,0.5);
+        backdrop-filter: blur(2px);
+        position: fixed;
+        top: 0vw;
+        left: 0vw;
+        .confirm-cancel-info{
+            display: flex;
+            width: fit-content;
+            padding: 2vw 10vw;
+            margin: 15vw auto;
+            border-radius: 2vw;
+            .button-borrar-order{
+                background-color: hsl(180, 79%, 15%,0.5);
+                margin: 1vw;
+                padding: 1.5vw;
+                border-radius: 2vw;
+                font-size: 1.5vw;
+                font-weight: 600;
+                cursor: pointer;
+                &:hover{
+                    background-color: white;
+                    color: hsl(180, 79%, 15%);
+                    border: 2px solid hsl(180, 79%, 15%);
+                }
+            }
+        }
+    }
 }
