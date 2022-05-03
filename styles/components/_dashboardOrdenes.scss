@@ -24,7 +24,7 @@
         font-size: 1.5vw;
         cursor: pointer;
     }
-    .confirm-cancel{
+    .fondo-block{
         width: 100vw;
         height: 100%;
         background-color: hsl(180, 79%, 15%,0.5);
@@ -51,6 +51,44 @@
                     color: hsl(180, 79%, 15%);
                     border: 2px solid hsl(180, 79%, 15%);
                 }
+            }
+        }
+        .detalles-info{
+            width: 80%;
+            background-color: hsl(180, 18%, 86%);
+            border: 5px solid hsl(180, 79%, 15%);
+            height: 90vh;
+            margin: 1vw auto;
+            .button-atras{
+                width: fit-content;
+                padding: 1vw 1.5vw;
+                margin: 1vw;
+                color: white;
+                cursor: pointer;
+                background-color: hsl(180, 79%, 15%);
+                &:hover{
+                    background-color: white;
+                    color: hsl(180, 79%, 15%);
+                    border: 3px solid hsl(180, 79%, 15%);
+                }
+            }
+            .ul-info{
+                margin-left: 1.5vw;
+                margin-right: 1.5vw;
+                background-color: transparent;
+                border-bottom: 2px solid black;
+            }
+            li{
+                list-style: none;
+                background-color: transparent;
+                font-size: 1.5vw;
+            }
+            .item-list{
+                border: 1px solid black;
+                margin-left: 1vw;
+                margin-right: 1vw;
+                padding-left: 1vw;
+                background-color: transparent;
             }
         }
     }
