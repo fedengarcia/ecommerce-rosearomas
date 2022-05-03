@@ -25,7 +25,7 @@ export default function DashboardContainer () {
             <div className="dashboard-type">
                 {typeContainer === "Ordenes" && <DashboardOrdenes/>}
                 {typeContainer === "Productos" && <DashboardProductos/>}
-                {typeContainer === "Fraganacias" && <DashboardFragancias/>}
+                {typeContainer === "Fragancias" && <DashboardFragancias/>}
             </div>
         </div>
             
