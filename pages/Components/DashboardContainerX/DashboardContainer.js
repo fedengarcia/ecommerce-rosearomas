@@ -7,7 +7,6 @@ import DashboardFragancias from "../DashboardFraganciasX/DashboardFragancias";
 export default function DashboardContainer () {
     const [typeContainer,setTypeContainer] = useState(undefined);
 
-
     useEffect(() => {
         setTypeContainer("Ordenes");
     }, []);

@@ -1,10 +1,6 @@
-
-
-
-
 export default function DashboardFragancias () {
 
-
-
-    return (<h1>Fragancias</h1>)
+    return (
+        <h1>Fragancias</h1>
+    )
 }

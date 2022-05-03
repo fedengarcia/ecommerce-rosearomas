@@ -20,8 +20,6 @@ export default function DashboardOrden({order,entregado}) {
       setDisp2("block")
     }
 
-    console.log(order)
-
     return (
     <>
       {order && <Card sx={{ maxWidth: 345 }}>

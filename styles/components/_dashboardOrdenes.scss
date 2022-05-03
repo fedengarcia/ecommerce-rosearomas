@@ -8,7 +8,7 @@
     .navbarorder{
         width: 90%;
         .active{
-            background-color: rgb(65, 80, 75);
+            background-color: rgba(126, 132, 207);
         }
     }
 
@@ -27,7 +27,7 @@
     .fondo-block{
         width: 100vw;
         height: 100%;
-        background-color: hsl(180, 79%, 15%,0.5);
+        background-color: rgba(126, 132, 207, 0.6);
         backdrop-filter: blur(2px);
         position: fixed;
         top: 0vw;
@@ -39,7 +39,7 @@
             margin: 15vw auto;
             border-radius: 2vw;
             .button-borrar-order{
-                background-color: hsl(180, 79%, 15%,0.5);
+                background-color: rgba(126, 132, 207, 0.6);
                 margin: 1vw;
                 padding: 1.5vw;
                 border-radius: 2vw;
@@ -48,15 +48,15 @@
                 cursor: pointer;
                 &:hover{
                     background-color: white;
-                    color: hsl(180, 79%, 15%);
-                    border: 2px solid hsl(180, 79%, 15%);
+                    color: rgba(126, 132, 207, 0.6);
+                    border: 2px solid rgba(126, 132, 207);
                 }
             }
         }
         .detalles-info{
             width: 80%;
             background-color: hsl(180, 18%, 86%);
-            border: 5px solid hsl(180, 79%, 15%);
+            border: 5px solid rgba(126, 132, 207);
             height: 90vh;
             margin: 1vw auto;
             .button-atras{
@@ -65,11 +65,11 @@
                 margin: 1vw;
                 color: white;
                 cursor: pointer;
-                background-color: hsl(180, 79%, 15%);
+                background-color: rgba(126, 132, 207);
                 &:hover{
                     background-color: white;
-                    color: hsl(180, 79%, 15%);
-                    border: 3px solid hsl(180, 79%, 15%);
+                    color: rgba(126, 132, 207);
+                    border: 3px solid rgba(126, 132, 207);
                 }
             }
             .ul-info{
