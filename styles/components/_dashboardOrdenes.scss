@@ -6,7 +6,10 @@
     width: 100%;
 
     .navbarorder{
-        width: 50%;
+        width: 90%;
+        .active{
+            background-color: rgb(65, 80, 75);
+        }
     }
 
     .ordenes-container{

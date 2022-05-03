@@ -113,8 +113,14 @@ export const getOrders = async() => {
   return(orders);
 }
 
+export const getOrdersRechazadas = async() => {
+  
+  const ordersDoc = await getDocs(query(collection(db,"OrdersFalses")));
+  const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
+  return(orders);
+}
 
-export const setOrderEntregada = (id) => {
+export const setOrderEntregada = (id, state) => {
   const order =  doc(db, 'Orders', id);
-  setDoc(order, { entregado: true }, { merge: true });
+  setDoc(order, { entregado: state }, { merge: true });
 }

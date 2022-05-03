@@ -6,12 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { setOrderEntregada } from '../../../firebaseX/Firebase';
 
-export default function DashboardOrden({order,actualizarOrders}) {
+export default function DashboardOrden({order,entregado}) {
 
-    const handleEntregadoState = (order) => {
-        setOrderEntregada(order.id)
+    const handleEntregadoState = (order,state) => {
+        setOrderEntregada(order.id,state)
     }
-    
+
     return (
     <>
       {order && <Card sx={{ maxWidth: 345 }}>
@@ -40,9 +40,14 @@ export default function DashboardOrden({order,actualizarOrders}) {
           
         </CardContent>
 
-          {!order.entregada && 
+          {entregado===true && entregado!="rechazada" && 
           <CardActions>
-              <button onClick={() => handleEntregadoState(order)}>ENTREGADA</button>
+              <button onClick={() => handleEntregadoState(order,false)}>NO ENTREGADA</button>
+          </CardActions>
+          }
+          {entregado!=true && entregado!="rechazada" && 
+          <CardActions>
+              <button onClick={() => handleEntregadoState(order,true)}>ENTREGADA</button>
           </CardActions>
           }
       </Card>
