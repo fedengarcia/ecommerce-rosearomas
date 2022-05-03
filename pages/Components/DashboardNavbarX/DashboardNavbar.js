@@ -4,7 +4,6 @@ export default function DashboardNavbar({setTypeContainer}) {
   
 
     const handleClick = (type) => {
-        console.log(type)
         setTypeContainer(type)
     }
 

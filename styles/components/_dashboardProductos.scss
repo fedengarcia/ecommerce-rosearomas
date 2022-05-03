@@ -1,0 +1,40 @@
+.dashboard-productos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+
+
+    .dashboard-productos-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .dash-prod-item-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            border: 1px solid black;
+            
+            .dash-prod-item{
+                display: flex;
+                margin: 1em;
+
+                svg{
+                    cursor: pointer;
+                    margin-left: 0.5em;
+                    opacity: 0.5;
+                    color: #0b5a5a;
+
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
