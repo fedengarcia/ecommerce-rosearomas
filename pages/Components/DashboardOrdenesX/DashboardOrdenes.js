@@ -27,7 +27,8 @@ export default function DashboardOrdenes() {
             <div className="ordenes-container">
                 {entregado?
                     orders.lenght!=0?orders.filter(order=>order.entregado===entregado).map(order => <DashboardOrden order={order} key={order.id} entregado={entregado}/>):<></>
-                :<></>
+                :
+                    orders.lenght!=0?orders.filter(order=>order.entregado===entregado).map(order => <DashboardOrden order={order} key={order.id} entregado={entregado}/>):<></>
                 }
                 {entregado==="rechazada"?ordersRechazada.lenght!=0?ordersRechazada.map(order => <DashboardOrden order={order} key={order.id} entregado={entregado}/>):<></>:<></>}
             </div>
