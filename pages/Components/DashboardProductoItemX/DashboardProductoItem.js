@@ -18,7 +18,6 @@ export default function DashboardProductoItem ({producto}) {
     return (
         <div className="dash-prod-item-container">
             <div className="dash-prod-item">
-                <h2>Nombre:</h2>
                 {editProp === "nombre" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleNameData}/>
                  : <h2>{producto.Nombre}</h2>}
                 <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("nombre")}}/>
@@ -26,7 +25,7 @@ export default function DashboardProductoItem ({producto}) {
 
             <div className="dash-prod-item">
                 {editProp === "categoria" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="categoriaId"  placeholder="Categoria" type="text" onChangeCapture={handleCategoriaData}/>
-                 : <h2>Categoria: {producto.Categoria}</h2>}
+                 : <h2>{producto.Categoria}</h2>}
                 <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("categoria")}}/>
             </div>
             
