@@ -59,8 +59,8 @@ export default function CartContainer () {
                             <div className="VaciarCarrito">
                                 <p className="title-vaciar">VACIAR CARRITO</p>
                                 <div className="button-vaciar-container">
-                                    <p className="button-vaciar" onClick={()=>{handleClearCart(false)}}>CANCELAR</p>
                                     <p className="button-vaciar" onClick={()=>{handleClearCart(true)}}>ACEPTAR</p>
+                                    <p className="button-vaciar" onClick={()=>{handleClearCart(false)}}>CANCELAR</p>
                                 </div>
                             </div>
                         </div>

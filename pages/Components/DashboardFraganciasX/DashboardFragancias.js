@@ -1,7 +1,8 @@
-import { useEffect, useState, useContext } from "react"
+import { useState, useContext } from "react"
 import { crlContext } from "../../../Context/CarouselContext"
 import Image from "next/image"
-import { FormCheck,Form } from "react-bootstrap"
+import añadir from "../../A-imgs/icons8-más-2-matemáticas-100.png"
+
 import { changeStockFragancia, removeFragancia } from "../../../firebaseX/Firebase"
 
 export default function DashboardFragancias () {
@@ -23,7 +24,9 @@ export default function DashboardFragancias () {
                 <h1>Fragancias</h1>
                 <div className="tipo-pantalla">
                     <h2>Fragancias Pantalla Grande</h2>
-                    <p className="agregar-frg">+</p>
+                    <div>
+                        <Image src={añadir} width={100} height={100} alt="añadir"/>
+                    </div>
                 </div>
                 <br/>
                 <div className="fragancia-container">
@@ -46,7 +49,9 @@ export default function DashboardFragancias () {
                 </div>
                 <div className="tipo-pantalla">
                     <h2>Fragancias Pantalla Chica</h2>
-                    <p className="agregar-frg-2">+</p>
+                    <div>
+                        <Image src={añadir} width={100} height={100} alt="añadir"/>
+                    </div>
                 </div>
                 <br/>
                 <div className="fragancia-container">

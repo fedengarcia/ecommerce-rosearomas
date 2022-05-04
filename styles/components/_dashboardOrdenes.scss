@@ -26,6 +26,10 @@
         margin-right: 1vw;
         font-size: 1.5vw;
         cursor: pointer;
+        &:hover{
+            font-size: 1.8vw;
+            color: red;
+        }
     }
     .detalles-info{
         width: 80%;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import loading from "../../A-imgs/loading_apple_wordpress.gif"
 
-export default function DashboardOrdenRemove({disp,entregado,cargando,handleBorrar,order}) {
+export default function DashboardOrdenRemove({disp,entregado,cargando,handleBorrar,order,setDisp}) {
 
     return(
         <div className='fondo-block' style={{display:disp}}>

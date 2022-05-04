@@ -1,8 +1,7 @@
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { removeOrderFinal, setOrderEntregada } from '../../../firebaseX/Firebase';
 import loading from "../../A-imgs/loading_apple_wordpress.gif"
@@ -95,7 +94,7 @@ export default function DashboardOrden({order,entregado}) {
 
       <DashboardOrdenDetalles disp2={disp2} order={order} setDisp2={setDisp2}/>
 
-      <DashboardOrdenRemove disp={disp} entregado={entregado} cargando={cargando} handleBorrar={handleBorrar} order={order}/>
+      <DashboardOrdenRemove disp={disp} entregado={entregado} cargando={cargando} handleBorrar={handleBorrar} order={order} setDisp={setDisp}/>
     </>
   );
 }

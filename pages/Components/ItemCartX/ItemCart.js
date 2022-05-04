@@ -47,8 +47,8 @@ export default function ItemCart({producto}) {
                                 <div className="VaciarCarrito">
                                     <p className="title-vaciar">BORRAR PRODUCTO</p>
                                     <div className="button-vaciar-container">
-                                        <p className="button-vaciar" onClick={()=>{handleClearCart(false,prods.id)}}>CANCELAR</p>
                                         <p className="button-vaciar" onClick={()=>{handleClearCart(true,prods.id)}}>ACEPTAR</p>
+                                        <p className="button-vaciar" onClick={()=>{handleClearCart(false,prods.id)}}>CANCELAR</p>
                                     </div>
                                 </div>
                             </div>

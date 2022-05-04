@@ -16,8 +16,18 @@
             background-color: transparent;
             width: 50%;
         }
-        p{
-            
+        div{
+          background-color: transparent;
+          width: 4.5vw;
+          margin: .3vw 0vw;
+          margin-left: 35vw;
+          &:hover{
+            width: 4.8vw;
+          }
+          img{
+            background-color: transparent;
+            cursor: pointer;
+          }
         }
     }
     .fragancia-container{
