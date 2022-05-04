@@ -14,12 +14,12 @@ export default function DashboardOrden({order,entregado}) {
 
     const handleEntregadoState = (order,state) => {
         setOrderEntregada(order.id,state)
-    }
-
-    const handleDetalles = () => {
-      setDisp2("block")
-    }
-
+      }
+      
+      const handleDetalles = () => {
+        setDisp2("block")
+      }
+      
     return (
     <>
       {order && <Card sx={{ maxWidth: 345 }}>

@@ -50,6 +50,8 @@ export const getProductos = async(cat,limite) =>{
 }
 
 
+
+
 //CARGAR UNA NUEVA ORDEN DE COMPRA
 export const addNewOrder = async (order) => {
 
@@ -69,7 +71,6 @@ export const addNewOrder = async (order) => {
 export const removeOrder = async (id) => {
   await deleteDoc(doc(db, "Orders", id));
 }
-
 
 //CARGAR UNA NUEVA ORDEN DE COMPRA TEMPORAL
 export const addNewOrderFalse = async (order) => {
@@ -91,6 +92,25 @@ export const removeOrderTemporal = async (id) => {
   await deleteDoc(doc(db, "OrdersFalses", id));
 }
 
+// DASHBOARD GET ORDERS
+export const getOrders = async(typeOrder) => {
+  
+  const ordersDoc = await getDocs(query(collection(db,typeOrder),orderBy("fecha")));
+  const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
+  return(orders);
+}
+
+export const setOrderEntregada = async(id, state) => {
+  const order =  doc(db, 'Orders', id);
+  await setDoc(order, { entregado: state }, { merge: true });
+}
+
+export const removeOrderFinal = async (id,typeOrder) => {
+  await deleteDoc(doc(db, typeOrder, id));
+}
+
+
+
 
 // DASHBOARD REF IMAGE
 const storage=getStorage(app)
@@ -101,22 +121,15 @@ export const addStorage=async(titulo,carpeta,imagen)=>{
   uploadBytes(storageRef,imagen).then(()=>{
     console.log(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
   })
-
 }
 
-// DASHBOARD GET ORDERS
-export const getOrders = async(typeOrder) => {
-  
-  const ordersDoc = await getDocs(query(collection(db,typeOrder),orderBy("fecha")));
-  const orders = ordersDoc.docs.map(doc=>{return{id:doc.id,...doc.data()}});
-  return(orders);
+
+// FRAGANCIAS
+export const changeStockFragancia=async(id,state)=>{
+  const fragancia =  doc(db, 'CarouselFragancias', id);
+  setDoc(fragancia, { stock: state }, { merge: true });
 }
 
-export const setOrderEntregada = (id, state) => {
-  const order =  doc(db, 'Orders', id);
-  setDoc(order, { entregado: state }, { merge: true });
-}
-
-export const removeOrderFinal = async (id,typeOrder) => {
-  await deleteDoc(doc(db, typeOrder, id));
+export const removeFragancia = async (id,docEliminar) => {
+  await deleteDoc(doc(db, docEliminar, id));
 }

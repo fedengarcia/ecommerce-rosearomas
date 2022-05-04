@@ -27,71 +27,71 @@
         font-size: 1.5vw;
         cursor: pointer;
     }
-    .fondo-block{
-        width: 100vw;
-        height: 100%;
-        background-color: rgba(126, 132, 207, 0.6);
-        backdrop-filter: blur(2px);
-        position: fixed;
-        top: 0vw;
-        left: 0vw;
-        .confirm-cancel-info{
-            display: flex;
+    .detalles-info{
+        width: 80%;
+        background-color: hsl(180, 18%, 86%);
+        border: 5px solid rgba(126, 132, 207);
+        height: 90vh;
+        margin: 1vw auto;
+        .button-atras{
             width: fit-content;
-            padding: 2vw 10vw;
-            margin: 15vw auto;
-            border-radius: 2vw;
-            .button-borrar-order{
-                background-color: rgba(126, 132, 207, 0.6);
-                margin: 1vw;
-                padding: 1.5vw;
-                border-radius: 2vw;
-                font-size: 1.5vw;
-                font-weight: 600;
-                cursor: pointer;
-                &:hover{
-                    background-color: white;
-                    color: rgba(126, 132, 207, 0.6);
-                    border: 2px solid rgba(126, 132, 207);
-                }
+            padding: 1vw 1.5vw;
+            margin: 1vw;
+            color: white;
+            cursor: pointer;
+            background-color: rgba(126, 132, 207);
+            &:hover{
+                background-color: white;
+                color: rgba(126, 132, 207);
+                border: 3px solid rgba(126, 132, 207);
             }
         }
-        .detalles-info{
-            width: 80%;
-            background-color: hsl(180, 18%, 86%);
-            border: 5px solid rgba(126, 132, 207);
-            height: 90vh;
-            margin: 1vw auto;
-            .button-atras{
-                width: fit-content;
-                padding: 1vw 1.5vw;
-                margin: 1vw;
-                color: white;
-                cursor: pointer;
-                background-color: rgba(126, 132, 207);
-                &:hover{
-                    background-color: white;
-                    color: rgba(126, 132, 207);
-                    border: 3px solid rgba(126, 132, 207);
-                }
-            }
-            .ul-info{
-                margin-left: 1.5vw;
-                margin-right: 1.5vw;
-                background-color: transparent;
-                border-bottom: 2px solid black;
-            }
-            li{
-                list-style: none;
-                background-color: transparent;
-                font-size: 1.5vw;
-            }
-            .item-list{
-                border: 1px solid black;
-                margin-left: 1vw;
-                margin-right: 1vw;
-                padding-left: 1vw;
-                background-color: transparent;
+        .ul-info{
+            margin-left: 1.5vw;
+            margin-right: 1.5vw;
+            background-color: transparent;
+            border-bottom: 2px solid black;
+        }
+        li{
+            list-style: none;
+            background-color: transparent;
+            font-size: 1.5vw;
+        }
+        .item-list{
+            border: 1px solid black;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            padding-left: 1vw;
+            background-color: transparent;
+        }
+    }
+}
+.fondo-block{
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(126, 132, 207, 0.6);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0vw;
+    left: 0vw;
+    .confirm-cancel-info{
+        display: flex;
+        width: fit-content;
+        padding: 2vw 10vw;
+        margin: 15vw auto;
+        border-radius: 2vw;
+        .button-borrar-order{
+            background-color: rgba(126, 132, 207, 0.6);
+            margin: 1vw;
+            padding: 1.5vw;
+            border-radius: 2vw;
+            font-size: 1.5vw;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover{
+                background-color: white;
+                color: rgba(126, 132, 207, 0.6);
+                border: 2px solid rgba(126, 132, 207);
             }
         }
     }
