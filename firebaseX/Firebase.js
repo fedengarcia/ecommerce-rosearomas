@@ -55,7 +55,7 @@ export const getProductos = async(cat,limite) =>{
 //CARGAR UNA NUEVA ORDEN DE COMPRA
 export const addNewOrder = async (order) => {
 
-  const fechaOrder={'dia': (new Date()).getDate(),'mes':((new Date()).getMonth()+1),"año":(new Date()).getFullYear()}
+  const fechaOrder={'dia': (new Date()).getDate(),'mes':((new Date()).getMonth()+1),"ano":(new Date()).getFullYear()}
 
   const newOrder = {
       fecha:fechaOrder,
@@ -75,7 +75,7 @@ export const removeOrder = async (id) => {
 //CARGAR UNA NUEVA ORDEN DE COMPRA TEMPORAL
 export const addNewOrderFalse = async (order) => {
   
-  const fechaOrder={'dia': (new Date()).getDate(),'mes':((new Date()).getMonth()+1),"año":(new Date()).getFullYear()}
+  const fechaOrder={'dia': (new Date()).getDate(),'mes':((new Date()).getMonth()+1),"ano":(new Date()).getFullYear()}
 
   const newOrder = {
       fecha:fechaOrder,

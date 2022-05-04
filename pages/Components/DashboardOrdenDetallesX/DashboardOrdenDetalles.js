@@ -5,7 +5,7 @@ export default function DashboardOrdenDetalles({disp2,order,setDisp2}) {
         <div className='detalles-info'>
         <p className='button-atras' onClick={()=>{setDisp2("none")}}>ATRAS</p>
         <ul className='ul-info'>
-            <li>{order.fecha["dia"]}/{order.fecha["mes"]}/{order.fecha["año"]}</li>
+            <li>{order.fecha["dia"]}/{order.fecha["mes"]}/{order.fecha["ano"]}</li>
             <li>{order.payer.name} {order.payer.surname} | {order.payer.email}</li>
             <li>{order.payer.localidad} {order.payer.address["zip_code"]} | {order.payer.address["street_name"]} {order.payer.address["street_number"]} | {order.payer.phone["area_code"]}-{order.payer.phone["number"]}</li>
             <li>{order.payer.metodo_pago}</li>

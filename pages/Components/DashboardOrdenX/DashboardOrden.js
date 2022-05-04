@@ -46,7 +46,7 @@ export default function DashboardOrden({order,entregado}) {
             {order && `Nombre: ${order.payer.name} ${order.payer.surname}`}
           </Typography>
           <Typography variant="body1" color="text.secondary" className='desc-card-tienda'>
-            {order && `Fecha: ${order.fecha.dia}/${order.fecha.mes}/${order.fecha.año}`}
+            {order && `Fecha: ${order.fecha.dia}/${order.fecha.mes}/${order.fecha.ano}`}
           </Typography>
           <Typography variant="body1" color="text.secondary" className='desc-card-tienda'>
             {order && `Email: ${order.payer.email}`}
