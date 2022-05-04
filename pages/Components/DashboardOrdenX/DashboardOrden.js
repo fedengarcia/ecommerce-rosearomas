@@ -5,20 +5,38 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { removeOrderFinal, setOrderEntregada } from '../../../firebaseX/Firebase';
+import loading from "../../A-imgs/loading_apple_wordpress.gif"
+import Image from "next/image";
+import DashboardOrdenDetalles from '../DashboardOrdenDetallesX/DashboardOrdenDetalles';
+import DashboardOrdenRemove from '../DashboardOrdenRemoveX/DashboardOrdenRemove';
 
 
 export default function DashboardOrden({order,entregado}) {
 
     const [disp,setDisp]=useState("none")
     const [disp2,setDisp2]=useState("none")
+    const [cargando,setCargando]=useState(false)
 
     const handleEntregadoState = (order,state) => {
-        setOrderEntregada(order.id,state)
-      }
-      
-      const handleDetalles = () => {
-        setDisp2("block")
-      }
+      setCargando(true)
+      setOrderEntregada(order.id,state).then(res=>{
+        document.location.reload()
+        setCargando(false)
+      })
+    }
+    
+    const handleBorrar = (order,typeOrder) => {
+      setCargando(true)
+      removeOrderFinal(order,typeOrder).then(res=>{
+        setDisp("none")
+        document.location.reload()
+        setCargando(false)
+      })
+    }
+
+    const handleDetalles = () => {
+      setDisp2("block")
+    }
       
     return (
     <>
@@ -53,45 +71,31 @@ export default function DashboardOrden({order,entregado}) {
             <button onClick={() => handleDetalles()} className="button-entregada">Detalles</button>
         </CardActions>
 
-        {entregado===true && entregado!="rechazada" && 
-          <CardActions>
-              <button onClick={() => handleEntregadoState(order,false)} className="button-entregada">NO ENTREGADA</button>
-          </CardActions>
+        {cargando?
+          <div style={{backgroundColor:"#dee6e6",width:"100%"}}>
+            <Image src={loading} alt="loading" width={50} height={50} style={{backgroundColor:"transparent"}}/>
+          </div>
+        :
+          <>
+            {entregado===true && entregado!="rechazada" &&
+              <CardActions>
+                <button onClick={() => handleEntregadoState(order,false)} className="button-entregada">NO ENTREGADA</button>
+              </CardActions>
+            }
+            {entregado!=true && entregado!="rechazada" &&
+              <CardActions>
+                <button onClick={() => handleEntregadoState(order,true)} className="button-entregada">ENTREGADA</button>
+              </CardActions>
+            }
+          </>
         }
 
-        {entregado!=true && entregado!="rechazada" && 
-          <CardActions>
-              <button onClick={() => handleEntregadoState(order,true)} className="button-entregada">ENTREGADA</button>
-          </CardActions>
-        }
       </Card>
       }
 
-      <div className='fondo-block' style={{display:disp2}}>
-        <div className='detalles-info'>
-          <p className='button-atras' onClick={()=>{setDisp2("none")}}>ATRAS</p>
-          <ul className='ul-info'>
-            <li>{order.fecha["dia"]}/{order.fecha["mes"]}/{order.fecha["año"]}</li>
-            <li>{order.payer.name} {order.payer.surname} | {order.payer.email}</li>
-            <li>{order.payer.localidad} {order.payer.address["zip_code"]} | {order.payer.address["street_name"]} {order.payer.address["street_number"]} | {order.payer.phone["area_code"]}-{order.payer.phone["number"]}</li>
-            <li>{order.payer.metodo_pago}</li>
-          </ul>
-          <ul>
-            {(order.items).map(item=><p key={item.id} className="item-list">{item.title} | Cantidad: {item.quantity} | Total: {item.quantity * item.unit_price} | Fragancia: {item.type}</p>)}
-          </ul>
-        </div>
-      </div>
+      <DashboardOrdenDetalles disp2={disp2} order={order} setDisp2={setDisp2}/>
 
-      <div className='fondo-block' style={{display:disp}}>
-        <div className='confirm-cancel-info'>
-          {entregado!="rechazada"?
-            <p className='button-borrar-order' onClick={()=>{removeOrderFinal(order.id,"Orders"),setDisp("none")}}>Confirmar</p>
-          :
-            <p className='button-borrar-order' onClick={()=>{removeOrderFinal(order.id,"OrdersFalses"),setDisp("none")}}>Confirmar</p>
-          }
-          <p className='button-borrar-order' onClick={()=>{setDisp("none")}}>Cancelar</p>
-        </div>
-      </div>
+      <DashboardOrdenRemove disp={disp} entregado={entregado} cargando={cargando} handleBorrar={handleBorrar} order={order}/>
     </>
   );
 }
