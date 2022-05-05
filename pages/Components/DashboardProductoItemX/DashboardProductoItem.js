@@ -3,7 +3,7 @@ import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutli
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { editPropProduct, removeProduct } from '../../../firebaseX/Firebase';
+import { addStorage, editPropProduct, removeProduct } from '../../../firebaseX/Firebase';
 import Image from "next/image";
 
 
@@ -12,7 +12,20 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
     const [propType, setPropType] = useState("");
     const [data,setData] = useState("");
     const [disp,setDisp]=useState("none");
+    const [imagen,setImagen]=useState("");
 
+    const changeImagen = (e)=>{
+        setImagen(e.target.files[0]);
+        addStorage(producto.Nombre,"productos",imagen).then(res =>{
+            const url = res;
+            console.log(url)
+
+        });
+        // editPropProduct(producto.id,"imagen",url).then(res=>{
+        //     setReload(!reload);
+        //     setImagen("");
+        // })
+    }
 
     const handleChangeData = (e) => {
         setData(e.target.value)
@@ -42,6 +55,12 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                 <div className="dash-prod-item">
                     <div className='img-dash-prod-item dash-prod-item-box'>
                         <Image src={producto.Img} alt={"imagen del producto"} width={200} height={200}/>
+                        <input
+                            type="file"
+                            name="img"
+                            id="img"
+                            onChange={(e) => {changeImagen(e)}}
+                        />
                     </div>
 
                     <div className='dash-prod-item-box'>

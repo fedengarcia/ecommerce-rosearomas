@@ -115,9 +115,9 @@ export const removeOrderFinal = async (id,typeOrder) => {
 // DASHBOARD REF IMAGE
 const storage=getStorage(app)
 
-export const addStorage=async(titulo,carpeta,imagen)=>{
+export const addStorage = async(titulo,carpeta,imagen)=>{
   
-  const storageRef= ref(storage,`${carpeta}/${titulo}.jpg`)
+  const storageRef = ref(storage,`${carpeta}/${titulo}.jpg`)
   await uploadBytes(storageRef,imagen).then(()=>{
     return(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
   })
@@ -151,6 +151,9 @@ export const editPropProduct = async (id,type,data) => {
   }
   if(type === "stock"){
     await setDoc(product,{Stock:data}, {merge:true})
+  }  
+  if(type === "imagen"){
+    await setDoc(product,{Img:data}, {merge:true})
   }
 }
 
