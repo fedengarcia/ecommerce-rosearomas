@@ -117,9 +117,9 @@ const storage=getStorage(app)
 
 export const addStorage = async(titulo,carpeta,imagen)=>{
   
-  const storageRef = ref(storage,`${carpeta}/${titulo}.jpg`)
+  const storageRef = ref(storage,`${carpeta}/${titulo}.png`)
   await uploadBytes(storageRef,imagen);
-  return(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)));
+  return(getDownloadURL(ref(storage,`${carpeta}/${titulo}.png`)));
 }
 
 
