@@ -29,7 +29,7 @@ export default function DashboardProductoItem ({producto}) {
 
                 <div className='title-description-dash-prod-item dash-prod-item-box'>
                     <div>
-                        <h5>Nombre: </h5>
+                        <h5>NombreE: </h5>
                         {editProp === "nombre" ? <TextField className="title-dash-prod-item" size="medium" autoComplete="off" color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleChangeData}/>
                         : <h5>{producto.Nombre}</h5>}
                         
