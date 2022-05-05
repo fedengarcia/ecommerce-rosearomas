@@ -3,12 +3,13 @@ import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutli
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
+import { editPropProduct } from '../../../firebaseX/Firebase';
 
 
 
 
-export default function DashboardProductoItem ({producto}) {
-    const [editProp, setEditProp] = useState("");
+export default function DashboardProductoItem ({producto,setReload, reload}) {
+    const [propType, setPropType] = useState("");
     const [data,setData] = useState("");
 
 
@@ -17,88 +18,92 @@ export default function DashboardProductoItem ({producto}) {
     }
 
     const handleConfirm = () => {
-        console.log("TU DATO A CAMBIAR ES", data);
-        console.log("TU DATO A CAMBIAR ES", editProp)
+
+        editPropProduct(producto.id,propType,data).then(res => {
+            setPropType("");
+            setReload(!reload);
+
+        });
+
     }
 
     return (
-        
-        <div className="dash-prod-item-container">
-            <div className="dash-prod-item">
-                <div className='img-dash-prod-item dash-prod-item-box'>IMAGEN</div>
+        <>
+            {producto === undefined ? <></> :
+            <div className="dash-prod-item-container">
+                <div className="dash-prod-item">
+                    <div className='img-dash-prod-item dash-prod-item-box'>IMAGEN</div>
 
-                <div className='title-description-dash-prod-item dash-prod-item-box'>
-                    <div>
-                        <h5>NombreE: </h5>
-                        {editProp === "nombre" ? <TextField className="title-dash-prod-item" size="medium" autoComplete="off" color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleChangeData}/>
-                        : <h5>{producto.Nombre}</h5>}
-                        
-                        {editProp !== "nombre" ? <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("nombre")}}/>
-                        : <div>
-                            <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
-                            <CancelOutlinedIcon onClick={()=> {setEditProp(""); setData("")}}/>
+                    <div className='title-description-dash-prod-item dash-prod-item-box'>
+                        <div>
+                            <h5>Nombre: </h5>
+                            {propType === "nombre" ? <TextField className="title-dash-prod-item" size="medium" autoComplete="off" color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleChangeData}/>
+                            : <h5>{producto.Nombre}</h5>}
+                            
+                            {propType !== "nombre" ? <EditTwoToneIcon fontSize="large" onClick={() => {setPropType("nombre")}}/>
+                            : <div>
+                                <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
+                                <CancelOutlinedIcon onClick={()=> {setPropType(""); setData("")}}/>
+                            </div>
+                            } 
                         </div>
-                        } 
+
+                        <div>
+                            <h5>Descripcion: </h5>
+                            {propType === "descripcion" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="descripcionId"  placeholder="Descripcion" type="text" onChangeCapture={handleChangeData}/>
+                                : <h5>{producto.Descripcion}</h5>}
+                            {propType !== "descripcion" ? <EditTwoToneIcon fontSize="large" onClick={() => {setPropType("descripcion")}}/>
+                            : <div>
+                                <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
+                                <CancelOutlinedIcon onClick={()=> {setPropType(""); setData("")}}/>
+                                </div>
+                            } 
+                        </div>
+                
                     </div>
 
-                    <div>
-                        <h5>Descripcion: </h5>
-                        {editProp === "descripcion" ? <TextField className="form-input" multiline rows={4} size="medium" autoComplete="off" color="secondary"  id="descripcionId"  placeholder="Descripcion" type="text" onChangeCapture={handleChangeData}/>
-                            : <h5>{producto.Descripcion}</h5>}
-                        {editProp !== "descripcion" ? <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("descripcion")}}/>
-                        : <div>
-                            <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
-                            <CancelOutlinedIcon onClick={()=> {setEditProp(""); setData("")}}/>
-                            </div>
-                        } 
+                    <div className='rest-dash-prod-item dash-prod-item-box'>
+
+                        <div>
+                            <h5>Categoria: </h5>
+                            {propType === "categoria" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="categoriaId"  placeholder="Categoria" type="text" onChangeCapture={handleChangeData}/>
+                            : <h5>{producto.Categoria}</h5>}
+
+                        {propType !== "categoria" ? <EditTwoToneIcon fontSize="large" onClick={() => {setPropType("categoria")}}/>
+                            : <div>
+                                <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
+                                <CancelOutlinedIcon onClick={()=> {setPropType(""); setData("")}}/>
+                                </div>
+                            } 
+                        </div>
+
+                        <div>
+                            <h5>Precio: $ </h5>
+                            {propType === "precio" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="precioId"  placeholder="Precio" type="number" onChangeCapture={handleChangeData}/>
+                            : <h5>{producto.Precio}</h5>}
+                            {propType !== "precio" ? <EditTwoToneIcon fontSize="large" onClick={() => {setPropType("precio")}}/>
+                            : <div>
+                                <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
+                                <CancelOutlinedIcon onClick={()=> {setPropType(""); setData("")}}/>
+                                </div>
+                            } 
+                        </div>
+
+                        <div>
+                            <h5>Stock: </h5>
+                            {propType === "stock" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="stockId"  placeholder="Stock" type="number" onChangeCapture={handleChangeData}/>
+                            : <h5>{producto.Stock}</h5>}
+                            {propType !== "stock" ? <EditTwoToneIcon fontSize="large" onClick={() => {setPropType("stock")}}/>
+                            : <div>
+                                <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
+                                <CancelOutlinedIcon onClick={()=> {setPropType(""); setData("")}}/>
+                                </div>
+                            } 
+                        </div>
                     </div>
-            
                 </div>
-
-                <div className='rest-dash-prod-item dash-prod-item-box'>
-
-                    <div>
-                        <h5>Categoria: </h5>
-                        {editProp === "categoria" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="categoriaId"  placeholder="Categoria" type="text" onChangeCapture={handleChangeData}/>
-                        : <h5>{producto.Categoria}</h5>}
-
-                       {editProp !== "categoria" ? <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("categoria")}}/>
-                        : <div>
-                            <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
-                            <CancelOutlinedIcon onClick={()=> {setEditProp(""); setData("")}}/>
-                            </div>
-                        } 
-                    </div>
-
-                    <div>
-                        <h5>Precio: $ </h5>
-                        {editProp === "precio" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="precioId"  placeholder="Precio" type="number" onChangeCapture={handleChangeData}/>
-                        : <h5>{producto.Precio}</h5>}
-                        {editProp !== "precio" ? <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("precio")}}/>
-                        : <div>
-                            <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
-                            <CancelOutlinedIcon onClick={()=> {setEditProp(""); setData("")}}/>
-                            </div>
-                        } 
-                    </div>
-
-                    <div>
-                        <h5>Stock: </h5>
-                        {editProp === "stock" ? <TextField className="form-input" size="medium" autoComplete="off" color="secondary"  id="stockId"  placeholder="Stock" type="number" onChangeCapture={handleChangeData}/>
-                        : <h5>{producto.Stock}</h5>}
-                        {editProp !== "stock" ? <EditTwoToneIcon fontSize="large" onClick={() => {setEditProp("stock")}}/>
-                        : <div>
-                            <CheckCircleOutlineOutlinedIcon onClick={handleConfirm}/>
-                            <CancelOutlinedIcon onClick={()=> {setEditProp(""); setData("")}}/>
-                            </div>
-                        } 
-                    </div>
-                    
-                </div>
-            </div>
-
+            </div>}
+        </>
         
-            
-        </div>
 )
 }

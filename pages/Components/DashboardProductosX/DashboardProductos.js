@@ -7,13 +7,14 @@ export default function DashboardProductos () {
     
     const [listaProds,setListaProds]=useState([])
     const [prodsFiltrados, setProdsFiltrados]=useState([])
-    const [busqueda,setBusqueda]=useState(false)
+    const [busqueda,setBusqueda]=useState(false);
+    const [reload,setReload] = useState(false);
 
     useEffect(()=>{
         getProductos("Todo",9999).then(res=>{
             setListaProds(res)
         })
-    },[])
+    },[reload])
 
     return (
         <div className="dashboard-productos">
@@ -23,9 +24,9 @@ export default function DashboardProductos () {
 
             <div className="dashboard-productos-container">
                 {busqueda? <p className="noSeEncontro">No se encontraron productos</p> 
-                :   prodsFiltrados.length === 0 ? listaProds.map(prod => <DashboardProductoItem key={prod.id} producto={prod}/>)
+                :   prodsFiltrados.length === 0 ? listaProds.map(prod => <DashboardProductoItem key={prod.id} producto={prod} setReload={setReload} reload={reload}/>)
                 :
-                prodsFiltrados.map(prod => <DashboardProductoItem key={prod.id} producto={prod}/>)
+                prodsFiltrados.map(prod => <DashboardProductoItem key={prod.id} producto={prod} setReloa={setReload} reload={reload}/>)
                 }
             </div>
 
