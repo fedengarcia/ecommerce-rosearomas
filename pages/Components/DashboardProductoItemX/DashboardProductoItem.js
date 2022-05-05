@@ -16,15 +16,14 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
 
     const changeImagen = (e)=>{
         setImagen(e.target.files[0]);
-        addStorage(producto.Nombre,"productos",imagen).then(res =>{
-            const url = res;
-            console.log(url)
-
+        addStorage(producto.Nombre,"productos",imagen).then(res => {
+            editPropProduct(producto.id,"imagen",res).then(res=>{
+                setReload(!reload);
+                setImagen("");
+            })
         });
-        // editPropProduct(producto.id,"imagen",url).then(res=>{
-        //     setReload(!reload);
-        //     setImagen("");
-        // })
+
+
     }
 
     const handleChangeData = (e) => {
@@ -59,6 +58,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                             type="file"
                             name="img"
                             id="img"
+                            accept="image/jpg"
                             onChange={(e) => {changeImagen(e)}}
                         />
                     </div>
