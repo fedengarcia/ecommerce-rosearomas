@@ -12,18 +12,13 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
     const [propType, setPropType] = useState("");
     const [data,setData] = useState("");
     const [disp,setDisp]=useState("none");
-    const [imagen,setImagen]=useState("");
 
     const changeImagen = (e)=>{
-        setImagen(e.target.files[0]);
-        addStorage(producto.Nombre,"productos",imagen).then(res => {
+        addStorage(producto.Nombre,"productos",e.target.files[0]).then(res => {
             editPropProduct(producto.id,"imagen",res).then(res=>{
                 setReload(!reload);
-                setImagen("");
             })
         });
-
-
     }
 
     const handleChangeData = (e) => {
