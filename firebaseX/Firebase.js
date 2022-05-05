@@ -133,3 +133,23 @@ export const changeStockFragancia=async(id,state)=>{
 export const removeFragancia = async (id,docEliminar) => {
   await deleteDoc(doc(db, docEliminar, id));
 }
+
+
+export const editPropProduct = async (id,type,data) => {
+  const product = doc(db, "Productos", id);
+  if(type === "nombre"){
+    await setDoc(product,{Nombre:data}, {merge:true})
+  }
+  if(type === "descripcion"){
+    await setDoc(product,{Descripcion:data}, {merge:true})
+  }
+  if(type === "categoria"){
+    await setDoc(product,{Categoria:data}, {merge:true})
+  }
+  if(type === "precio"){
+    await setDoc(product,{Precio:data}, {merge:true})
+  }
+  if(type === "stock"){
+    await setDoc(product,{Stock:data}, {merge:true})
+  }
+}
