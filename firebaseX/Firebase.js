@@ -153,3 +153,8 @@ export const editPropProduct = async (id,type,data) => {
     await setDoc(product,{Stock:data}, {merge:true})
   }
 }
+
+
+export const removeProduct = async (id) => {
+  await deleteDoc(doc(db, "Productos", id));
+}

@@ -3,14 +3,15 @@ import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutli
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { editPropProduct } from '../../../firebaseX/Firebase';
-
+import { editPropProduct, removeProduct } from '../../../firebaseX/Firebase';
+import Image from "next/image";
 
 
 
 export default function DashboardProductoItem ({producto,setReload, reload}) {
     const [propType, setPropType] = useState("");
     const [data,setData] = useState("");
+    const [disp,setDisp]=useState("none");
 
 
     const handleChangeData = (e) => {
@@ -27,14 +28,23 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
 
     }
 
+
+    const handleRemoveProduct = () => {
+        removeProduct(producto.id).then(res => {
+            setReload(!reload);
+        })
+    }
+
     return (
         <>
             {producto === undefined ? <></> :
             <div className="dash-prod-item-container">
                 <div className="dash-prod-item">
-                    <div className='img-dash-prod-item dash-prod-item-box'>IMAGEN</div>
+                    <div className='img-dash-prod-item dash-prod-item-box'>
+                        <Image src={producto.Img} alt={"imagen del producto"} width={200} height={200}/>
+                    </div>
 
-                    <div className='title-description-dash-prod-item dash-prod-item-box'>
+                    <div className='dash-prod-item-box'>
                         <div>
                             <h5>Nombre: </h5>
                             {propType === "nombre" ? <TextField className="title-dash-prod-item" size="medium" autoComplete="off" color="secondary"  id="nameId"  placeholder="Nombre" type="text" onChangeCapture={handleChangeData}/>
@@ -62,7 +72,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                 
                     </div>
 
-                    <div className='rest-dash-prod-item dash-prod-item-box'>
+                    <div className='dash-prod-item-box'>
 
                         <div>
                             <h5>Categoria: </h5>
@@ -100,9 +110,24 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                                 </div>
                             } 
                         </div>
+
+                    </div>
+                    
+                    <div className='dash-prod-item-box delete-item-box'>
+                        <button onClick={()=> setDisp("block")}>ELIMINAR PRODUCTO</button>
                     </div>
                 </div>
-            </div>}
+            </div>
+            
+            }
+
+            <div className='fondo-block' style={{display:disp, zIndex:'5'}}>
+                <div className='confirm-cancel-info'>
+                    <p className='button-borrar-order' onClick={()=>{handleRemoveProduct,setDisp("none")}}>Confirmar</p>
+                    <p className='button-borrar-order' onClick={()=>{setDisp("none")}}>Cancelar</p>
+                </div>
+            </div>
+
         </>
         
 )
