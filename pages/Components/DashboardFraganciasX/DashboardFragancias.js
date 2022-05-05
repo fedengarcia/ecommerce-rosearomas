@@ -12,8 +12,11 @@ export default function DashboardFragancias () {
 
     const [addFragancia,setAddFragancia]=useState(false)
     const [pantalla,setPantalla]=useState("")
+    const [tamaño,setTamaño]=useState("")
+    const [type,setType]=useState("")
 
     const [fraganciaEliminar,setFraganciaEliminar]=useState("")
+    const [fraganciaEliminar2,setFraganciaEliminar2]=useState("")
     const [docEliminar,setDocEliminar]=useState("")
 
     const [disp,setDisp]=useState("none")
@@ -29,7 +32,7 @@ export default function DashboardFragancias () {
                 <div className="tipo-pantalla">
                     <h2>Fragancias Pantalla Grande</h2>
                     <div>
-                        <Image src={anadir} width={100} height={100} alt="añadir" onClick={()=>{setPantalla("Pantalla Grande"),setAddFragancia(true)}}/>
+                        <Image src={anadir} width={100} height={100} alt="añadir" onClick={()=>{setPantalla("Pantalla Grande"),setTamaño("(1320x300)"),setType("CarouselFragancias"),setAddFragancia(true)}}/>
                     </div>
                 </div>
                 <br/>
@@ -37,7 +40,7 @@ export default function DashboardFragancias () {
                     {carouselFragancia.map(img=>(
                         <div key={img.id} className="linea-fragancia">
                             <p>{img.Nombre}</p>
-                            <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setDocEliminar("CarouselFragancias"),setDisp("block")}}>X</p>
+                            <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFragancias"),setDisp("block")}}>X</p>
                             <div className="foto-stock">
                                 <Image src={img.img} width={800} height={170} alt={img.Nombre}/>
                                 <div>
@@ -54,7 +57,7 @@ export default function DashboardFragancias () {
                 <div className="tipo-pantalla">
                     <h2>Fragancias Pantalla Chica</h2>
                     <div>
-                        <Image src={anadir} width={100} height={100} alt="añadir" onClick={()=>{setPantalla("Pantalla Chica"),setAddFragancia(true)}}/>
+                        <Image src={anadir} width={100} height={100} alt="añadir" onClick={()=>{setPantalla("Pantalla Chica"),setTamaño("(700x500)"),setType("CarouselFraganciasSML"),setAddFragancia(true)}}/>
                     </div>
                 </div>
                 <br/>
@@ -62,7 +65,7 @@ export default function DashboardFragancias () {
                     {carouselFraganciaSML.map(img=>(
                         <div key={img.id} className="linea-fragancia">
                             <p>{img.Nombre}</p>
-                            <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setDocEliminar("CarouselFraganciasSML"),setDisp("block")}}>X</p>
+                            <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFraganciasSML"),setDisp("block")}}>X</p>
                             <div className="foto-stock">
                                 <Image src={img.img} width={400} height={300} alt={img.Nombre}/>
                             </div>
@@ -72,12 +75,12 @@ export default function DashboardFragancias () {
             </div>
             <div className='fondo-block' style={{display:disp}}>
                 <div className='confirm-cancel-info'>
-                    <p className='button-borrar-order' onClick={()=>{removeFragancia(fraganciaEliminar,docEliminar),setDisp("none")}}>Confirmar</p>
+                    <p className='button-borrar-order' onClick={()=>{removeFragancia(fraganciaEliminar,docEliminar,fraganciaEliminar2),setDisp("none")}}>Confirmar</p>
                     <p className='button-borrar-order' onClick={()=>{setDisp("none")}}>Cancelar</p>
                 </div>
             </div>
             {!addFragancia?<></>:
-                <DashboardAddFragancias setAddFragancia={setAddFragancia} pantalla={pantalla}/>
+                <DashboardAddFragancias setAddFragancia={setAddFragancia} pantalla={pantalla} tamaño={tamaño} type={type}/>
             }
         </>
     )

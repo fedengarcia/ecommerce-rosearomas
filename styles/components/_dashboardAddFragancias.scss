@@ -12,6 +12,12 @@
         margin: auto;
         margin-top: 5vw;
         padding: 1vw;
+        p{
+            font-size: 2vw;
+        }
+        .subTitulo{
+            font-size: 1.8vw;
+        }
     }
     .boton-atras{
         background-color: transparent;
@@ -29,9 +35,14 @@
             border: 2px solid hsl(180, 79%, 15%);
         }
     }
+    .boton-subir{
+        margin-left: 24vw;
+        font-size: 2vw;
+        margin-top: 2vw;
+    }
     .add-foto{
         width: 95%;
-        height: 30%;
+        height: 8vw;
         border: 1px solid black;
         margin: auto;
         display: flex;
@@ -40,6 +51,16 @@
         align-items: center;
         p{
             font-size: 1.5vw;
+        }
+    }
+    form{
+        .form-input{
+            text-align: center;
+        }
+        .input-span{
+            text-align: center;
+            width: fit-content;
+            margin: auto;
         }
     }
 }

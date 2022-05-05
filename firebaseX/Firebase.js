@@ -2,7 +2,7 @@ import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import {getFirestore, limit} from "firebase/firestore";
 import { collection, getDocs, orderBy, where, query, addDoc, doc,setDoc,Timestamp, deleteDoc} from "firebase/firestore";
-import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
+import {getStorage, ref, uploadBytes, getDownloadURL, deleteObject} from "firebase/storage"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAfSPLiF53AwxpbFsL9RQjamXZaBC49lKU",
@@ -129,10 +129,24 @@ export const changeStockFragancia=(id,state)=>{
   setDoc(fragancia, { stock: state }, { merge: true });
 }
 
-export const removeFragancia = async (id,docEliminar) => {
+export const removeFragancia = async (id,docEliminar,name) => {
+  const deleteF=`${docEliminar}/${name}.png`
   await deleteDoc(doc(db, docEliminar, id));
+  await deleteObject(ref(storage, deleteF));
 }
 
+export const addFragancia = async (titulo,type,img)=>{
+  const fragancia={
+    Nombre:titulo,
+    img:img,
+    stock:false
+  }
+  await addDoc(collection(db, type),fragancia)
+  return(true)
+}
+
+
+// DASHBOARD PRODUCTOS
 
 export const editPropProduct = async (id,type,data) => {
   const product = doc(db, "Productos", id);
