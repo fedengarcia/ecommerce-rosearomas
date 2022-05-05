@@ -118,14 +118,14 @@ const storage=getStorage(app)
 export const addStorage=async(titulo,carpeta,imagen)=>{
   
   const storageRef= ref(storage,`${carpeta}/${titulo}.jpg`)
-  uploadBytes(storageRef,imagen).then(()=>{
-    console.log(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
+  await uploadBytes(storageRef,imagen).then(()=>{
+    return(getDownloadURL(ref(storage,`${carpeta}/${titulo}.jpg`)))
   })
 }
 
 
 // FRAGANCIAS
-export const changeStockFragancia=async(id,state)=>{
+export const changeStockFragancia=(id,state)=>{
   const fragancia =  doc(db, 'CarouselFragancias', id);
   setDoc(fragancia, { stock: state }, { merge: true });
 }
