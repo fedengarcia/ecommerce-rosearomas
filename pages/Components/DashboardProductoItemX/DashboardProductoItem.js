@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { addStorage, editPropProduct, removeProduct } from '../../../firebaseX/Firebase';
 import Image from "next/image";
+import loading from "../../A-imgs/loading_apple_wordpress.gif"
+
 
 
 
@@ -12,13 +14,18 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
     const [propType, setPropType] = useState("");
     const [data,setData] = useState("");
     const [disp,setDisp]=useState("none");
+   
+    const [cargando,setCargando] = useState(false);
+
+
 
     const changeImagen = (e)=>{
         if(e.target.files[0].type==="image/png"){
-            console.log(e.target.files[0])
+            setCargando(true);
             addStorage(producto.Nombre,"productos",e.target.files[0]).then(res => {
                 editPropProduct(producto.id,"imagen",res).then(res=>{
                     setReload(!reload);
+                    setCargando(false);
                 })
             })
         }
@@ -49,14 +56,24 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
             <div className="dash-prod-item-container">
                 <div className="dash-prod-item">
                     <div className='img-dash-prod-item dash-prod-item-box'>
-                        <Image src={producto.Img} alt={"imagen del producto"} width={200} height={200}/>
-                        <input
-                            type="file"
-                            name="img"
-                            id="img"
-                            accept="image/png"
-                            onChange={(e) => {changeImagen(e)}}
-                        />
+                        {
+                            cargando?
+                                <div style={{backgroundColor:"#dee6e6",width:"100%"}}>
+                                  <Image src={loading} alt="loading" width={50} height={50} style={{backgroundColor:"transparent"}}/>
+                                </div>
+                            :
+                            <>
+                                <Image src={producto.Img} alt={"imagen del producto"} width={200} height={200}/>
+                                <input
+                                    type="file"
+                                    name="img"
+                                    id="img"
+                                    accept="image/png"
+                                    onChange={(e) => {changeImagen(e)}}
+                                />
+                            </>
+                        }
+                        
                     </div>
 
                     <div className='dash-prod-item-box'>

@@ -6,6 +6,25 @@
     height: auto;
     flex-direction: column;
 
+    .dash-buscador{
+        width: 30%;
+        input{
+            width: 100%;
+            padding: 0.5em;
+            border-radius: 1em;
+            background-color: #0b5a5a4a;
+        }
+    }
+
+    button{
+        background-color: #0b5a5a;
+        color: white;
+        padding: 0.9em;
+        cursor: pointer;
+        border-radius: 0.4em;
+        margin: 1.5em;
+    }
+
 
     .dashboard-productos-container{
         width: 100%;
@@ -56,14 +75,19 @@
 
                         }
                     }
+
+                    input{
+                        background-color: #0b5a5a;
+                        color: white;
+                        cursor: pointer;
+                        border-radius: 0.4em;
+                        margin: 0.5em;
+
+                    }
                 }
 
                 .delete-item-box{
                     width: 50% !important;
-                    button{
-                        margin: 1em;
-                        padding: 0.5em;
-                    }
                 }
 
 
