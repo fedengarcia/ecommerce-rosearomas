@@ -47,7 +47,7 @@ export default function DashboardBuscador ({listaProds,setProdsFiltrados,prodsFi
     }
 
     return (
-        <div>
+        <div className="dash-buscador">
             <input type="text" placeholder="Buscar producto" onChangeCapture={buscador}/>
         </div>
     )
