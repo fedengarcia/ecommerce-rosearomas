@@ -174,3 +174,10 @@ export const editPropProduct = async (id,type,data) => {
 export const removeProduct = async (id) => {
   await deleteDoc(doc(db, "Productos", id));
 }
+
+
+export const addProduct = async (producto) => {
+  const doc = await addDoc(collection(db, "Productos"), producto);
+  return (doc.id)
+
+}

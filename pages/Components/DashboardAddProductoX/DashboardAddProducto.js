@@ -1,5 +1,6 @@
 import { useState } from "react"
 import TextField from '@material-ui/core/TextField';
+import { addProduct } from "../../../firebaseX/Firebase";
 
 
 export default function DashboardAddProducto ({disp,setDisp}) {
@@ -9,27 +10,29 @@ export default function DashboardAddProducto ({disp,setDisp}) {
     const handleData = (e,dataType) => {
         
         if(dataType === "imagen"){
-            setProducto({...producto,img: e.target.value})
+            setProducto({...producto,Img: e.target.value})
         }
         if(dataType === "nombre"){
-            setProducto({...producto,nombre: e.target.value})
+            setProducto({...producto,Nombre: e.target.value})
         }
         if(dataType === "descripcion"){
-            setProducto({...producto,descripcion: e.target.value})
+            setProducto({...producto,Descripcion: e.target.value})
         }
         if(dataType === "categoria"){
-            setProducto({...producto,categoria: e.target.value})
+            setProducto({...producto,Categoria: e.target.value})
         }
         if(dataType === "precio"){
-            setProducto({...producto,precio: e.target.value})
+            setProducto({...producto,Precio: e.target.value})
         }
         if(dataType === "stock"){
-            setProducto({...producto,stock: e.target.value})
+            setProducto({...producto,Stock: e.target.value})
         }
     }
 
     const handleAccept = () => {
-
+        addProduct(producto).then(res => {
+            setDisp("none");
+        })
     }
 
 
