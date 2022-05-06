@@ -10,26 +10,26 @@ import DashboardOrdenDetalles from '../DashboardOrdenDetallesX/DashboardOrdenDet
 import DashboardOrdenRemove from '../DashboardOrdenRemoveX/DashboardOrdenRemove';
 
 
-export default function DashboardOrden({order,entregado}) {
+export default function DashboardOrden({order,entregado,reload,setReload}) {
 
     const [disp,setDisp]=useState("none")
     const [disp2,setDisp2]=useState("none")
     const [cargando,setCargando]=useState(false)
 
     const handleEntregadoState = (order,state) => {
-      setCargando(true)
+      setCargando(true);
       setOrderEntregada(order.id,state).then(res=>{
-        document.location.reload()
-        setCargando(false)
+        setReload(!reload);
+        setCargando(false);
       })
     }
     
     const handleBorrar = (order,typeOrder) => {
       setCargando(true)
       removeOrderFinal(order,typeOrder).then(res=>{
-        setDisp("none")
-        document.location.reload()
-        setCargando(false)
+        setDisp("none");
+        setReload(!reload);
+        setCargando(false);
       })
     }
 
