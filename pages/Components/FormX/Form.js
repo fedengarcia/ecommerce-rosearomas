@@ -54,7 +54,6 @@ export default function Form2(){
     const handleFormSubmit = () => {
         setRespuesta(true)
         setFormValidado(true);
-        console.log(payerInfoEspecial)
     }   
 
     // NOMBRE
