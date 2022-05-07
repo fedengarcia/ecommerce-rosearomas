@@ -8,6 +8,7 @@ export default function ItemTypeSelect ({setType,prod}){
   const handleOnChange = (e) => {
     setType(e.target.value)
   }
+  console.log(prod)
 
   return (
     <div className="item-select-container">
@@ -15,7 +16,7 @@ export default function ItemTypeSelect ({setType,prod}){
         <option value="none">Seleccionar Fragancia</option>
         {carouselFragancia.map((fragancia)=>{
           return(
-            fragancia.stock?<option value={fragancia.Nombre} key={`${prod.Nombre} ${fragancia.Nombre}`}>{fragancia.Nombre}</option>:null
+            fragancia.stock?<option value={fragancia.Nombre} key={fragancia.Nombre}>{fragancia.Nombre}</option>:null
           )
         }
         )}

@@ -42,7 +42,9 @@ export default function DashboardOrden({order,entregado,reload,setReload}) {
       {order===undefined?<></>:
         <Card sx={{ maxWidth: 345 }}>
           <CardContent>
-            <p className='borrar-order' onClick={()=>{setDisp("block")}}>X</p>
+            <div className='dash-prod-item-box delete-item-box' style={{marginBottom:"1.5vw"}}>
+              <button onClick={()=> setDisp("block")}>ELIMINAR ORDEN</button>
+            </div>
             <Typography gutterBottom variant="h5" component="div">
               {order && `Nombre: ${order.payer.name} ${order.payer.surname}`}
             </Typography>
