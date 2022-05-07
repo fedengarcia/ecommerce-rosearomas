@@ -37,7 +37,7 @@ export default function CardProducto({producto, setShowNotification, setShowNoti
         </Typography>
       </CardContent>
       <CardActions>
-        <ItemTypeSelect setType={setType} type={type} prod={producto.Nombre} className="select-card-tienda"/>
+        <ItemTypeSelect setType={setType} type={type} prod={producto} className="select-card-tienda"/>
         <ItemCount stock={producto && producto.Stock} amount={amount} setAmount={setAmount}/>
         <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
         <DetailsButton SetDetails={setDetails} Details={details}/>
