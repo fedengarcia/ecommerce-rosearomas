@@ -1,7 +1,11 @@
 import Header from "./Components/HeaderX/Header";
 import Footer from "./Components/FooterX/Footer";
-import logoWhap from "./A-imgs/whatsapp.png";
+import logoWhap from "./A-imgs/whatsapp.webp";
 import Image from "next/image";
+import prod1 from "./A-imgs/productos-inicio/vela.png"
+import prod2 from "./A-imgs/productos-inicio/difusor.webp"
+import prod3 from "./A-imgs/productos-inicio/homespray.png"
+import prod4 from "./A-imgs/productos-inicio/bombon.webp"
 
 function NuestrosProductos() {
 
@@ -10,7 +14,7 @@ function NuestrosProductos() {
       <div className='container-Nprods'>
         <div className='container-Nprods-left'>
           <div className="container-photo">
-            <Image src="https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/nuestrosProductos%2Fvela.png?alt=media&token=79251fd4-5591-45cb-9322-0ebedb490feb"
+            <Image src={prod1}
             alt="VELAS" width={245} height={320}/>
           </div>
           <div className="container-Nprods-info">
@@ -24,8 +28,8 @@ function NuestrosProductos() {
         </div>
         <div className='container-Nprods-right'>
           <div className="container-photo">
-            <Image src="https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/nuestrosProductos%2Fdifusor.png?alt=media&token=94fe8b7e-2860-4d7b-918c-1586d6ba0362"
-            alt="VELAS" className='fotoProd' width={245} height={320}/>
+            <Image src={prod2}
+            alt="DIFUSOR" className='fotoProd' width={245} height={320}/>
           </div>
           <div className="container-Nprods-info">
               <h2>DIFUSORES</h2>
@@ -37,8 +41,8 @@ function NuestrosProductos() {
         </div>
         <div className='container-Nprods-left'>
           <div className="container-photo">
-              <Image src="https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/nuestrosProductos%2Fhomespray.png?alt=media&token=ee23a5c1-9ca9-4bf5-ac10-d69429939263"
-              alt="VELAS" className='fotoProd' width={245} height={320}/>
+              <Image src={prod3}
+              alt="HOMESPRAY" className='fotoProd' width={245} height={320}/>
           </div>
           <div className="container-Nprods-info">
               <h2>HOMESPRAYS</h2>
@@ -50,8 +54,8 @@ function NuestrosProductos() {
         </div>
         <div className='container-Nprods-right'>
           <div className="container-photo">
-            <Image src="https://firebasestorage.googleapis.com/v0/b/rosepagina.appspot.com/o/nuestrosProductos%2Fbombon.png?alt=media&token=58ee5f8d-a0b9-44ad-ab6a-63ec346e2be7"
-            alt="VELAS" className='fotoProd' width={245} height={320}/>
+            <Image src={prod4}
+            alt="BOMBON" className='fotoProd' width={245} height={320}/>
           </div>
           <div className="container-Nprods-info">
               <h2>BOMBONES</h2>

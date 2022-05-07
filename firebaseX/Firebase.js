@@ -117,9 +117,9 @@ const storage=getStorage(app)
 
 export const addStorage = async(titulo,carpeta,imagen)=>{
   
-  const storageRef = ref(storage,`${carpeta}/${titulo}.png`)
+  const storageRef = ref(storage,`${carpeta}/${titulo}.webp`)
   await uploadBytes(storageRef,imagen);
-  return(getDownloadURL(ref(storage,`${carpeta}/${titulo}.png`)));
+  return(getDownloadURL(ref(storage,`${carpeta}/${titulo}.webp`)));
 }
 
 
@@ -130,7 +130,7 @@ export const changeStockFragancia=(id,state)=>{
 }
 
 export const removeFragancia = async (id,docEliminar,name) => {
-  const deleteF=`${docEliminar}/${name}.png`
+  const deleteF=`${docEliminar}/${name}.webp`
   await deleteDoc(doc(db, docEliminar, id));
   await deleteObject(ref(storage, deleteF));
 }

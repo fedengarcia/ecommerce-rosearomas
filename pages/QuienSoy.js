@@ -1,6 +1,6 @@
 import Header from "./Components/HeaderX/Header";
 import Footer from "./Components/FooterX/Footer";
-import logoWhap from "./A-imgs/whatsapp.png";
+import logoWhap from "./A-imgs/whatsapp.webp";
 import Image from "next/image";
 
 function QuienSoy() {

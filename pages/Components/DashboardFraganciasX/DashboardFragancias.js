@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react"
 import { crlContext } from "../../../Context/CarouselContext"
 import Image from "next/image"
-import anadir from "../../A-imgs/icons8-más-2-matemáticas-100.png"
+import anadir from "../../A-imgs/icons8-más-2-matemáticas-100.webp"
 
 import { changeStockFragancia, removeFragancia, getCarouselFraganciaImg, getCarouselFraganciaSMLImg } from "../../../firebaseX/Firebase"
 import DashboardAddFragancias from "../DashboardAddFraganciasX/DashboardAddFragancias"

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { addStorage, editPropProduct, removeProduct } from '../../../firebaseX/Firebase';
 import Image from "next/image";
-import loading from "../../A-imgs/loading_apple_wordpress.gif"
+import loading from "../../A-imgs/loading_apple_wordpress.webp"
 
 
 
@@ -20,7 +20,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
 
 
     const changeImagen = (e)=>{
-        if(e.target.files[0].type==="image/png"){
+        if(e.target.files[0].type==="image/webp"){
             setCargando(true);
             addStorage(producto.Nombre,"productos",e.target.files[0]).then(res => {
                 editPropProduct(producto.id,"imagen",res).then(res=>{
@@ -69,7 +69,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                                     type="file"
                                     name="img"
                                     id="img"
-                                    accept="image/png"
+                                    accept="image/webp"
                                     onChange={(e) => {changeImagen(e)}}
                                 />
                             </>

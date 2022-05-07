@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { addFragancia,addStorage } from "../../../firebaseX/Firebase";
 import Image from "next/image";
-import loading from "../../A-imgs/loading_apple_wordpress.gif"
+import loading from "../../A-imgs/loading_apple_wordpress.webp"
 
 export default function DashboardAddFragancias({setAddFragancia,pantalla,tamaño,type,setReload,reload}){
 
@@ -44,7 +44,7 @@ export default function DashboardAddFragancias({setAddFragancia,pantalla,tamaño
                         type="file"
                         name="img"
                         id="img"
-                        accept="image/png"
+                        accept="image/webp"
                         onChangeCapture={(e) => {changeImagen(e)}}
                         {...register("img",{required:true})}
                     />

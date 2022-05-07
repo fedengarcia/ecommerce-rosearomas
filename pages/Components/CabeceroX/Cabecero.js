@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../A-imgs/rose.png'
+import logo from '../../A-imgs/rose.webp'
 
 export default function Header(){
 

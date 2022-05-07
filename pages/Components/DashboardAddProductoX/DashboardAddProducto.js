@@ -42,7 +42,7 @@ export default function DashboardAddProducto ({disp,setDisp}) {
             <div className='form-container'>
                 <div>
                     <h5>Imagen: </h5>
-                    <input type="file" name="img" id="img" accept="image/png" onChange={(e) => handleData(e,"imagen")}/>
+                    <input type="file" name="img" id="img" accept="image/webp" onChange={(e) => handleData(e,"imagen")}/>
                 </div>
                 
                 <div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import loading from "../../A-imgs/loading_apple_wordpress.gif"
+import loading from "../../A-imgs/loading_apple_wordpress.webp"
 
 export default function DashboardOrdenRemove({disp,entregado,cargando,handleBorrar,order,setDisp}) {
 

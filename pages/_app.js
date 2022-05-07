@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Sitio web de Rosé Aromas, emprendimiento de Zárate. Dedicado a la venta de velas, homesprays, difusores y bombones aromatizados."/>
 	      <meta name="keywords" content="aromas, vela, difusor, bombon, homespray, perfume, decoracion, emprendimiento, rose"/>
         <meta name="theme-color" content="#084444"/>
-        <link rel="apple-touch-icon" href="./A-imgs/rose.png"></link>
+        <link rel="apple-touch-icon" href="./A-imgs/rose.webp"></link>
       </Head>
       
       <CarouselContext>

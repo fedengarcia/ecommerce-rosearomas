@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import {useEffect, useState, useContext} from "react";
 import CarouselInicio from "./Components/CarouselX/CarouselInicio";
-import banner_1 from "./A-imgs/banner/banner.png";
-import banner_2 from "./A-imgs/banner/banner2.png";
-import logoWhap from "./A-imgs/whatsapp.png";
+import banner_1 from "./A-imgs/banner/banner.webp";
+import banner_2 from "./A-imgs/banner/banner2.webp";
+import logoWhap from "./A-imgs/whatsapp.webp";
 import CarouselFragancia from "./Components/CarouselFraganciaX/CarouselFragancia";
 import Header from "./Components/HeaderX/Header";
 import Footer from "./Components/FooterX/Footer";
 import ProductosInicio from './Components/ProductosInicioX/ProductosInicio';
 import { crlContext } from '../Context/CarouselContext';
-import loading from "./A-imgs/loading_apple_wordpress.gif"
+import loading from "./A-imgs/loading_apple_wordpress.webp"
 
 export default function Home() {
 

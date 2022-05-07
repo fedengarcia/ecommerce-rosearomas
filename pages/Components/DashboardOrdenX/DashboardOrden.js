@@ -4,7 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { removeOrderFinal, setOrderEntregada } from '../../../firebaseX/Firebase';
-import loading from "../../A-imgs/loading_apple_wordpress.gif"
+import loading from "../../A-imgs/loading_apple_wordpress.webp"
 import Image from "next/image";
 import DashboardOrdenDetalles from '../DashboardOrdenDetallesX/DashboardOrdenDetalles';
 import DashboardOrdenRemove from '../DashboardOrdenRemoveX/DashboardOrdenRemove';
