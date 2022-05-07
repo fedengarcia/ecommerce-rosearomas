@@ -5,7 +5,7 @@ import { addFragancia,addStorage } from "../../../firebaseX/Firebase";
 import Image from "next/image";
 import loading from "../../A-imgs/loading_apple_wordpress.gif"
 
-export default function DashboardAddFragancias({setAddFragancia,pantalla,tamaño,type}){
+export default function DashboardAddFragancias({setAddFragancia,pantalla,tamaño,type,setReload,reload}){
 
     const {register, formState:{errors},handleSubmit} = useForm()
     const [imagen,setImagen]=useState("")
@@ -23,6 +23,7 @@ export default function DashboardAddFragancias({setAddFragancia,pantalla,tamaño
             const x = addFragancia(titulo,type,res)
             setCargando(!x)
             setAddFragancia(false)
+            setReload(!reload)
         })
     }   
 

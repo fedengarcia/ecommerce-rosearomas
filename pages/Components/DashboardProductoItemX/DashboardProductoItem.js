@@ -64,6 +64,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                             :
                             <>
                                 <Image src={producto.Img} alt={"imagen del producto"} width={200} height={200}/>
+                                <p>(245x320)</p>
                                 <input
                                     type="file"
                                     name="img"

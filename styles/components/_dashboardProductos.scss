@@ -39,6 +39,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
+            max-height: 320px;
             
             .dash-prod-item{
                 border: 1px solid black;
@@ -48,10 +49,12 @@
                 align-items: center;
                 flex-direction: row;
                 margin: 1em;
-                height: 30vh;
+                height: auto;
 
                 .img-dash-prod-item{
                     width: 50% !important;
+                    max-width: 50% !important;
+                    min-height: 50% !important;
                 }
 
 

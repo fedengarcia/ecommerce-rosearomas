@@ -12,8 +12,11 @@ export default function DashboardOrdenDetalles({disp2,order,setDisp2}) {
                 <li>{order.payer.localidad} {order.payer.address["zip_code"]} | {order.payer.address["street_name"]} {order.payer.address["street_number"]} | {order.payer.phone["area_code"]}-{order.payer.phone["number"]}</li>
                 <li>{order.payer.metodo_pago}</li>
             </ul>
-            <ul>
-                {(order.items).map(item=><p key={item.id} className="item-list">{item.title} | Cantidad: {item.quantity} | Total: {item.quantity * item.unit_price} | Fragancia: {item.type}</p>)}
+            <ul className="container-item-list">
+                {(order.items).map(item=><li key={item.id} className="item-list">{item.title} | Cantidad: {item.quantity} | Total: {item.quantity * item.unit_price} | Fragancia: {item.type}</li>)}
+                {(order.items).map(item=><li key={item.id} className="item-list">{item.title} | Cantidad: {item.quantity} | Total: {item.quantity * item.unit_price} | Fragancia: {item.type}</li>)}
+                {(order.items).map(item=><li key={item.id} className="item-list">{item.title} | Cantidad: {item.quantity} | Total: {item.quantity * item.unit_price} | Fragancia: {item.type}</li>)}
+
             </ul>
           </div>
         </div>

@@ -1,14 +1,17 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { crlContext } from "../../../Context/CarouselContext"
 import Image from "next/image"
 import anadir from "../../A-imgs/icons8-más-2-matemáticas-100.png"
 
-import { changeStockFragancia, removeFragancia } from "../../../firebaseX/Firebase"
+import { changeStockFragancia, removeFragancia, getCarouselFraganciaImg, getCarouselFraganciaSMLImg } from "../../../firebaseX/Firebase"
 import DashboardAddFragancias from "../DashboardAddFraganciasX/DashboardAddFragancias"
 
 export default function DashboardFragancias () {
 
     const {carouselFragancia, carouselFraganciaSML}=useContext(crlContext)
+
+    const [fragancias,setFragancias]=useState(carouselFragancia)
+    const [fraganciasSML, setFraganciasSML]=useState(carouselFraganciaSML)
 
     const [addFragancia,setAddFragancia]=useState(false)
     const [pantalla,setPantalla]=useState("")
@@ -20,6 +23,17 @@ export default function DashboardFragancias () {
     const [docEliminar,setDocEliminar]=useState("")
 
     const [disp,setDisp]=useState("none")
+
+    const [reload,setReload] = useState(false);
+
+    useEffect(()=>{
+        getCarouselFraganciaImg().then(res=>{
+            setFragancias(res)
+        })
+        getCarouselFraganciaSMLImg().then(res=>{
+            setFraganciasSML(res)
+        })
+    },[reload])
 
     const disponibilidad = (e)=>{
         changeStockFragancia(e.target.name,e.target.checked)
@@ -37,7 +51,7 @@ export default function DashboardFragancias () {
                 </div>
                 <br/>
                 <div className="fragancia-container">
-                    {carouselFragancia.map(img=>(
+                    {fragancias.map(img=>(
                         <div key={img.id} className="linea-fragancia">
                             <p>{img.Nombre}</p>
                             <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFragancias"),setDisp("block")}}>X</p>
@@ -62,7 +76,7 @@ export default function DashboardFragancias () {
                 </div>
                 <br/>
                 <div className="fragancia-container">
-                    {carouselFraganciaSML.map(img=>(
+                    {fraganciasSML.map(img=>(
                         <div key={img.id} className="linea-fragancia">
                             <p>{img.Nombre}</p>
                             <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFraganciasSML"),setDisp("block")}}>X</p>
@@ -75,12 +89,12 @@ export default function DashboardFragancias () {
             </div>
             <div className='fondo-block' style={{display:disp}}>
                 <div className='confirm-cancel-info'>
-                    <p className='button-borrar-order' onClick={()=>{removeFragancia(fraganciaEliminar,docEliminar,fraganciaEliminar2),setDisp("none")}}>Confirmar</p>
+                    <p className='button-borrar-order' onClick={()=>{removeFragancia(fraganciaEliminar,docEliminar,fraganciaEliminar2),setDisp("none"),setReload(!reload)}}>Confirmar</p>
                     <p className='button-borrar-order' onClick={()=>{setDisp("none")}}>Cancelar</p>
                 </div>
             </div>
             {!addFragancia?<></>:
-                <DashboardAddFragancias setAddFragancia={setAddFragancia} pantalla={pantalla} tamaño={tamaño} type={type}/>
+                <DashboardAddFragancias setAddFragancia={setAddFragancia} pantalla={pantalla} tamaño={tamaño} type={type} setReload={setReload} reload={reload}/>
             }
         </>
     )

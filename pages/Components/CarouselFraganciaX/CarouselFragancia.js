@@ -27,13 +27,13 @@ export default function CarouselFragancia(){
                                 <Carousel.Item key={foto.id}>
                                     <Image
                                     src={foto.img}
-                                    alt={foto.titulo}
+                                    alt={foto.Nombre}
                                     width={1320}
                                     height={300}
                                     className="carouselF-foto"
                                     />
                                     <Carousel.Caption>
-                                        <h3>{foto.titulo}</h3>
+                                        <h3>{foto.Nombre}</h3>
                                         <p>{foto.descripcion}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
@@ -46,13 +46,13 @@ export default function CarouselFragancia(){
                                 <Carousel.Item key={foto.id}>
                                     <Image
                                     src={foto.img}
-                                    alt={foto.titulo}
+                                    alt={foto.Nombre}
                                     width={700}
                                     height={500}
                                     className="carouselF-foto"
                                     />
                                     <Carousel.Caption>
-                                        <h3>{foto.titulo}</h3>
+                                        <h3>{foto.Nombre}</h3>
                                         <p>{foto.descripcion}</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
