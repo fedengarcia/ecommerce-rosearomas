@@ -31,11 +31,8 @@ export default function CarouselFragancia(){
                                     width={1320}
                                     height={300}
                                     className="carouselF-foto"
+                                    style={{width:"1320px",height:"300px"}}
                                     />
-                                    <Carousel.Caption>
-                                        <h3>{foto.Nombre}</h3>
-                                        <p>{foto.descripcion}</p>
-                                    </Carousel.Caption>
                                 </Carousel.Item>
                             )
                         })}
@@ -50,11 +47,8 @@ export default function CarouselFragancia(){
                                     width={700}
                                     height={500}
                                     className="carouselF-foto"
+                                    style={{width:"700px",height:"500px"}}
                                     />
-                                    <Carousel.Caption>
-                                        <h3>{foto.Nombre}</h3>
-                                        <p>{foto.descripcion}</p>
-                                    </Carousel.Caption>
                                 </Carousel.Item>
                             )
                         })}
