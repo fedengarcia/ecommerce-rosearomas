@@ -12,25 +12,27 @@ export default function NavBarTienda({setItemType}) {
             <nav className="navbar navbar-expand navbar-light navbar-tienda" id='navBar'>
                 <div className="collapse navbar-collapse justify-content-around" id="navbarNavAltMarkup2">
                     <ul>
-                        <div className="Filtro1">
-                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                <li onClick={() =>handleClick("Todo")}>Todo</li>
-                            </Animated>
-                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                <li onClick={() =>handleClick("Velas")}>Velas</li>
-                            </Animated>
-                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                <li onClick={() =>handleClick("Homespray")}>Homespray</li>
-                            </Animated>
-                        </div>
-                        <div className="Filtro2">
-                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                <li onClick={() =>handleClick("Difusores")}>Difusores</li>
-                            </Animated>
-                            <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                <li onClick={() =>handleClick("Bombones")}>Bombones</li>
-                            </Animated>
-                        </div>
+                        <li style={{display:"flex"}}>
+                            <div className="Filtro1">
+                                <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                    <p onClick={() =>handleClick("Todo")}>Todo</p>
+                                </Animated>
+                                <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                    <p onClick={() =>handleClick("Velas")}>Velas</p>
+                                </Animated>
+                                <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                    <p onClick={() =>handleClick("Homespray")}>Homespray</p>
+                                </Animated>
+                            </div>
+                            <div className="Filtro2">
+                                <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                    <p onClick={() =>handleClick("Difusores")}>Difusores</p>
+                                </Animated>
+                                <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+                                    <p onClick={() =>handleClick("Bombones")}>Bombones</p>
+                                </Animated>
+                            </div>
+                        </li>
                     </ul>
                 </div>
         </nav>

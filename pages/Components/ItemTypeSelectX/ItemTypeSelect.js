@@ -1,7 +1,7 @@
 import React, { useContext,useState } from "react";
 import { crlContext } from "../../../Context/CarouselContext";
 
-export default function ItemTypeSelect ({setType}){
+export default function ItemTypeSelect ({setType,prod}){
 
   const {carouselFragancia} = useContext(crlContext);
 
@@ -15,7 +15,7 @@ export default function ItemTypeSelect ({setType}){
         <option value="none">Seleccionar Fragancia</option>
         {carouselFragancia.map((fragancia)=>{
           return(
-            fragancia.stock?<option value={fragancia.Nombre} key={fragancia.Nombre}>{fragancia.Nombre}</option>:null
+            fragancia.stock?<option value={fragancia.Nombre} key={`${prod} ${fragancia.Nombre}`}>{fragancia.Nombre}</option>:null
           )
         }
         )}

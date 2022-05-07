@@ -32,12 +32,12 @@ export default function CardProducto({producto, setShowNotification, setShowNoti
         <Typography variant="body1" color="text.secondary" className='desc-card-tienda'>
           {producto && producto.Descripcion}
         </Typography>
-        <Typography variant="h6" color="text.secondary" className='precio-card-tienda'>
+        <Typography variant="p" color="text.secondary" className='precio-card-tienda'>
           {producto && `Precio: $${producto.Precio}`}
         </Typography>
       </CardContent>
       <CardActions>
-        <ItemTypeSelect setType={setType} type={type} className="select-card-tienda"/>
+        <ItemTypeSelect setType={setType} type={type} prod={producto.Nombre} className="select-card-tienda"/>
         <ItemCount stock={producto && producto.Stock} amount={amount} setAmount={setAmount}/>
         <AddCartButton producto={producto} type={type} amount={amount} setShowNotification={setShowNotification} setShowNotification2={setShowNotification2}/>
         <DetailsButton SetDetails={setDetails} Details={details}/>

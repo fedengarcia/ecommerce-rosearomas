@@ -10,7 +10,7 @@
             flex-wrap: wrap;
             margin-top: 1.5vw;
             border-top: 1px solid #08444433;
-            li{
+            p{
                 text-decoration: none;
                 color: rgba(0,0,0,.55) !important;
                 cursor: pointer;
@@ -19,7 +19,7 @@
                 padding: 1vw;
                 cursor: pointer;
                 list-style: none;
-                font-size: 2.3vw;
+                font-size: 2.5vw;
                 &:hover{
                 background-color: #084444 !important;
                 color: #c7e5e3 !important;                
