@@ -1,7 +1,7 @@
 export default function DashboardLogin ({setLogin,login}) {
 
     const loginExito=(usuario,contraseña)=>{
-        if(usuario==="Caro" & contraseña==="1"){
+        if(usuario==="Carolinarose" & contraseña==="CaroRose2022"){
             setLogin(!login)
         }
     }

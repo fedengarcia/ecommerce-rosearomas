@@ -22,7 +22,7 @@ export default function DashboardProductos () {
         getProductos("Todo",9999).then(res=>{
             setListaProds(res)
         })
-    },[reload])
+    },[reload])// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>

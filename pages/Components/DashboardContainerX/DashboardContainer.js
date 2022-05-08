@@ -9,7 +9,7 @@ export default function DashboardContainer () {
 
     useEffect(() => {
         setTypeContainer("Ordenes");
-    }, []);
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="dashboard-container">

@@ -21,7 +21,7 @@ function Tienda({typeProd}) {
     if(router.query.keyword != undefined){
       setItemType(router.query.keyword)
     }
-  },[router])
+  },[router])// eslint-disable-line react-hooks/exhaustive-deps
 
 
   return (<>

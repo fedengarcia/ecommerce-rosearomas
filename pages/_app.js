@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         (adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e) { }
     }
-  }, []);
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

@@ -17,7 +17,7 @@ export default function DashboardOrdenes() {
         getOrders("OrdersFalses").then(res => {
             setOrdersRechazadas(res)
         })
-    }, [reload]);
+    }, [reload])// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
     

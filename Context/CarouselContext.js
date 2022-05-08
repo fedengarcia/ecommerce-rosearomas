@@ -20,7 +20,7 @@ export function CarouselContext ({children}){
         getCarouselFraganciaSMLImg().then(res => {
             setCarouselFraganciaSMLImg(res);
         })
-    }, []);
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
     
     return(
         <crlContext.Provider value={{carousel, carouselFragancia, carouselFraganciaSML}}>

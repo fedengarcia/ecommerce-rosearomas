@@ -152,8 +152,8 @@ export default function Form2(){
             setEnvio(0);
         }else if(payerInfo.address.zip_code ==="2800" || payerInfo.address.zip_code==="2804" || payerInfo.address.zip_code==="2806"){
             setCodigoPostal(true);
-            addShippment(1);
-            setEnvio(1);
+            addShippment(300);
+            setEnvio(300);
         }else{
             setCodigoPostal(false);
             addShippment(600);

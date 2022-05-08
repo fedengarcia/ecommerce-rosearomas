@@ -2,9 +2,9 @@ import Header from "./Components/HeaderX/Header";
 import Footer from "./Components/FooterX/Footer";
 import logoWhap from "./A-imgs/whatsapp.webp";
 import Image from "next/image";
-import prod1 from "./A-imgs/productos-inicio/vela.png"
+import prod1 from "./A-imgs/productos-inicio/vela.webp"
 import prod2 from "./A-imgs/productos-inicio/difusor.webp"
-import prod3 from "./A-imgs/productos-inicio/homespray.png"
+import prod3 from "./A-imgs/productos-inicio/homespray.webp"
 import prod4 from "./A-imgs/productos-inicio/bombon.webp"
 
 function NuestrosProductos() {

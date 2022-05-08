@@ -33,7 +33,7 @@ export default function DashboardFragancias () {
         getCarouselFraganciaSMLImg().then(res=>{
             setFraganciasSML(res)
         })
-    },[reload])
+    },[reload])// eslint-disable-line react-hooks/exhaustive-deps
 
     const disponibilidad = (e)=>{
         changeStockFragancia(e.target.name,e.target.checked)

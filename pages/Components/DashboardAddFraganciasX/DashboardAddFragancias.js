@@ -44,7 +44,7 @@ export default function DashboardAddFragancias({setAddFragancia,pantalla,tamaño
                         type="file"
                         name="img"
                         id="img"
-                        accept="image/webp"
+                        accept="image/png"
                         onChangeCapture={(e) => {changeImagen(e)}}
                         {...register("img",{required:true})}
                     />
