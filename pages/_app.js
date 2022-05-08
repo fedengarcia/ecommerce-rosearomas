@@ -4,8 +4,18 @@ import {CartContext} from '../Context/CartContext';
 import Head from 'next/head';
 import Script from "next/script";
 import { StorageContext } from '../Context/StorageContext';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
+
+  useEffect(() => {
+    var ads = document.getElementsByClassName("adsbygoogle").length;
+    for (var i = 0; i < ads; i++) {
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) { }
+    }
+  }, []);
 
   return (
     <>

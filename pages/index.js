@@ -17,6 +17,7 @@ export default function Home() {
 
     return(
         <div>
+
             {carousel.length!=0 && carouselFragancia.length!=0 && carouselFraganciaSML.length!=0?
                 <>
                     <Header/>
@@ -28,6 +29,14 @@ export default function Home() {
                     <div className='banner-2'>
                         <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                     </div>
+
+                    <ins className="adsbygoogle"
+                        style={{display:"block"}}
+                        data-ad-client="ca-pub-1655669335191511"
+                        data-ad-slot="4447855162"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true">
+                    </ins>
 
                     <CarouselInicio/>
 
