@@ -18,18 +18,18 @@ export default function NavBarTienda({setItemType}) {
                                     <p onClick={() =>handleClick("Todo")}>Todo</p>
                                 </Animated>
                                 <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                    <p onClick={() =>handleClick("Velas")}>Velas</p>
+                                    <p onClick={() =>handleClick("velas")}>Velas</p>
                                 </Animated>
                                 <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                    <p onClick={() =>handleClick("Homespray")}>Homespray</p>
+                                    <p onClick={() =>handleClick("homespray")}>Homespray</p>
                                 </Animated>
                             </div>
                             <div className="Filtro2">
                                 <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                    <p onClick={() =>handleClick("Difusores")}>Difusores</p>
+                                    <p onClick={() =>handleClick("difusores")}>Difusores</p>
                                 </Animated>
                                 <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-                                    <p onClick={() =>handleClick("Bombones")}>Bombones</p>
+                                    <p onClick={() =>handleClick("bombones")}>Bombones</p>
                                 </Animated>
                             </div>
                         </li>

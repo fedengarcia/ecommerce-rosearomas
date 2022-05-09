@@ -124,8 +124,8 @@ export const addStorage = async(titulo,carpeta,imagen)=>{
 
 
 // FRAGANCIAS
-export const changeStockFragancia=(id,state)=>{
-  const fragancia =  doc(db, 'CarouselFragancias', id);
+export const changeStockFragancia=(id,state,type)=>{
+  const fragancia =  doc(db, type, id);
   setDoc(fragancia, { stock: state }, { merge: true });
 }
 
@@ -170,14 +170,15 @@ export const editPropProduct = async (id,type,data) => {
   }
 }
 
-
 export const removeProduct = async (id) => {
   await deleteDoc(doc(db, "Productos", id));
 }
 
+export const addProduct = async (producto,img) => {
+  const newProd={
+    ...producto, Img:img
+  }
 
-export const addProduct = async (producto) => {
-  const doc = await addDoc(collection(db, "Productos"), producto);
-  return (doc.id)
-
+  await addDoc(collection(db, "Productos"),newProd);
+  return (true)
 }

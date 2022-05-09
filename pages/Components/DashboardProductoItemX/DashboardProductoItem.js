@@ -20,7 +20,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
 
 
     const changeImagen = (e)=>{
-        if(e.target.files[0].type==="image/webp"){
+        if(e.target.files[0].type==="image/png"){
             setCargando(true);
             addStorage(producto.Nombre,"productos",e.target.files[0]).then(res => {
                 editPropProduct(producto.id,"imagen",res).then(res=>{
@@ -36,15 +36,14 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
     }
 
     const handleConfirm = () => {
-
         editPropProduct(producto.id,propType,data).then(res => {
             setPropType("");
             setReload(!reload);
         });
-
     }
 
     const handleRemoveProduct = () => {
+        setCargando(true)
         removeProduct(producto.id).then(res => {
             setReload(!reload);
         })
@@ -63,14 +62,14 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
                                 </div>
                             :
                             <>
-                                <Image src={producto.Img} alt={"imagen del producto"} width={200} height={200}/>
+                                <Image src={producto.Img} alt={"imagen-del-producto"} width={200} height={200}/>
                                 <p>(245x320)</p>
                                 <input
                                     type="file"
                                     name="img"
                                     id="img"
-                                    accept="image/webp"
-                                    onChange={(e) => {changeImagen(e)}}
+                                    accept="image/png"
+                                    onChangeCapture={(e) => {changeImagen(e)}}
                                 />
                             </>
                         }
@@ -156,7 +155,7 @@ export default function DashboardProductoItem ({producto,setReload, reload}) {
 
             <div className='fondo-block' style={{display:disp, zIndex:'5'}}>
                 <div className='confirm-cancel-info'>
-                    <p className='button-borrar-order' onClick={()=>{handleRemoveProduct,setDisp("none")}}>Confirmar</p>
+                    <p className='button-borrar-order' onClick={()=>{handleRemoveProduct(),setDisp("none")}}>Confirmar</p>
                     <p className='button-borrar-order' onClick={()=>{setDisp("none")}}>Cancelar</p>
                 </div>
             </div>

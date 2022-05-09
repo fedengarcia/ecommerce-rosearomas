@@ -36,7 +36,10 @@ export default function DashboardFragancias () {
     },[reload])// eslint-disable-line react-hooks/exhaustive-deps
 
     const disponibilidad = (e)=>{
-        changeStockFragancia(e.target.name,e.target.checked)
+        changeStockFragancia(e.target.name,e.target.checked,"CarouselFragancias")
+    }
+    const disponibilidad2 = (e)=>{
+        changeStockFragancia(e.target.name,e.target.checked,"CarouselFraganciasSML")
     }
 
     return (
@@ -54,7 +57,9 @@ export default function DashboardFragancias () {
                     {fragancias.map(img=>(
                         <div key={img.id} className="linea-fragancia">
                             <p>{img.Nombre}</p>
-                            <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFragancias"),setDisp("block")}}>X</p>
+                            <div className='dash-prod-item-box delete-item-box' style={{marginBottom:"1.5vw"}}>
+                                <button onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFragancias"),setDisp("block")}}>ELIMINAR</button>
+                            </div>
                             <div className="foto-stock">
                                 <Image src={img.img} width={800} height={170} alt={img.Nombre}/>
                                 <div>
@@ -79,9 +84,18 @@ export default function DashboardFragancias () {
                     {fraganciasSML.map(img=>(
                         <div key={img.id} className="linea-fragancia">
                             <p>{img.Nombre}</p>
-                            <p className="borrar-fragancia" onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFraganciasSML"),setDisp("block")}}>X</p>
+                            <div className='dash-prod-item-box delete-item-box' style={{marginBottom:"1.5vw"}}>
+                                <button onClick={()=>{setFraganciaEliminar(img.id),setFraganciaEliminar2(img.Nombre),setDocEliminar("CarouselFraganciasSML"),setDisp("block")}}>ELIMINAR</button>
+                            </div>
                             <div className="foto-stock">
                                 <Image src={img.img} width={400} height={300} alt={img.Nombre}/>
+                                <div>
+                                    <p>Disponible:</p>
+                                    <label className="switch">
+                                        <input type={"checkbox"} name={img.id} id={img.id} onClick={disponibilidad2} defaultChecked={img.stock?true:false}/>
+                                        <span className="slider round"></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     ))}

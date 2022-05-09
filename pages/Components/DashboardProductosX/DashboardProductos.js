@@ -17,7 +17,6 @@ export default function DashboardProductos () {
         setDisp("block")
       }
 
-
     useEffect(()=>{
         getProductos("Todo",9999).then(res=>{
             setListaProds(res)
@@ -37,13 +36,13 @@ export default function DashboardProductos () {
                 {busqueda? <p className="noSeEncontro">No se encontraron productos</p> 
                 :   prodsFiltrados.length === 0 ? listaProds.map(prod => <DashboardProductoItem key={prod.id} producto={prod} setReload={setReload} reload={reload}/>)
                 :
-                prodsFiltrados.map(prod => <DashboardProductoItem key={prod.id} producto={prod} setReloa={setReload} reload={reload}/>)
+                prodsFiltrados.map(prod => <DashboardProductoItem key={prod.id} producto={prod} setReload={setReload} reload={reload}/>)
                 }
             </div>
 
         </div>
 
-        <DashboardAddProducto setDisp={setDisp} disp={disp}/>
+        <DashboardAddProducto setDisp={setDisp} disp={disp} reload={reload} setReload={setReload}/>
         </>
         
     )

@@ -91,6 +91,13 @@
 
                 .delete-item-box{
                     width: 50% !important;
+                    button{
+                        &:hover{
+                            background-color: #dee6e6;
+                            color: hsl(180, 79%, 15%);
+                            border: 2px solid hsl(180, 79%, 15%);
+                        }
+                    }
                 }
 
 

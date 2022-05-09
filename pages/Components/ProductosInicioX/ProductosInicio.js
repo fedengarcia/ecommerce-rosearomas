@@ -12,7 +12,7 @@ export default function ProductosInicio(){
         <div>
             <h2 className="titulo-productos">NUESTROS PRODUCTOS</h2>
             <div className="contenedor-productos-inicio">
-                <Link href={{ pathname: '/Tienda', query: { keyword: 'Velas' } }} passHref>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'velas' } }} passHref>
                     <div className="productos-inicio">
                         <div className='contenedor-card-inicio'>
                             <Image src={prod1} alt="DIFUSORES" width={445} height={520} className="img-card-inicio"/>
@@ -20,7 +20,7 @@ export default function ProductosInicio(){
                         <h3>VELAS</h3>
                     </div>
                 </Link>
-                <Link href={{ pathname: '/Tienda', query: { keyword: 'Homespray' } }} passHref>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'homespray' } }} passHref>
                     <div className="productos-inicio">
                         <div className='contenedor-card-inicio'>
                             <Image src={prod2} alt="BOMBON" width={445} height={520} className="img-card-inicio"/>
@@ -28,7 +28,7 @@ export default function ProductosInicio(){
                         <h3>HOMESPRAY</h3>
                     </div>
                 </Link>
-                <Link href={{ pathname: '/Tienda', query: { keyword: 'Difusores' } }} passHref>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'difusores' } }} passHref>
                     <div className="productos-inicio">
                         <div className='contenedor-card-inicio'>
                             <Image src={prod3} alt="VELAS" width={445} height={520} className="img-card-inicio"/>
@@ -36,7 +36,7 @@ export default function ProductosInicio(){
                         <h3>DIFUSORES</h3>
                     </div>
                 </Link>
-                <Link href={{ pathname: '/Tienda', query: { keyword: 'Bombones' } }} passHref>
+                <Link href={{ pathname: '/Tienda', query: { keyword: 'bombones' } }} passHref>
                     <div className="productos-inicio">
                         <div className='contenedor-card-inicio'>
                             <Image src={prod4} alt="HOMESPRAY" width={445} height={520} className="img-card-inicio"/>
