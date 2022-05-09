@@ -22,7 +22,7 @@ export default function CarouselFragancia(){
             <h1 className="titulo-fragancias">NUESTRAS FRAGANCIAS</h1>
             <div className="container-carouselFragancia">
                 <Carousel prevIcon={leftArrow} nextIcon={rightArrow} interval={3000} className="carouselF-1">
-                        {carouselFragancia.map((foto)=>{
+                        {carouselFragancia.filter(frag=>frag.stock===true).map((foto)=>{
                             return(
                                 <Carousel.Item key={foto.id}>
                                     <Image
@@ -38,7 +38,7 @@ export default function CarouselFragancia(){
                         })}
                 </Carousel>
                 <Carousel prevIcon={leftArrow} nextIcon={rightArrow} interval={3000} className="carouselF-2">
-                        {carouselFraganciaSML.map((foto)=>{
+                        {carouselFraganciaSML.filter(frag=>frag.stock===true).map((foto)=>{
                             return(
                                 <Carousel.Item key={foto.id}>
                                     <Image
