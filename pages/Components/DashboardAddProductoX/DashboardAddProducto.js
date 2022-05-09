@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import TextField from '@material-ui/core/TextField';
 import { addProduct, addStorage } from "../../../firebaseX/Firebase";
 import { useForm } from "react-hook-form";
@@ -10,10 +10,6 @@ export default function DashboardAddProducto ({disp,setDisp,reload,setReload}) {
     const [cargando,setCargando]=useState(false)
 
     const {register, formState:{errors},handleSubmit} = useForm()
-
-    useEffect(()=>{
-
-    },[disp])
 
     const handleData = (e,dataType) => {
         

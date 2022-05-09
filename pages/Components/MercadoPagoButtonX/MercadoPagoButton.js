@@ -1,6 +1,6 @@
 import {useContext, useState} from 'react';
 import {UseCartContext} from '../../../Context/CartContext';
-import Router,{ useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import Loader from '../LoaderX/Loader';
 import { addNewOrder, addNewOrderFalse } from '../../../firebaseX/Firebase';
 import { sendEmail } from '../../../helpersX/helpers';

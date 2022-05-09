@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {useEffect, useState, useContext} from "react";
+import {useContext} from "react";
 import CarouselInicio from "./Components/CarouselX/CarouselInicio";
 import banner_1 from "./A-imgs/banner/banner.webp";
 import banner_2 from "./A-imgs/banner/banner2.webp";

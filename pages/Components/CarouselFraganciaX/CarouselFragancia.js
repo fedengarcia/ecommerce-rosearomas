@@ -1,4 +1,4 @@
-import React, { useContext,useState,useEffect } from "react";
+import React, { useContext} from "react";
 import { Carousel } from "react-bootstrap";
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import left from "./icons8-izquierda-círculo-90.webp";

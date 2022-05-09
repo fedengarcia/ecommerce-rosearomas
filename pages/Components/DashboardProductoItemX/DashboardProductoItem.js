@@ -1,7 +1,7 @@
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { addStorage, editPropProduct, removeProduct } from '../../../firebaseX/Firebase';
 import Image from "next/image";
