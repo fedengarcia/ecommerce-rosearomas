@@ -5,6 +5,9 @@ import Head from 'next/head';
 import Script from "next/script";
 import { StorageContext } from '../Context/StorageContext';
 import { useEffect } from 'react';
+import * as gtag from "../lib/gtag"
+import { useRouter } from 'next/router'
+
 
 function MyApp({ Component, pageProps }) {
 
@@ -17,6 +20,20 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    router.events.on('hashChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off('hashChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
+  
   return (
     <>
       <Head>
@@ -35,8 +52,26 @@ function MyApp({ Component, pageProps }) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"/>
             
-            <Component {...pageProps} />            
-            
+            {/* Global Site Tag (gtag.js) - Google Analytics */}
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+            />
+            <Script
+              id="gtag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gtag.GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+
             <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1655669335191511" crossOrigin="anonymous"></Script>
             <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
             <Script type="text/javascript" id='emailJS'>
@@ -44,6 +79,9 @@ function MyApp({ Component, pageProps }) {
                   emailjs.init("iAGffvAUjlmg0kSrt");}
               }
             </Script>
+            
+            <Component {...pageProps} />            
+            
           </CartContext>
         </StorageContext>
       
