@@ -21,6 +21,7 @@
     "bootstrap": "5.1.3",
     "emailjs": "4.0.0",
     "firebase": "9.6.10",
+    "just-detect-adblock": "^1.1.0",
     "mercadopago": "^1.5.12",
     "next": "12.1.1",
     "node": "17.7.2",

@@ -11,15 +11,6 @@ import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
 
-  useEffect(() => {
-    var ads = document.getElementsByClassName("adsbygoogle").length;
-    for (var i = 0; i < ads; i++) {
-      try {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) { }
-    }
-  }, [])// eslint-disable-line react-hooks/exhaustive-deps
-
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -52,7 +43,7 @@ function MyApp({ Component, pageProps }) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"/>
             
-            {/* Global Site Tag (gtag.js) - Google Analytics */}
+            {/* Google Analytics */}
             <Script
               strategy="afterInteractive"
               src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
@@ -72,7 +63,11 @@ function MyApp({ Component, pageProps }) {
               }}
             />
 
+            {/* Google Adsense */}
+
             <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1655669335191511" crossOrigin="anonymous"></Script>
+            
+            
             <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
             <Script type="text/javascript" id='emailJS'>
               {() =>{

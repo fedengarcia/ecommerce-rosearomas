@@ -2731,6 +2731,11 @@
     "readable-stream" "~2.3.6"
     "set-immediate-shim" "~1.0.1"
 
+"just-detect-adblock@^1.1.0":
+  "integrity" "sha512-xtgnwBBZaLtKspGo6jDX/H0FDsHrn41mQVWhNHge7pZe6Nj2gU2izfC09O0rPU/i97iMcJFVjbecFiTAvmNhLQ=="
+  "resolved" "https://registry.npmjs.org/just-detect-adblock/-/just-detect-adblock-1.1.0.tgz"
+  "version" "1.1.0"
+
 "language-subtag-registry@~0.3.2":
   "integrity" "sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg=="
   "resolved" "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz"

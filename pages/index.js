@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import CarouselInicio from "./Components/CarouselX/CarouselInicio";
 import banner_1 from "./A-imgs/banner/banner.webp";
 import banner_2 from "./A-imgs/banner/banner2.webp";
@@ -29,14 +29,6 @@ export default function Home() {
                     <div className='banner-2'>
                         <Image src={banner_2} layout="responsive" alt="BANNER" className="appear-ban2"/>
                     </div>
-
-                    <ins className="adsbygoogle"
-                        style={{display:"block"}}
-                        data-ad-client="ca-pub-1655669335191511"
-                        data-ad-slot="4447855162"
-                        data-ad-format="auto"
-                        data-full-width-responsive="true">
-                    </ins>
 
                     <CarouselInicio/>
 
