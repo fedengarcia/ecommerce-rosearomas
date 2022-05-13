@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer(){
 
@@ -18,7 +19,7 @@ export default function Footer(){
                     </a>
                 </div>
                 <div>
-                    <p className="copyright">&copy; Copyright 2021  RoséAromas | Powered by Carolina Magnani</p>
+                    <p className="copyright">&copy; Copyright 2021  RoséAromas | Desarrollado por <Link className="desarrollado" href="mailto:ftpaginasweb@gmail.com">FT</Link></p>
                 </div>
             </div>
         </footer>
