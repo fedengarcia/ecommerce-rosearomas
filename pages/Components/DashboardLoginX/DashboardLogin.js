@@ -12,7 +12,7 @@ export default function DashboardLogin ({setLogin,login}) {
             <label form="usuario">USUARIO:</label>
             <input placeholder="Usuario" name="usuario" id="usuario"/>
             <label form="contraseña">CONTRASEÑA:</label>
-            <input placeholder="Contraseña" name="contraseña" id="contraseña"/>
+            <input placeholder="Contraseña" type={"password"} name="contraseña" id="contraseña"/>
             <div className="container-logeo-button">
                 <p onClick={()=>{loginExito(usuario.value,contraseña.value)}}>CONFIRMAR</p>
             </div>
